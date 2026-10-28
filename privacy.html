@@ -3,61 +3,302 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>プライバシーポリシー | Jisik Gongbang</title>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>プライバシーポリシー（個人情報保護方針） | Jisik Gongbang</title>
   <style>
-    :root { --bg: #f8fafc; --card: #ffffff; --text: #0f172a; --muted: #475569; --accent: #2563eb; --border: #e2e8f0; }
+    :root {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --accent: #d9381e;
+      --accent-blue: #2563eb;
+      --border: #e2e8f0;
+      --badge-bg: #fef2f2;
+      --badge-text: #b91c1c;
+    }
     * { box-sizing: border-box; }
-    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; }
-    main { max-width: 820px; margin: 40px auto; padding: 0 20px; }
-    .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 36px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
-    h1 { font-size: 24px; margin: 0 0 16px; }
-    h2 { font-size: 18px; margin: 28px 0 10px; border-left: 4px solid var(--accent); padding-left: 12px; }
-    p, li { color: var(--muted); font-size: 15px; }
-    a { color: var(--accent); text-decoration: none; }
-    .nav { margin-bottom: 16px; font-size: 14px; }
-  </style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Malgun Gothic", Meiryo, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+    }
+    main { max-width: 860px; margin: 36px auto; padding: 0 20px 48px; }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .nav a {
+      color: var(--accent-blue);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .nav a:hover { text-decoration: underline; }
+    .lang-switch {
+      display: inline-flex;
+      background: #e2e8f0;
+      border-radius: 999px;
+      padding: 3px;
+      gap: 2px;
+    }
+    .lang-btn {
+      border: none;
+      background: transparent;
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #334155;
+      cursor: pointer;
+    }
+    .lang-btn.active {
+      background: #ffffff;
+      color: #0f172a;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      margin-bottom: 24px;
+    }
+    h1 { font-size: 24px; margin: 0 0 12px; color: var(--text); line-height: 1.4; }
+    h2 {
+      font-size: 18px;
+      margin: 28px 0 12px;
+      border-left: 4px solid var(--accent);
+      padding-left: 12px;
+      color: var(--text);
+    }
+    h3 { font-size: 15.5px; margin: 18px 0 8px; color: var(--text); }
+    p, li { color: var(--muted); font-size: 15px; margin: 8px 0; }
+    ul, ol { padding-left: 22px; margin: 8px 0 16px; }
+    a { color: var(--accent-blue); text-decoration: none; font-weight: 600; }
+    a:hover { text-decoration: underline; }
+    .badge {
+      display: inline-block;
+      background: var(--badge-bg);
+      color: var(--badge-text);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 8px;
+    }
+    .info-box {
+      background: #f1f5f9;
+      border-left: 4px solid var(--accent-blue);
+      padding: 14px 18px;
+      border-radius: 8px;
+      margin: 14px 0;
+      font-size: 14.5px;
+      color: #1e293b;
+    }
+    table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+    th, td {
+      border-bottom: 1px solid var(--border);
+      padding: 14px 12px;
+      text-align: left;
+      vertical-align: top;
+      font-size: 14.5px;
+    }
+    th { width: 32%; color: var(--text); font-weight: 700; background: #f8fafc; }
+    td { color: var(--muted); }
+    .meta-footer {
+      margin-top: 28px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      font-size: 13.5px;
+      color: #64748b;
+    }
+    [data-lang="ko"] { display: none; }
+    body.lang-ko [data-lang="ja"] { display: none; }
+    body.lang-ko [data-lang="ko"] { display: block; }
+    body.lang-ko span[data-lang="ko"], body.lang-ko a[data-lang="ko"] { display: inline; }
+    span[data-lang="ja"], a[data-lang="ja"] { display: inline; }
+    body.lang-ko span[data-lang="ja"], body.lang-ko a[data-lang="ja"] { display: none; }
+</style>
 </head>
 <body>
   <main>
-    <div class="nav"><a href="./index.html">← 公式ポータルへ戻る</a></div>
+    <div class="topbar">
+      <div class="nav">
+        <a data-internal="true" data-base="./index.html" href="./index.html?v=20261028_v3">
+          <span data-lang="ja">← 公式サポート・法務ポータルへ戻る</span>
+          <span data-lang="ko">← 공식 고객지원·법무 포털로 돌아가기</span>
+        </a>
+      </div>
+      <div class="lang-switch" role="group" aria-label="Language switch">
+        <button id="btn-ja" class="lang-btn active" onclick="setLang('ja')">🇯🇵 日本語</button>
+        <button id="btn-ko" class="lang-btn" onclick="setLang('ko')">🇰🇷 한국어</button>
+      </div>
+    </div>
+
     <div class="card">
-      <h1>プライバシーポリシー（個人情報保護方針）</h1>
-      <p>Jisik Gongbang（以下「当方」といいます）は、当方が提供するスマートフォン用アプリケーション（以下「本アプリ」といいます）における利用者情報の取扱いについて、以下のとおりプライバシーポリシー（以下「本ポリシー」といいます）を定め、日本の個人情報保護法およびApp Store・Google Playの各ガイドラインを遵守いたします。</p>
+      <span class="badge" data-lang="ja">Privacy Policy</span>
+      <span class="badge" data-lang="ko">개인정보처리방침 (Privacy Policy)</span>
+      <h1 data-lang="ja">プライバシーポリシー（個人情報保護方針）</h1>
+      <h1 data-lang="ko">개인정보처리방침 (개인정보 보호 정책)</h1>
 
-      <h2>1. 取得する情報および利用目的</h2>
-      <p>本アプリでは、ユーザーが入力したデータ（計算履歴、チェックリスト、タイマー記録、設定情報など）は原則として<strong>ユーザーの端末内（ローカルストレージ）にのみ保存</strong>され、当方の外部サーバーへ自動送信・収集されることはありません。</p>
-      <p>ただし、以下の機能を提供するアプリにおいては、必要な範囲で情報を処理します。</p>
-      <ul>
-        <li><strong>AI解析・アシスタント機能を含む場合：</strong> ユーザーが任意に選択・入力したテキストや画像データは、AI解析結果を生成する目的に限り暗号化通信を通じて外部AI API（Google Gemini API等）へ送信され、処理完了後に当方が個人を特定する形で保存することはありません。</li>
-        <li><strong>お問い合わせ対応：</strong> ユーザーからサポート窓口へご連絡いただいた際、メールアドレスおよびお問い合わせ内容を回答・サポートの目的で利用します。</li>
-      </ul>
+      <div data-lang="ja">
+        <p>Jisik Gongbang（知識工房、以下「当方」といいます）は、当方が提供するスマートフォン用アプリケーション『電子印鑑作成 - はんこメーカー＆PDF押印』および関連アプリケーション（以下総称して「本アプリ」といいます）における利用者情報の取扱いについて、以下のとおりプライバシーポリシー（以下「本ポリシー」といいます）を定め、日本の個人情報保護法、大韓民国の個人情報保護法令、ならびにApple App StoreおよびGoogle Playの各ガイドラインを遵守いたします。</p>
 
-      <h2>2. 第三者モジュール（広告配信・課金決済）の利用について</h2>
-      <p>本アプリでは、無料提供の維持およびアプリ内課金（サブスクリプション・買い切り決済）の処理のため、以下の第三者サービスを利用する場合があります。これらの事業者は、広告配信や決済確認のために匿名の識別子（広告ID、購入トークン、クラッシュログ等）を取得することがあります。</p>
-      <ul>
-        <li><strong>Google AdMob（Google LLC）：</strong> 広告配信および最適化のため（<a href="https://policies.google.com/technologies/ads?hl=ja" target="_blank" rel="noopener">Google 広告に関するポリシー</a>）</li>
-        <li><strong>RevenueCat（RevenueCat, Inc.）：</strong> アプリ内課金およびサブスクリプションの購入状態確認・復元処理のため（<a href="https://www.revenuecat.com/privacy/" target="_blank" rel="noopener">RevenueCat Privacy Policy</a>）</li>
-      </ul>
+        <h2>1. 取得する情報および端末内（オンデバイス）処理の原則</h2>
+        <p>本アプリは、ユーザーのプライバシーおよび業務上の機密書類を保護するため、<strong>すべての印鑑生成・画像透過・PDF押印処理をユーザーの端末内（ローカルストレージおよびメモリ内）でのみ実行するオンデバイス設計</strong>を採用しています。</p>
+        <ul>
+          <li><strong>印鑑データおよび印面文字列：</strong> ユーザーが入力した氏名、会社名、役職名、部署名、日付、および作成した電子印鑑（印影画像）やマイ印鑑ボックスの保存データは、<strong>ユーザーの端末内にのみ保存</strong>され、当方や第三者の外部サーバーへ送信・収集されることは一切ありません。</li>
+          <li><strong>書類・PDFデータおよび写真データ：</strong> ユーザーが押印のために読み込んだPDFファイルや書類画像、ならびに「写真から作成」機能で撮影または選択した実物印鑑の写真データは、端末内でのみ画像処理・PDF合成が行われ、外部サーバーへアップロードされることはありません。</li>
+          <li><strong>お問い合わせ対応時の情報：</strong> ユーザーがカスタマーサポート窓口（<a href="mailto:ddumwork@gmail.com">ddumwork@gmail.com</a>）へメールでご連絡いただいた場合に限り、送信元のメールアドレスおよびお問い合わせ内容を、回答およびサポート対応の目的にのみ利用します。</li>
+        </ul>
 
-      <h2>3. 個人情報の第三者提供</h2>
-      <p>当方は、法令に基づく場合を除き、ユーザーの同意を得ることなく個人情報を第三者に提供いたしません。</p>
+        <h2>2. 端末アクセス権限（カメラ・写真・ファイル）の利用目的</h2>
+        <p>本アプリでは、機能提供に必要な範囲で以下のOS権限を使用します。これらの権限を通じて取得したデータが端末外へ送信されることはありません。</p>
+        <ul>
+          <li><strong>カメラ権限（Camera）：</strong> 紙に押された実物の印鑑（印影）を撮影し、背景透過（朱肉部分の切り抜き）を行う機能にのみ使用します。</li>
+          <li><strong>写真ライブラリ・ストレージ権限（Photo Library / Storage）：</strong> 端末内の印影写真を読み込んで背景透過を行うため、および作成した透過PNG印鑑や押印済み画像を端末に保存・共有するためにのみ使用します。</li>
+          <li><strong>ファイル・PDF参照権限（File Picker）：</strong> ユーザーが端末内から選択したPDF書類や画像ファイルに電子印鑑を配置・押印して出力するためにのみ使用します。</li>
+        </ul>
 
-      <h2>4. データの削除および管理</h2>
-      <p>端末内に保存されたすべてのアプリデータは、本アプリ内の初期化（リセット）機能、または本アプリを端末からアンインストール（削除）することにより、いつでも完全に消去することができます。</p>
+        <h2>3. 課金決済および第三者サービスの利用について</h2>
+        <p>本アプリにおける有料プラン（買い切りプラン・月額サブスクリプション）の決済処理および購入状態の検証は、各アプリストアが提供する公式決済システムを通じて安全に行われます。</p>
+        <ul>
+          <li><strong>Apple Inc.（App Store / StoreKit）および Google LLC（Google Play Billing）：</strong> アプリ内課金の決済処理、定期購読の有効性確認、および機種変更時の「購入の復元」処理のために利用します。クレジットカード番号や銀行口座情報などの決済情報はAppleまたはGoogleが直接管理し、当方が取得・保持することはありません。
+            <ul>
+              <li><a href="https://www.apple.com/jp/legal/privacy/" target="_blank" rel="noopener">Apple プライバシーポリシー</a></li>
+              <li><a href="https://policies.google.com/privacy?hl=ja" target="_blank" rel="noopener">Google プライバシーポリシー</a></li>
+            </ul>
+          </li>
+          <li><strong>広告配信・外部トラッキングについて：</strong> 『電子印鑑作成 - はんこメーカー＆PDF押印』では、第三者広告配信モジュールによる広告表示や行動ターゲティング用のトラッキング（IDFA / AAIDの収集）は一切行っておりません。（※将来、当方が別途提供する無料アプリにおいて課金管理補助ツール（RevenueCat等）や広告配信（Google AdMob等）を使用する場合は、該当アプリ内の説明および本ポリシーにて明示いたします。）</li>
+        </ul>
 
-      <h2>5. プライバシーポリシーの変更</h2>
-      <p>当方は、法令の改正やサービス内容の変更に伴い、本ポリシーを改定することがあります。重要な変更がある場合は本ページにて公表いたします。</p>
+        <h2>4. 個人情報の第三者提供</h2>
+        <p>当方は、法令に基づく開示要請がある場合を除き、ユーザーの同意を得ることなく個人情報を第三者に提供または販売することは一切ありません。</p>
 
-      <h2>6. お問い合わせ窓口</h2>
-      <p>本ポリシーに関するお問い合わせは、下記までご連絡ください。</p>
-      <p>
-        <strong>事業者名：</strong> Jisik Gongbang（知識工房）<br>
-        <strong>代表者：</strong> KOO BONYEOP<br>
-        <strong>所在地：</strong> 65 Naesong-gil, Yeondong-myeon, Sejong-si, 30069, Republic of Korea<br>
-        <strong>メールアドレス：</strong> <a href="mailto:ddumwork@gmail.com">ddumwork@gmail.com</a>
-      </p>
-      <p style="margin-top:24px; font-size:13px;">制定日：2026年10月17日</p>
+        <h2>5. データの削除およびユーザーによる管理方法</h2>
+        <ul>
+          <li><strong>アプリ内からの個別削除：</strong> 「マイ印鑑・設定」タブ内の削除ボタンから、保存した印鑑データをいつでも個別に完全消去できます。</li>
+          <li><strong>アプリ削除による全データ消去：</strong> 本アプリのデータはすべて端末内にのみ保存されているため、本アプリを端末からアンインストール（削除）することで、端末内のすべての印鑑データおよび設定情報が即座に完全消去されます。</li>
+          <li><strong>お問い合わせ履歴の削除請求：</strong> メールでお問い合わせいただいた際の履歴削除をご希望の場合は、下記お問い合わせ窓口までご連絡いただければ速やかに消去いたします。</li>
+        </ul>
+
+        <h2>6. プライバシーポリシーの改定</h2>
+        <p>当方は、法令の改正やアプリ機能の改善に伴い、本ポリシーを改定することがあります。重要な変更がある場合は、本ページへの掲載をもって公表いたします。</p>
+
+        <h2>7. お問い合わせ窓口（運営事業者情報）</h2>
+        <p>本ポリシーおよび利用者情報の取扱いに関するお問い合わせは、下記窓口までご連絡ください。</p>
+        <div class="info-box">
+          <strong>事業者名（屋号）：</strong> Jisik Gongbang（知識工房 / 事業者登録番号：874-15-02757 / D-U-N-S® Number：697010594）<br>
+          <strong>代表者：</strong> KOO BONYEOP（具 本燁）<br>
+          <strong>所在地：</strong> 65 Naesong-gil, Yeondong-myeon, Sejong-si, 30069, Republic of Korea<br>
+          <strong>メールアドレス：</strong> <a href="mailto:ddumwork@gmail.com">ddumwork@gmail.com</a>
+        </div>
+      </div>
+
+      <div data-lang="ko">
+        <p>Jisik Gongbang(지식공방, 이하 「당사」)은 당사가 제공하는 스마트폰용 애플리케이션 『전자도장 제작 - 인감 메이커 &amp; PDF 날인(電子印鑑作成 - はんこメーカー＆PDF押印)』 및 관련 애플리케이션(이하 총칭하여 「본 앱」)에서의 이용자 정보 처리에 관하여 아래와 같이 개인정보처리방침(이하 「본 방침」)을 제정하며, 일본 개인정보보호법, 대한민국 개인정보 보호법령 및 Apple App Store·Google Play의 각 가이드라인을 준수합니다.</p>
+
+        <h2>1. 수집하는 정보 및 기기 내(On-Device) 로컬 처리 원칙</h2>
+        <p>본 앱은 사용자의 프라이버시와 업무용 기밀 서류를 철저히 보호하기 위해, <strong>모든 도장 이미지 생성·사진 배경 투명화·PDF 날인 처리를 사용자의 기기 내부(로컬 스토리지 및 메모리)에서만 수행하는 온디바이스(On-Device) 설계</strong>를 채택하고 있습니다.</p>
+        <ul>
+          <li><strong>도장 데이터 및 인면 텍스트:</strong> 사용자가 입력한 성명, 회사명, 직책명, 부서명, 날짜 및 제작한 전자도장(인영 이미지)과 내 도장 보관함 저장 데이터는 <strong>사용자의 기기 내부에만 저장</strong>되며, 당사나 제3자의 외부 서버로 전송·수집되는 일이 일절 없습니다.</li>
+          <li><strong>서류·PDF 데이터 및 사진 데이터:</strong> 사용자가 날인을 위해 불러온 PDF 파일이나 서류 이미지, 그리고 [사진으로 제작] 기능에서 촬영하거나 선택한 실물 도장 사진 데이터는 기기 내부에서만 이미지 처리 및 PDF 합성이 이루어지며 외부 서버로 업로드되지 않습니다.</li>
+          <li><strong>고객지원 문의 시 정보:</strong> 사용자가 공식 고객지원 창구(<a href="mailto:ddumwork@gmail.com">ddumwork@gmail.com</a>)로 이메일 문의를 보낸 경우에 한하여, 발신 이메일 주소와 문의 내용을 답변 및 고객지원 목적으로만 이용합니다.</li>
+        </ul>
+
+        <h2>2. 기기 접근 권한 (카메라·사진·파일) 이용 목적</h2>
+        <p>본 앱은 핵심 기능 제공에 필요한 최소 범위 내에서 아래의 OS 권한을 사용하며, 해당 권한을 통해 접근한 데이터는 기기 외부로 절대 전송되지 않습니다.</p>
+        <ul>
+          <li><strong>카메라 권한 (Camera):</strong> 종이에 찍힌 실물 도장(인영)을 촬영하여 배경 투명화(인주 부분만 추출)를 수행하는 기능에만 사용합니다.</li>
+          <li><strong>사진 라이브러리·저장소 권한 (Photo Library / Storage):</strong> 기기 내 도장 사진을 불러와 배경을 투명화하거나, 완성된 투명 PNG 도장 및 날인 문서를 기기에 저장·공유하기 위해서만 사용합니다.</li>
+          <li><strong>파일·PDF 참조 권한 (File Picker):</strong> 사용자가 기기에서 선택한 PDF 서류나 이미지 파일 위에 전자도장을 배치·날인하여 내보내기 위해서만 사용합니다.</li>
+        </ul>
+
+        <h2>3. 인앱 결제 및 제3자 서비스 이용 안내</h2>
+        <p>본 앱의 유료 플랜(평생 소장 플랜·월간 구독 플랜) 결제 처리 및 구매 권한 검증은 양대 앱 스토어가 제공하는 공식 결제 시스템을 통해 안전하게 처리됩니다.</p>
+        <ul>
+          <li><strong>Apple Inc. (App Store / StoreKit) 및 Google LLC (Google Play Billing):</strong> 인앱 결제 처리, 정기구독 유효성 확인 및 기기 변경 시 [구매 내역 복원] 처리를 위해 이용합니다. 신용카드 번호나 계좌 정보 등 결제 수단 정보는 Apple 또는 Google이 직접 관리하며, 당사가 이를 수집하거나 보유하지 않습니다.
+            <ul>
+              <li><a href="https://www.apple.com/kr/legal/privacy/" target="_blank" rel="noopener">Apple 개인정보 처리방침</a></li>
+              <li><a href="https://policies.google.com/privacy?hl=ko" target="_blank" rel="noopener">Google 개인정보처리방침</a></li>
+            </ul>
+          </li>
+          <li><strong>광고 송출 및 외부 트래킹 여부:</strong> 『전자도장 제작 - 인감 메이커 &amp; PDF 날인』 앱은 제3자 광고 모듈에 의한 광고 표시나 맞춤형 광고 추적(IDFA / AAID 수집)을 일절 수행하지 않습니다.</li>
+        </ul>
+
+        <h2>4. 개인정보의 제3자 제공</h2>
+        <p>당사는 법령에 근거한 적법한 공개 요청이 있는 경우를 제외하고, 사용자의 사전 동의 없이 개인정보를 제3자에게 제공하거나 판매하지 않습니다.</p>
+
+        <h2>5. 데이터 삭제 및 사용자 관리 방법</h2>
+        <ul>
+          <li><strong>앱 내 개별 삭제:</strong> [내 도장·설정] 탭의 삭제(휴지통) 버튼을 눌러 저장된 도장 데이터를 언제든지 개별적으로 즉시 삭제할 수 있습니다.</li>
+          <li><strong>앱 삭제를 통한 전체 데이터 파기:</strong> 본 앱의 모든 데이터는 기기 내부에만 저장되므로, 기기에서 앱을 삭제(언인스톨)하면 기기 내 모든 도장 데이터 및 설정 정보가 즉시 완전히 파기됩니다.</li>
+          <li><strong>이메일 문의 내역 삭제 요청:</strong> 고객지원 이메일 문의 기록의 삭제를 원하시는 경우 아래 문의 창구로 연락해 주시면 지체 없이 파기합니다.</li>
+        </ul>
+
+        <h2>6. 개인정보처리방침의 변경</h2>
+        <p>당사는 관련 법령의 개정이나 서비스 기능 변경에 따라 본 방침을 개정할 수 있으며, 중요한 변경사항이 있을 경우 본 페이지를 통해 공지합니다.</p>
+
+        <h2>7. 개인정보 보호 책임자 및 공식 문의 창구</h2>
+        <p>본 방침 및 개인정보 처리에 관한 문의는 아래 공식 창구로 연락해 주시기 바랍니다.</p>
+        <div class="info-box">
+          <strong>사업자명 (상호):</strong> Jisik Gongbang (지식공방 / 사업자등록번호: 874-15-02757 / D-U-N-S® Number: 697010594)<br>
+          <strong>대표자:</strong> KOO BONYEOP (구본엽)<br>
+          <strong>소재지:</strong> 65 Naesong-gil, Yeondong-myeon, Sejong-si, 30069, Republic of Korea (세종특별자치시 연동면 내송길 65)<br>
+          <strong>공식 이메일 주소:</strong> <a href="mailto:ddumwork@gmail.com">ddumwork@gmail.com</a>
+        </div>
+      </div>
+
+      <div class="meta-footer">
+        <span data-lang="ja">制定日：2026年10月17日 ｜ 最終改定日：2026年10月28日</span>
+        <span data-lang="ko">제정일: 2026년 10월 17일 ｜ 최종 개정일: 2026년 10월 28日</span>
+      </div>
     </div>
   </main>
+  
+  <script>
+    function setLang(lang) {
+      var isKo = (lang === 'ko');
+      document.body.classList.toggle('lang-ko', isKo);
+      document.documentElement.lang = isKo ? 'ko' : 'ja';
+      var btnJa = document.getElementById('btn-ja');
+      var btnKo = document.getElementById('btn-ko');
+      if (btnJa && btnKo) {
+        btnJa.classList.toggle('active', !isKo);
+        btnKo.classList.toggle('active', isKo);
+      }
+      // Update internal links to preserve lang parameter
+      var links = document.querySelectorAll('a[data-internal="true"]');
+      for (var i = 0; i < links.length; i++) {
+        var baseHref = links[i].getAttribute('data-base');
+        if (baseHref) {
+          links[i].setAttribute('href', baseHref + '?v=20261028_v3' + (isKo ? '&lang=ko' : ''));
+        }
+      }
+      try { localStorage.setItem('jg_legal_lang', isKo ? 'ko' : 'ja'); } catch (e) {}
+    }
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var qLang = params.get('lang');
+      var saved = null;
+      try { saved = localStorage.getItem('jg_legal_lang'); } catch (e) {}
+      if (qLang === 'ko' || (!qLang && saved === 'ko')) {
+        setLang('ko');
+      } else {
+        setLang('ja');
+      }
+    })();
+  </script>
+
 </body>
 </html>
