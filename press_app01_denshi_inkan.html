@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>電子印鑑スタジオ — 公式紹介・メディア向けプレスキット｜Jisik Gongbang（知識工房）</title>
+  <meta name="description" content="会員登録不要・完全オフライン動作のiOS/Androidアプリ『電子印鑑スタジオ - 透過ハンコ作成＆PDF押印』の公式紹介ページおよびメディア関係者様向けプレスキットです。旧字体・異体字対応、実物ハンコの写真背景透過スキャン、最大20ページPDFへの実寸mm押印に対応。">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="電子印鑑スタジオ - 透過ハンコ作成＆PDF押印｜公式紹介＆プレスキット">
+  <meta property="og:description" content="登録不要・完全端末内処理で社外秘PDFも安心。旧字体対応の電子印鑑作成・実物ハンコ写真透過スキャン・PDF実寸押印がこれ1つで完結。">
+  <meta property="og:url" content="https://koo-by.github.io/press_app01_denshi_inkan.html">
+  <meta property="og:image" content="https://koo-by.github.io/press_hero_1200x630.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Jisik Gongbang（知識工房）公式ポータル">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://koo-by.github.io/press_hero_1200x630.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "電子印鑑スタジオ - 透過ハンコ作成＆PDF押印",
+    "alternateName": "전자도장 스튜디오 - 투명 도장 제작 & PDF 날인",
+    "operatingSystem": "iOS 15.0+, iPadOS 15.0+, Android 7.0+",
+    "applicationCategory": "BusinessApplication",
+    "inLanguage": "ja",
+    "offers": [
+      {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "JPY",
+        "description": "無料プラン（個人丸印・小判印・日付データ印の鮮明モード作成、背景透過PNG保存、内蔵サンプル書類押印、マイ印鑑2個保存）"
+      },
+      {
+        "@type": "Offer",
+        "price": "790",
+        "priceCurrency": "JPY",
+        "description": "Pro買い切りプラン（永久ライセンス：法人角印、朱肉かすれ・二重枠、外部PDF最大20ページ押印、複数同時押印、写真スキャン透過保存、無制限保存）"
+      },
+      {
+        "@type": "Offer",
+        "price": "200",
+        "priceCurrency": "JPY",
+        "description": "Pro月額プラン（初回3日間無料トライアル付き）"
+      }
+    ],
+    "publisher": {
+      "@type": "Organization",
+      "name": "Jisik Gongbang（知識工房）",
+      "url": "https://koo-by.github.io/",
+      "email": "ddumwork@gmail.com"
+    },
+    "downloadUrl": [
+      "https://apps.apple.com/jp/app/id6827110841",
+      "https://play.google.com/store/apps/details?id=com.knowledgestudio.japan.app01_denshi_inkan&hl=ja&gl=JP"
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --accent: #d9381e;
+      --accent-dark: #b91c1c;
+      --accent-blue: #2563eb;
+      --border: #e2e8f0;
+      --badge-bg: #fef2f2;
+      --badge-text: #b91c1c;
+      --code-bg: #0f172a;
+      --code-text: #f8fafc;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Malgun Gothic", Meiryo, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+    }
+    main { max-width: 920px; margin: 36px auto; padding: 0 20px 60px; }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .nav a {
+      color: var(--accent-blue);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .nav a:hover { text-decoration: underline; }
+    .lang-switch {
+      display: inline-flex;
+      background: #e2e8f0;
+      border-radius: 999px;
+      padding: 3px;
+      gap: 2px;
+    }
+    .lang-btn {
+      border: none;
+      background: transparent;
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #334155;
+      cursor: pointer;
+    }
+    .lang-btn.active {
+      background: #ffffff;
+      color: #0f172a;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      margin-bottom: 24px;
+    }
+    .hero-card {
+      background: linear-gradient(135deg, #ffffff 0%, #fff5f5 100%);
+      border: 1px solid #fecaca;
+    }
+    h1 { font-size: 25px; margin: 0 0 12px; color: var(--text); line-height: 1.4; }
+    h2 {
+      font-size: 18.5px;
+      margin: 26px 0 12px;
+      border-left: 4px solid var(--accent);
+      padding-left: 12px;
+      color: var(--text);
+    }
+    h2:first-child { margin-top: 0; }
+    h3 { font-size: 16px; margin: 18px 0 8px; color: var(--text); }
+    p, li { color: var(--muted); font-size: 15px; margin: 8px 0; }
+    ul, ol { padding-left: 22px; margin: 8px 0 16px; }
+    a { color: var(--accent-blue); text-decoration: none; font-weight: 600; }
+    a:hover { text-decoration: underline; }
+    .badge {
+      display: inline-block;
+      background: var(--badge-bg);
+      color: var(--badge-text);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+    .lead-box {
+      background: #fff1f2;
+      border-left: 4px solid var(--accent);
+      padding: 16px 20px;
+      border-radius: 10px;
+      margin: 16px 0;
+      color: #881337;
+      font-size: 14.5px;
+    }
+    .lead-box strong { color: #9f1239; }
+    .store-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .btn-store {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 20px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none !important;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+    .btn-store:hover { transform: translateY(-1px); opacity: 0.94; }
+    .btn-ios { background: #0f172a; color: #ffffff !important; }
+    .btn-android { background: #059669; color: #ffffff !important; }
+    .btn-copy {
+      background: var(--accent-blue);
+      color: #ffffff;
+      border: none;
+      padding: 9px 16px;
+      border-radius: 8px;
+      font-size: 13.5px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .btn-copy:hover { background: #1d4ed8; }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 14px;
+    }
+    .feature-item {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+      background: #f8fafc;
+    }
+    .feature-item h3 { margin-top: 0; color: #0f172a; }
+    .stamp-showcase {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 14px;
+      margin: 18px 0 8px;
+    }
+    .stamp-box {
+      border: 1px dashed #cbd5e1;
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      background: #ffffff;
+    }
+    .stamp-caption { font-size: 13px; font-weight: 700; color: #334155; margin-top: 8px; }
+    .stamp-sub { font-size: 12px; color: #64748b; }
+    table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+    th, td {
+      border-bottom: 1px solid var(--border);
+      padding: 13px 12px;
+      text-align: left;
+      vertical-align: top;
+      font-size: 14.5px;
+    }
+    th { width: 30%; color: var(--text); font-weight: 700; background: #f8fafc; }
+    td { color: var(--muted); }
+    .press-copy-wrap {
+      position: relative;
+      margin-top: 12px;
+    }
+    pre.press-text {
+      background: var(--code-bg);
+      color: var(--code-text);
+      padding: 20px;
+      border-radius: 12px;
+      font-size: 13.5px;
+      line-height: 1.7;
+      white-space: pre-wrap;
+      word-break: break-word;
+      overflow-x: auto;
+      margin: 10px 0 0;
+      font-family: "SFMono-Regular", Consolas, "Hiragino Kaku Gothic ProN", "Malgun Gothic", monospace;
+    }
+    .info-box {
+      background: #f1f5f9;
+      border-left: 4px solid var(--accent-blue);
+      padding: 14px 18px;
+      border-radius: 8px;
+      margin: 14px 0;
+      font-size: 14.5px;
+      color: #1e293b;
+    }
+    .meta-footer {
+      margin-top: 28px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      font-size: 13.5px;
+      color: #64748b;
+    }
+    [data-lang="ko"] { display: none; }
+    body.lang-ko [data-lang="ja"] { display: none; }
+    body.lang-ko [data-lang="ko"] { display: block; }
+    body.lang-ko span[data-lang="ko"], body.lang-ko a[data-lang="ko"] { display: inline; }
+    span[data-lang="ja"], a[data-lang="ja"] { display: inline; }
+    body.lang-ko span[data-lang="ja"], body.lang-ko a[data-lang="ja"] { display: none; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="topbar">
+      <div class="nav">
+        <a data-internal="true" data-base="./index.html" href="./index.html">← <span data-lang="ja">Jisik Gongbang 公式ポータルへ戻る</span><span data-lang="ko">Jisik Gongbang 공식 포털 홈으로 돌아가기</span></a>
+      </div>
+      <div class="lang-switch" role="group" aria-label="Language switch">
+        <button id="btn-ja" class="lang-btn active" onclick="setLang('ja')">🇯🇵 日本語</button>
+        <button id="btn-ko" class="lang-btn" onclick="setLang('ko')">🇰🇷 한국어</button>
+      </div>
+    </div>
+
+    <!-- Hero & 3-Line Summary -->
+    <div class="card hero-card">
+      <span class="badge" data-lang="ja">公式アプリ紹介・メディア向けプレスキット（Press Kit）</span>
+      <span class="badge" data-lang="ko">공식 앱 소개 및 일본 미디어 전용 프레스킷 (Press Kit)</span>
+      <h1 data-lang="ja">電子印鑑スタジオ - 透過ハンコ作成＆PDF押印</h1>
+      <h1 data-lang="ko">전자도장 스튜디오 - 투명 도장 제작 &amp; PDF 날인 (電子印鑑スタジオ)</h1>
+      <p data-lang="ja"><strong>サブタイトル：</strong>異体字・角印・日付印も完全オフラインで即出力（iOS / iPadOS / Android対応）</p>
+      <p data-lang="ko"><strong>부제목:</strong> 이체자·법인 직인·날짜 도장도 완전 오프라인 즉시 출력 (iOS / iPadOS / Android 지원)</p>
+
+      <div class="lead-box" data-lang="ja">
+        <strong>【メディア・編集者様向け 3行要約（リード文）】</strong><br>
+        1. <strong>旧字体・異体字（髙・﨑・邊・齋など）に完全対応</strong>した個人丸印・日付データ印・法人角印を3秒で作成し、300DPI相当の背景透過PNGで即座に出力。<br>
+        2. 白い紙に押した<strong>実物の印鑑をカメラで撮影して背景だけを透明化（Alpha=0）するスキャン抽出機能</strong>と、<strong>最大20ページのPDF書類へ実寸mm指定（10.5mm/15mm/21mm等）で直接押印</strong>できる機能を1つのアプリに統合。<br>
+        3. <strong>会員登録不要・100%端末内（完全オフライン）処理</strong>のため、社外秘の見積書・請求書・稟議書PDFも外部サーバーへ一切送信されず安全に完結。
+      </div>
+
+      <div class="lead-box" data-lang="ko">
+        <strong>[일본 미디어 기자·에디터용 3줄 핵심 요약 (리드문)]</strong><br>
+        1. <strong>구자체·이체자(髙·﨑·邊·齋 등)를 완벽 지원</strong>하는 개인 원형인·날짜 데이터인·법인 각인을 3초 만에 제작하고 300DPI급 투명 배경 PNG로 즉시 출력.<br>
+        2. 흰 종이에 찍은 <strong>실물 도장을 카메라로 촬영해 종이 그림자만 지우고 인주만 투명 추출(Alpha=0)하는 스캔 기능</strong>과, <strong>최대 20페이지 PDF 서류에 실측 mm 규격(10.5mm/15mm/21mm 등)으로 직접 날인</strong>하는 기능을 앱 하나로 통합.<br>
+        3. <strong>회원가입 불필요·100% 기기 내(완전 오프라인) 처리</strong> 아키텍처로 대외비 견적서·청구서·품의서 PDF가 외부 서버로 일절 전송되지 않아 보안 걱정 없이 완결.
+      </div>
+
+      <!-- Vector Stamp Visual Preview -->
+      <div class="stamp-showcase" aria-label="Stamp Visual Examples">
+        <div class="stamp-box">
+          <svg width="88" height="88" viewBox="0 0 100 100" role="img" aria-label="個人丸印 サンプル">
+            <circle cx="50" cy="50" r="42" fill="none" stroke="#d9381e" stroke-width="5.5"/>
+            <text x="50" y="44" text-anchor="middle" fill="#d9381e" font-size="25" font-weight="700" font-family="serif">髙橋</text>
+            <text x="50" y="74" text-anchor="middle" fill="#d9381e" font-size="25" font-weight="700" font-family="serif">之印</text>
+          </svg>
+          <div class="stamp-caption" data-lang="ja">① 個人丸印・旧字体対応</div>
+          <div class="stamp-caption" data-lang="ko">① 개인 원형인·구자체 대응</div>
+          <div class="stamp-sub">10.5mm / 12mm / 15mm</div>
+        </div>
+        <div class="stamp-box">
+          <svg width="88" height="88" viewBox="0 0 100 100" role="img" aria-label="日付データ印 サンプル">
+            <circle cx="50" cy="50" r="43" fill="none" stroke="#d9381e" stroke-width="4.5"/>
+            <line x1="12" y1="36" x2="88" y2="36" stroke="#d9381e" stroke-width="3"/>
+            <line x1="12" y1="64" x2="88" y2="64" stroke="#d9381e" stroke-width="3"/>
+            <text x="50" y="28" text-anchor="middle" fill="#d9381e" font-size="14" font-weight="700" font-family="sans-serif">検収済</text>
+            <text x="50" y="55" text-anchor="middle" fill="#d9381e" font-size="13.5" font-weight="700" font-family="monospace">’26.11.05</text>
+            <text x="50" y="81" text-anchor="middle" fill="#d9381e" font-size="15" font-weight="700" font-family="serif">山﨑</text>
+          </svg>
+          <div class="stamp-caption" data-lang="ja">② 日付データ印（令和/西暦）</div>
+          <div class="stamp-caption" data-lang="ko">② 날짜 데이터인 (레이와/서기)</div>
+          <div class="stamp-sub" data-lang="ja">上下段テキスト自由編集</div>
+          <div class="stamp-sub" data-lang="ko">상하단 문구 자유 편집</div>
+        </div>
+        <div class="stamp-box">
+          <svg width="88" height="88" viewBox="0 0 100 100" role="img" aria-label="法人角印 サンプル">
+            <rect x="12" y="12" width="76" height="76" rx="4" fill="none" stroke="#d9381e" stroke-width="5.5"/>
+            <text x="68" y="38" text-anchor="middle" fill="#d9381e" font-size="18" font-weight="700" font-family="serif">株式</text>
+            <text x="68" y="60" text-anchor="middle" fill="#d9381e" font-size="18" font-weight="700" font-family="serif">会社</text>
+            <text x="68" y="80" text-anchor="middle" fill="#d9381e" font-size="18" font-weight="700" font-family="serif">知識</text>
+            <text x="32" y="42" text-anchor="middle" fill="#d9381e" font-size="18" font-weight="700" font-family="serif">工房</text>
+            <text x="32" y="72" text-anchor="middle" fill="#d9381e" font-size="18" font-weight="700" font-family="serif">之印</text>
+          </svg>
+          <div class="stamp-caption" data-lang="ja">③ 法人角印（社判 1〜4列）</div>
+          <div class="stamp-caption" data-lang="ko">③ 법인 사각인 (사판 1~4열)</div>
+          <div class="stamp-sub">21mm / 24mm / 之印自動調整</div>
+        </div>
+        <div class="stamp-box">
+          <svg width="88" height="88" viewBox="0 0 100 100" role="img" aria-label="PDF押印＆写真透過">
+            <rect x="18" y="10" width="56" height="74" rx="4" fill="#f8fafc" stroke="#475569" stroke-width="3"/>
+            <line x1="26" y1="24" x2="64" y2="24" stroke="#94a3b8" stroke-width="3"/>
+            <line x1="26" y1="36" x2="64" y2="36" stroke="#94a3b8" stroke-width="3"/>
+            <line x1="26" y1="48" x2="52" y2="48" stroke="#94a3b8" stroke-width="3"/>
+            <circle cx="64" cy="64" r="22" fill="rgba(217,56,30,0.12)" stroke="#d9381e" stroke-width="4"/>
+            <text x="64" y="69" text-anchor="middle" fill="#d9381e" font-size="13" font-weight="700" font-family="serif">渡邊</text>
+          </svg>
+          <div class="stamp-caption" data-lang="ja">④ 実物ハンコ透過＆PDF押印</div>
+          <div class="stamp-caption" data-lang="ko">④ 실물도장 투명 추출 &amp; PDF 날인</div>
+          <div class="stamp-sub" data-lang="ja">最大20ページ・複数同時押印</div>
+          <div class="stamp-sub" data-lang="ko">최대 20페이지·복수 동시 날인</div>
+        </div>
+      </div>
+
+      <div class="store-buttons">
+        <a class="btn-store btn-ios" href="https://apps.apple.com/jp/app/id6827110841" target="_blank" rel="noopener">
+          🍎 <span data-lang="ja">App Store（iOS / iPadOS）公式ページ</span><span data-lang="ko">App Store (iOS / iPadOS) 공식 페이지</span>
+        </a>
+        <a class="btn-store btn-android" href="https://play.google.com/store/apps/details?id=com.knowledgestudio.japan.app01_denshi_inkan&hl=ja&gl=JP" target="_blank" rel="noopener">
+          🤖 <span data-lang="ja">Google Play（Android）公式ページ</span><span data-lang="ko">Google Play (Android) 공식 페이지</span>
+        </a>
+        <a class="btn-store" style="background:#334155;color:#fff !important;" href="./press_hero_1200x630.png" download="denshi_inkan_studio_press_1200x630.png">
+          🖼️ <span data-lang="ja">記事用アイキャッチ画像（1200×630 PNG）をダウンロード</span><span data-lang="ko">보도용 대표 배너(1200×630 PNG) 다운로드</span>
+        </a>
+      </div>
+      <div style="margin-top:20px;">
+        <img src="./press_hero_1200x630.png" alt="電子印鑑スタジオ 公式アイキャッチバナー (1200x630)" style="width:100%;max-width:840px;height:auto;border-radius:12px;border:1px solid #cbd5e1;display:block;" />
+      </div>
+    </div>
+
+    <!-- 4 Key Differentiators -->
+    <div class="card">
+      <h2 data-lang="ja">開発背景と4つの主要機能（従来の電子印鑑アプリの課題を解決）</h2>
+      <h2 data-lang="ko">개발 배경 및 4대 핵심 차별점 (기존 전자도장 앱의 고질적 불만 해결)</h2>
+      <p data-lang="ja">従来の電子印鑑アプリにおける「旧字体が文字化けする」「紙のハンコ写真の背景が綺麗に消えない」「印鑑画像を作ってもPDFに実寸で押す方法が分からない」「社外秘の請求書を外部クラウドにアップロードしたくない」という4大課題を解決するために開発されました。</p>
+      <p data-lang="ko">기존 일본 전자도장 앱 사용자들이 가장 많이 호소하던 '구자체 한자 깨짐', '종이 도장 사진 배경 미제거', '도장 이미지를 만든 후 PDF에 실제 크기로 찍기 어려움', '대외비 서류를 외부 클라우드에 업로드하기 꺼려짐'이라는 4대 페인포인트를 정면으로 해결했습니다.</p>
+
+      <div class="feature-grid">
+        <div class="feature-item">
+          <h3 data-lang="ja">1. 旧字体・異体字ピッカー＆6書体内蔵</h3>
+          <h3 data-lang="ko">1. 구자체·이체자 입력기 &amp; 6종 서체 내장</h3>
+          <p data-lang="ja">「髙橋」「山﨑」「渡邊」「齋藤」など日本の多様な苗字を文字化けなく即座に入力可能。印相体風・篆書体風・古印体風・楷書体・明朝・ゴシックの6書体、朱肉5色、かすれ効果、お辞儀傾き調整に対応。</p>
+          <p data-lang="ko">'髙橋', '山﨑', '渡邊', '齋藤' 등 일본의 다양한 이체자 성씨를 깨짐 없이 즉시 선택 가능. 인상체풍·전서체풍·고인체풍·해서체·명조·고딕 6종 서체와 인주 5색, 인주 번짐(갈필), 인사 기울기 조정 지원.</p>
+        </div>
+        <div class="feature-item">
+          <h3 data-lang="ja">2. 実物ハンコの写真スキャン透過抽出</h3>
+          <h3 data-lang="ko">2. 실물 도장 사진 스캔 배경 투명화 추출</h3>
+          <p data-lang="ja">白い紙に押した実物の丸印や角印をスマホカメラで撮影するだけで、紙の影や照明ムラを除去し、朱肉の輪郭だけを鮮明な背景透過PNG（Alpha=0）として抽出します。</p>
+          <p data-lang="ko">흰 종이에 찍은 실물 원형인이나 회사 직인을 스마트폰 카메라로 촬영하면, 종이 그림자와 조명 얼룩만 깔끔히 지우고 인주 윤곽만 투명 배경 PNG(Alpha=0)로 정밀 추출합니다.</p>
+        </div>
+        <div class="feature-item">
+          <h3 data-lang="ja">3. 最大20ページPDFへの実寸mm押印</h3>
+          <h3 data-lang="ko">3. 최대 20페이지 PDF 실측 mm 날인</h3>
+          <p data-lang="ja">見積書・請求書・社内稟議書の内蔵サンプル3種に加え、お手元のPDF（最大20ページ）を読み込み、認印10.5mm・実印15mm・角印21mm/24mmの実寸比率でドラッグ配置＆複数同時押印が可能です。</p>
+          <p data-lang="ko">견적서·청구서·사내 품의서 내장 양식 3종은 물론, 외부 PDF(최대 20페이지)를 불러와 막도장 10.5mm·실인 15mm·각인 21mm/24mm 실물 비율로 드래그 배치 및 복수 동시 날인이 가능합니다.</p>
+        </div>
+        <div class="feature-item">
+          <h3 data-lang="ja">4. 登録不要・100%オンデバイス安全処理</h3>
+          <h3 data-lang="ko">4. 회원가입 불필요·100% 기기 내 보안 처리</h3>
+          <p data-lang="ja">アカウント登録は一切不要。作成した印影データや読み込んだ取引先PDFは外部サーバーへ送信されず、すべてお使いのスマートフォン・タブレット端末内だけで安全に処理されます。</p>
+          <p data-lang="ko">계정 가입이 일절 필요 없으며, 제작한 도장 이미지나 불러온 거래처 대외비 PDF는 외부 서버로 전송되지 않고 100% 사용자의 스마트폰·태블릿 기기 내부에서만 안전하게 처리됩니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- App Specification Table for Journalists -->
+    <div class="card">
+      <h2 data-lang="ja">アプリ基本情報・スペック一覧（記事掲載用データ）</h2>
+      <h2 data-lang="ko">앱 기본 사양 및 스펙 일람 (기사 등재용 데이터)</h2>
+      <table>
+        <tbody>
+          <tr>
+            <th data-lang="ja">アプリ名称</th>
+            <th data-lang="ko">앱 명칭</th>
+            <td>
+              <span data-lang="ja"><strong>電子印鑑スタジオ - 透過ハンコ作成＆PDF押印</strong></span>
+              <span data-lang="ko"><strong>電子印鑑スタジオ - 透過ハンコ作成＆PDF押印</strong> (전자도장 스튜디오 - 투명 도장 제작 &amp; PDF 날인)</span>
+            </td>
+          </tr>
+          <tr>
+            <th data-lang="ja">カテゴリ</th>
+            <th data-lang="ko">카테고리</th>
+            <td>
+              <span data-lang="ja">ビジネス ／ 仕事効率化（ユーティリティ）</span>
+              <span data-lang="ko">비즈니스 / 생산성 (유틸리티)</span>
+            </td>
+          </tr>
+          <tr>
+            <th data-lang="ja">対応OS・機種</th>
+            <th data-lang="ko">지원 OS 및 기기</th>
+            <td>
+              <span data-lang="ja">iOS 15.0以降（iPhone / iPad ユニバーサル対応）、Android 7.0以降（スマートフォン / タブレット対応）</span>
+              <span data-lang="ko">iOS 15.0 이상 (iPhone / iPad 유니버설 지원), Android 7.0 이상 (스마트폰 / 태블릿 지원)</span>
+            </td>
+          </tr>
+          <tr>
+            <th data-lang="ja">価格（税込）</th>
+            <th data-lang="ko">가격 (세금 포함)</th>
+            <td>
+              <span data-lang="ja">
+                ・<strong>基本無料</strong>（個人丸印・小判印・日付データ印の鮮明モード作成、背景透過PNG保存、内蔵サンプル書類3種への押印出力、マイ印鑑2個保存）<br>
+                ・<strong>Pro買い切りプラン：¥790</strong>（1回払いで永久利用）／ <strong>Pro月額プラン：¥200/月</strong>（初回3日間無料トライアル付き）<br>
+                ※Pro解放機能：法人角印（1〜4列）、朱肉かすれ・二重枠保存、外部PDF（最大20ページ）・写真書類への押印出力、1書類への複数同時押印、実物ハンコ写真スキャン透過保存、マイ印鑑無制限保存
+              </span>
+              <span data-lang="ko">
+                · <strong>기본 무료</strong> (개인 원형인·타원형 회람인·날짜 데이터인 선명 모드 제작, 배경 투명 PNG 저장, 내장 샘플 서류 3종 날인 출력, 내 도장 2개 보관)<br>
+                · <strong>Pro 평생 소장 플랜: ¥790</strong> (1회 결제로 영구 이용) / <strong>Pro 월간 구독: ¥200/월</strong> (최초 3일 무료 체험 포함)<br>
+                ※Pro 해금 기능: 법인 사각인(1~4열), 인주 번짐·이중 테두리 저장, 외부 PDF(최대 20페이지)·사진 서류 날인 출력, 1서류 다중 동시 날인, 실물 도장 사진 스캔 투명 저장, 내 도장 무제한 보관
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <th data-lang="ja">ストアURL</th>
+            <th data-lang="ko">공식 스토어 URL</th>
+            <td>
+              ・App Store (iOS/iPadOS): <a href="https://apps.apple.com/jp/app/id6827110841" target="_blank" rel="noopener">https://apps.apple.com/jp/app/id6827110841</a><br>
+              ・Google Play (Android): <a href="https://play.google.com/store/apps/details?id=com.knowledgestudio.japan.app01_denshi_inkan&hl=ja&gl=JP" target="_blank" rel="noopener">https://play.google.com/store/apps/details?id=com.knowledgestudio.japan.app01_denshi_inkan&amp;hl=ja&amp;gl=JP</a>
+            </td>
+          </tr>
+          <tr>
+            <th data-lang="ja">開発・運営事業者</th>
+            <th data-lang="ko">개발 및 운영사업자</th>
+            <td>
+              <span data-lang="ja">Jisik Gongbang（知識工房 ／ 代表：KOO BONYEOP ／ D-U-N-S® Number：697010594）</span>
+              <span data-lang="ko">Jisik Gongbang (지식공방 / 대표: 구본엽 / D-U-N-S® Number: 697010594)</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- One-Click Copyable Press Release Text for Media -->
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+        <div>
+          <h2 data-lang="ja" style="margin:0;">プレスリリース全文（記事引用・転載フリー）</h2>
+          <h2 data-lang="ko" style="margin:0;">보도자료 전문 (일본 미디어 기사 인용·전재 프리)</h2>
+        </div>
+        <button class="btn-copy" onclick="copyPressRelease()">
+          📋 <span data-lang="ja">プレスリリース全文をコピー</span><span data-lang="ko">일본어 보도자료 전문 복사</span>
+        </button>
+      </div>
+      <p data-lang="ja">メディア関係者様・ブロガー様は、以下のプレスリリース本文および当ページ内の情報を自由に引用・転載いただけます。</p>
+      <p data-lang="ko">일본 미디어 기자 및 블로거가 별도 문의 없이 즉시 기사에 인용·복사하여 사용할 수 있는 표준 일본어 보도자료 전문입니다.</p>
+
+      <div class="press-copy-wrap">
+        <pre id="press-release-ja" class="press-text">【プレスリリース】旧字体・実物ハンコ透過スキャン・PDF実寸押印がスマホ1つで完結！完全オフラインの『電子印鑑スタジオ』iOS/Android向けに提供開始
+
+Jisik Gongbang（知識工房、代表：具 本燁）は、会員登録不要・完全端末内（オフライン）処理で安全に電子印鑑の作成からPDF書類への押印までを完結できるモバイルアプリ『電子印鑑スタジオ - 透過ハンコ作成＆PDF押印』（iOS / iPadOS / Android対応）を公開いたしました。
+
+■ 開発の背景
+テレワークや電子請求書の普及に伴い、スマートフォンやタブレットだけで見積書や請求書PDFに押印したいという需要が急増しています。しかし従来の電子印鑑アプリには、「髙・﨑・邊・齋などの旧字体・異体字が文字化けする」「紙に押した社判の写真から背景だけを綺麗に透過できない」「社外秘の取引書類を外部クラウドサーバーにアップロードするのが不安」といった課題がありました。『電子印鑑スタジオ』は、これら日本のビジネス現場の声を反映し、外部通信ゼロの完全オンデバイス処理で開発されました。
+
+■ 『電子印鑑スタジオ』の4大特長
+1. 日本のあらゆる苗字・旧字体・異体字に対応した印鑑作成
+個人丸印（認印・三文判）、小判型回覧印、日付データ印（令和/西暦ワンタッチ切替・上下段テキスト自由編集）、法人角印（縦・横1〜4列、之印自動調整）に対応。6書体（印相体風・篆書体風・古印体風・楷書体・明朝・ゴシック）や朱肉5色、リアルな朱肉かすれ効果・お辞儀角度の調整も可能で、300DPI相当の背景透過PNGとして即座に保存できます。
+
+2. 紙に押した実物ハンコの「背景透過スキャン抽出」
+白い紙に押した手持ちの印鑑をカメラ撮影またはアルバムから読み込むだけで、紙の影や照明ムラを消去し、朱肉の輪郭だけを残した鮮明な背景透過PNGを生成します。
+
+3. 最大20ページのPDF書類へ実寸mm指定で直接ドラッグ押印
+見積書・請求書・社内稟議書のサンプル書類を標準内蔵。さらに手元のPDF書類（最大20ページ一括読込対応）を読み込み、認印10.5mm・実印15mm・角印21mm/24mmの実寸プリセットで狙った枠にピタッと配置できます。1つの書類に「会社角印＋担当者丸印」を同時に押す複数押印にも対応しています。
+
+4. 会員登録不要・100%端末内処理で社外秘書類も安心
+作成した印影や読み込んだPDFファイルは外部サーバーへ一切送信されません。すべて端末内で完結するため、機密性の高い業務書類でも安心してご利用いただけます。
+
+■ 価格とプラン
+・無料プラン：個人丸印・小判印・日付データ印の鮮明モード作成、背景透過PNG保存、内蔵サンプル書類3種への単一押印出力、マイ印鑑2個保存がすべて無料。
+・Proプラン：買い切り ¥790（税込・永久ライセンス）または 月額 ¥200（税込・初回3日間無料トライアル付き）で、法人角印、朱肉かすれ・二重枠、外部PDF押印出力、複数同時押印、写真スキャン透過保存、無制限保存が解放されます。
+
+■ 公式リンク
+・公式プレスキット：https://koo-by.github.io/press_app01_denshi_inkan.html
+・App Store (iOS/iPadOS)：https://apps.apple.com/jp/app/id6827110841
+・Google Play (Android)：https://play.google.com/store/apps/details?id=com.knowledgestudio.japan.app01_denshi_inkan&amp;hl=ja&amp;gl=JP
+・お問い合わせ先：Jisik Gongbang（知識工房） ddumwork@gmail.com</pre>
+      </div>
+    </div>
+
+    <!-- Contact & Legal Footer -->
+    <div class="card">
+      <h2 data-lang="ja">メディア掲載・取材に関するお問い合わせ</h2>
+      <h2 data-lang="ko">미디어 게재 및 취재 관련 문의</h2>
+      <p data-lang="ja">記事掲載のご連絡、レビュー用のご質問、機能に関するお問い合わせは以下の公式メールアドレスまでお気軽にご連絡ください（事前許諾なしでの記事掲載・リンク紹介も大歓迎です）。</p>
+      <p data-lang="ko">기사 게재 안내, 리뷰 관련 질문, 기능 문의는 아래 공식 이메일로 연락해 주시기 바랍니다 (사전 허락 없는 미디어 기사 게재 및 블로그 소개도 환영합니다).</p>
+      <div class="info-box">
+        <strong>Jisik Gongbang（知識工房 / 지식공방）</strong><br>
+        ・Email: <a href="mailto:ddumwork@gmail.com">ddumwork@gmail.com</a><br>
+        ・Official Portal: <a href="https://koo-by.github.io/">https://koo-by.github.io/</a><br>
+        ・Legal Links:
+        <a data-internal="true" data-base="./privacy.html" href="./privacy.html">Privacy Policy</a> ｜
+        <a data-internal="true" data-base="./terms.html" href="./terms.html">Terms of Use</a> ｜
+        <a data-internal="true" data-base="./tokushoho.html" href="./tokushoho.html">特定商取引法に基づく表記</a>
+      </div>
+      <div class="meta-footer">
+        <span data-lang="ja">公開日：2026年11月5日 ｜ Jisik Gongbang（知識工房）All Rights Reserved.</span>
+        <span data-lang="ko">공개일: 2026년 11월 5일 ｜ Jisik Gongbang (지식공방) All Rights Reserved.</span>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function setLang(lang) {
+      var isKo = (lang === 'ko');
+      document.body.classList.toggle('lang-ko', isKo);
+      document.documentElement.lang = isKo ? 'ko' : 'ja';
+      var btnJa = document.getElementById('btn-ja');
+      var btnKo = document.getElementById('btn-ko');
+      if (btnJa && btnKo) {
+        btnJa.classList.toggle('active', !isKo);
+        btnKo.classList.toggle('active', isKo);
+      }
+      var links = document.querySelectorAll('a[data-internal="true"]');
+      for (var i = 0; i < links.length; i++) {
+        var baseHref = links[i].getAttribute('data-base');
+        if (baseHref) {
+          links[i].setAttribute('href', baseHref + '?v=20261105_press' + (isKo ? '&lang=ko' : ''));
+        }
+      }
+      try { localStorage.setItem('jg_legal_lang', isKo ? 'ko' : 'ja'); } catch (e) {}
+    }
+
+    function copyPressRelease() {
+      var el = document.getElementById('press-release-ja');
+      if (!el) return;
+      var text = el.innerText || el.textContent;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function() {
+          alert(document.body.classList.contains('lang-ko')
+            ? '일본어 보도자료 전문이 클립보드에 복사되었습니다!'
+            : 'プレスリリース全文をクリップボードにコピーしました。');
+        });
+      } else {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        alert('Copied!');
+      }
+    }
+
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var qLang = params.get('lang');
+      var saved = null;
+      try { saved = localStorage.getItem('jg_legal_lang'); } catch (e) {}
+      if (qLang === 'ko' || (!qLang && saved === 'ko')) {
+        setLang('ko');
+      } else {
+        setLang('ja');
+      }
+    })();
+  </script>
+</body>
+</html>
