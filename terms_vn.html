@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>Điều Khoản Sử Dụng (Terms of Use / EULA) | Báo Giá &amp; Tính Giá Nhập Hàng - Jisik Gongbang</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --accent: #0f766e;
+      --accent-blue: #2563eb;
+      --border: #e2e8f0;
+      --badge-bg: #f0fdfa;
+      --badge-text: #0f766e;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", "Malgun Gothic", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+    }
+    main { max-width: 860px; margin: 36px auto; padding: 0 20px 48px; }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .nav {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .nav a {
+      color: var(--accent-blue);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .nav a:hover { text-decoration: underline; }
+    .lang-switch {
+      display: inline-flex;
+      background: #e2e8f0;
+      border-radius: 999px;
+      padding: 3px;
+      gap: 2px;
+    }
+    .lang-btn {
+      border: none;
+      background: transparent;
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #334155;
+      cursor: pointer;
+    }
+    .lang-btn.active {
+      background: #ffffff;
+      color: #0f172a;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      margin-bottom: 24px;
+    }
+    h1 { font-size: 24px; margin: 0 0 12px; color: var(--text); line-height: 1.4; }
+    h2 {
+      font-size: 18px;
+      margin: 28px 0 12px;
+      border-left: 4px solid var(--accent);
+      padding-left: 12px;
+      color: var(--text);
+    }
+    h3 { font-size: 15.5px; margin: 18px 0 8px; color: var(--text); }
+    p, li { color: var(--muted); font-size: 15px; margin: 8px 0; }
+    ul, ol { padding-left: 22px; margin: 8px 0 16px; }
+    a { color: var(--accent-blue); text-decoration: none; font-weight: 600; }
+    a:hover { text-decoration: underline; }
+    .badge {
+      display: inline-block;
+      background: var(--badge-bg);
+      color: var(--badge-text);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 8px;
+      border: 1px solid #99f6e4;
+    }
+    .info-box {
+      background: #f1f5f9;
+      border-left: 4px solid var(--accent);
+      padding: 14px 18px;
+      border-radius: 8px;
+      margin: 14px 0;
+      font-size: 14.5px;
+      color: #1e293b;
+    }
+    .meta-footer {
+      margin-top: 28px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      font-size: 13.5px;
+      color: #64748b;
+    }
+    [data-lang] { display: none; }
+    body.lang-vi [data-lang="vi"] { display: block; }
+    body.lang-en [data-lang="en"] { display: block; }
+    body.lang-ko [data-lang="ko"] { display: block; }
+    body.lang-vi span[data-lang="vi"], body.lang-vi a[data-lang="vi"] { display: inline; }
+    body.lang-en span[data-lang="en"], body.lang-en a[data-lang="en"] { display: inline; }
+    body.lang-ko span[data-lang="ko"], body.lang-ko a[data-lang="ko"] { display: inline; }
+  </style>
+</head>
+<body class="lang-vi">
+  <main>
+    <div class="topbar">
+      <div class="nav">
+        <a data-internal="true" data-base="./privacy_vn.html" href="./privacy_vn.html">
+          <span data-lang="vi">← Xem Chính Sách Bảo Mật (Privacy Policy)</span>
+          <span data-lang="en">← View Privacy Policy</span>
+          <span data-lang="ko">← 개인정보처리방침 (Privacy Policy) 보기</span>
+        </a>
+      </div>
+      <div class="lang-switch" role="group" aria-label="Language switch">
+        <button id="btn-vi" class="lang-btn active" onclick="setLang('vi')">🇻🇳 Tiếng Việt</button>
+        <button id="btn-en" class="lang-btn" onclick="setLang('en')">🇺🇸 English</button>
+        <button id="btn-ko" class="lang-btn" onclick="setLang('ko')">🇰🇷 한국어</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="badge" data-lang="vi">Điều Khoản Sử Dụng · Terms of Use &amp; EULA</span>
+      <span class="badge" data-lang="en">Terms of Use &amp; EULA</span>
+      <span class="badge" data-lang="ko">이용약관 · Terms of Use &amp; EULA</span>
+
+      <h1 data-lang="vi">Điều Khoản Sử Dụng (Terms of Use / EULA)</h1>
+      <h1 data-lang="en">Terms of Use &amp; End User License Agreement (EULA)</h1>
+      <h1 data-lang="ko">이용약관 (Terms of Use / 최종 사용자 라이선스 계약)</h1>
+
+      <!-- VIETNAMESE -->
+      <div data-lang="vi">
+        <p>Điều khoản Sử dụng này ("Điều khoản") quy định các điều kiện pháp lý giữa bạn ("Người dùng") và <strong>Jisik Gongbang</strong> ("Chúng tôi") khi tải xuống, cài đặt và sử dụng ứng dụng <strong>"Báo Giá &amp; Tính Giá Nhập Hàng"</strong> (<em>B2B Quote, Receipt &amp; Import Cost Studio</em> / <em>베트남 견적서 &amp; 사입원가 계산기</em>, sau đây gọi là "Ứng dụng").</p>
+
+        <h2>Điều 1. Quyền sở hữu dữ liệu &amp; Sử dụng thương mại</h2>
+        <ol>
+          <li>Bản quyền mã nguồn, giao diện, biểu tượng và bố cục mẫu của Ứng dụng thuộc sở hữu của Jisik Gongbang.</li>
+          <li><strong>Quyền sử dụng thương mại đối với phiếu xuất:</strong> Toàn bộ phiếu báo giá, hóa đơn bán lẻ, phiếu giao hàng (ảnh PNG, tệp PDF A4/80mm, tệp CSV) và bảng tính giá nhập hàng do bạn tạo bằng Ứng dụng thuộc quyền sở hữu của bạn và được phép sử dụng tự do cho mục đích kinh doanh thương mại hợp pháp.</li>
+        </ol>
+
+        <h2>Điều 2. Các gói Pro, Dùng thử miễn phí &amp; Quy định hủy gia hạn (Apple Guideline 3.1.2)</h2>
+        <ol>
+          <li>Ngoài Bản Tiêu chuẩn miễn phí, Ứng dụng cung cấp các gói nâng cấp Pro mở khóa toàn bộ tính năng (in mã VietQR động tự điền số tiền, đóng dấu đỏ Tên cửa hàng &amp; MST riêng, không giới hạn số món hàng và mẫu sản phẩm hay bán, xuất CSV):
+            <ul>
+              <li><strong>Gói Trọn Đời (Lifetime Pro – Mã gói: <code>baogia_nhaphang_lifetime_pro</code>):</strong> Giá tham chiếu <strong>149.000 ₫</strong> (thanh toán 1 lần duy nhất, sở hữu vĩnh viễn, không tự động gia hạn).</li>
+              <li><strong>Gói Thuê Bao Tháng (Monthly Pro – Mã gói: <code>baogia_nhaphang_monthly_pro</code>):</strong> Giá tham chiếu <strong>39.000 ₫ / tháng</strong>, kèm <strong>3 ngày dùng thử miễn phí (3-day free trial)</strong> cho người dùng đủ điều kiện lần đầu.</li>
+            </ul>
+          </li>
+          <li><strong>Quy định gia hạn tự động &amp; Hủy gói thuê bao (Tuân thủ Apple Guideline 3.1.2):</strong>
+            <ul>
+              <li>Khoản thanh toán sẽ được tính vào tài khoản Apple ID (App Store) hoặc Google Play của bạn khi xác nhận mua hàng.</li>
+              <li><strong>Bạn có thể hủy gói thuê bao bất cứ lúc nào, kể cả trong vòng 24 giờ trước khi gia hạn; tuy nhiên, để tránh bị tính phí cho chu kỳ thanh toán tiếp theo, việc hủy phải được hoàn tất ít nhất 24 giờ trước khi kết thúc giai đoạn hiện tại (hoặc giai đoạn dùng thử miễn phí 3 ngày).</strong></li>
+              <li>Nếu bạn hủy khi thời hạn hiện tại còn dưới 24 giờ, hệ thống thanh toán của Apple / Google có thể đã xử lý ủy quyền cho kỳ tiếp theo và việc dừng gia hạn sẽ có hiệu lực từ chu kỳ kế tiếp sau đó.</li>
+              <li>Cách hủy: Vào <em>Cài đặt (Settings) &gt; Tài khoản Apple (Apple Account) &gt; Đăng ký (Subscriptions)</em> trên iOS, hoặc <em>Google Play Store &gt; Thanh toán và gói thuê bao &gt; Gói thuê bao</em> trên Android. Việc gỡ cài đặt ứng dụng không tự động hủy gói thuê bao.</li>
+              <li>Nếu bạn đang dùng Gói Tháng (bao gồm cả thời gian dùng thử) và mua thêm Gói Trọn Đời (<code>baogia_nhaphang_lifetime_pro</code>), vui lòng chủ động hủy Gói Tháng trong cài đặt cửa hàng ứng dụng để tránh bị trừ phí định kỳ.</li>
+            </ul>
+          </li>
+          <li><strong>Không khóa dữ liệu sau khi hủy (No Data Hostage):</strong> Ngay cả khi bạn hủy Gói Tháng, toàn bộ lịch sử báo giá, công nợ và danh mục sản phẩm đã lưu trên máy vẫn được giữ nguyên 100% để bạn tra cứu và quản lý thu tiền.</li>
+        </ol>
+
+        <h2>Điều 3. Trách nhiệm kiểm tra thông tin tài khoản, thuế suất &amp; Miễn trừ trách nhiệm pháp lý</h2>
+        <ol>
+          <li><strong>Trách nhiệm kiểm tra của chủ cửa hàng / thương nhân:</strong> Ứng dụng là công cụ hỗ trợ tính toán và trình bày chứng từ thương mại. <strong>Trước khi gửi báo giá, hóa đơn hoặc mã VietQR cho khách hàng, Người dùng có trách nhiệm tự kiểm tra chính xác số tài khoản ngân hàng, tên ngân hàng thụ hưởng, số tiền cần thanh toán, tỷ giá quy đổi, chiết khấu và mức thuế suất GTGT (VAT).</strong> Chúng tôi không chịu trách nhiệm đối với các khoản chuyển khoản nhầm hoặc sai lệch báo giá do nhập sai thông tin ngân hàng, đơn giá hoặc thuế suất.</li>
+          <li><strong>Hiệu lực chứng từ:</strong> Phiếu báo giá, phiếu giao hàng và con dấu tạo bởi Ứng dụng phục vụ giao dịch thương mại dân sự/B2B thông thường và không thay thế Hóa đơn điện tử có mã của Cơ quan Thuế theo quy định pháp luật thuế Việt Nam.</li>
+          <li><strong>Sao lưu dữ liệu trên thiết bị:</strong> Vì dữ liệu được lưu 100% cục bộ trên thiết bị, người dùng cần chủ động sao lưu các phiếu quan trọng.</li>
+        </ol>
+
+        <h2>Điều 4. Giới hạn trách nhiệm bồi thường</h2>
+        <p>Trừ trường hợp phát sinh do lỗi cố ý hoặc vô ý nghiêm trọng (gross negligence) của Chúng tôi, trách nhiệm bồi thường thiệt hại trực tiếp tối đa của Chúng tôi liên quan đến việc sử dụng Ứng dụng không vượt quá tổng số tiền thực tế mà Người dùng đã thanh toán cho Chúng tôi đối với Ứng dụng trong vòng 12 tháng trước thời điểm phát sinh khiếu nại.</p>
+
+        <h2>Điều 5. Luật điều chỉnh &amp; Giải quyết tranh chấp</h2>
+        <p>Điều khoản này được điều chỉnh và giải thích theo pháp luật Đại Hàn Dân Quốc và các quy định bảo vệ người tiêu dùng hiện hành tại quốc gia cư trú của Người dùng. Mọi tranh chấp phát sinh sẽ được ưu tiên giải quyết thông qua thương lượng thiện chí.</p>
+
+        <h2>Điều 6. Thông tin đơn vị vận hành &amp; Liên hệ</h2>
+        <div class="info-box">
+          <strong>Đơn vị vận hành:</strong> Jisik Gongbang (지식공방)<br>
+          <strong>Mã số đăng ký kinh doanh:</strong> 874-15-02757<br>
+          <strong>Số đăng ký thương mại điện tử:</strong> 2026-세종-0490 (Sejong Special Self-Governing City)<br>
+          <strong>Mã số D-U-N-S®:</strong> 697010594<br>
+          <strong>Địa chỉ:</strong> 65, Naesong-gil, Yeondong-myeon, Sejong-si, 30069, Republic of Korea<br>
+          <strong>Email hỗ trợ:</strong> <a href="mailto:ddumwork@gmail.com">ddumwork@gmail.com</a>
+        </div>
+      </div>
+
+      <!-- ENGLISH -->
+      <div data-lang="en">
+        <p>These Terms of Use ("Terms") govern your download, installation, and use of the mobile application <strong>"Báo Giá &amp; Tính Giá Nhập Hàng"</strong> (<em>B2B Quote, Receipt &amp; Import Cost Studio</em> / <em>베트남 견적서 &amp; 사입원가 계산기</em>, hereinafter the "App") operated by <strong>Jisik Gongbang</strong> ("we", "our", or "us").</p>
+
+        <h2>1. Ownership of Generated Documents &amp; Commercial Use</h2>
+        <ol>
+          <li>All intellectual property rights in the App software, UI design, and templates belong to Jisik Gongbang.</li>
+          <li><strong>Commercial Use Rights:</strong> All price quotes, invoices, delivery receipts (PNG, A4/80mm PDF, CSV), digital stamps, and import landed cost sheets created by you using the App belong to you and may be freely used for your legitimate wholesale/retail business operations.</li>
+        </ol>
+
+        <h2>2. Pro Plans, Free Trial &amp; Cancellation Policy (Apple Guideline 3.1.2)</h2>
+        <ol>
+          <li>In addition to the Standard tier, the App offers optional Pro plans that unlock dynamic auto-amount EMVCo VietQR generation, custom shop/tax ID red stamps, unlimited line items &amp; product presets, and CSV ledger export:
+            <ul>
+              <li><strong>Lifetime Pro (Product ID: <code>baogia_nhaphang_lifetime_pro</code>):</strong> Reference price <strong>149.000 ₫</strong> (one-time purchase, permanent access, no auto-renewal).</li>
+              <li><strong>Monthly Pro (Product ID: <code>baogia_nhaphang_monthly_pro</code>):</strong> Reference price <strong>39.000 ₫ / month</strong>, including a <strong>3-day free trial</strong> for eligible first-time subscribers.</li>
+            </ul>
+          </li>
+          <li><strong>Auto-Renewal &amp; Cancellation Notice (Apple Guideline 3.1.2 Compliant):</strong>
+            <ul>
+              <li>Payment will be charged to your Apple ID (App Store) or Google Play account at confirmation of purchase.</li>
+              <li><strong>You can cancel at any time, including within 24 hours before renewal; however, to avoid being charged for the next billing cycle, cancellation must be completed at least 24 hours before the current period ends.</strong></li>
+              <li>Subscriptions may be managed and auto-renewal may be turned off by going to your device's Account Settings (iOS: <em>Settings &gt; Apple Account &gt; Subscriptions</em>; Android: <em>Google Play Store &gt; Payments &amp; subscriptions &gt; Subscriptions</em>) after purchase. Uninstalling the App does not cancel an active subscription.</li>
+              <li>If you purchase Lifetime Pro (<code>baogia_nhaphang_lifetime_pro</code>) while an active Monthly Pro subscription or free trial is running, you must manually cancel the Monthly Pro subscription in your store account settings to prevent recurring monthly charges.</li>
+            </ul>
+          </li>
+          <li><strong>Zero Data Hostage Guarantee:</strong> All quotes, customer records, and payment statuses saved on your device remain 100% accessible even if you cancel a subscription.</li>
+        </ol>
+
+        <h2>3. Merchant Verification Disclaimer</h2>
+        <ol>
+          <li><strong>Verification of Bank Account &amp; Tax Rates:</strong> The App is a local calculation and document generation utility. <strong>Merchants must verify their own bank account number, beneficiary bank code, payment amount due, exchange rate, discounts, and VAT tax rate before sending quotes, invoices, or VietQR codes to customers.</strong> We are not responsible for misdirected bank transfers or pricing errors resulting from inaccurate user input.</li>
+          <li><strong>Tax Compliance:</strong> Commercial quotes and receipts generated by the App do not replace government-mandated statutory e-invoices (Hóa đơn điện tử có mã của Cơ quan Thuế) where required by local tax authorities.</li>
+        </ol>
+
+        <h2>4. Limitation of Liability</h2>
+        <p>Except in cases of our willful misconduct or gross negligence, our total aggregate liability for direct damages arising out of or related to the use or inability to use the App shall not exceed the total amount actually paid by you for the App during the twelve (12) months immediately preceding the event giving rise to liability.</p>
+
+        <h2>5. Governing Law &amp; Dispute Resolution</h2>
+        <p>These Terms are governed by and construed in accordance with the laws of the Republic of Korea and applicable mandatory consumer protection laws in your jurisdiction.</p>
+
+        <h2>6. Operator Information &amp; Contact</h2>
+        <div class="info-box">
+          <strong>Operator:</strong> Jisik Gongbang (지식공방)<br>
+          <strong>Business Registration No.:</strong> 874-15-02757<br>
+          <strong>E-Commerce Registration No.:</strong> 2026-세종-0490 (Sejong-si, Republic of Korea)<br>
+          <strong>D-U-N-S® Number:</strong> 697010594<br>
+          <strong>Address:</strong> 65, Naesong-gil, Yeondong-myeon, Sejong-si, 30069, Republic of Korea<br>
+          <strong>Support Email:</strong> <a href="mailto:ddumwork@gmail.com">ddumwork@gmail.com</a>
+        </div>
+      </div>
+
+      <!-- KOREAN -->
+      <div data-lang="ko">
+        <p>본 이용약관(이하 「본 약관」)은 <strong>Jisik Gongbang(지식공방, 이하 「당사」)</strong>이 제공하는 스마트폰 애플리케이션 <strong>『Báo Giá &amp; Tính Giá Nhập Hàng (베트남 견적서 &amp; 사입원가 계산기 / B2B Quote, Receipt &amp; Import Cost Studio)』</strong>(이하 「본 앱」)의 이용 조건 및 권리·의무 관계를 규정합니다.</p>
+
+        <h2>제1조 (지식재산권 및 생성 문서의 상업적 이용 보장)</h2>
+        <ol>
+          <li>본 앱의 소프트웨어 코드, UI 디자인, 로고 및 내장 양식에 대한 지식재산권은 당사에 귀속됩니다.</li>
+          <li><strong>상업적 실무 이용 권리:</strong> 사용자가 본 앱을 통해 작성·출력한 견적서, 거래명세서, 영수증(PNG 카드, A4/80mm PDF, CSV 파일), 직인 이미지 및 사입 원가 계산표의 권리는 사용자에게 귀속되며, 도소매 영업 및 상거래 목적에 제한 없이 자유롭게 사용할 수 있습니다.</li>
+        </ol>
+
+        <h2>제2조 (유료 Pro 플랜, 무료 체험 및 구독 해지 조건 – Apple Guideline 3.1.2 준수)</h2>
+        <ol>
+          <li>본 앱은 기본 표준판 외에 금액 자동입력 동적 VietQR, 상호·사업자번호(MST) 공식 적색 직인, 무제한 품목·단골상품 등록 및 엑셀 CSV 백업을 지원하는 아래 유료 Pro 플랜을 제공합니다:
+            <ul>
+              <li><strong>평생 소장 플랜 (Lifetime Pro – 상품 ID: <code>baogia_nhaphang_lifetime_pro</code>):</strong> 기준 가격 <strong>149.000 ₫</strong> (1회 결제로 추가 과금이나 자동 갱신 없이 영구 소장).</li>
+              <li><strong>월간 구독 플랜 (Monthly Pro – 상품 ID: <code>baogia_nhaphang_monthly_pro</code>):</strong> 기준 가격 <strong>39.000 ₫ / 월</strong> (최초 가입 적격 사용자 대상 <strong>3일 무료 체험(3-day free trial)</strong> 제공).</li>
+            </ul>
+          </li>
+          <li><strong>자동 갱신 및 구독 해지 안내 (Apple Guideline 3.1.2 준수):</strong>
+            <ul>
+              <li>결제는 구매 확인 시 사용자의 Apple ID(App Store) 또는 Google Play 계정으로 청구됩니다.</li>
+              <li><strong>사용자는 갱신 전 24시간 이내를 포함하여 언제든지 구독을 해지할 수 있습니다. 다만, 다음 결제 주기의 요금 청구를 피하려면 현재 구독 기간(또는 3일 무료 체험 기간)이 종료되기 최소 24시간 전에 해지가 완료되어야 합니다.</strong></li>
+              <li>구독 관리 및 자동 갱신 해지는 구매 후 기기의 계정 설정(iOS: <em>설정 &gt; Apple 계정 &gt; 구독</em>, Android: <em>Google Play 스토어 &gt; 결제 및 정기 결제 &gt; 정기 결제</em>)에서 언제든지 직접 수행할 수 있습니다. 앱을 삭제(언인스톨)하는 것만으로는 구독이 자동 해지되지 않습니다.</li>
+              <li>월간 구독(무료 체험 포함) 이용 중 평생 소장 플랜(<code>baogia_nhaphang_lifetime_pro</code>)을 구매하는 경우, 중복 과금을 방지하기 위해 반드시 스토어 설정에서 기존 월간 구독을 직접 해지하셔야 합니다.</li>
+            </ul>
+          </li>
+          <li><strong>해지 후 장부 데이터 영구 보존 보장:</strong> 월간 구독을 해지하더라도 기기에 저장된 기존 발행 전표, 외상 미수금 내역 및 상품 프리셋은 잠기거나 삭제되지 않고 100% 열람·관리할 수 있습니다.</li>
+        </ol>
+
+        <h2>제3조 (계좌번호·세율 검수 의무 및 면책사항)</h2>
+        <ol>
+          <li><strong>상인의 사전 검수 책임:</strong> 본 앱은 상거래 계산 및 전표 작성을 돕는 도구입니다. <strong>사용자는 고객에게 견적서, 영수증 또는 VietQR 코드를 전송하기 전에 반드시 본인의 은행 계좌번호, 수취 은행, 청구 잔액, 환율, 할인액 및 부가가치세율(VAT)이 정확한지 직접 확인해야 합니다.</strong> 사용자의 오입력으로 인한 오송금이나 거래 손실에 대해 당사는 책임을 지지 않습니다.</li>
+          <li><strong>법적 세금계산서 대체 불가:</strong> 본 앱에서 생성된 견적서·영수증 및 전자직인은 일반 B2B/소매 상거래 확인용이며, 베트남 세법상 국세청 코드가 부여되는 법정 전자세금계산서(Hóa đơn điện tử có mã của Cơ quan Thuế)를 대체하지 않습니다.</li>
+        </ol>
+
+        <h2>제4조 (손해배상 책임의 제한)</h2>
+        <p>당사의 고의 또는 중과실로 인한 경우를 제외하고, 본 앱의 이용과 관련하여 당사가 부담하는 직접 손해배상 책임의 상한은 손해 발생 직전 12개월 동안 해당 사용자가 본 앱과 관련하여 당사에 실제 지불한 유료 결제 금액 총액을 한도로 합니다.</p>
+
+        <h2>제5조 (준거법 및 관할)</h2>
+        <p>본 약관은 대한민국 법령 및 사용자 거주 국가의 강행 소비자보호법령에 따라 해석·적용되며, 분쟁 발생 시 상호 성실한 협의를 통해 해결합니다.</p>
+
+        <h2>제6조 (운영 사업자 정보 및 문의처)</h2>
+        <div class="info-box">
+          <strong>상호 (운영사):</strong> Jisik Gongbang (지식공방)<br>
+          <strong>사업자등록번호:</strong> 874-15-02757<br>
+          <strong>통신판매업신고번호:</strong> 제 2026-세종-0490 호 (세종특별자치시장)<br>
+          <strong>D-U-N-S® Number:</strong> 697010594<br>
+          <strong>소재지:</strong> 65, Naesong-gil, Yeondong-myeon, Sejong-si, 30069, Republic of Korea (세종특별자치시 연동면 내송길 65)<br>
+          <strong>고객지원 이메일:</strong> <a href="mailto:ddumwork@gmail.com">ddumwork@gmail.com</a>
+        </div>
+      </div>
+
+      <div class="meta-footer">
+        <span data-lang="vi">Ngày ban hành: 14/11/2026 ｜ Cập nhật lần cuối: 14/11/2026</span>
+        <span data-lang="en">Effective Date: November 14, 2026 ｜ Last Updated: November 14, 2026</span>
+        <span data-lang="ko">시행일: 2026년 11월 14일 ｜ 최종 개정일: 2026년 11월 14일</span>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function setLang(lang) {
+      var supported = ['vi', 'en', 'ko'];
+      var target = supported.indexOf(lang) !== -1 ? lang : 'vi';
+      document.body.className = 'lang-' + target;
+      document.documentElement.lang = target;
+      for (var i = 0; i < supported.length; i++) {
+        var code = supported[i];
+        var btn = document.getElementById('btn-' + code);
+        if (btn) {
+          btn.classList.toggle('active', code === target);
+        }
+      }
+      var links = document.querySelectorAll('a[data-internal="true"]');
+      for (var j = 0; j < links.length; j++) {
+        var baseHref = links[j].getAttribute('data-base');
+        if (baseHref) {
+          links[j].setAttribute('href', baseHref + '?lang=' + target);
+        }
+      }
+      try { localStorage.setItem('jg_vn_legal_lang', target); } catch (e) {}
+    }
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var qLang = params.get('lang');
+      var saved = null;
+      try { saved = localStorage.getItem('jg_vn_legal_lang'); } catch (e) {}
+      if (qLang === 'vi' || qLang === 'en' || qLang === 'ko') {
+        setLang(qLang);
+      } else if (saved === 'vi' || saved === 'en' || saved === 'ko') {
+        setLang(saved);
+      } else {
+        setLang('vi');
+      }
+    })();
+  </script>
+</body>
+</html>
