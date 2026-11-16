@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>Báo Giá &amp; Tính Giá Nhập Hàng — Tải Ứng Dụng Chính Thức (iOS &amp; Android)</title>
+  <meta name="description" content="Lập báo giá sỉ Zalo, phiếu xuất kho VietQR NAPAS 247, đóng dấu đỏ &amp; tính giá vốn nhập hàng 1688/Taobao (kg vs CBM) 100% Offline không cần đăng ký.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://koo-by.github.io/vn-baogia/">
+  <meta property="og:title" content="Báo Giá &amp; Tính Giá Nhập Hàng — Tải App Cho Chủ Shop &amp; Dân Buôn 1688">
+  <meta property="og:description" content="Lập báo giá sỉ, phiếu xuất kho có dấu đỏ &amp; mã VietQR tự động trong 3 giây. Tính giá vốn 1688 kg/CBM &amp; quản lý sổ công nợ 100% Offline.">
+  <meta name="twitter:card" content="summary">
+  <style>
+    :root {
+      --jade-900: #062825;
+      --jade-800: #0d4a46;
+      --jade-700: #0f766e;
+      --jade-50: #f0fdfa;
+      --bg: #f1f5f4;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --border: #d9e2ec;
+      --gold: #f59e0b;
+      --gold-soft: #fef3c7;
+      --apple-bg: #0f172a;
+      --play-bg: #0f766e;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", "Malgun Gothic", sans-serif;
+      background: linear-gradient(180deg, #062825 0%, #0d4a46 260px, #f1f5f4 260px, #f1f5f4 100%);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    .wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 20px 16px 48px;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+    .brand-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      color: #f0fdfa;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+    .lang-switch {
+      display: inline-flex;
+      background: rgba(15, 23, 42, 0.38);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 999px;
+      padding: 3px;
+      gap: 4px;
+    }
+    .lang-btn {
+      appearance: none;
+      border: 0;
+      background: transparent;
+      color: #e2e8f0;
+      font-size: 12.5px;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+    .lang-btn.active {
+      background: #ffffff;
+      color: #062825;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 28px 24px;
+      box-shadow: 0 18px 40px rgba(6, 40, 37, 0.12);
+    }
+    .status-banner {
+      display: none;
+      align-items: center;
+      gap: 10px;
+      background: var(--jade-50);
+      border: 1px solid #99f6e4;
+      color: var(--jade-800);
+      border-radius: 12px;
+      padding: 11px 14px;
+      font-size: 13.5px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+    .status-banner.visible {
+      display: flex;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: var(--gold-soft);
+      color: #92400e;
+      border: 1px solid #fcd34d;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 26px;
+      line-height: 1.25;
+      color: #0f172a;
+      font-weight: 800;
+    }
+    .subtitle {
+      margin: 0 0 22px;
+      font-size: 15px;
+      color: var(--muted);
+    }
+    .cta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+    @media (max-width: 560px) {
+      .cta-grid {
+        grid-template-columns: 1fr;
+      }
+      .card {
+        padding: 22px 16px;
+      }
+      h1 {
+        font-size: 22px;
+      }
+    }
+    .store-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      text-decoration: none;
+      padding: 15px 18px;
+      border-radius: 14px;
+      color: #ffffff;
+      font-weight: 800;
+      transition: transform 0.12s ease, opacity 0.12s ease;
+    }
+    .store-btn:hover {
+      transform: translateY(-1px);
+      opacity: 0.95;
+    }
+    .store-btn.apple {
+      background: var(--apple-bg);
+    }
+    .store-btn.play {
+      background: var(--play-bg);
+    }
+    .store-btn .btn-meta {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      line-height: 1.25;
+    }
+    .store-btn .btn-small {
+      font-size: 11.5px;
+      font-weight: 600;
+      opacity: 0.86;
+    }
+    .store-btn .btn-main {
+      font-size: 16px;
+      font-weight: 800;
+    }
+    .qr-panel {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px 18px;
+      margin-bottom: 22px;
+    }
+    @media (max-width: 560px) {
+      .qr-panel {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+    .qr-box {
+      flex-shrink: 0;
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 12px;
+      padding: 8px;
+      line-height: 0;
+    }
+    .qr-box svg {
+      display: block;
+      width: 156px;
+      height: 156px;
+    }
+    .qr-text h2 {
+      margin: 0 0 6px;
+      font-size: 16px;
+      color: #0f172a;
+    }
+    .qr-text p {
+      margin: 0 0 8px;
+      font-size: 13.5px;
+      color: var(--muted);
+    }
+    .url-chip {
+      display: inline-block;
+      background: #e2e8f0;
+      color: #0f172a;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 9px;
+      border-radius: 8px;
+      word-break: break-all;
+    }
+    .features-title {
+      margin: 0 0 12px;
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--jade-800);
+    }
+    .features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    @media (max-width: 560px) {
+      .features {
+        grid-template-columns: 1fr;
+      }
+    }
+    .feat-item {
+      background: var(--jade-50);
+      border: 1px solid #ccfbf1;
+      border-radius: 12px;
+      padding: 12px 14px;
+    }
+    .feat-item strong {
+      display: block;
+      font-size: 13.5px;
+      color: var(--jade-800);
+      margin-bottom: 4px;
+    }
+    .feat-item span {
+      display: block;
+      font-size: 12.5px;
+      color: #334155;
+      line-height: 1.45;
+    }
+    .compliance-note {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-size: 12.5px;
+      color: #78350f;
+      margin-bottom: 18px;
+    }
+    .footer {
+      border-top: 1px solid var(--border);
+      padding-top: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 12.5px;
+      color: var(--muted);
+    }
+    .footer-links {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      color: var(--jade-700);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+    [data-lang] { display: none; }
+    body.lang-vi [data-lang="vi"] { display: block; }
+    body.lang-ko [data-lang="ko"] { display: block; }
+    body.lang-vi span[data-lang="vi"],
+    body.lang-ko span[data-lang="ko"] { display: inline; }
+  </style>
+</head>
+<body class="lang-vi">
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand-pill">
+        <span>Jisik Gongbang</span>
+        <span>•</span>
+        <span>VN App #2</span>
+      </div>
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button id="btn-vi" class="lang-btn active" type="button" onclick="setLang('vi')">Tiếng Việt</button>
+        <button id="btn-ko" class="lang-btn" type="button" onclick="setLang('ko')">한국어 검수</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div id="redirect-banner" class="status-banner" role="status">
+        <span data-lang="vi" id="redirect-msg-vi">Đang tự động chuyển sang kho ứng dụng phù hợp với thiết bị của bạn... Nếu không tự chuyển sau 2 giây, hãy bấm trực tiếp nút bên dưới.</span>
+        <span data-lang="ko" id="redirect-msg-ko">검수 모드(?lang=ko 또는 ?preview=1)이거나 PC 접속 중이므로 자동 스토어 이동을 멈추었습니다. 아래 버튼으로 각 스토어를 확인할 수 있습니다.</span>
+      </div>
+
+      <span class="hero-badge" data-lang="vi">100% OFFLINE • KHÔNG CẦN ĐĂNG KÝ SỐ ĐIỆN THOẠI</span>
+      <span class="hero-badge" data-lang="ko">100% 오프라인 • 회원가입·전화번호 인증 불필요</span>
+
+      <h1 data-lang="vi">Báo Giá &amp; Tính Giá Nhập Hàng</h1>
+      <h1 data-lang="ko">Báo Giá &amp; Tính Giá Nhập Hàng (베트남 견적서 &amp; 사입원가 계산기)</h1>
+
+      <p class="subtitle" data-lang="vi">Lập báo giá sỉ Zalo, phiếu xuất kho có dấu đỏ &amp; mã VietQR động 18 ngân hàng trong 3 giây. Tính giá vốn hàng nhập 1688/Taobao (kg vs CBM) &amp; quản lý sổ công nợ trực tiếp trên điện thoại.</p>
+      <p class="subtitle" data-lang="ko">Zalo 도매 견적서·창고 출고증(적색 직인·18개 은행 NAPAS 247 동적 VietQR)을 3초 만에 발행하고, 1688/타오바오 중량(kg) 대 부피(CBM) 도착원가와 외상 미수금 장부를 한 번에 관리하는 B2B 스튜디오입니다.</p>
+
+      <div class="cta-grid">
+        <a id="btn-ios-store" class="store-btn apple" href="https://apps.apple.com/vn/app/id6834984762?l=vi" rel="noopener">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M16.365 1.43c0 1.14-.493 2.27-1.177 3.08-.744.9-1.99 1.57-2.987 1.57-.12 0-.23-.02-.3-.03-.01-.06-.04-.22-.04-.39 0-1.15.572-2.27 1.206-2.98.804-.94 2.142-1.64 3.248-1.68.03.13.05.28.05.43zm4.565 15.71c-.03.07-.463 1.58-1.518 3.12-.945 1.34-1.94 2.71-3.43 2.71-1.517 0-1.9-.88-3.63-.88-1.698 0-2.302.91-3.67.91-1.377 0-2.332-1.26-3.428-2.8-1.287-1.82-2.323-4.63-2.323-7.28 0-4.28 2.797-6.55 5.552-6.55 1.448 0 2.675.95 3.6.95.865 0 2.222-1.01 3.902-1.01.613 0 2.886.06 4.374 2.19-.13.09-2.383 1.37-2.383 4.19 0 3.26 2.854 4.42 2.955 4.45z"/>
+          </svg>
+          <span class="btn-meta">
+            <span class="btn-small" data-lang="vi">Tải trên iPhone / iPad</span>
+            <span class="btn-small" data-lang="ko">iPhone / iPad 다운로드</span>
+            <span class="btn-main">App Store (VN)</span>
+          </span>
+        </a>
+
+        <a id="btn-android-store" class="store-btn play" href="https://play.google.com/store/apps/details?id=com.knowledgestudio.vn.app_02_baogia_nhaphang&amp;hl=vi&amp;gl=VN" rel="noopener">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M3.609 1.814L13.792 12 3.61 22.186a1.77 1.77 0 0 1-.495-1.253V3.067c0-.487.185-.94.494-1.253zm11.24 11.243l2.742 2.743-11.27 6.38 8.528-9.123zm3.658-2.094l2.433 1.378c.747.423.747 1.495 0 1.918l-2.433 1.378-3.035-3.037 3.035-1.637zM6.32 1.82l11.27 6.38-2.742 2.743L6.32 1.82z"/>
+          </svg>
+          <span class="btn-meta">
+            <span class="btn-small" data-lang="vi">Tải trên Android</span>
+            <span class="btn-small" data-lang="ko">Android 다운로드</span>
+            <span class="btn-main">Google Play (VN)</span>
+          </span>
+        </a>
+      </div>
+
+      <div class="qr-panel">
+        <div class="qr-box">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 37" width="196" height="196" shape-rendering="crispEdges" role="img" aria-label="QR Code Báo Giá &amp; Tính Giá Nhập Hàng"><rect width="37" height="37" fill="#ffffff"/><path d="M4,4h7v1h-7zM12,4h1v1h-1zM16,4h1v1h-1zM19,4h6v1h-6zM26,4h7v1h-7zM4,5h1v1h-1zM10,5h1v1h-1zM12,5h1v1h-1zM14,5h1v1h-1zM18,5h2v1h-2zM21,5h1v1h-1zM24,5h1v1h-1zM26,5h1v1h-1zM32,5h1v1h-1zM4,6h1v1h-1zM6,6h3v1h-3zM10,6h1v1h-1zM14,6h1v1h-1zM16,6h4v1h-4zM22,6h1v1h-1zM24,6h1v1h-1zM26,6h1v1h-1zM28,6h3v1h-3zM32,6h1v1h-1zM4,7h1v1h-1zM6,7h3v1h-3zM10,7h1v1h-1zM12,7h2v1h-2zM15,7h2v1h-2zM21,7h1v1h-1zM23,7h1v1h-1zM26,7h1v1h-1zM28,7h3v1h-3zM32,7h1v1h-1zM4,8h1v1h-1zM6,8h3v1h-3zM10,8h1v1h-1zM13,8h2v1h-2zM17,8h1v1h-1zM23,8h2v1h-2zM26,8h1v1h-1zM28,8h3v1h-3zM32,8h1v1h-1zM4,9h1v1h-1zM10,9h1v1h-1zM16,9h1v1h-1zM18,9h1v1h-1zM21,9h3v1h-3zM26,9h1v1h-1zM32,9h1v1h-1zM4,10h7v1h-7zM12,10h1v1h-1zM14,10h1v1h-1zM16,10h1v1h-1zM18,10h1v1h-1zM20,10h1v1h-1zM22,10h1v1h-1zM24,10h1v1h-1zM26,10h7v1h-7zM12,11h1v1h-1zM14,11h11v1h-11zM4,12h1v1h-1zM6,12h2v1h-2zM9,12h3v1h-3zM15,12h7v1h-7zM23,12h1v1h-1zM26,12h1v1h-1zM29,12h1v1h-1zM31,12h2v1h-2zM4,13h1v1h-1zM6,13h2v1h-2zM11,13h4v1h-4zM21,13h8v1h-8zM32,13h1v1h-1zM4,14h1v1h-1zM7,14h4v1h-4zM13,14h4v1h-4zM18,14h1v1h-1zM20,14h1v1h-1zM22,14h1v1h-1zM30,14h2v1h-2zM4,15h5v1h-5zM17,15h2v1h-2zM20,15h1v1h-1zM22,15h3v1h-3zM27,15h2v1h-2zM32,15h1v1h-1zM4,16h1v1h-1zM8,16h3v1h-3zM13,16h2v1h-2zM16,16h1v1h-1zM19,16h1v1h-1zM21,16h1v1h-1zM24,16h1v1h-1zM29,16h2v1h-2zM4,17h3v1h-3zM8,17h1v1h-1zM14,17h2v1h-2zM17,17h1v1h-1zM19,17h5v1h-5zM25,17h3v1h-3zM30,17h3v1h-3zM5,18h1v1h-1zM7,18h1v1h-1zM9,18h4v1h-4zM14,18h1v1h-1zM18,18h1v1h-1zM21,18h3v1h-3zM27,18h2v1h-2zM30,18h3v1h-3zM4,19h2v1h-2zM11,19h1v1h-1zM15,19h3v1h-3zM19,19h1v1h-1zM22,19h1v1h-1zM27,19h1v1h-1zM31,19h1v1h-1zM5,20h1v1h-1zM7,20h1v1h-1zM9,20h2v1h-2zM12,20h1v1h-1zM14,20h3v1h-3zM19,20h1v1h-1zM22,20h3v1h-3zM27,20h3v1h-3zM31,20h1v1h-1zM5,21h1v1h-1zM8,21h1v1h-1zM14,21h1v1h-1zM17,21h1v1h-1zM19,21h1v1h-1zM21,21h1v1h-1zM24,21h1v1h-1zM27,21h1v1h-1zM29,21h3v1h-3zM4,22h1v1h-1zM6,22h1v1h-1zM8,22h5v1h-5zM14,22h1v1h-1zM16,22h1v1h-1zM19,22h3v1h-3zM26,22h2v1h-2zM30,22h1v1h-1zM7,23h1v1h-1zM9,23h1v1h-1zM11,23h1v1h-1zM13,23h1v1h-1zM15,23h1v1h-1zM19,23h3v1h-3zM26,23h1v1h-1zM28,23h1v1h-1zM30,23h1v1h-1zM5,24h1v1h-1zM7,24h1v1h-1zM9,24h2v1h-2zM13,24h2v1h-2zM16,24h2v1h-2zM20,24h2v1h-2zM23,24h8v1h-8zM12,25h2v1h-2zM16,25h3v1h-3zM20,25h5v1h-5zM28,25h5v1h-5zM4,26h7v1h-7zM12,26h3v1h-3zM17,26h1v1h-1zM20,26h5v1h-5zM26,26h1v1h-1zM28,26h2v1h-2zM31,26h1v1h-1zM4,27h1v1h-1zM10,27h1v1h-1zM12,27h4v1h-4zM19,27h1v1h-1zM22,27h1v1h-1zM24,27h1v1h-1zM28,27h2v1h-2zM31,27h1v1h-1zM4,28h1v1h-1zM6,28h3v1h-3zM10,28h1v1h-1zM15,28h2v1h-2zM18,28h1v1h-1zM21,28h1v1h-1zM24,28h5v1h-5zM30,28h2v1h-2zM4,29h1v1h-1zM6,29h3v1h-3zM10,29h1v1h-1zM12,29h1v1h-1zM14,29h1v1h-1zM18,29h4v1h-4zM23,29h3v1h-3zM27,29h3v1h-3zM32,29h1v1h-1zM4,30h1v1h-1zM6,30h3v1h-3zM10,30h1v1h-1zM12,30h4v1h-4zM21,30h1v1h-1zM23,30h2v1h-2zM27,30h1v1h-1zM30,30h1v1h-1zM32,30h1v1h-1zM4,31h1v1h-1zM10,31h1v1h-1zM13,31h1v1h-1zM15,31h2v1h-2zM19,31h1v1h-1zM22,31h1v1h-1zM24,31h1v1h-1zM27,31h1v1h-1zM29,31h1v1h-1zM31,31h1v1h-1zM4,32h7v1h-7zM12,32h2v1h-2zM15,32h1v1h-1zM22,32h7v1h-7zM31,32h1v1h-1z" fill="#0f172a"/></svg>
+        </div>
+        <div class="qr-text">
+          <h2 data-lang="vi">Đang dùng Zalo trên máy tính (PC)?</h2>
+          <h2 data-lang="ko">PC Zalo 또는 데스크톱으로 접속하셨나요?</h2>
+          <p data-lang="vi">Mở camera điện thoại hoặc tính năng quét mã của Zalo để quét mã QR bên cạnh — hệ thống sẽ tự mở đúng App Store (iPhone) hoặc Google Play (Android).</p>
+          <p data-lang="ko">스마트폰 카메라나 Zalo QR 스캐너로 왼쪽 QR 코드를 스캔하면 기기 OS(iOS 38% / Android 62%)에 맞춰 베트남 스토어로 즉시 연결됩니다.</p>
+          <span class="url-chip">https://koo-by.github.io/vn-baogia/</span>
+        </div>
+      </div>
+
+      <h3 class="features-title" data-lang="vi">4 điểm khác biệt dành riêng cho chủ shop &amp; dân nhập hàng Việt Nam</h3>
+      <h3 class="features-title" data-lang="ko">베트남 도소매 상인·1688 사입 셀러를 위한 4대 핵심 기능</h3>
+      <div class="features">
+        <div class="feat-item">
+          <strong data-lang="vi">1. Báo giá &amp; Xuất kho 3 giây (Có SP hay bán)</strong>
+          <strong data-lang="ko">1. 3초 견적·출고증 (단골상품 1-Tap 추가)</strong>
+          <span data-lang="vi">Gõ tắt kiểu Zalo (50k, 1tr5), tự động đọc tiền bằng chữ &amp; in 3 cột chữ ký kho.</span>
+          <span data-lang="ko">Zalo 축약어(50k, 1tr5) 입력, 베트남어 금액 독음, 창고 3자 인수 서명란 자동 출력.</span>
+        </div>
+        <div class="feat-item">
+          <strong data-lang="vi">2. Đóng dấu đỏ &amp; Mã VietQR NAPAS 247</strong>
+          <strong data-lang="ko">2. 상점 적색 직인 &amp; 18개 은행 VietQR</strong>
+          <span data-lang="vi">Hỗ trợ 18 ngân hàng Việt Nam, tự tính Tiền cần thu = Tổng + Nợ cũ - Đặt cọc.</span>
+          <span data-lang="ko">합계 + 전월미수 - 계약금을 자동 산출해 정확한 금액이 채워지는 EMVCo QR 생성.</span>
+        </div>
+        <div class="feat-item">
+          <strong data-lang="vi">3. Tính giá vốn 1688/Taobao (Kg vs CBM)</strong>
+          <strong data-lang="ko">3. 1688/타오바오 도착원가 (kg vs CBM)</strong>
+          <span data-lang="vi">Tự so sánh cước cân nặng và thể tích, phân bổ phí đóng gỗ &amp; nội địa TQ chính xác.</span>
+          <span data-lang="ko">실측 중량 vs 부피 운임 자동 비교 및 중국 내륙비·목재 패킹 공동경비 안분.</span>
+        </div>
+        <div class="feat-item">
+          <strong data-lang="vi">4. Sổ công nợ Offline miễn phí trọn đời</strong>
+          <strong data-lang="ko">4. 오프라인 외상 미수금 장부 평생 열람</strong>
+          <span data-lang="vi">Chạm 1 lần đổi trạng thái Chưa thu / Đã thu, không lo mất dữ liệu hay thuê bao đắt đỏ.</span>
+          <span data-lang="ko">미수(Chưa thu) ↔ 수금(Đã thu) 1-Tap 전환, 만료 후에도 기존 다품목 전표 영구 열람.</span>
+        </div>
+      </div>
+
+      <div class="compliance-note" data-lang="vi">
+        <strong>Lưu ý phạm vi sử dụng:</strong> Ứng dụng chuyên dụng cho <em>báo giá sỉ trước chốt đơn trên Zalo, phiếu xuất kho nội bộ 3 bên, tính giá vốn nhập hàng và sổ công nợ cá nhân</em>. Ứng dụng không thay thế hóa đơn điện tử kết nối cơ quan thuế theo Nghị định 70/2025/NĐ-CP.
+      </div>
+      <div class="compliance-note" data-lang="ko">
+        <strong>법적 포지셔닝 안내 (Nghị định 70/2025 준수):</strong> 본 앱은 <em>거래 확정 전 Zalo 도매 견적서, 창고 3자 인수인계 출고증, 1688/타오바오 사입원가 계산 및 프라이빗 외상 장부</em> 전용 도구이며 국세청 직결 전자세금계산서 대체 용도가 아닙니다.
+      </div>
+
+      <div class="footer">
+        <span>Jisik Gongbang • Offline Utility Studio</span>
+        <div class="footer-links">
+          <a id="link-privacy" href="https://koo-by.github.io/privacy_vn.html" data-base="https://koo-by.github.io/privacy_vn.html">
+            <span data-lang="vi">Chính sách bảo mật</span>
+            <span data-lang="ko">개인정보 처리방침</span>
+          </a>
+          <a id="link-terms" href="https://koo-by.github.io/terms_vn.html" data-base="https://koo-by.github.io/terms_vn.html">
+            <span data-lang="vi">Điều khoản sử dụng</span>
+            <span data-lang="ko">이용약관</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var IOS_STORE_URL = "https://apps.apple.com/vn/app/id6834984762?l=vi";
+    var ANDROID_STORE_URL = "https://play.google.com/store/apps/details?id=com.knowledgestudio.vn.app_02_baogia_nhaphang&hl=vi&gl=VN";
+
+    function detectTargetPlatform(ua, platform, maxTouchPoints) {
+      var u = ua || "";
+      var p = platform || "";
+      var touch = typeof maxTouchPoints === "number" ? maxTouchPoints : 0;
+      if (/Android/i.test(u)) {
+        return { os: "android", url: ANDROID_STORE_URL };
+      }
+      if (/iPhone|iPad|iPod/i.test(u) || (/Macintosh/i.test(u) && touch > 1) || (/MacIntel/i.test(p) && touch > 1)) {
+        return { os: "ios", url: IOS_STORE_URL };
+      }
+      return { os: "desktop", url: "" };
+    }
+
+    function setLang(lang) {
+      var target = lang === "ko" ? "ko" : "vi";
+      document.body.className = "lang-" + target;
+      document.documentElement.lang = target;
+      var btnVi = document.getElementById("btn-vi");
+      var btnKo = document.getElementById("btn-ko");
+      if (btnVi) btnVi.classList.toggle("active", target === "vi");
+      if (btnKo) btnKo.classList.toggle("active", target === "ko");
+      var lp = document.getElementById("link-privacy");
+      var lt = document.getElementById("link-terms");
+      if (lp) lp.href = lp.getAttribute("data-base") + "?lang=" + target;
+      if (lt) lt.href = lt.getAttribute("data-base") + "?lang=" + target;
+    }
+
+    (function initOneLink() {
+      var params = new URLSearchParams(window.location.search);
+      var qLang = params.get("lang");
+      var preview = params.get("preview") === "1" || params.get("no_redirect") === "1";
+
+      if (qLang === "ko") {
+        setLang("ko");
+      } else {
+        setLang("vi");
+      }
+
+      var detected = detectTargetPlatform(navigator.userAgent, navigator.platform, navigator.maxTouchPoints);
+      var banner = document.getElementById("redirect-banner");
+
+      if (preview || qLang === "ko") {
+        if (banner) banner.classList.add("visible");
+        return;
+      }
+
+      if (detected.url) {
+        if (banner) {
+          banner.classList.add("visible");
+          var msgVi = document.getElementById("redirect-msg-vi");
+          if (msgVi) {
+            msgVi.textContent = detected.os === "ios"
+              ? "Đang chuyển đến App Store (iPhone / iPad)... Nếu chưa tự mở, hãy bấm nút App Store bên dưới."
+              : "Đang chuyển đến Google Play (Android)... Nếu chưa tự mở, hãy bấm nút Google Play bên dưới.";
+          }
+        }
+        window.setTimeout(function() {
+          try {
+            window.location.replace(detected.url);
+          } catch (e) {
+            window.location.href = detected.url;
+          }
+        }, 120);
+      }
+    })();
+  </script>
+</body>
+</html>
