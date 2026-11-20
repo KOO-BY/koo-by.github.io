@@ -600,9 +600,17 @@
       var lp = document.getElementById("link-privacy");
       var lt = document.getElementById("link-terms");
       var lc = document.getElementById("link-calc");
+      var bwc = document.getElementById("btn-web-cbm-tool");
       if (lp) lp.href = lp.getAttribute("data-base") + "?lang=" + target;
       if (lt) lt.href = lt.getAttribute("data-base") + "?lang=" + target;
       if (lc) lc.href = lc.getAttribute("data-base") + (target === "ko" ? "?lang=ko" : "");
+      if (bwc) bwc.href = "/vn-baogia/tinh-cbm-1688/" + (target === "ko" ? "?lang=ko" : "");
+      var banner = document.getElementById("redirect-banner");
+      var currentOs = document.documentElement.getAttribute("data-detected-os") || "desktop";
+      if (banner) {
+        var shouldShowBanner = (target === "ko") || keepPreview || (currentOs === "android");
+        banner.classList.toggle("visible", shouldShowBanner);
+      }
     }
 
     function applyPlatformState(os, allowRedirect) {
@@ -616,8 +624,10 @@
       var iosNotice = document.getElementById("ios-notice");
       var msgVi = document.getElementById("redirect-msg-vi");
       var msgKo = document.getElementById("redirect-msg-ko");
+      var isQaMode = document.body.classList.contains("lang-ko") || document.body.classList.contains("qa-preview");
 
       if (iosNotice) iosNotice.classList.toggle("visible", os === "ios");
+      document.documentElement.setAttribute("data-detected-os", os);
 
       if (os === "android") {
         if (banner) banner.classList.add("visible");
@@ -639,17 +649,22 @@
           }, 120);
         }
       } else if (os === "ios") {
-        var keepBanner = document.body.classList.contains("lang-ko") || document.body.classList.contains("qa-preview");
-        if (banner) banner.classList.toggle("visible", keepBanner);
+        if (banner) banner.classList.toggle("visible", isQaMode);
+        if (msgVi) {
+          msgVi.textContent = "Thiết bị iPhone / iPad — dùng ngay công cụ Web tính giá vốn 1688 bên dưới hoặc sao chép link Google Play cho máy Android.";
+        }
         if (msgKo) {
           msgKo.textContent = "[시뮬레이션: iPhone/iOS] App Store 리다이렉트 차단됨. 대신 무료 1688 웹 계산기 및 링크 복사 안내를 노출합니다.";
         }
       } else {
+        if (banner) banner.classList.toggle("visible", isQaMode);
+        if (msgVi) {
+          msgVi.textContent = "Đang xem trên máy tính (Desktop) — quét mã QR hoặc bấm nút Google Play / Web 1688 bên dưới.";
+        }
         if (msgKo) {
           msgKo.textContent = "[시뮬레이션: Desktop/PC] 자동 이동 없이 QR 코드, Google Play 버튼, 무료 1688 웹 계산기 동선을 표시합니다.";
         }
       }
-      document.documentElement.setAttribute("data-detected-os", os);
     }
 
     function copyPlayLink() {
@@ -657,29 +672,43 @@
       var toast = document.getElementById("copy-toast");
       var isKo = document.body.classList.contains("lang-ko");
       var doneMsg = isKo ? "✓ Google Play 링크가 복사되었습니다!" : "✓ Đã sao chép link Google Play!";
+      var failMsg = isKo ? "⚠️ 복사 실패 — 주소를 길게 눌러 복사해주세요." : "⚠️ Không tự sao chép được — hãy bấm giữ link để chép.";
+      if (fallbackCopyText(url, toast, doneMsg, true)) {
+        return;
+      }
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(url).then(function() {
           if (toast) toast.textContent = doneMsg;
         }).catch(function() {
-          fallbackCopyText(url, toast, doneMsg);
+          if (toast) toast.textContent = failMsg;
         });
-      } else {
-        fallbackCopyText(url, toast, doneMsg);
+      } else if (toast) {
+        toast.textContent = failMsg;
       }
     }
 
-    function fallbackCopyText(text, toast, doneMsg) {
+    function fallbackCopyText(text, toast, doneMsg, silentOnFail) {
       var ta = document.createElement("textarea");
       ta.value = text;
+      ta.setAttribute("readonly", "");
       ta.style.position = "fixed";
+      ta.style.left = "-9999px";
       ta.style.opacity = "0";
       document.body.appendChild(ta);
       ta.select();
+      var copied = false;
       try {
-        document.execCommand("copy");
-        if (toast) toast.textContent = doneMsg;
-      } catch (e) {}
+        copied = !!document.execCommand("copy");
+      } catch (e) {
+        copied = false;
+      }
       document.body.removeChild(ta);
+      if (copied && toast) {
+        toast.textContent = doneMsg;
+      } else if (!silentOnFail && toast) {
+        toast.textContent = "⚠️";
+      }
+      return copied;
     }
 
     (function initOneLink() {
