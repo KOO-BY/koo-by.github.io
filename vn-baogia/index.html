@@ -6,13 +6,35 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <title>Báo Giá &amp; Tính Giá Nhập Hàng — Tải Ứng Dụng Chính Thức (iOS &amp; Android)</title>
-  <meta name="description" content="Lập báo giá sỉ Zalo, phiếu xuất kho VietQR NAPAS 247, đóng dấu đỏ &amp; tính giá vốn nhập hàng 1688/Taobao (kg vs CBM) 100% Offline không cần đăng ký.">
+  <title>Báo Giá &amp; Tính Giá Nhập Hàng — Tải Google Play (Android) Chính Thức</title>
+  <meta name="description" content="Tải Báo Giá &amp; Tính Giá Nhập Hàng trên Google Play (Android): lập báo giá sỉ Zalo, phiếu xuất kho VietQR NAPAS 247, dấu đỏ &amp; tính giá vốn 1688/Taobao (kg vs CBM) 100% Offline.">
+  <link rel="canonical" href="https://koo-by.github.io/vn-baogia/">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://koo-by.github.io/vn-baogia/">
-  <meta property="og:title" content="Báo Giá &amp; Tính Giá Nhập Hàng — Tải App Cho Chủ Shop &amp; Dân Buôn 1688">
-  <meta property="og:description" content="Lập báo giá sỉ, phiếu xuất kho có dấu đỏ &amp; mã VietQR tự động trong 3 giây. Tính giá vốn 1688 kg/CBM &amp; quản lý sổ công nợ 100% Offline.">
+  <meta property="og:title" content="Báo Giá &amp; Tính Giá Nhập Hàng — Tải Google Play Cho Chủ Shop &amp; Dân Buôn 1688">
+  <meta property="og:description" content="Lập báo giá sỉ, phiếu xuất kho có dấu đỏ &amp; mã VietQR động trong 3 giây. Tính giá vốn 1688 kg/CBM chuẩn Tết 2027 &amp; quản lý sổ công nợ 100% Offline trên Android.">
   <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Báo Giá & Tính Giá Nhập Hàng",
+    "operatingSystem": "ANDROID",
+    "applicationCategory": "BusinessApplication",
+    "inLanguage": "vi",
+    "url": "https://koo-by.github.io/vn-baogia/",
+    "downloadUrl": "https://play.google.com/store/apps/details?id=com.knowledgestudio.vn.app_02_baogia_nhaphang&hl=vi&gl=VN",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "VND"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Jisik Gongbang"
+    }
+  }
+  </script>
   <style>
     :root {
       --jade-900: #062825;
@@ -26,20 +48,21 @@
       --border: #d9e2ec;
       --gold: #f59e0b;
       --gold-soft: #fef3c7;
-      --apple-bg: #0f172a;
       --play-bg: #0f766e;
+      --amber-bg: #fffbeb;
+      --amber-bd: #fcd34d;
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", "Malgun Gothic", sans-serif;
-      background: linear-gradient(180deg, #062825 0%, #0d4a46 260px, #f1f5f4 260px, #f1f5f4 100%);
+      background: linear-gradient(180deg, #062825 0%, #0d4a46 270px, #f1f5f4 270px, #f1f5f4 100%);
       color: var(--text);
       line-height: 1.6;
       min-height: 100vh;
     }
     .wrap {
-      max-width: 720px;
+      max-width: 740px;
       margin: 0 auto;
       padding: 20px 16px 48px;
     }
@@ -97,20 +120,70 @@
     }
     .status-banner {
       display: none;
-      align-items: center;
-      gap: 10px;
+      flex-direction: column;
+      gap: 8px;
       background: var(--jade-50);
       border: 1px solid #99f6e4;
       color: var(--jade-800);
       border-radius: 12px;
-      padding: 11px 14px;
+      padding: 12px 14px;
       font-size: 13.5px;
       font-weight: 700;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
     .status-banner.visible {
       display: flex;
     }
+    .ios-notice {
+      display: none;
+      background: var(--amber-bg);
+      border: 1.5px solid var(--amber-bd);
+      color: #78350f;
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin-bottom: 18px;
+      font-size: 13.5px;
+    }
+    .ios-notice.visible {
+      display: block;
+    }
+    .ios-notice strong {
+      display: block;
+      font-size: 14.5px;
+      color: #92400e;
+      margin-bottom: 4px;
+    }
+    .qa-box {
+      display: none;
+      margin-top: 4px;
+      padding-top: 8px;
+      border-top: 1px dashed #99f6e4;
+      font-size: 12px;
+      font-weight: 600;
+      color: #0f172a;
+    }
+    body.lang-ko .qa-box,
+    body.qa-preview .qa-box {
+      display: block;
+    }
+    .qa-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+    .qa-btn {
+      appearance: none;
+      border: 1px solid #99f6e4;
+      background: #ffffff;
+      color: #0d4a46;
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+    .qa-btn:hover { background: #ccfbf1; }
     .hero-badge {
       display: inline-block;
       background: var(--gold-soft);
@@ -130,26 +203,15 @@
       font-weight: 800;
     }
     .subtitle {
-      margin: 0 0 22px;
+      margin: 0 0 20px;
       font-size: 15px;
       color: var(--muted);
     }
-    .cta-grid {
+    .cta-stack {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       gap: 12px;
-      margin-bottom: 22px;
-    }
-    @media (max-width: 560px) {
-      .cta-grid {
-        grid-template-columns: 1fr;
-      }
-      .card {
-        padding: 22px 16px;
-      }
-      h1 {
-        font-size: 22px;
-      }
+      margin-bottom: 18px;
     }
     .store-btn {
       display: flex;
@@ -157,21 +219,25 @@
       justify-content: center;
       gap: 12px;
       text-decoration: none;
-      padding: 15px 18px;
+      padding: 16px 20px;
       border-radius: 14px;
       color: #ffffff;
       font-weight: 800;
+      border: 0;
+      cursor: pointer;
       transition: transform 0.12s ease, opacity 0.12s ease;
     }
     .store-btn:hover {
       transform: translateY(-1px);
-      opacity: 0.95;
-    }
-    .store-btn.apple {
-      background: var(--apple-bg);
+      opacity: 0.96;
     }
     .store-btn.play {
-      background: var(--play-bg);
+      background: linear-gradient(135deg, #0f766e, #0d4a46);
+      box-shadow: 0 10px 22px rgba(15, 118, 110, 0.25);
+    }
+    .store-btn.webtool {
+      background: linear-gradient(135deg, #b45309, #d97706);
+      box-shadow: 0 8px 18px rgba(217, 119, 6, 0.22);
     }
     .store-btn .btn-meta {
       display: flex;
@@ -180,13 +246,39 @@
       line-height: 1.25;
     }
     .store-btn .btn-small {
-      font-size: 11.5px;
+      font-size: 12px;
       font-weight: 600;
-      opacity: 0.86;
+      opacity: 0.9;
     }
     .store-btn .btn-main {
-      font-size: 16px;
+      font-size: 16.5px;
       font-weight: 800;
+    }
+    .secondary-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .copy-btn {
+      appearance: none;
+      border: 1px solid #cbd5e1;
+      background: #f8fafc;
+      color: #0f172a;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 9px 14px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .copy-btn:hover {
+      background: #e2e8f0;
+    }
+    .copy-toast {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #0f766e;
+      align-self: center;
     }
     .qr-panel {
       display: flex;
@@ -199,10 +291,9 @@
       margin-bottom: 22px;
     }
     @media (max-width: 560px) {
-      .qr-panel {
-        flex-direction: column;
-        text-align: center;
-      }
+      .card { padding: 22px 16px; }
+      h1 { font-size: 22px; }
+      .qr-panel { flex-direction: column; text-align: center; }
     }
     .qr-box {
       flex-shrink: 0;
@@ -214,8 +305,8 @@
     }
     .qr-box svg {
       display: block;
-      width: 156px;
-      height: 156px;
+      width: 148px;
+      height: 148px;
     }
     .qr-text h2 {
       margin: 0 0 6px;
@@ -251,9 +342,7 @@
       margin-bottom: 20px;
     }
     @media (max-width: 560px) {
-      .features {
-        grid-template-columns: 1fr;
-      }
+      .features { grid-template-columns: 1fr; }
     }
     .feat-item {
       background: var(--jade-50);
@@ -319,7 +408,7 @@
       <div class="brand-pill">
         <span>Jisik Gongbang</span>
         <span>•</span>
-        <span>VN App #2</span>
+        <span>Android Google Play VN</span>
       </div>
       <div class="lang-switch" role="group" aria-label="Language">
         <button id="btn-vi" class="lang-btn active" type="button" onclick="setLang('vi')">Tiếng Việt</button>
@@ -329,41 +418,67 @@
 
     <div class="card">
       <div id="redirect-banner" class="status-banner" role="status">
-        <span data-lang="vi" id="redirect-msg-vi">Đang tự động chuyển sang kho ứng dụng phù hợp với thiết bị của bạn... Nếu không tự chuyển sau 2 giây, hãy bấm trực tiếp nút bên dưới.</span>
-        <span data-lang="ko" id="redirect-msg-ko">검수 모드(?lang=ko 또는 ?preview=1)이거나 PC 접속 중이므로 자동 스토어 이동을 멈추었습니다. 아래 버튼으로 각 스토어를 확인할 수 있습니다.</span>
+        <div>
+          <span data-lang="vi" id="redirect-msg-vi">Đang chuyển đến Google Play (Android)... Nếu không tự mở sau 2 giây, hãy bấm trực tiếp nút bên dưới.</span>
+          <span data-lang="ko" id="redirect-msg-ko">검수 모드(?lang=ko / ?preview=1)이거나 PC 접속 중이므로 자동 이동을 멈추었습니다. 아래에서 Android / iPhone / Desktop 분기를 즉시 점검할 수 있습니다.</span>
+        </div>
+        <div class="qa-box">
+          <div>추적 Google Play URL (UTM &amp; referrer 자동 조합): <code id="qa-play-url" style="word-break:break-all;"></code></div>
+          <div class="qa-actions">
+            <button class="qa-btn" type="button" onclick="applyPlatformState('android', false)">Android 접속 시뮬</button>
+            <button class="qa-btn" type="button" onclick="applyPlatformState('ios', false)">iPhone 접속 시뮬</button>
+            <button class="qa-btn" type="button" onclick="applyPlatformState('desktop', false)">Desktop 접속 시뮬</button>
+          </div>
+        </div>
       </div>
 
-      <span class="hero-badge" data-lang="vi">100% OFFLINE • KHÔNG CẦN ĐĂNG KÝ SỐ ĐIỆN THOẠI</span>
-      <span class="hero-badge" data-lang="ko">100% 오프라인 • 회원가입·전화번호 인증 불필요</span>
+      <div id="ios-notice" class="ios-notice" role="region" aria-label="Thông báo cho thiết bị iPhone">
+        <strong data-lang="vi">Thông báo dành cho thiết bị iPhone / iPad (iOS)</strong>
+        <strong data-lang="ko">iPhone / iPad (iOS) 접속 안내 (iOS 전면 보류 가드 작동 중)</strong>
+        <span data-lang="vi">Ứng dụng hiện đã phát hành chính thức cho điện thoại <strong>Android (Google Play)</strong>. Phiên bản iPhone đang hoàn thiện — trong lúc chờ đợi, bạn có thể dùng ngay <strong>Công cụ tính giá vốn 1688 (Kg vs CBM) miễn phí trực tiếp trên Safari</strong> bên dưới hoặc sao chép link Google Play để cài trên máy Android tại cửa hàng/kho!</span>
+        <span data-lang="ko">현재 본 앱은 <strong>Android (Google Play VN)</strong> 전용으로 선출시되어 운영 중입니다(iOS 심사 대기열 보호를 위해 iOS 보류). iPhone 접속자는 오류 화면으로 보내지 않고, 아래 <strong>무료 1688 CBM/kg 웹 계산기</strong>를 바로 사용하거나 매장 안드로이드폰용 Google Play 링크를 복사하도록 안전 분기됩니다.</span>
+      </div>
+
+      <span class="hero-badge" data-lang="vi">100% OFFLINE • ANDROID GOOGLE PLAY • KHÔNG CẦN ĐĂNG KÝ SĐT</span>
+      <span class="hero-badge" data-lang="ko">100% 오프라인 • Google Play(Android) 전용 • 회원가입 불필요</span>
 
       <h1 data-lang="vi">Báo Giá &amp; Tính Giá Nhập Hàng</h1>
-      <h1 data-lang="ko">Báo Giá &amp; Tính Giá Nhập Hàng (베트남 견적서 &amp; 사입원가 계산기)</h1>
+      <h1 data-lang="ko">Báo Giá &amp; Tính Giá Nhập Hàng (Google Play VN 전용)</h1>
 
-      <p class="subtitle" data-lang="vi">Lập báo giá sỉ Zalo, phiếu xuất kho có dấu đỏ &amp; mã VietQR động 18 ngân hàng trong 3 giây. Tính giá vốn hàng nhập 1688/Taobao (kg vs CBM) &amp; quản lý sổ công nợ trực tiếp trên điện thoại.</p>
-      <p class="subtitle" data-lang="ko">Zalo 도매 견적서·창고 출고증(적색 직인·18개 은행 NAPAS 247 동적 VietQR)을 3초 만에 발행하고, 1688/타오바오 중량(kg) 대 부피(CBM) 도착원가와 외상 미수금 장부를 한 번에 관리하는 B2B 스튜디오입니다.</p>
+      <p class="subtitle" data-lang="vi">Lập báo giá sỉ Zalo, phiếu xuất kho có dấu đỏ &amp; mã VietQR động 18 ngân hàng trong 3 giây. Tính giá vốn hàng nhập 1688/Taobao (kg vs CBM) mùa Tết 2027 &amp; quản lý sổ công nợ trực tiếp trên điện thoại Android.</p>
+      <p class="subtitle" data-lang="ko">Zalo 도매 견적서·창고 출고증(적색 직인·18개 은행 NAPAS 247 동적 VietQR)을 3초 만에 발행하고, 뗏 2027 성수기 1688/타오바오 중량(kg) vs 부피(CBM) 도착원가와 외상 미수금 장부를 100% 오프라인으로 관리하는 Android 앱입니다.</p>
 
-      <div class="cta-grid">
-        <a id="btn-ios-store" class="store-btn apple" href="https://apps.apple.com/vn/app/id6834984762?l=vi" rel="noopener">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M16.365 1.43c0 1.14-.493 2.27-1.177 3.08-.744.9-1.99 1.57-2.987 1.57-.12 0-.23-.02-.3-.03-.01-.06-.04-.22-.04-.39 0-1.15.572-2.27 1.206-2.98.804-.94 2.142-1.64 3.248-1.68.03.13.05.28.05.43zm4.565 15.71c-.03.07-.463 1.58-1.518 3.12-.945 1.34-1.94 2.71-3.43 2.71-1.517 0-1.9-.88-3.63-.88-1.698 0-2.302.91-3.67.91-1.377 0-2.332-1.26-3.428-2.8-1.287-1.82-2.323-4.63-2.323-7.28 0-4.28 2.797-6.55 5.552-6.55 1.448 0 2.675.95 3.6.95.865 0 2.222-1.01 3.902-1.01.613 0 2.886.06 4.374 2.19-.13.09-2.383 1.37-2.383 4.19 0 3.26 2.854 4.42 2.955 4.45z"/>
-          </svg>
-          <span class="btn-meta">
-            <span class="btn-small" data-lang="vi">Tải trên iPhone / iPad</span>
-            <span class="btn-small" data-lang="ko">iPhone / iPad 다운로드</span>
-            <span class="btn-main">App Store (VN)</span>
-          </span>
-        </a>
-
+      <div class="cta-stack">
         <a id="btn-android-store" class="store-btn play" href="https://play.google.com/store/apps/details?id=com.knowledgestudio.vn.app_02_baogia_nhaphang&amp;hl=vi&amp;gl=VN" rel="noopener">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M3.609 1.814L13.792 12 3.61 22.186a1.77 1.77 0 0 1-.495-1.253V3.067c0-.487.185-.94.494-1.253zm11.24 11.243l2.742 2.743-11.27 6.38 8.528-9.123zm3.658-2.094l2.433 1.378c.747.423.747 1.495 0 1.918l-2.433 1.378-3.035-3.037 3.035-1.637zM6.32 1.82l11.27 6.38-2.742 2.743L6.32 1.82z"/>
           </svg>
           <span class="btn-meta">
-            <span class="btn-small" data-lang="vi">Tải trên Android</span>
-            <span class="btn-small" data-lang="ko">Android 다운로드</span>
-            <span class="btn-main">Google Play (VN)</span>
+            <span class="btn-small" data-lang="vi">Tải miễn phí bản cơ bản trên Android</span>
+            <span class="btn-small" data-lang="ko">Google Play(VN) Android 다운로드 · UTM Referrer 추적</span>
+            <span class="btn-main">Google Play (Android VN)</span>
           </span>
         </a>
+
+        <a id="btn-web-cbm-tool" class="store-btn webtool" href="/vn-baogia/tinh-cbm-1688/">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="14" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="10" y2="18"/><line x1="14" y1="18" x2="16" y2="18"/>
+          </svg>
+          <span class="btn-meta">
+            <span class="btn-small" data-lang="vi">Dùng ngay trên mọi trình duyệt (không cần cài đặt)</span>
+            <span class="btn-small" data-lang="ko">무료 웹 SEO 도구 (iPhone/PC/Android 모두 즉시 사용)</span>
+            <span class="btn-main" data-lang="vi">Mở Công Cụ Tính Giá Vốn 1688 (Kg vs CBM) Miễn Phí</span>
+            <span class="btn-main" data-lang="ko">무료 1688 CBM/kg 사입원가 웹 계산기 열기</span>
+          </span>
+        </a>
+      </div>
+
+      <div class="secondary-actions">
+        <button id="btn-copy-play" class="copy-btn" type="button" onclick="copyPlayLink()">
+          <span data-lang="vi">📋 Sao chép link Google Play gửi Zalo / máy kho</span>
+          <span data-lang="ko">📋 Google Play 링크 복사 (Zalo·안드로이드폰 전송용)</span>
+        </button>
+        <span id="copy-toast" class="copy-toast" aria-live="polite"></span>
       </div>
 
       <div class="qr-panel">
@@ -373,8 +488,8 @@
         <div class="qr-text">
           <h2 data-lang="vi">Đang dùng Zalo trên máy tính (PC)?</h2>
           <h2 data-lang="ko">PC Zalo 또는 데스크톱으로 접속하셨나요?</h2>
-          <p data-lang="vi">Mở camera điện thoại hoặc tính năng quét mã của Zalo để quét mã QR bên cạnh — hệ thống sẽ tự mở đúng App Store (iPhone) hoặc Google Play (Android).</p>
-          <p data-lang="ko">스마트폰 카메라나 Zalo QR 스캐너로 왼쪽 QR 코드를 스캔하면 기기 OS(iOS 38% / Android 62%)에 맞춰 베트남 스토어로 즉시 연결됩니다.</p>
+          <p data-lang="vi">Mở camera điện thoại Android hoặc tính năng quét mã của Zalo để quét mã QR bên cạnh — hệ thống sẽ mở thẳng trang tải Google Play chính thức.</p>
+          <p data-lang="ko">안드로이드 스마트폰 카메라나 Zalo QR 스캐너로 왼쪽 QR 코드를 스캔하면 Google Play 베트남 스토어로 즉시 연결됩니다.</p>
           <span class="url-chip">https://koo-by.github.io/vn-baogia/</span>
         </div>
       </div>
@@ -397,8 +512,8 @@
         <div class="feat-item">
           <strong data-lang="vi">3. Tính giá vốn 1688/Taobao (Kg vs CBM)</strong>
           <strong data-lang="ko">3. 1688/타오바오 도착원가 (kg vs CBM)</strong>
-          <span data-lang="vi">Tự so sánh cước cân nặng và thể tích, phân bổ phí đóng gỗ &amp; nội địa TQ chính xác.</span>
-          <span data-lang="ko">실측 중량 vs 부피 운임 자동 비교 및 중국 내륙비·목재 패킹 공동경비 안분.</span>
+          <span data-lang="vi">Tự so sánh cước cân nặng và thể tích, phân bổ phí đóng gỗ &amp; nội địa TQ chính xác cho mùa Tết 2027.</span>
+          <span data-lang="ko">실측 중량 vs 부피 운임 자동 비교 및 중국 내륙비·목재 패킹 공동경비 안분 (뗏 2027 성수기 대비).</span>
         </div>
         <div class="feat-item">
           <strong data-lang="vi">4. Sổ công nợ Offline miễn phí trọn đời</strong>
@@ -409,15 +524,19 @@
       </div>
 
       <div class="compliance-note" data-lang="vi">
-        <strong>Lưu ý phạm vi sử dụng:</strong> Ứng dụng chuyên dụng cho <em>báo giá sỉ trước chốt đơn trên Zalo, phiếu xuất kho nội bộ 3 bên, tính giá vốn nhập hàng và sổ công nợ cá nhân</em>. Ứng dụng không thay thế hóa đơn điện tử kết nối cơ quan thuế theo Nghị định 70/2025/NĐ-CP.
+        <strong>Lưu ý phạm vi sử dụng (Nghị định 70/2025/NĐ-CP):</strong> Ứng dụng chuyên dụng cho <em>báo giá sỉ trước chốt đơn trên Zalo, phiếu xuất kho nội bộ 3 bên, tính giá vốn nhập hàng và sổ công nợ cá nhân</em>. Ứng dụng <strong>không thay thế hóa đơn điện tử kết nối cơ quan thuế</strong> theo Nghị định 70/2025/NĐ-CP.
       </div>
       <div class="compliance-note" data-lang="ko">
         <strong>법적 포지셔닝 안내 (Nghị định 70/2025 준수):</strong> 본 앱은 <em>거래 확정 전 Zalo 도매 견적서, 창고 3자 인수인계 출고증, 1688/타오바오 사입원가 계산 및 프라이빗 외상 장부</em> 전용 도구이며 국세청 직결 전자세금계산서 대체 용도가 아닙니다.
       </div>
 
       <div class="footer">
-        <span>Jisik Gongbang • Offline Utility Studio</span>
+        <span>Jisik Gongbang • Android Offline Utility Studio</span>
         <div class="footer-links">
+          <a id="link-calc" href="/vn-baogia/tinh-cbm-1688/" data-base="/vn-baogia/tinh-cbm-1688/">
+            <span data-lang="vi">Tính CBM 1688 Web</span>
+            <span data-lang="ko">1688 웹 계산기</span>
+          </a>
           <a id="link-privacy" href="https://koo-by.github.io/privacy_vn.html" data-base="https://koo-by.github.io/privacy_vn.html">
             <span data-lang="vi">Chính sách bảo mật</span>
             <span data-lang="ko">개인정보 처리방침</span>
@@ -432,25 +551,47 @@
   </div>
 
   <script>
-    var IOS_STORE_URL = "https://apps.apple.com/vn/app/id6834984762?l=vi";
-    var ANDROID_STORE_URL = "https://play.google.com/store/apps/details?id=com.knowledgestudio.vn.app_02_baogia_nhaphang&hl=vi&gl=VN";
+    var PLAY_BASE_URL = "https://play.google.com/store/apps/details?id=com.knowledgestudio.vn.app_02_baogia_nhaphang&hl=vi&gl=VN";
+
+    function buildGooglePlayUrl(searchStr) {
+      var params = new URLSearchParams(searchStr !== undefined ? searchStr : (window.location.search || ""));
+      var customRef = params.get("referrer");
+      var referrerValue = customRef;
+      if (!referrerValue) {
+        var utmSource = params.get("utm_source") || params.get("src") || "onelink";
+        var utmMedium = params.get("utm_medium") || "web_redirect";
+        var utmCampaign = params.get("utm_campaign") || "vn_android_tet2027";
+        var utmContent = params.get("utm_content") || "";
+        var utmTerm = params.get("utm_term") || "";
+        var parts = [
+          "utm_source=" + encodeURIComponent(utmSource),
+          "utm_medium=" + encodeURIComponent(utmMedium),
+          "utm_campaign=" + encodeURIComponent(utmCampaign)
+        ];
+        if (utmContent) parts.push("utm_content=" + encodeURIComponent(utmContent));
+        if (utmTerm) parts.push("utm_term=" + encodeURIComponent(utmTerm));
+        referrerValue = parts.join("&");
+      }
+      return PLAY_BASE_URL + "&referrer=" + encodeURIComponent(referrerValue);
+    }
 
     function detectTargetPlatform(ua, platform, maxTouchPoints) {
       var u = ua || "";
       var p = platform || "";
       var touch = typeof maxTouchPoints === "number" ? maxTouchPoints : 0;
       if (/Android/i.test(u)) {
-        return { os: "android", url: ANDROID_STORE_URL };
+        return { os: "android", shouldRedirect: true };
       }
       if (/iPhone|iPad|iPod/i.test(u) || (/Macintosh/i.test(u) && touch > 1) || (/MacIntel/i.test(p) && touch > 1)) {
-        return { os: "ios", url: IOS_STORE_URL };
+        return { os: "ios", shouldRedirect: false };
       }
-      return { os: "desktop", url: "" };
+      return { os: "desktop", shouldRedirect: false };
     }
 
     function setLang(lang) {
       var target = lang === "ko" ? "ko" : "vi";
-      document.body.className = "lang-" + target;
+      var keepPreview = document.body.classList.contains("qa-preview");
+      document.body.className = "lang-" + target + (keepPreview ? " qa-preview" : "");
       document.documentElement.lang = target;
       var btnVi = document.getElementById("btn-vi");
       var btnKo = document.getElementById("btn-ko");
@@ -458,47 +599,111 @@
       if (btnKo) btnKo.classList.toggle("active", target === "ko");
       var lp = document.getElementById("link-privacy");
       var lt = document.getElementById("link-terms");
+      var lc = document.getElementById("link-calc");
       if (lp) lp.href = lp.getAttribute("data-base") + "?lang=" + target;
       if (lt) lt.href = lt.getAttribute("data-base") + "?lang=" + target;
+      if (lc) lc.href = lc.getAttribute("data-base") + (target === "ko" ? "?lang=ko" : "");
+    }
+
+    function applyPlatformState(os, allowRedirect) {
+      var targetPlayUrl = buildGooglePlayUrl();
+      var playBtn = document.getElementById("btn-android-store");
+      if (playBtn) playBtn.href = targetPlayUrl;
+      var qaPlay = document.getElementById("qa-play-url");
+      if (qaPlay) qaPlay.textContent = targetPlayUrl;
+
+      var banner = document.getElementById("redirect-banner");
+      var iosNotice = document.getElementById("ios-notice");
+      var msgVi = document.getElementById("redirect-msg-vi");
+      var msgKo = document.getElementById("redirect-msg-ko");
+
+      if (iosNotice) iosNotice.classList.toggle("visible", os === "ios");
+
+      if (os === "android") {
+        if (banner) banner.classList.add("visible");
+        if (msgVi) {
+          msgVi.textContent = allowRedirect
+            ? "Đang chuyển đến Google Play (Android)... Nếu chưa tự mở, hãy bấm nút Google Play bên dưới."
+            : "Đã nhận diện thiết bị Android — chế độ xem trước đang chặn tự chuyển hướng. Bấm Google Play bên dưới để kiểm tra link UTM.";
+        }
+        if (msgKo) {
+          msgKo.textContent = "[시뮬레이션: Android] 실제 Android 접속 시 120ms 후 UTM referrer 포함 Google Play VN으로 자동 이동합니다.";
+        }
+        if (allowRedirect) {
+          window.setTimeout(function() {
+            try {
+              window.location.replace(targetPlayUrl);
+            } catch (e) {
+              window.location.href = targetPlayUrl;
+            }
+          }, 120);
+        }
+      } else if (os === "ios") {
+        var keepBanner = document.body.classList.contains("lang-ko") || document.body.classList.contains("qa-preview");
+        if (banner) banner.classList.toggle("visible", keepBanner);
+        if (msgKo) {
+          msgKo.textContent = "[시뮬레이션: iPhone/iOS] App Store 리다이렉트 차단됨. 대신 무료 1688 웹 계산기 및 링크 복사 안내를 노출합니다.";
+        }
+      } else {
+        if (msgKo) {
+          msgKo.textContent = "[시뮬레이션: Desktop/PC] 자동 이동 없이 QR 코드, Google Play 버튼, 무료 1688 웹 계산기 동선을 표시합니다.";
+        }
+      }
+      document.documentElement.setAttribute("data-detected-os", os);
+    }
+
+    function copyPlayLink() {
+      var url = buildGooglePlayUrl();
+      var toast = document.getElementById("copy-toast");
+      var isKo = document.body.classList.contains("lang-ko");
+      var doneMsg = isKo ? "✓ Google Play 링크가 복사되었습니다!" : "✓ Đã sao chép link Google Play!";
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(function() {
+          if (toast) toast.textContent = doneMsg;
+        }).catch(function() {
+          fallbackCopyText(url, toast, doneMsg);
+        });
+      } else {
+        fallbackCopyText(url, toast, doneMsg);
+      }
+    }
+
+    function fallbackCopyText(text, toast, doneMsg) {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand("copy");
+        if (toast) toast.textContent = doneMsg;
+      } catch (e) {}
+      document.body.removeChild(ta);
     }
 
     (function initOneLink() {
       var params = new URLSearchParams(window.location.search);
       var qLang = params.get("lang");
       var preview = params.get("preview") === "1" || params.get("no_redirect") === "1";
+      var osOverride = params.get("os");
 
-      if (qLang === "ko") {
-        setLang("ko");
-      } else {
-        setLang("vi");
+      if (preview) {
+        document.body.classList.add("qa-preview");
       }
+      setLang(qLang === "ko" ? "ko" : "vi");
 
       var detected = detectTargetPlatform(navigator.userAgent, navigator.platform, navigator.maxTouchPoints);
-      var banner = document.getElementById("redirect-banner");
+      var effectiveOs = (osOverride === "android" || osOverride === "ios" || osOverride === "desktop") ? osOverride : detected.os;
 
       if (preview || qLang === "ko") {
+        var banner = document.getElementById("redirect-banner");
         if (banner) banner.classList.add("visible");
+        applyPlatformState(effectiveOs, false);
         return;
       }
 
-      if (detected.url) {
-        if (banner) {
-          banner.classList.add("visible");
-          var msgVi = document.getElementById("redirect-msg-vi");
-          if (msgVi) {
-            msgVi.textContent = detected.os === "ios"
-              ? "Đang chuyển đến App Store (iPhone / iPad)... Nếu chưa tự mở, hãy bấm nút App Store bên dưới."
-              : "Đang chuyển đến Google Play (Android)... Nếu chưa tự mở, hãy bấm nút Google Play bên dưới.";
-          }
-        }
-        window.setTimeout(function() {
-          try {
-            window.location.replace(detected.url);
-          } catch (e) {
-            window.location.href = detected.url;
-          }
-        }, 120);
-      }
+      applyPlatformState(effectiveOs, effectiveOs === "android");
     })();
   </script>
 </body>

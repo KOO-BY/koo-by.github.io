@@ -1,0 +1,1088 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <title>Tính Giá Vốn 1688 / Taobao (Kg vs CBM) Miễn Phí — Chuẩn Mùa Tết 2027</title>
+  <meta name="description" content="Công cụ tính giá vốn nhập hàng 1688, Taobao, Quảng Châu miễn phí: quy đổi tỷ giá CNY-VND, tự động so sánh cước cân nặng (kg) và thể tích (m³ CBM), phân bổ phí đóng gỗ &amp; nội địa TQ, mô phỏng giá bán sỉ/lẻ và phí sàn TMĐT.">
+  <meta name="keywords" content="tính giá vốn 1688, tính cbm hàng trung quốc, tính khối 1688, so sánh cước kg và cbm, nhập hàng quảng châu tết 2027, tính giá nhập hàng taobao">
+  <link rel="canonical" href="https://koo-by.github.io/vn-baogia/tinh-cbm-1688/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://koo-by.github.io/vn-baogia/tinh-cbm-1688/">
+  <meta property="og:title" content="Tính Giá Vốn 1688 / Taobao (Kg vs CBM) Miễn Phí — Tránh Lỗ Ngầm Tiền Khối">
+  <meta property="og:description" content="Nhập giá tệ, tỷ giá, cân nặng kg và kích thước kiện hàng để tự động so sánh cước Kg vs CBM, chia đều phí đóng gỗ &amp; ra giá bán sỉ mục tiêu trong 3 giây.">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Công Cụ Tính Giá Vốn 1688 Kg vs CBM — Báo Giá & Tính Giá Nhập Hàng",
+    "operatingSystem": "Web, ANDROID",
+    "applicationCategory": "BusinessApplication",
+    "inLanguage": "vi",
+    "url": "https://koo-by.github.io/vn-baogia/tinh-cbm-1688/",
+    "installUrl": "https://play.google.com/store/apps/details?id=com.knowledgestudio.vn.app_02_baogia_nhaphang&hl=vi&gl=VN",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "VND"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Jisik Gongbang"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Cách tính số khối (CBM) hàng nhập 1688 / Taobao như thế nào?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Công thức chuẩn là: Số khối CBM (m³) = (Dài cm × Rộng cm × Cao cm) / 1.000.000 × Số kiện. Ví dụ thùng hàng 60×40×40 cm có thể tích là 0,096 m³."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Khi nào đơn vị vận chuyển Trung - Việt tính cước theo CBM thay vì kg?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Các đơn vị vận chuyển thường so sánh tiền cước theo cân nặng thực tế (kg × đơn giá/kg) và tiền cước theo thể tích (CBM × đơn giá/m³), sau đó áp dụng mức nào cao hơn. Hàng nhẹ nhưng cồng kềnh như áo phao, giày dép, đồ gia dụng nhựa rất dễ bị tính theo CBM."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Tại sao cần cộng và chia đều phí đóng gỗ, nội địa Trung Quốc vào giá vốn?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nếu chỉ cộng tiền hàng và cước quốc tế mà quên phí đóng gỗ, phí kiểm đếm, ship nội địa TQ hoặc phí mua hộ, giá vốn thực tế có thể đội thêm 5% đến 15%, gây lỗ ngầm khi chốt giá sỉ."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Làm sao để gộp nhiều sản phẩm chung 1 lô hàng và gửi báo giá Zalo kèm VietQR?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Công cụ web này tính nhanh cho từng mã hàng. Để gộp nhiều sản phẩm chung 1 lô (tự động phân bổ phí chung theo tỷ lệ giá trị), lưu dữ liệu 100% Offline không cần mạng và chuyển 1 chạm sang báo giá sỉ Zalo có dấu đỏ & mã VietQR 18 ngân hàng, bạn có thể cài ứng dụng Android Báo Giá & Tính Giá Nhập Hàng trên Google Play."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ứng dụng có thay thế hóa đơn điện tử cơ quan thuế theo Nghị định 70/2025/NĐ-CP không?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Không. Công cụ và ứng dụng chuyên dùng để tính giá vốn nhập hàng, lập báo giá sỉ trước chốt đơn trên Zalo, phiếu xuất kho nội bộ 3 bên và sổ công nợ cá nhân; không thay thế hóa đơn điện tử kết nối cơ quan thuế theo Nghị định 70/2025/NĐ-CP."
+        }
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --jade-900: #062825;
+      --jade-800: #0d4a46;
+      --jade-700: #0f766e;
+      --jade-50: #f0fdfa;
+      --bg: #f1f5f4;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --border: #d9e2ec;
+      --gold: #f59e0b;
+      --gold-soft: #fef3c7;
+      --red-soft: #fef2f2;
+      --red-bd: #fca5a5;
+      --red-txt: #b91c1c;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", "Malgun Gothic", sans-serif;
+      background: linear-gradient(180deg, #062825 0%, #0d4a46 250px, #f1f5f4 250px, #f1f5f4 100%);
+      color: var(--text);
+      line-height: 1.55;
+      min-height: 100vh;
+    }
+    .wrap {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 18px 16px 56px;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .brand-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      color: #f0fdfa;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .brand-pill:hover { background: rgba(255, 255, 255, 0.22); }
+    .lang-switch {
+      display: inline-flex;
+      background: rgba(15, 23, 42, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 999px;
+      padding: 3px;
+      gap: 4px;
+    }
+    .lang-btn {
+      appearance: none;
+      border: 0;
+      background: transparent;
+      color: #e2e8f0;
+      font-size: 12.5px;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+    .lang-btn.active {
+      background: #ffffff;
+      color: #062825;
+    }
+    .hero-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px 24px 20px;
+      box-shadow: 0 16px 36px rgba(6, 40, 37, 0.12);
+      margin-bottom: 18px;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: var(--gold-soft);
+      color: #92400e;
+      border: 1px solid #fcd34d;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 8px;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 25px;
+      line-height: 1.25;
+      color: #0f172a;
+      font-weight: 800;
+    }
+    .subtitle {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 14.5px;
+    }
+    .presets {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .preset-btn {
+      appearance: none;
+      border: 1px solid #99f6e4;
+      background: var(--jade-50);
+      color: var(--jade-800);
+      font-size: 12.5px;
+      font-weight: 700;
+      padding: 7px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+    .preset-btn:hover, .preset-btn.active {
+      background: var(--jade-700);
+      color: #ffffff;
+      border-color: var(--jade-700);
+    }
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 18px;
+      align-items: start;
+    }
+    @media (max-width: 860px) {
+      .calc-grid { grid-template-columns: 1fr; }
+      h1 { font-size: 21px; }
+    }
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.05);
+    }
+    .panel h2 {
+      margin: 0 0 14px;
+      font-size: 16.5px;
+      color: var(--jade-800);
+      font-weight: 800;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 10px;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    @media (max-width: 520px) {
+      .form-grid { grid-template-columns: 1fr; }
+    }
+    .field { display: flex; flex-direction: column; gap: 4px; }
+    .field.full { grid-column: 1 / -1; }
+    .field label {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #334155;
+    }
+    .field input, .field select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 10px;
+      font-size: 14.5px;
+      font-weight: 600;
+      color: #0f172a;
+      background: #ffffff;
+      font-family: inherit;
+    }
+    .field input:focus, .field select:focus {
+      outline: none;
+      border-color: var(--jade-700);
+      box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.14);
+    }
+    .field .hint {
+      font-size: 11.5px;
+      color: #64748b;
+    }
+    .dim-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+    @media (max-width: 520px) {
+      .dim-row { grid-template-columns: repeat(2, 1fr); }
+    }
+    .result-hero {
+      background: linear-gradient(135deg, #062825, #0f766e);
+      color: #ffffff;
+      border-radius: 16px;
+      padding: 18px;
+      margin-bottom: 14px;
+    }
+    .result-hero .lbl {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #a7f3d0;
+    }
+    .result-hero .big-num {
+      font-size: 31px;
+      font-weight: 800;
+      line-height: 1.2;
+      margin: 4px 0 6px;
+      font-variant-numeric: tabular-nums;
+    }
+    .result-hero .sub-row {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 13px;
+      color: #e2e8f0;
+    }
+    .freight-badge {
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    .freight-badge.cbm {
+      background: var(--gold-soft);
+      color: #92400e;
+      border: 1px solid #fcd34d;
+    }
+    .freight-badge.kg {
+      background: #e0f2fe;
+      color: #075985;
+      border: 1px solid #7dd3fc;
+    }
+    .loss-alert {
+      background: var(--red-soft);
+      border: 1px solid var(--red-bd);
+      color: var(--red-txt);
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-size: 13px;
+      margin-bottom: 14px;
+      display: none;
+    }
+    .loss-alert.visible { display: block; }
+    .breakdown-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.5px;
+      margin-bottom: 14px;
+    }
+    .breakdown-table td {
+      padding: 7px 4px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .breakdown-table td:last-child {
+      text-align: right;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+    }
+    .breakdown-table tr.total td {
+      border-top: 2px solid #0f766e;
+      border-bottom: 0;
+      font-weight: 800;
+      color: #062825;
+      padding-top: 10px;
+    }
+    .sell-box {
+      background: var(--jade-50);
+      border: 1.5px solid #99f6e4;
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin-bottom: 14px;
+    }
+    .sell-box .sell-price {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--jade-800);
+      margin: 2px 0;
+    }
+    .actions-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+    .btn-secondary {
+      appearance: none;
+      border: 1px solid #cbd5e1;
+      background: #f8fafc;
+      color: #0f172a;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 10px 14px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .btn-secondary:hover { background: #e2e8f0; }
+    .cta-box {
+      background: linear-gradient(135deg, #062825, #0d4a46);
+      color: #ffffff;
+      border-radius: 16px;
+      padding: 18px;
+      margin-top: 12px;
+    }
+    .cta-box h3 { margin: 0 0 6px; font-size: 16.5px; color: #fde68a; }
+    .cta-box p { margin: 0 0 12px; font-size: 13.5px; color: #e2e8f0; }
+    .play-cta-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      text-decoration: none;
+      background: #10b981;
+      color: #062825;
+      font-weight: 800;
+      font-size: 15px;
+      padding: 13px 16px;
+      border-radius: 12px;
+    }
+    .play-cta-btn:hover { background: #34d399; }
+    .seo-section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px 24px;
+      margin-top: 18px;
+    }
+    .seo-section h2 {
+      margin: 0 0 12px;
+      font-size: 18px;
+      color: var(--jade-800);
+    }
+    .faq-item {
+      border-bottom: 1px solid #e2e8f0;
+      padding: 12px 0;
+    }
+    .faq-item:last-child { border-bottom: 0; }
+    .faq-item h3 { margin: 0 0 5px; font-size: 15px; color: #0f172a; }
+    .faq-item p { margin: 0; font-size: 14px; color: var(--muted); }
+    .compliance-note {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-size: 12.5px;
+      color: #78350f;
+      margin-top: 16px;
+    }
+    .footer {
+      margin-top: 20px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 12.5px;
+      color: var(--muted);
+    }
+    .footer a { color: var(--jade-700); text-decoration: none; font-weight: 700; }
+    [data-lang] { display: none; }
+    body.lang-vi [data-lang="vi"] { display: block; }
+    body.lang-ko [data-lang="ko"] { display: block; }
+    body.lang-vi span[data-lang="vi"],
+    body.lang-ko span[data-lang="ko"] { display: inline; }
+  </style>
+</head>
+<body class="lang-vi">
+  <div class="wrap">
+    <div class="topbar">
+      <div class="nav-left">
+        <a id="back-onelink" class="brand-pill" href="/vn-baogia/?utm_source=seo_web_calc&amp;utm_medium=nav&amp;utm_campaign=tet2027">
+          <span data-lang="vi">← Báo Giá &amp; Tính Giá Nhập Hàng (Android App)</span>
+          <span data-lang="ko">← Google Play 스마트 원링크로 돌아가기</span>
+        </a>
+      </div>
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button id="btn-vi" class="lang-btn active" type="button" onclick="setLang('vi')">Tiếng Việt</button>
+        <button id="btn-ko" class="lang-btn" type="button" onclick="setLang('ko')">한국어 검수</button>
+      </div>
+    </div>
+
+    <section class="hero-card">
+      <span class="hero-badge" data-lang="vi">MIỄN PHÍ 100% • TẾT 2027 (06/02) • SO SÁNH CƯỚC KG VS CBM</span>
+      <span class="hero-badge" data-lang="ko">무료 SEO 웹 도구 • 뗏 2027(2/6) 사입 성수기 대비 • KG vs CBM 자동 비교</span>
+
+      <h1 data-lang="vi">Công Cụ Tính Giá Vốn Nhập Hàng 1688 / Taobao (Kg vs CBM)</h1>
+      <h1 data-lang="ko">1688 / 타오바오 사입 도착원가 &amp; 부피(CBM) 무료 계산기</h1>
+
+      <p class="subtitle" data-lang="vi">Đừng chỉ nhẩm <code>(Giá tệ × Tỷ giá + Cước kg)</code> rồi bán hớ! Nhập kích thước kiện hàng để tự động so sánh <strong>cước cân nặng (kg)</strong> và <strong>cước thể tích (m³ CBM)</strong>, chia đều phí đóng gỗ &amp; nội địa TQ chuẩn xác cho từng cái.</p>
+      <p class="subtitle" data-lang="ko"><code>(위안화 × 환율 + kg 운임)</code>만 대충 계산해 적자 보지 않도록, 실측 중량(kg)과 부피(m³ CBM) 운임을 자동 비교하고 목재 패킹비·중국 내륙비를 개당 원가에 정밀 안분합니다.</p>
+
+      <div class="presets">
+        <button class="preset-btn active" id="preset-tet" type="button" onclick="applyPreset('tet')">
+          <span data-lang="vi">🔥 Mẫu Tết 2027: 100 Áo phao (45¥ · 0,55 CBM)</span>
+          <span data-lang="ko">🔥 뗏 2027 성수기 샘플: 패딩 100벌 (45¥ · 0.55 CBM)</span>
+        </button>
+        <button class="preset-btn" id="preset-hanoi" type="button" onclick="applyPreset('hanoi')">
+          <span data-lang="vi">📦 Tuyến Hà Nội (22k/kg · 2,6tr/m³)</span>
+          <span data-lang="ko">📦 하노이 표준 (22k/kg · 2.6M/m³)</span>
+        </button>
+        <button class="preset-btn" id="preset-hcm" type="button" onclick="applyPreset('hcm')">
+          <span data-lang="vi">🚢 Tuyến TP.HCM (30k/kg · 3,4tr/m³)</span>
+          <span data-lang="ko">🚢 호찌민 표준 (30k/kg · 3.4M/m³)</span>
+        </button>
+        <button class="preset-btn" id="preset-direct" type="button" onclick="applyPreset('direct')">
+          <span data-lang="vi">💳 Tự thanh toán (0% mua hộ)</span>
+          <span data-lang="ko">💳 직접 결제 (구매대행 0%)</span>
+        </button>
+      </div>
+    </section>
+
+    <div class="calc-grid">
+      <!-- INPUTS -->
+      <section class="panel" aria-label="Thông số lô hàng 1688">
+        <h2>
+          <span data-lang="vi">1. Nhập thông số lô hàng 1688 / Taobao</span>
+          <span data-lang="ko">1. 1688 / 타오바오 사입 조건 입력</span>
+        </h2>
+        <div class="form-grid">
+          <div class="field full">
+            <label for="inp-name">
+              <span data-lang="vi">Tên mặt hàng (tùy chọn)</span>
+              <span data-lang="ko">품목명 (선택)</span>
+            </label>
+            <input id="inp-name" type="text" value="Áo phao lông vũ Quảng Châu (Tết 2027)" oninput="calculate()">
+          </div>
+
+          <div class="field">
+            <label for="inp-cny">
+              <span data-lang="vi">Giá xưởng 1688 (¥ / cái)</span>
+              <span data-lang="ko">위안화 공장 단가 (¥ / 개)</span>
+            </label>
+            <input id="inp-cny" type="text" inputmode="decimal" value="45" oninput="calculate()">
+          </div>
+
+          <div class="field">
+            <label for="inp-qty">
+              <span data-lang="vi">Số lượng cả lô (cái/bộ)</span>
+              <span data-lang="ko">총 수량 (개/세트)</span>
+            </label>
+            <input id="inp-qty" type="number" min="1" step="1" value="100" oninput="calculate()">
+          </div>
+
+          <div class="field">
+            <label for="inp-rate">
+              <span data-lang="vi">Tỷ giá CNY → VND (₫/¥)</span>
+              <span data-lang="ko">위안화 환율 (₫/¥)</span>
+            </label>
+            <input id="inp-rate" type="text" value="3.620" oninput="calculate()">
+          </div>
+
+          <div class="field">
+            <label for="inp-agency">
+              <span data-lang="vi">Phí dịch vụ mua hộ (%)</span>
+              <span data-lang="ko">구매대행 수수료 (%)</span>
+            </label>
+            <input id="inp-agency" type="text" inputmode="decimal" value="0" oninput="calculate()">
+          </div>
+
+          <div class="field">
+            <label for="inp-inland">
+              <span data-lang="vi">Ship nội địa TQ cả lô (¥)</span>
+              <span data-lang="ko">중국 내륙 배송비 (¥)</span>
+            </label>
+            <input id="inp-inland" type="text" inputmode="decimal" value="0" oninput="calculate()">
+          </div>
+
+          <div class="field">
+            <label for="inp-shared">
+              <span data-lang="vi">Phí đóng gỗ, kiểm đếm &amp; xe tải VN (₫)</span>
+              <span data-lang="ko">목재 패킹·검수·국내 화물비 합계 (₫)</span>
+            </label>
+            <input id="inp-shared" type="text" value="1.250.000" oninput="calculate()">
+            <span class="hint">
+              <span data-lang="vi">Hỗ trợ gõ tắt kiểu Zalo: 1tr250, 500k, 800ng</span>
+              <span data-lang="ko">Zalo 축약어 지원: 1tr250, 500k 등</span>
+            </span>
+          </div>
+
+          <div class="field">
+            <label for="inp-weight">
+              <span data-lang="vi">Tổng cân nặng thực tế (kg)</span>
+              <span data-lang="ko">총 실측 무게 (kg)</span>
+            </label>
+            <input id="inp-weight" type="text" inputmode="decimal" value="42" oninput="calculate()">
+          </div>
+
+          <div class="field">
+            <label for="inp-rate-kg">
+              <span data-lang="vi">Đơn giá cước cân nặng (₫/kg)</span>
+              <span data-lang="ko">kg당 운임 단가 (₫/kg)</span>
+            </label>
+            <input id="inp-rate-kg" type="text" value="28.000" oninput="calculate()">
+          </div>
+
+          <div class="field full">
+            <label>
+              <span data-lang="vi">Kích thước thùng hàng (Dài × Rộng × Cao cm × Số kiện) → Tự tính CBM</span>
+              <span data-lang="ko">박스 규격 (가로 × 세로 × 높이 cm × 박스 수) → CBM 자동 계산</span>
+            </label>
+            <div class="dim-row">
+              <input id="inp-len" type="number" min="0" step="1" placeholder="Dài cm" value="100" oninput="syncCbmFromDims()">
+              <input id="inp-wid" type="number" min="0" step="1" placeholder="Rộng cm" value="100" oninput="syncCbmFromDims()">
+              <input id="inp-hei" type="number" min="0" step="1" placeholder="Cao cm" value="55" oninput="syncCbmFromDims()">
+              <input id="inp-boxes" type="number" min="1" step="1" placeholder="Kiện" value="1" oninput="syncCbmFromDims()">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="inp-cbm">
+              <span data-lang="vi">Hoặc nhập thẳng tổng m³ (CBM)</span>
+              <span data-lang="ko">또는 총 부피(CBM m³) 직접 입력</span>
+            </label>
+            <input id="inp-cbm" type="text" inputmode="decimal" value="0.55" oninput="calculate()">
+          </div>
+
+          <div class="field">
+            <label for="inp-rate-cbm">
+              <span data-lang="vi">Đơn giá cước thể tích (₫/m³ CBM)</span>
+              <span data-lang="ko">CBM(m³)당 운임 단가 (₫/m³)</span>
+            </label>
+            <input id="inp-rate-cbm" type="text" value="3.200.000" oninput="calculate()">
+          </div>
+
+          <div class="field full">
+            <label for="inp-mode">
+              <span data-lang="vi">Quy tắc tính cước vận chuyển Trung - Việt</span>
+              <span data-lang="ko">운임 적용 방식</span>
+            </label>
+            <select id="inp-mode" onchange="calculate()">
+              <option value="auto">Tự động so sánh — Lấy mức cao hơn giữa Kg &amp; CBM (Chuẩn nhà xe)</option>
+              <option value="kg">Chỉ tính theo Cân nặng (Kg)</option>
+              <option value="cbm">Chỉ tính theo Thể tích (m³ CBM)</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="inp-margin">
+              <span data-lang="vi">Lãi ròng mục tiêu (% trên giá bán)</span>
+              <span data-lang="ko">목표 순마진율 (% / 판매가 기준)</span>
+            </label>
+            <input id="inp-margin" type="number" min="0" max="80" step="1" value="25" oninput="calculate()">
+          </div>
+
+          <div class="field">
+            <label for="inp-mktfee">
+              <span data-lang="vi">Phí sàn Shopee / TikTok (%) (nếu có)</span>
+              <span data-lang="ko">마켓 수수료 (%) (선택)</span>
+            </label>
+            <input id="inp-mktfee" type="number" min="0" max="45" step="0.5" value="0" oninput="calculate()">
+          </div>
+        </div>
+      </section>
+
+      <!-- RESULTS -->
+      <section class="panel" aria-live="polite">
+        <h2>
+          <span data-lang="vi">2. Kết quả giá vốn về kho &amp; giá bán đề xuất</span>
+          <span data-lang="ko">2. 도착원가 산출 결과 및 판매가 시뮬레이션</span>
+        </h2>
+
+        <div class="result-hero">
+          <div class="lbl">
+            <span data-lang="vi">GIÁ VỐN THỰC TẾ VỀ KHO / 1 SẢN PHẨM</span>
+            <span data-lang="ko">실제 창고 도착 원가 / 1개당</span>
+          </div>
+          <div class="big-num" id="out-unit-cost">193.000 ₫</div>
+          <div class="sub-row">
+            <span><span data-lang="vi">Tổng vốn cả lô:</span><span data-lang="ko">총 사입원가:</span> <strong id="out-total-cost">19.300.000 ₫</strong></span>
+            <span><span data-lang="vi">CBM lô:</span><span data-lang="ko">총 부피:</span> <strong id="out-cbm">0,550 m³</strong></span>
+          </div>
+        </div>
+
+        <div id="out-freight-badge" class="freight-badge cbm">ÁP DỤNG CƯỚC THỂ TÍCH (CBM) — Cao hơn Kg +584.000 ₫</div>
+
+        <div id="out-loss-alert" class="loss-alert visible">
+          <strong>⚠️ Cảnh báo lỗ ngầm:</strong> Nếu chỉ nhẩm theo Kg &amp; quên đóng gỗ, bạn tưởng giá vốn chỉ <strong id="out-naive-unit">174.660 ₫</strong> — thực tế bị đội thêm <strong id="out-hidden-diff">+18.340 ₫/cái</strong> (<strong id="out-hidden-batch">+1.834.000 ₫</strong> cả lô)!
+        </div>
+
+        <table class="breakdown-table">
+          <tbody>
+            <tr>
+              <td><span data-lang="vi">Tiền hàng (Giá tệ × SL × Tỷ giá)</span><span data-lang="ko">물품 대금 (CNY × 수량 × 환율)</span></td>
+              <td id="out-product-vnd">16.290.000 ₫</td>
+            </tr>
+            <tr>
+              <td><span data-lang="vi">Phí mua hộ + Ship nội địa TQ</span><span data-lang="ko">구매대행 수수료 + 중국 내륙비</span></td>
+              <td id="out-agency-inland">0 ₫</td>
+            </tr>
+            <tr>
+              <td><span data-lang="vi">Cước theo cân nặng (Kg)</span><span data-lang="ko">실측 중량(kg) 기준 운임</span></td>
+              <td id="out-kg-freight">1.176.000 ₫</td>
+            </tr>
+            <tr>
+              <td><span data-lang="vi">Cước theo thể tích (CBM)</span><span data-lang="ko">부피(CBM) 기준 운임</span></td>
+              <td id="out-cbm-freight">1.760.000 ₫</td>
+            </tr>
+            <tr>
+              <td><span data-lang="vi">Cước quốc tế thực tế áp dụng</span><span data-lang="ko">실제 적용 국제 운임</span></td>
+              <td id="out-eff-freight">1.760.000 ₫</td>
+            </tr>
+            <tr>
+              <td><span data-lang="vi">Đóng gỗ, kiểm đếm &amp; chi phí chung</span><span data-lang="ko">목재 패킹 · 공동경비 합계</span></td>
+              <td id="out-shared-vnd">1.250.000 ₫</td>
+            </tr>
+            <tr class="total">
+              <td><span data-lang="vi">Tổng giá vốn cả lô về kho</span><span data-lang="ko">총 창고 도착 원가</span></td>
+              <td id="out-total-cost-row">19.300.000 ₫</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="sell-box">
+          <div style="font-size:12.5px;font-weight:700;color:#0d4a46;">
+            <span data-lang="vi">GIÁ BÁN ĐỀ XUẤT (ĐẠT LÃI RÒNG <span id="out-margin-lbl">25%</span> SAU PHÍ SÀN)</span>
+            <span data-lang="ko">목표 순마진 <span id="out-margin-lbl-ko">25%</span> 기준 권장 판매가</span>
+          </div>
+          <div class="sell-price" id="out-sell-price">257.333 ₫ / cái</div>
+          <div style="font-size:12.5px;color:#334155;">
+            <span data-lang="vi">Lãi ròng/cái: <strong id="out-unit-profit">64.333 ₫</strong> • Tổng lãi cả lô: <strong id="out-total-profit">6.433.333 ₫</strong> • (Cộng markup +<span id="out-markup-pct">25%</span>: <strong id="out-markup-price">241.250 ₫</strong>)</span>
+            <span data-lang="ko">개당 순이익: <strong id="out-unit-profit-ko">64.333 ₫</strong> • 총 이익: <strong id="out-total-profit-ko">6.433.333 ₫</strong></span>
+          </div>
+        </div>
+
+        <div class="actions-row">
+          <button class="btn-secondary" id="btn-copy-summary" type="button" onclick="copySummary()">
+            <span data-lang="vi">📋 Sao chép bảng tính gửi Zalo</span>
+            <span data-lang="ko">📋 계산 결과 요약 복사 (Zalo용)</span>
+          </button>
+          <span id="copy-calc-toast" style="font-size:12.5px;font-weight:700;color:#0f766e;align-self:center;"></span>
+        </div>
+
+        <div class="cta-box">
+          <h3>
+            <span data-lang="vi">Cần gộp nhiều mã hàng 1688 chung 1 lô &amp; xuất Báo giá Zalo?</span>
+            <span data-lang="ko">여러 1688 품목 합배송 안분 + Zalo 견적서·VietQR 1-Tap 전환이 필요하신가요?</span>
+          </h3>
+          <p>
+            <span data-lang="vi">Trên app Android <strong>Báo Giá &amp; Tính Giá Nhập Hàng</strong>: tự động chia phí chung cho <strong>nhiều mặt hàng cùng lô</strong>, lưu bảng giá 100% Offline không mất dữ liệu &amp; bấm 1 chạm chuyển sang <strong>Phiếu Báo Giá Zalo có dấu đỏ + mã VietQR 18 ngân hàng</strong>!</span>
+            <span data-lang="ko">Android 앱에서는 <strong>여러 품목 합배송 공동경비 자동 안분</strong>, 오프라인 영구 저장, 1-Tap으로 <strong>Zalo 적색 직인 견적서 + 18개 은행 VietQR</strong> 전송까지 한 번에 끝납니다.</span>
+          </p>
+          <a id="cta-play-link" class="play-cta-btn" href="https://play.google.com/store/apps/details?id=com.knowledgestudio.vn.app_02_baogia_nhaphang&amp;hl=vi&amp;gl=VN&amp;referrer=utm_source%3Dseo_web_calc%26utm_medium%3Dtool_1688_cbm%26utm_campaign%3Dtet2027" rel="noopener">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M3.609 1.814L13.792 12 3.61 22.186a1.77 1.77 0 0 1-.495-1.253V3.067c0-.487.185-.94.494-1.253zm11.24 11.243l2.742 2.743-11.27 6.38 8.528-9.123zm3.658-2.094l2.433 1.378c.747.423.747 1.495 0 1.918l-2.433 1.378-3.035-3.037 3.035-1.637zM6.32 1.82l11.27 6.38-2.742 2.743L6.32 1.82z"/>
+            </svg>
+            <span data-lang="vi">Tải App Miễn Phí Trên Google Play (Android)</span>
+            <span data-lang="ko">Google Play에서 무료 다운로드 (Android VN)</span>
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <section class="seo-section">
+      <h2>
+        <span data-lang="vi">Hướng dẫn tính giá vốn 1688 &amp; Hỏi đáp thường gặp (Cập nhật mùa Tết 2027)</span>
+        <span data-lang="ko">1688 사입원가 · CBM 계산 가이드 및 FAQ (Nghị định 70/2025 준수)</span>
+      </h2>
+      <div class="faq-item">
+        <h3>1. Công thức tính số khối (CBM) khi nhập hàng Trung Quốc 1688 / Taobao là gì?</h3>
+        <p>Thể tích 1 kiện (m³) = <code>(Dài cm × Rộng cm × Cao cm) / 1.000.000</code>. Sau đó nhân với số kiện để ra tổng CBM cả lô. Ví dụ kiện áo phao mùa Tết kích thước 100×100×55 cm tương đương <code>0,55 m³</code>.</p>
+      </div>
+      <div class="faq-item">
+        <h3>2. Vì sao hàng cồng kềnh mùa Tết 2027 hay bị đội giá vốn?</h3>
+        <p>Quần áo mùa đông, áo phao, giày dép, túi xách hoặc đồ gia dụng nhẹ nhưng chiếm nhiều thể tích trên xe container thường bị nhà xe tính theo cước thể tích (CBM) cao hơn 30%–60% so với cước cân nặng (kg), cộng thêm phí đóng gỗ chống móp.</p>
+      </div>
+      <div class="faq-item">
+        <h3>3. Điểm khác biệt giữa Markup trên giá vốn và Biên lợi nhuận ròng trên giá bán?</h3>
+        <p>Ví dụ giá vốn <code>193.000 ₫</code>: nếu cộng Markup +25% lên giá vốn sẽ ra <code>241.250 ₫</code> (lãi 48.250 ₫, chiếm 20% doanh thu). Nếu muốn giữ <strong>lãi ròng 25% trên giá bán</strong> (đặc biệt khi bán sàn Shopee/TikTok có phí sàn), công thức chuẩn là <code>Giá vốn / (1 - %Lãi - %Phí sàn) = 257.333 ₫</code>.</p>
+      </div>
+      <div class="faq-item">
+        <h3>4. Công cụ có lưu dữ liệu giá nhập hay nguồn hàng lên máy chủ không?</h3>
+        <p>Không. Toàn bộ phép tính chạy 100% ngay trên trình duyệt của bạn. Phiên bản app Android <strong>Báo Giá &amp; Tính Giá Nhập Hàng</strong> cũng chạy 100% Offline không cần đăng nhập để bảo vệ tuyệt đối bí mật nguồn hàng của chủ shop.</p>
+      </div>
+
+      <div class="compliance-note" data-lang="vi">
+        <strong>Lưu ý phạm vi sử dụng (Nghị định 70/2025/NĐ-CP):</strong> Công cụ web và ứng dụng Android chuyên dùng cho <em>tính giá vốn nhập hàng 1688/Taobao, lập báo giá sỉ trước chốt đơn trên Zalo, phiếu xuất kho nội bộ 3 bên và sổ công nợ cá nhân</em> — <strong>không thay thế hóa đơn điện tử kết nối cơ quan thuế</strong> theo Nghị định 70/2025/NĐ-CP.
+      </div>
+      <div class="compliance-note" data-lang="ko">
+        <strong>법적 포지셔닝 안내 (Nghị định 70/2025 준수):</strong> 본 웹 계산기 및 Android 앱은 <em>1688/타오바오 사입원가 산출, 거래 확정 전 Zalo 도매 견적, 창고 출고증 및 프라이빗 외상 장부</em> 전용이며 국세청 직결 전자세금계산서를 대체하지 않습니다.
+      </div>
+
+      <div class="footer">
+        <span>Jisik Gongbang • Công cụ miễn phí cho dân buôn Việt Nam</span>
+        <div>
+          <a href="/vn-baogia/">Trang tải App Android</a> ·
+          <a href="https://koo-by.github.io/privacy_vn.html">Chính sách bảo mật</a> ·
+          <a href="https://koo-by.github.io/terms_vn.html">Điều khoản sử dụng</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    var PRESETS = {
+      tet: {
+        name: "Áo phao lông vũ Quảng Châu (Tết 2027)",
+        cny: "45", qty: 100, rate: "3.620", agency: "0", inland: "0",
+        shared: "1.250.000", weight: "42", rateKg: "28.000",
+        len: 100, wid: 100, hei: 55, boxes: 1, cbm: "0.55", rateCbm: "3.200.000",
+        mode: "auto", margin: 25, mktfee: 0
+      },
+      hanoi: {
+        name: "Áo khoác gió chống nước 1688",
+        cny: "28.5", qty: 100, rate: "3.650", agency: "3", inland: "20",
+        shared: "50.000", weight: "25", rateKg: "22.000",
+        len: 60, wid: 40, hei: 40, boxes: 1, cbm: "0.096", rateCbm: "2.600.000",
+        mode: "auto", margin: 35, mktfee: 0
+      },
+      hcm: {
+        name: "Áo khoác gió chống nước 1688 (Kho HCM)",
+        cny: "28.5", qty: 100, rate: "3.650", agency: "3", inland: "20",
+        shared: "50.000", weight: "25", rateKg: "30.000",
+        len: 60, wid: 40, hei: 40, boxes: 1, cbm: "0.096", rateCbm: "3.400.000",
+        mode: "auto", margin: 35, mktfee: 0
+      },
+      direct: {
+        name: "Lô hàng tự thanh toán tệ 1688",
+        cny: "35", qty: 80, rate: "3.620", agency: "0", inland: "15",
+        shared: "0", weight: "20", rateKg: "25.000",
+        len: 50, wid: 40, hei: 40, boxes: 1, cbm: "0.08", rateCbm: "2.900.000",
+        mode: "auto", margin: 30, mktfee: 0
+      }
+    };
+
+    function parseDecimal(raw, fallback) {
+      var s = String(raw || "").trim().replace(/\s+/g, "");
+      if (!s) return fallback;
+      if (s.indexOf(",") !== -1 && s.indexOf(".") === -1) {
+        s = s.replace(",", ".");
+      } else {
+        s = s.replace(/,/g, "");
+      }
+      var n = parseFloat(s);
+      return isFinite(n) && n >= 0 ? n : fallback;
+    }
+
+    function parseVnd(raw, fallback) {
+      var s = String(raw || "").trim().toLowerCase()
+        .replace(/đồng|dong|vnd|₫|đ/g, "")
+        .replace(/\s+/g, "");
+      if (!s) return fallback;
+
+      // Support Zalo shorthand: 1tr250, 1tr5, 1,5tr, 50k, 200ng, 5cu, 1ty2
+      var mMid = s.match(/^(\d+)(tr|triệu|trieu|ty|tỷ|củ|cu|k|ng|nghìn|nghin|ngàn|ngan)(\d+)$/);
+      if (mMid) {
+        var mult = 1000;
+        if (/^(tr|triệu|trieu|củ|cu)$/.test(mMid[2])) mult = 1000000;
+        else if (/^(ty|tỷ)$/.test(mMid[2])) mult = 1000000000;
+        var val = parseFloat(mMid[1] + "." + mMid[3]) * mult;
+        return isFinite(val) ? Math.round(val) : fallback;
+      }
+
+      var mSuf = s.match(/^([\d.,]+)(tr|triệu|trieu|ty|tỷ|củ|cu|k|ng|nghìn|nghin|ngàn|ngan)$/);
+      if (mSuf) {
+        var base = parseFloat(mSuf[1].replace(",", "."));
+        var mult2 = 1000;
+        if (/^(tr|triệu|trieu|củ|cu)$/.test(mSuf[2])) mult2 = 1000000;
+        else if (/^(ty|tỷ)$/.test(mSuf[2])) mult2 = 1000000000;
+        var val2 = base * mult2;
+        return isFinite(val2) ? Math.round(val2) : fallback;
+      }
+
+      // Standard VND thousands separators ('3.620', '1.250.000', '28,000')
+      var digits = s.replace(/[.,]/g, "");
+      var n = parseFloat(digits);
+      return isFinite(n) && n >= 0 ? Math.round(n) : fallback;
+    }
+
+    function fmtVnd(val) {
+      var rounded = Math.round(val || 0);
+      return rounded.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + " ₫";
+    }
+
+    function setLang(lang) {
+      var target = lang === "ko" ? "ko" : "vi";
+      document.body.className = "lang-" + target;
+      document.documentElement.lang = target;
+      var bv = document.getElementById("btn-vi");
+      var bk = document.getElementById("btn-ko");
+      if (bv) bv.classList.toggle("active", target === "vi");
+      if (bk) bk.classList.toggle("active", target === "ko");
+      var back = document.getElementById("back-onelink");
+      if (back) {
+        back.href = "/vn-baogia/?utm_source=seo_web_calc&utm_medium=nav&utm_campaign=tet2027" + (target === "ko" ? "&lang=ko" : "");
+      }
+      calculate();
+    }
+
+    function applyPreset(key) {
+      var p = PRESETS[key];
+      if (!p) return;
+      ["tet", "hanoi", "hcm", "direct"].forEach(function(id) {
+        var el = document.getElementById("preset-" + id);
+        if (el) el.classList.toggle("active", id === key);
+      });
+      document.getElementById("inp-name").value = p.name;
+      document.getElementById("inp-cny").value = p.cny;
+      document.getElementById("inp-qty").value = p.qty;
+      document.getElementById("inp-rate").value = p.rate;
+      document.getElementById("inp-agency").value = p.agency;
+      document.getElementById("inp-inland").value = p.inland;
+      document.getElementById("inp-shared").value = p.shared;
+      document.getElementById("inp-weight").value = p.weight;
+      document.getElementById("inp-rate-kg").value = p.rateKg;
+      document.getElementById("inp-len").value = p.len;
+      document.getElementById("inp-wid").value = p.wid;
+      document.getElementById("inp-hei").value = p.hei;
+      document.getElementById("inp-boxes").value = p.boxes;
+      document.getElementById("inp-cbm").value = p.cbm;
+      document.getElementById("inp-rate-cbm").value = p.rateCbm;
+      document.getElementById("inp-mode").value = p.mode;
+      document.getElementById("inp-margin").value = p.margin;
+      document.getElementById("inp-mktfee").value = p.mktfee;
+      calculate();
+    }
+
+    function syncCbmFromDims() {
+      var l = parseDecimal(document.getElementById("inp-len").value, 0);
+      var w = parseDecimal(document.getElementById("inp-wid").value, 0);
+      var h = parseDecimal(document.getElementById("inp-hei").value, 0);
+      var b = Math.max(1, Math.round(parseDecimal(document.getElementById("inp-boxes").value, 1)));
+      var cbm = ((l * w * h) / 1000000.0) * b;
+      document.getElementById("inp-cbm").value = cbm.toFixed(3).replace(/\.?0+$/, "");
+      calculate();
+    }
+
+    var LAST_RESULT = {};
+
+    function calculate() {
+      var isKo = document.body.classList.contains("lang-ko");
+      var unitCny = parseDecimal(document.getElementById("inp-cny").value, 0);
+      var qty = Math.max(1, Math.round(parseDecimal(document.getElementById("inp-qty").value, 1)));
+      var rate = parseVnd(document.getElementById("inp-rate").value, 3620);
+      var agencyPct = Math.min(30, Math.max(0, parseDecimal(document.getElementById("inp-agency").value, 0)));
+      var inlandCny = parseDecimal(document.getElementById("inp-inland").value, 0);
+      var sharedVnd = parseVnd(document.getElementById("inp-shared").value, 0);
+      var weightKg = parseDecimal(document.getElementById("inp-weight").value, 0);
+      var rateKg = parseVnd(document.getElementById("inp-rate-kg").value, 0);
+      var totalCbm = parseDecimal(document.getElementById("inp-cbm").value, 0);
+      var rateCbm = parseVnd(document.getElementById("inp-rate-cbm").value, 0);
+      var mode = document.getElementById("inp-mode").value || "auto";
+      var marginPct = Math.min(85, Math.max(0, parseDecimal(document.getElementById("inp-margin").value, 25)));
+      var mktFeePct = Math.min(45, Math.max(0, parseDecimal(document.getElementById("inp-mktfee").value, 0)));
+
+      var productVnd = unitCny * qty * rate;
+      var inlandVnd = inlandCny * rate;
+      var agencyVnd = productVnd * (agencyPct / 100.0);
+      var kgFreight = weightKg * rateKg;
+      var cbmFreight = totalCbm * rateCbm;
+
+      var effFreight = kgFreight;
+      var isCbmUsed = false;
+      if (mode === "cbm") {
+        effFreight = cbmFreight;
+        isCbmUsed = true;
+      } else if (mode === "kg") {
+        effFreight = kgFreight;
+        isCbmUsed = false;
+      } else {
+        isCbmUsed = cbmFreight > kgFreight && cbmFreight > 0;
+        effFreight = Math.max(kgFreight, cbmFreight);
+      }
+
+      var totalLanded = productVnd + inlandVnd + agencyVnd + effFreight + sharedVnd;
+      var unitLanded = totalLanded / qty;
+
+      var denom = Math.max(0.05, 1.0 - (marginPct + mktFeePct) / 100.0);
+      var recPrice = unitLanded / denom;
+      var unitProfit = recPrice * (1.0 - mktFeePct / 100.0) - unitLanded;
+      var totalProfit = unitProfit * qty;
+      var markupPrice = unitLanded * (1.0 + marginPct / 100.0);
+
+      // Naive mental math comparison: (productVnd + kgFreight) / qty
+      var naiveTotal = productVnd + kgFreight;
+      var naiveUnit = naiveTotal / qty;
+      var hiddenUnitDiff = unitLanded - naiveUnit;
+      var hiddenBatchDiff = totalLanded - naiveTotal;
+
+      document.getElementById("out-unit-cost").textContent = fmtVnd(unitLanded);
+      document.getElementById("out-total-cost").textContent = fmtVnd(totalLanded);
+      document.getElementById("out-total-cost-row").textContent = fmtVnd(totalLanded);
+      document.getElementById("out-cbm").textContent = totalCbm.toFixed(3).replace(".", ",") + " m³";
+      document.getElementById("out-product-vnd").textContent = fmtVnd(productVnd);
+      document.getElementById("out-agency-inland").textContent = fmtVnd(agencyVnd + inlandVnd);
+      document.getElementById("out-kg-freight").textContent = fmtVnd(kgFreight);
+      document.getElementById("out-cbm-freight").textContent = fmtVnd(cbmFreight);
+      document.getElementById("out-eff-freight").textContent = fmtVnd(effFreight);
+      document.getElementById("out-shared-vnd").textContent = fmtVnd(sharedVnd);
+
+      var badgeEl = document.getElementById("out-freight-badge");
+      if (isCbmUsed) {
+        badgeEl.className = "freight-badge cbm";
+        var cbmMore = cbmFreight - kgFreight;
+        badgeEl.textContent = isKo
+          ? ("부피(CBM) 운임 적용 — 무게 대비 +" + fmtVnd(cbmMore) + " 추가")
+          : ("ÁP DỤNG CƯỚC THỂ TÍCH (CBM) — Cao hơn Kg +" + fmtVnd(cbmMore));
+      } else {
+        badgeEl.className = "freight-badge kg";
+        var kgMore = kgFreight - cbmFreight;
+        badgeEl.textContent = isKo
+          ? ("중량(Kg) 운임 적용 — CBM 대비 +" + fmtVnd(Math.max(0, kgMore)))
+          : ("ÁP DỤNG CƯỚC CÂN NẶNG (Kg) — Cao hơn CBM +" + fmtVnd(Math.max(0, kgMore)));
+      }
+
+      var lossEl = document.getElementById("out-loss-alert");
+      if (hiddenBatchDiff >= 1000) {
+        lossEl.classList.add("visible");
+        lossEl.innerHTML = isKo
+          ? ("<strong>⚠️ 숨은 적자 경고:</strong> 무게(kg)만 대충 계산하면 개당 <strong>" + fmtVnd(naiveUnit) + "</strong>으로 착각하지만, 실제 도착원가는 개당 <strong>+" + fmtVnd(hiddenUnitDiff) + "</strong> (총 <strong>+" + fmtVnd(hiddenBatchDiff) + "</strong>) 더 비쌉니다!")
+          : ("<strong>⚠️ Cảnh báo lỗ ngầm:</strong> Nếu chỉ nhẩm theo Kg &amp; quên chi phí chung, bạn tưởng giá vốn chỉ <strong>" + fmtVnd(naiveUnit) + "</strong> — thực tế bị đội thêm <strong>+" + fmtVnd(hiddenUnitDiff) + "/cái</strong> (<strong>+" + fmtVnd(hiddenBatchDiff) + "</strong> cả lô)!");
+      } else {
+        lossEl.classList.remove("visible");
+      }
+
+      document.getElementById("out-margin-lbl").textContent = marginPct + "%";
+      document.getElementById("out-margin-lbl-ko").textContent = marginPct + "%";
+      document.getElementById("out-sell-price").textContent = fmtVnd(recPrice) + (isKo ? " / 개" : " / cái");
+      document.getElementById("out-unit-profit").textContent = fmtVnd(unitProfit);
+      document.getElementById("out-total-profit").textContent = fmtVnd(totalProfit);
+      document.getElementById("out-unit-profit-ko").textContent = fmtVnd(unitProfit);
+      document.getElementById("out-total-profit-ko").textContent = fmtVnd(totalProfit);
+      document.getElementById("out-markup-pct").textContent = marginPct + "%";
+      document.getElementById("out-markup-price").textContent = fmtVnd(markupPrice);
+
+      LAST_RESULT = {
+        name: document.getElementById("inp-name").value || "Hàng 1688",
+        qty: qty,
+        unitCny: unitCny,
+        rate: rate,
+        weightKg: weightKg,
+        totalCbm: totalCbm,
+        isCbmUsed: isCbmUsed,
+        effFreight: effFreight,
+        sharedVnd: sharedVnd,
+        unitLanded: unitLanded,
+        totalLanded: totalLanded,
+        recPrice: recPrice,
+        marginPct: marginPct
+      };
+    }
+
+    function copySummary() {
+      var r = LAST_RESULT;
+      var text = [
+        "[TÍNH GIÁ VỐN 1688] " + r.name + " (" + r.qty + " cái)",
+        "- Giá xưởng: " + r.unitCny + "¥ | Tỷ giá: " + fmtVnd(r.rate).replace(" ₫", "") + "₫/¥",
+        "- Vận chuyển (" + (r.isCbmUsed ? "Áp dụng CBM " + r.totalCbm.toFixed(3) + "m³" : "Áp dụng " + r.weightKg + "kg") + "): " + fmtVnd(r.effFreight),
+        "- Đóng gỗ & phí chung: " + fmtVnd(r.sharedVnd),
+        "=> Giá vốn về kho: " + fmtVnd(r.unitLanded) + "/cái (Tổng lô: " + fmtVnd(r.totalLanded) + ")",
+        "=> Giá bán đề xuất (lãi " + r.marginPct + "%): " + fmtVnd(r.recPrice) + "/cái",
+        "Tính bằng: https://koo-by.github.io/vn-baogia/tinh-cbm-1688/"
+      ].join("\n");
+      var toast = document.getElementById("copy-calc-toast");
+      var isKo = document.body.classList.contains("lang-ko");
+      var okMsg = isKo ? "✓ 계산 요약이 복사되었습니다!" : "✓ Đã sao chép bảng tính!";
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function() {
+          if (toast) toast.textContent = okMsg;
+        }).catch(function() {
+          fallbackCopy(text, toast, okMsg);
+        });
+      } else {
+        fallbackCopy(text, toast, okMsg);
+      }
+    }
+
+    function fallbackCopy(text, toast, msg) {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand("copy");
+        if (toast) toast.textContent = msg;
+      } catch (e) {}
+      document.body.removeChild(ta);
+    }
+
+    (function initCalc() {
+      var params = new URLSearchParams(window.location.search);
+      setLang(params.get("lang") === "ko" ? "ko" : "vi");
+      calculate();
+    })();
+  </script>
+</body>
+</html>

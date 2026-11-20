@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://koo-by.github.io/sitemap.xml
