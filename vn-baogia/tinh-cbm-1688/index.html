@@ -142,12 +142,16 @@
     }
     .brand-pill:hover { background: rgba(255, 255, 255, 0.22); }
     .lang-switch {
-      display: inline-flex;
+      display: none;
       background: rgba(15, 23, 42, 0.4);
       border: 1px solid rgba(255, 255, 255, 0.22);
       border-radius: 999px;
       padding: 3px;
       gap: 4px;
+    }
+    body.lang-ko .lang-switch,
+    body.qa-preview .lang-switch {
+      display: inline-flex;
     }
     .lang-btn {
       appearance: none;
@@ -457,11 +461,10 @@
       color: var(--muted);
     }
     .footer a { color: var(--jade-700); text-decoration: none; font-weight: 700; }
-    [data-lang] { display: none; }
-    body.lang-vi [data-lang="vi"] { display: block; }
-    body.lang-ko [data-lang="ko"] { display: block; }
-    body.lang-vi span[data-lang="vi"],
-    body.lang-ko span[data-lang="ko"] { display: inline; }
+    body.lang-vi [data-lang="ko"],
+    body.lang-ko [data-lang="vi"] {
+      display: none !important;
+    }
   </style>
 </head>
 <body class="lang-vi">
@@ -902,7 +905,8 @@
 
     function setLang(lang) {
       var target = lang === "ko" ? "ko" : "vi";
-      document.body.className = "lang-" + target;
+      var keepPreview = document.body.classList.contains("qa-preview");
+      document.body.className = "lang-" + target + (keepPreview ? " qa-preview" : "");
       document.documentElement.lang = target;
       var bv = document.getElementById("btn-vi");
       var bk = document.getElementById("btn-ko");
@@ -910,7 +914,7 @@
       if (bk) bk.classList.toggle("active", target === "ko");
       var back = document.getElementById("back-onelink");
       if (back) {
-        back.href = "/vn-baogia/?utm_source=seo_web_calc&utm_medium=nav&utm_campaign=tet2027" + (target === "ko" ? "&lang=ko" : "");
+        back.href = "/vn-baogia/?utm_source=seo_web_calc&utm_medium=nav&utm_campaign=tet2027" + (target === "ko" ? "&lang=ko" : (keepPreview ? "&preview=1" : ""));
       }
       calculate();
     }
@@ -1139,7 +1143,12 @@
 
     (function initCalc() {
       var params = new URLSearchParams(window.location.search);
-      setLang(params.get("lang") === "ko" ? "ko" : "vi");
+      var qLang = params.get("lang");
+      var preview = params.get("preview") === "1" || params.get("no_redirect") === "1";
+      if (preview || qLang === "ko") {
+        document.body.classList.add("qa-preview");
+      }
+      setLang(qLang === "ko" ? "ko" : "vi");
       calculate();
     })();
   </script>

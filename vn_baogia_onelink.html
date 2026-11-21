@@ -88,12 +88,16 @@
       letter-spacing: 0.2px;
     }
     .lang-switch {
-      display: inline-flex;
+      display: none;
       background: rgba(15, 23, 42, 0.38);
       border: 1px solid rgba(255, 255, 255, 0.22);
       border-radius: 999px;
       padding: 3px;
       gap: 4px;
+    }
+    body.lang-ko .lang-switch,
+    body.qa-preview .lang-switch {
+      display: inline-flex;
     }
     .lang-btn {
       appearance: none;
@@ -395,11 +399,10 @@
     .footer-links a:hover {
       text-decoration: underline;
     }
-    [data-lang] { display: none; }
-    body.lang-vi [data-lang="vi"] { display: block; }
-    body.lang-ko [data-lang="ko"] { display: block; }
-    body.lang-vi span[data-lang="vi"],
-    body.lang-ko span[data-lang="ko"] { display: inline; }
+    body.lang-vi [data-lang="ko"],
+    body.lang-ko [data-lang="vi"] {
+      display: none !important;
+    }
   </style>
 </head>
 <body class="lang-vi">
@@ -603,8 +606,9 @@
       var bwc = document.getElementById("btn-web-cbm-tool");
       if (lp) lp.href = lp.getAttribute("data-base") + "?lang=" + target;
       if (lt) lt.href = lt.getAttribute("data-base") + "?lang=" + target;
-      if (lc) lc.href = lc.getAttribute("data-base") + (target === "ko" ? "?lang=ko" : "");
-      if (bwc) bwc.href = "/vn-baogia/tinh-cbm-1688/" + (target === "ko" ? "?lang=ko" : "");
+      var calcQuery = target === "ko" ? "?lang=ko" : (keepPreview ? "?preview=1" : "");
+      if (lc) lc.href = lc.getAttribute("data-base") + calcQuery;
+      if (bwc) bwc.href = "/vn-baogia/tinh-cbm-1688/" + calcQuery;
       var banner = document.getElementById("redirect-banner");
       var currentOs = document.documentElement.getAttribute("data-detected-os") || "desktop";
       if (banner) {
@@ -717,7 +721,7 @@
       var preview = params.get("preview") === "1" || params.get("no_redirect") === "1";
       var osOverride = params.get("os");
 
-      if (preview) {
+      if (preview || qLang === "ko") {
         document.body.classList.add("qa-preview");
       }
       setLang(qLang === "ko" ? "ko" : "vi");
