@@ -7,10 +7,11 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <title>電子印鑑スタジオ — 公式紹介・メディア向けプレスキット｜Jisik Gongbang（知識工房）</title>
-  <meta name="description" content="会員登録不要・完全オフライン動作のiOS/Androidアプリ『電子印鑑スタジオ - 透過ハンコ作成＆PDF押印』の公式紹介ページおよびメディア関係者様向けプレスキットです。旧字体・異体字対応、実物ハンコの写真背景透過スキャン、最大20ページPDFへの実寸mm押印に対応。">
+  <meta name="description" content="会員登録不要・完全オフライン動作の『電子印鑑スタジオ - 透過ハンコ作成＆PDF押印』（Android先行公開中・iOS版審査中）公式紹介ページおよびメディア関係者様向けプレスキットです。無劣化ベクターPDF直接押印、Excel実寸mm（pHYs）透過PNG、法人代表者印（二重丸印）・角印・旧字体対応、1024px実物ハンコ手動クロップ透過抽出に対応。">
+  <link rel="canonical" href="https://koo-by.github.io/press_app01_denshi_inkan.html">
   <meta property="og:type" content="website">
   <meta property="og:title" content="電子印鑑スタジオ - 透過ハンコ作成＆PDF押印｜公式紹介＆プレスキット">
-  <meta property="og:description" content="登録不要・完全端末内処理で社外秘PDFも安心。旧字体対応の電子印鑑作成・実物ハンコ写真透過スキャン・PDF実寸押印がこれ1つで完結。">
+  <meta property="og:description" content="元のPDFの文字・画質を一切劣化させないロスレスPDF直接押印＆Excel実寸mm対応透過PNG出力。Android版先行公開中・iOS版審査中。">
   <meta property="og:url" content="https://koo-by.github.io/press_app01_denshi_inkan.html">
   <meta property="og:image" content="https://koo-by.github.io/press_hero_1200x630.png">
   <meta property="og:image:width" content="1200">
@@ -23,22 +24,22 @@
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "電子印鑑スタジオ - 透過ハンコ作成＆PDF押印",
-    "alternateName": "전자도장 스튜디오 - 투명 도장 제작 & PDF 날인",
-    "operatingSystem": "iOS 15.0+, iPadOS 15.0+, Android 7.0+",
+    "operatingSystem": "Android 7.0+ (iOS 15.0+ / iPadOS 15.0+ 審査中)",
     "applicationCategory": "BusinessApplication",
     "inLanguage": "ja",
+    "url": "https://koo-by.github.io/jp-inkan/",
     "offers": [
       {
         "@type": "Offer",
         "price": "0",
         "priceCurrency": "JPY",
-        "description": "無料プラン（個人丸印・小判印・日付データ印の鮮明モード作成、背景透過PNG保存、内蔵サンプル書類押印、マイ印鑑2個保存）"
+        "description": "無料プラン（個人丸印・小判印・日付データ印の鮮明モード作成、pHYs実寸mm入り背景透過PNG保存、内蔵サンプル書類押印、マイ印鑑2個保存）"
       },
       {
         "@type": "Offer",
         "price": "790",
         "priceCurrency": "JPY",
-        "description": "Pro買い切りプラン（永久ライセンス：法人角印、朱肉かすれ・二重枠、外部PDF最大20ページ押印、複数同時押印、写真スキャン透過保存、無制限保存）"
+        "description": "Pro買い切りプラン（永久ライセンス：法人代表者印・法人角印、朱肉かすれ・二重枠、外部PDFロスレス直接押印・20ページ超無制限対応、複数同時押印、手動クロップ1024px写真スキャン透過保存、無制限保存）"
       },
       {
         "@type": "Offer",
@@ -54,8 +55,8 @@
       "email": "ddumwork@gmail.com"
     },
     "downloadUrl": [
-      "https://apps.apple.com/jp/app/id6827110841",
-      "https://play.google.com/store/apps/details?id=com.knowledgestudio.japan.app01_denshi_inkan&hl=ja&gl=JP"
+      "https://koo-by.github.io/jp-inkan/",
+      "https://play.google.com/store/apps/details?id=com.knowledgestudio.japan.app_01_denshi_inkan&hl=ja&gl=JP"
     ]
   }
   </script>
@@ -99,11 +100,15 @@
     }
     .nav a:hover { text-decoration: underline; }
     .lang-switch {
-      display: inline-flex;
+      display: none;
       background: #e2e8f0;
       border-radius: 999px;
       padding: 3px;
       gap: 2px;
+    }
+    body.lang-ko .lang-switch,
+    body.qa-preview .lang-switch {
+      display: inline-flex;
     }
     .lang-btn {
       border: none;
@@ -166,6 +171,16 @@
       font-size: 14.5px;
     }
     .lead-box strong { color: #9f1239; }
+    .status-strip-ja {
+      background: #fffbeb;
+      border: 1px solid #fcd34d;
+      color: #78350f;
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-size: 13.5px;
+      font-weight: 700;
+      margin: 12px 0;
+    }
     .store-buttons {
       display: flex;
       flex-wrap: wrap;
@@ -184,8 +199,9 @@
       transition: transform 0.15s ease, opacity 0.15s ease;
     }
     .btn-store:hover { transform: translateY(-1px); opacity: 0.94; }
-    .btn-ios { background: #0f172a; color: #ffffff !important; }
+    .btn-smart { background: #d9381e; color: #ffffff !important; }
     .btn-android { background: #059669; color: #ffffff !important; }
+    .btn-tool { background: #0f172a; color: #ffffff !important; }
     .btn-copy {
       background: var(--accent-blue);
       color: #ffffff;
@@ -268,15 +284,13 @@
       font-size: 13.5px;
       color: #64748b;
     }
-    [data-lang="ko"] { display: none; }
-    body.lang-ko [data-lang="ja"] { display: none; }
-    body.lang-ko [data-lang="ko"] { display: block; }
-    body.lang-ko span[data-lang="ko"], body.lang-ko a[data-lang="ko"] { display: inline; }
-    span[data-lang="ja"], a[data-lang="ja"] { display: inline; }
-    body.lang-ko span[data-lang="ja"], body.lang-ko a[data-lang="ja"] { display: none; }
+    body.lang-ja [data-lang="ko"],
+    body.lang-ko [data-lang="ja"] {
+      display: none !important;
+    }
   </style>
 </head>
-<body>
+<body class="lang-ja">
   <main>
     <div class="topbar">
       <div class="nav">
@@ -294,21 +308,28 @@
       <span class="badge" data-lang="ko">공식 앱 소개 및 일본 미디어 전용 프레스킷 (Press Kit)</span>
       <h1 data-lang="ja">電子印鑑スタジオ - 透過ハンコ作成＆PDF押印</h1>
       <h1 data-lang="ko">전자도장 스튜디오 - 투명 도장 제작 &amp; PDF 날인 (電子印鑑スタジオ)</h1>
-      <p data-lang="ja"><strong>サブタイトル：</strong>異体字・角印・日付印も完全オフラインで即出力（iOS / iPadOS / Android対応）</p>
-      <p data-lang="ko"><strong>부제목:</strong> 이체자·법인 직인·날짜 도장도 완전 오프라인 즉시 출력 (iOS / iPadOS / Android 지원)</p>
+      <p data-lang="ja"><strong>サブタイトル：</strong>代表者印・角印・日付印も完全オフラインで即出力（Android 先行公開中 ／ iOS版 審査中）</p>
+      <p data-lang="ko"><strong>부제목:</strong> 대표자인·법인 각인·날짜 도장도 완전 오프라인 즉시 출력 (Android 선행 공개 중 / iOS 심사 중)</p>
+
+      <div class="status-strip-ja" data-lang="ja">
+        📢 公開状況：Google Play（Android版）先行公開中 ｜ App Store（iOS / iPadOS版）審査中（iPhone・PCからは無料Web透過ハンコツールをご利用いただけます）
+      </div>
+      <div class="status-strip-ja" data-lang="ko">
+        📢 공개 현황: Google Play(Android) 선행 공개 중 | App Store(iOS Build 9) 심사 대기 중 (죽은 iOS 404 직링크 제거 및 스마트 원링크 /jp-inkan/ 연결 완료)
+      </div>
 
       <div class="lead-box" data-lang="ja">
         <strong>【メディア・編集者様向け 3行要約（リード文）】</strong><br>
-        1. <strong>旧字体・異体字（髙・﨑・邊・齋など）に完全対応</strong>した個人丸印・日付データ印・法人角印を3秒で作成し、300DPI相当の背景透過PNGで即座に出力。<br>
-        2. 白い紙に押した<strong>実物の印鑑をカメラで撮影して背景だけを透明化（Alpha=0）するスキャン抽出機能</strong>と、<strong>最大20ページのPDF書類へ実寸mm指定（10.5mm/15mm/21mm等）で直接押印</strong>できる機能を1つのアプリに統合。<br>
-        3. <strong>会員登録不要・100%端末内（完全オフライン）処理</strong>のため、社外秘の見積書・請求書・稟議書PDFも外部サーバーへ一切送信されず安全に完結。
+        1. <strong>元のPDFのテキスト選択・画質を一切劣化させない「ロスレスベクターPDF直接押印」</strong>と、Excel/Wordで27cmにならず実寸で貼れる<strong>PNG pHYs物理サイズ（10.5mm〜24mm）自動記録</strong>を実現。<br>
+        2. <strong>「髙・﨑・邊・齋」などの旧字体ピッカー＆4種オフライン書体</strong>で個人丸印・日付データ印・<strong>法人代表者印（二重丸印）</strong>・法人角印を作成でき、さらに<strong>手動クロップ枠・微調整回転付きの1024px実物ハンコ透過スキャン</strong>にも対応。<br>
+        3. <strong>会員登録不要・100%端末内（完全オフライン）処理</strong>のため、社外秘の見積書・請求書・契約書PDFも外部サーバーへ一切送信されず安全に完結。
       </div>
 
       <div class="lead-box" data-lang="ko">
         <strong>[일본 미디어 기자·에디터용 3줄 핵심 요약 (리드문)]</strong><br>
-        1. <strong>구자체·이체자(髙·﨑·邊·齋 등)를 완벽 지원</strong>하는 개인 원형인·날짜 데이터인·법인 각인을 3초 만에 제작하고 300DPI급 투명 배경 PNG로 즉시 출력.<br>
-        2. 흰 종이에 찍은 <strong>실물 도장을 카메라로 촬영해 종이 그림자만 지우고 인주만 투명 추출(Alpha=0)하는 스캔 기능</strong>과, <strong>최대 20페이지 PDF 서류에 실측 mm 규격(10.5mm/15mm/21mm 등)으로 직접 날인</strong>하는 기능을 앱 하나로 통합.<br>
-        3. <strong>회원가입 불필요·100% 기기 내(완전 오프라인) 처리</strong> 아키텍처로 대외비 견적서·청구서·품의서 PDF가 외부 서버로 일절 전송되지 않아 보안 걱정 없이 완결.
+        1. <strong>원본 PDF의 텍스트·화질을 100% 보존하는 '무손실 벡터 PDF 직접 날인'</strong>과, Excel/Word 붙여넣기 시 27cm로 커지지 않는 <strong>PNG pHYs 물리 mm 메타데이터 자동 기록</strong>을 실현.<br>
+        2. <strong>구자체 피커(髙·﨑·邊·齋) &amp; 오프라인 4종 서체</strong>로 개인 원형인·날짜인·<strong>법인 대표자인(이중 원형인)</strong>·법인 각인을 제작하고, <strong>수동 크롭 &amp; 미세 회전 1024px 실물 도장 투명 스캔</strong>까지 통합.<br>
+        3. <strong>회원가입 불필요·100% 기기 내(완전 오프라인) 처리</strong>로 대외비 견적서·청구서 PDF가 외부 서버로 전송되지 않아 보안 걱정 없이 완결.
       </div>
 
       <!-- Vector Stamp Visual Preview -->
@@ -319,9 +340,21 @@
             <text x="50" y="44" text-anchor="middle" fill="#d9381e" font-size="25" font-weight="700" font-family="serif">髙橋</text>
             <text x="50" y="74" text-anchor="middle" fill="#d9381e" font-size="25" font-weight="700" font-family="serif">之印</text>
           </svg>
-          <div class="stamp-caption" data-lang="ja">① 個人丸印・旧字体対応</div>
-          <div class="stamp-caption" data-lang="ko">① 개인 원형인·구자체 대응</div>
+          <div class="stamp-caption" data-lang="ja">① 個人丸印・Excel実寸pHYs</div>
+          <div class="stamp-caption" data-lang="ko">① 개인 원형인·Excel 실측 pHYs</div>
           <div class="stamp-sub">10.5mm / 12mm / 15mm</div>
+        </div>
+        <div class="stamp-box">
+          <svg width="88" height="88" viewBox="0 0 100 100" role="img" aria-label="法人代表者印 サンプル">
+            <circle cx="50" cy="50" r="43" fill="none" stroke="#d9381e" stroke-width="5"/>
+            <circle cx="50" cy="50" r="24" fill="none" stroke="#d9381e" stroke-width="2.5"/>
+            <text x="50" y="21" text-anchor="middle" fill="#d9381e" font-size="10.5" font-weight="700" font-family="serif">株式会社見本</text>
+            <text x="50" y="47" text-anchor="middle" fill="#d9381e" font-size="11.5" font-weight="700" font-family="serif">代表</text>
+            <text x="50" y="61" text-anchor="middle" fill="#d9381e" font-size="11.5" font-weight="700" font-family="serif">取締役</text>
+          </svg>
+          <div class="stamp-caption" data-lang="ja">② 法人代表者印（二重丸印）</div>
+          <div class="stamp-caption" data-lang="ko">② 법인 대표자인 (이중 원형인)</div>
+          <div class="stamp-sub">18.0mm / 21mm / 角印対応</div>
         </div>
         <div class="stamp-box">
           <svg width="88" height="88" viewBox="0 0 100 100" role="img" aria-label="日付データ印 サンプル">
@@ -329,29 +362,16 @@
             <line x1="12" y1="36" x2="88" y2="36" stroke="#d9381e" stroke-width="3"/>
             <line x1="12" y1="64" x2="88" y2="64" stroke="#d9381e" stroke-width="3"/>
             <text x="50" y="28" text-anchor="middle" fill="#d9381e" font-size="14" font-weight="700" font-family="sans-serif">検収済</text>
-            <text x="50" y="55" text-anchor="middle" fill="#d9381e" font-size="13.5" font-weight="700" font-family="monospace">’26.11.05</text>
+            <text x="50" y="55" text-anchor="middle" fill="#d9381e" font-size="13.5" font-weight="700" font-family="monospace">’26.11.22</text>
             <text x="50" y="81" text-anchor="middle" fill="#d9381e" font-size="15" font-weight="700" font-family="serif">山﨑</text>
           </svg>
-          <div class="stamp-caption" data-lang="ja">② 日付データ印（令和/西暦）</div>
-          <div class="stamp-caption" data-lang="ko">② 날짜 데이터인 (레이와/서기)</div>
+          <div class="stamp-caption" data-lang="ja">③ 日付データ印（令和/西暦）</div>
+          <div class="stamp-caption" data-lang="ko">③ 날짜 데이터인 (레이와/서기)</div>
           <div class="stamp-sub" data-lang="ja">上下段テキスト自由編集</div>
           <div class="stamp-sub" data-lang="ko">상하단 문구 자유 편집</div>
         </div>
         <div class="stamp-box">
-          <svg width="88" height="88" viewBox="0 0 100 100" role="img" aria-label="法人角印 サンプル">
-            <rect x="12" y="12" width="76" height="76" rx="4" fill="none" stroke="#d9381e" stroke-width="5.5"/>
-            <text x="68" y="38" text-anchor="middle" fill="#d9381e" font-size="18" font-weight="700" font-family="serif">株式</text>
-            <text x="68" y="60" text-anchor="middle" fill="#d9381e" font-size="18" font-weight="700" font-family="serif">会社</text>
-            <text x="68" y="80" text-anchor="middle" fill="#d9381e" font-size="18" font-weight="700" font-family="serif">知識</text>
-            <text x="32" y="42" text-anchor="middle" fill="#d9381e" font-size="18" font-weight="700" font-family="serif">工房</text>
-            <text x="32" y="72" text-anchor="middle" fill="#d9381e" font-size="18" font-weight="700" font-family="serif">之印</text>
-          </svg>
-          <div class="stamp-caption" data-lang="ja">③ 法人角印（社判 1〜4列）</div>
-          <div class="stamp-caption" data-lang="ko">③ 법인 사각인 (사판 1~4열)</div>
-          <div class="stamp-sub">21mm / 24mm / 之印自動調整</div>
-        </div>
-        <div class="stamp-box">
-          <svg width="88" height="88" viewBox="0 0 100 100" role="img" aria-label="PDF押印＆写真透過">
+          <svg width="88" height="88" viewBox="0 0 100 100" role="img" aria-label="無劣化PDF押印＆手動クロップ">
             <rect x="18" y="10" width="56" height="74" rx="4" fill="#f8fafc" stroke="#475569" stroke-width="3"/>
             <line x1="26" y1="24" x2="64" y2="24" stroke="#94a3b8" stroke-width="3"/>
             <line x1="26" y1="36" x2="64" y2="36" stroke="#94a3b8" stroke-width="3"/>
@@ -359,19 +379,22 @@
             <circle cx="64" cy="64" r="22" fill="rgba(217,56,30,0.12)" stroke="#d9381e" stroke-width="4"/>
             <text x="64" y="69" text-anchor="middle" fill="#d9381e" font-size="13" font-weight="700" font-family="serif">渡邊</text>
           </svg>
-          <div class="stamp-caption" data-lang="ja">④ 実物ハンコ透過＆PDF押印</div>
-          <div class="stamp-caption" data-lang="ko">④ 실물도장 투명 추출 &amp; PDF 날인</div>
-          <div class="stamp-sub" data-lang="ja">最大20ページ・複数同時押印</div>
-          <div class="stamp-sub" data-lang="ko">최대 20페이지·복수 동시 날인</div>
+          <div class="stamp-caption" data-lang="ja">④ 無劣化PDF＆1024pxスキャン</div>
+          <div class="stamp-caption" data-lang="ko">④ 무손실 PDF &amp; 1024px 크롭</div>
+          <div class="stamp-sub" data-lang="ja">ベクター文字維持・手動クロップ</div>
+          <div class="stamp-sub" data-lang="ko">원본 텍스트 보존·수동 크롭</div>
         </div>
       </div>
 
       <div class="store-buttons">
-        <a class="btn-store btn-ios" href="https://apps.apple.com/jp/app/id6827110841" target="_blank" rel="noopener">
-          🍎 <span data-lang="ja">App Store（iOS / iPadOS）公式ページ</span><span data-lang="ko">App Store (iOS / iPadOS) 공식 페이지</span>
+        <a class="btn-store btn-smart" href="https://koo-by.github.io/jp-inkan/">
+          🔗 <span data-lang="ja">公式スマートリンク（Android直行 ／ iOS審査状況案内）</span><span data-lang="ko">공식 스마트 원링크 (/jp-inkan/)</span>
         </a>
-        <a class="btn-store btn-android" href="https://play.google.com/store/apps/details?id=com.knowledgestudio.japan.app01_denshi_inkan&hl=ja&gl=JP" target="_blank" rel="noopener">
-          🤖 <span data-lang="ja">Google Play（Android）公式ページ</span><span data-lang="ko">Google Play (Android) 공식 페이지</span>
+        <a class="btn-store btn-android" href="https://play.google.com/store/apps/details?id=com.knowledgestudio.japan.app_01_denshi_inkan&amp;hl=ja&amp;gl=JP" target="_blank" rel="noopener">
+          🤖 <span data-lang="ja">Google Play（Android 先行公開中）</span><span data-lang="ko">Google Play (Android 선행 공개 중)</span>
+        </a>
+        <a class="btn-store btn-tool" href="https://koo-by.github.io/jp-inkan/hanko-size-tool/">
+          🧰 <span data-lang="ja">無料Webツール（Excel実寸10.5mm透過PNG）</span><span data-lang="ko">무료 웹 도구 (Excel 실측 10.5mm PNG)</span>
         </a>
         <a class="btn-store" style="background:#334155;color:#fff !important;" href="./press_hero_1200x630.png" download="denshi_inkan_studio_press_1200x630.png">
           🖼️ <span data-lang="ja">記事用アイキャッチ画像（1200×630 PNG）をダウンロード</span><span data-lang="ko">보도용 대표 배너(1200×630 PNG) 다운로드</span>
@@ -384,35 +407,35 @@
 
     <!-- 4 Key Differentiators -->
     <div class="card">
-      <h2 data-lang="ja">開発背景と4つの主要機能（従来の電子印鑑アプリの課題を解決）</h2>
-      <h2 data-lang="ko">개발 배경 및 4대 핵심 차별점 (기존 전자도장 앱의 고질적 불만 해결)</h2>
-      <p data-lang="ja">従来の電子印鑑アプリにおける「旧字体が文字化けする」「紙のハンコ写真の背景が綺麗に消えない」「印鑑画像を作ってもPDFに実寸で押す方法が分からない」「社外秘の請求書を外部クラウドにアップロードしたくない」という4大課題を解決するために開発されました。</p>
-      <p data-lang="ko">기존 일본 전자도장 앱 사용자들이 가장 많이 호소하던 '구자체 한자 깨짐', '종이 도장 사진 배경 미제거', '도장 이미지를 만든 후 PDF에 실제 크기로 찍기 어려움', '대외비 서류를 외부 클라우드에 업로드하기 꺼려짐'이라는 4대 페인포인트를 정면으로 해결했습니다.</p>
+      <h2 data-lang="ja">従来の電子印鑑アプリの課題を解決する「4つの武器」</h2>
+      <h2 data-lang="ko">기존 전자도장 앱의 한계를 해결한 「4대 핵심 무기」</h2>
+      <p data-lang="ja">『電子印鑑スタジオ』は、「Excelに貼ると27cmの巨大サイズになる」「PDFに押すと文字が画像化されて検索できない」「法人代表者印の二重丸印が作れない」「複数ハンコが並んだ写真から1つだけ切り抜けない」といった現場の実務課題を解消するために開発されました。</p>
+      <p data-lang="ko">『전자도장 스튜디오』는 'Excel 27cm 거대화', 'PDF 날인 시 원본 글자 이미지화/깨짐', '법인 대표자인(이중 원형인) 부재', '종이 도장 수동 크롭 부재'라는 기존 앱들의 실무 병목을 정면 해결한 최신 아키텍처입니다.</p>
 
       <div class="feature-grid">
         <div class="feature-item">
-          <h3 data-lang="ja">1. 旧字体・異体字ピッカー＆6書体内蔵</h3>
-          <h3 data-lang="ko">1. 구자체·이체자 입력기 &amp; 6종 서체 내장</h3>
-          <p data-lang="ja">「髙橋」「山﨑」「渡邊」「齋藤」など日本の多様な苗字を文字化けなく即座に入力可能。印相体風・篆書体風・古印体風・楷書体・明朝・ゴシックの6書体、朱肉5色、かすれ効果、お辞儀傾き調整に対応。</p>
-          <p data-lang="ko">'髙橋', '山﨑', '渡邊', '齋藤' 등 일본의 다양한 이체자 성씨를 깨짐 없이 즉시 선택 가능. 인상체풍·전서체풍·고인체풍·해서체·명조·고딕 6종 서체와 인주 5색, 인주 번짐(갈필), 인사 기울기 조정 지원.</p>
+          <h3 data-lang="ja">1. 無劣化ベクターPDF直接押印（20p超対応）</h3>
+          <h3 data-lang="ko">1. 원본 무손실 벡터 PDF 직접 날인</h3>
+          <p data-lang="ja">PDFを低解像度画像に焼き直さず、元のベクター文字選択・レイアウト・全ページをそのまま保持した状態で透明印影のみを正確に重ねて出力します。</p>
+          <p data-lang="ko">PDF를 비트맵으로 다시 굽지 않고 원본 벡터 텍스트·복사·검색 및 20페이지 초과 대용량 계약서 규격을 100% 보존한 채 날인합니다.</p>
         </div>
         <div class="feature-item">
-          <h3 data-lang="ja">2. 実物ハンコの写真スキャン透過抽出</h3>
-          <h3 data-lang="ko">2. 실물 도장 사진 스캔 배경 투명화 추출</h3>
-          <p data-lang="ja">白い紙に押した実物の丸印や角印をスマホカメラで撮影するだけで、紙の影や照明ムラを除去し、朱肉の輪郭だけを鮮明な背景透過PNG（Alpha=0）として抽出します。</p>
-          <p data-lang="ko">흰 종이에 찍은 실물 원형인이나 회사 직인을 스마트폰 카메라로 촬영하면, 종이 그림자와 조명 얼룩만 깔끔히 지우고 인주 윤곽만 투명 배경 PNG(Alpha=0)로 정밀 추출합니다.</p>
+          <h3 data-lang="ja">2. PNG pHYs Excel・Word実寸mm対応</h3>
+          <h3 data-lang="ko">2. PNG pHYs 물리 mm 메타데이터 주입</h3>
+          <p data-lang="ja">出力される1024×1024px透過PNGには物理サイズ情報（pHYs DPI）を自動記録。ExcelやWordに貼り付けるだけで10.5mm・18mm・21mmの実寸サイズで配置されます。</p>
+          <p data-lang="ko">내보내는 1024px 투명 PNG에 물리 DPI(pHYs)를 자동 기록해 Excel·Word에 붙여넣기만 해도 27cm 거대화 없이 10.5mm/18mm/21mm 실물로 삽입됩니다.</p>
         </div>
         <div class="feature-item">
-          <h3 data-lang="ja">3. 最大20ページPDFへの実寸mm押印</h3>
-          <h3 data-lang="ko">3. 최대 20페이지 PDF 실측 mm 날인</h3>
-          <p data-lang="ja">見積書・請求書・社内稟議書の内蔵サンプル3種に加え、お手元のPDF（最大20ページ）を読み込み、認印10.5mm・実印15mm・角印21mm/24mmの実寸比率でドラッグ配置＆複数同時押印が可能です。</p>
-          <p data-lang="ko">견적서·청구서·사내 품의서 내장 양식 3종은 물론, 외부 PDF(최대 20페이지)를 불러와 막도장 10.5mm·실인 15mm·각인 21mm/24mm 실물 비율로 드래그 배치 및 복수 동시 날인이 가능합니다.</p>
+          <h3 data-lang="ja">3. 法人代表者印（二重丸印）・角印・旧字体</h3>
+          <h3 data-lang="ko">3. 법인 대표자인(이중원형)·각인·구자체</h3>
+          <p data-lang="ja">外周会社名＋中央役職名の「法人代表者印（二重丸印）」、法人角印（1〜4列）、日付データ印（令和/西暦）に加え、「髙・﨑・邊・齋」旧字体ピッカー＆4種オフライン書体を標準内蔵。</p>
+          <p data-lang="ko">외곽 상호+중앙 직책 이중 원형 대표자인과 사각인(1~4열), 날짜인, 구자체 피커(髙·﨑·邊·齋) 및 SIL OFL 1.1 서체 4종을 오프라인 내장했습니다.</p>
         </div>
         <div class="feature-item">
-          <h3 data-lang="ja">4. 登録不要・100%オンデバイス安全処理</h3>
-          <h3 data-lang="ko">4. 회원가입 불필요·100% 기기 내 보안 처리</h3>
-          <p data-lang="ja">アカウント登録は一切不要。作成した印影データや読み込んだ取引先PDFは外部サーバーへ送信されず、すべてお使いのスマートフォン・タブレット端末内だけで安全に処理されます。</p>
-          <p data-lang="ko">계정 가입이 일절 필요 없으며, 제작한 도장 이미지나 불러온 거래처 대외비 PDF는 외부 서버로 전송되지 않고 100% 사용자의 스마트폰·태블릿 기기 내부에서만 안전하게 처리됩니다.</p>
+          <h3 data-lang="ja">4. 手動クロップ＆1024px背景透過スキャン</h3>
+          <h3 data-lang="ko">4. 수동 크롭 &amp; 1024px 고해상도 스캔</h3>
+          <p data-lang="ja">複数のハンコが押された書類写真でも、手動クロップ枠・90°回転・±15°傾き補正で狙った印影だけを切り出し、紙の影を消して1024px透過PNGを生成。外部通信はゼロです。</p>
+          <p data-lang="ko">다중 도장 사진에서도 수동 크롭·회전 보정으로 원하는 도장만 분리해 1024px 투명 PNG로 추출하며 외부 서버 전송은 0바이트입니다.</p>
         </div>
       </div>
     </div>
@@ -432,19 +455,19 @@
             </td>
           </tr>
           <tr>
-            <th data-lang="ja">カテゴリ</th>
-            <th data-lang="ko">카테고리</th>
+            <th data-lang="ja">公開ステータス</th>
+            <th data-lang="ko">스토어 공개 상태</th>
             <td>
-              <span data-lang="ja">ビジネス ／ 仕事効率化（ユーティリティ）</span>
-              <span data-lang="ko">비즈니스 / 생산성 (유틸리티)</span>
+              <span data-lang="ja">Android（Google Play）：先行公開中（v1.0.0） ／ iOS・iPadOS（App Store）：審査中（公開準備中）</span>
+              <span data-lang="ko">Android(Google Play): 선행 공개 중(v1.0.0) / iOS·iPadOS(App Store): Build 9 심사 대기 중</span>
             </td>
           </tr>
           <tr>
             <th data-lang="ja">対応OS・機種</th>
             <th data-lang="ko">지원 OS 및 기기</th>
             <td>
-              <span data-lang="ja">iOS 15.0以降（iPhone / iPad ユニバーサル対応）、Android 7.0以降（スマートフォン / タブレット対応）</span>
-              <span data-lang="ko">iOS 15.0 이상 (iPhone / iPad 유니버설 지원), Android 7.0 이상 (스마트폰 / 태블릿 지원)</span>
+              <span data-lang="ja">Android 7.0以降（先行公開中）、iOS 15.0以降／iPadOS 15.0以降（審査中）</span>
+              <span data-lang="ko">Android 7.0 이상(선행 공개 중), iOS 15.0+ / iPadOS 15.0+(심사 대기 중)</span>
             </td>
           </tr>
           <tr>
@@ -452,23 +475,25 @@
             <th data-lang="ko">가격 (세금 포함)</th>
             <td>
               <span data-lang="ja">
-                ・<strong>基本無料</strong>（個人丸印・小判印・日付データ印の鮮明モード作成、背景透過PNG保存、内蔵サンプル書類3種への押印出力、マイ印鑑2個保存）<br>
-                ・<strong>Pro買い切りプラン：¥790</strong>（1回払いで永久利用）／ <strong>Pro月額プラン：¥200/月</strong>（初回3日間無料トライアル付き）<br>
-                ※Pro解放機能：法人角印（1〜4列）、朱肉かすれ・二重枠保存、外部PDF（最大20ページ）・写真書類への押印出力、1書類への複数同時押印、実物ハンコ写真スキャン透過保存、マイ印鑑無制限保存
+                ・<strong>基本無料</strong>（個人丸印・小判印・日付データ印の鮮明モード作成、pHYs実寸入り背景透過PNG保存、内蔵サンプル書類3種への押印出力、マイ印鑑2個保存）<br>
+                ・<strong>Pro買い切りプラン：¥790</strong>（永久利用）／ <strong>Pro月額プラン：¥200/月</strong>（初回3日間無料トライアル付き）<br>
+                ※Pro解放機能：法人代表者印（二重丸印）・法人角印、朱肉かすれ・二重枠保存、外部PDFロスレス押印（複数ページ・20ページ超無制限）・1書類への複数同時押印、手動クロップ1024px写真スキャン透過保存、マイ印鑑無制限保存
               </span>
               <span data-lang="ko">
-                · <strong>기본 무료</strong> (개인 원형인·타원형 회람인·날짜 데이터인 선명 모드 제작, 배경 투명 PNG 저장, 내장 샘플 서류 3종 날인 출력, 내 도장 2개 보관)<br>
-                · <strong>Pro 평생 소장 플랜: ¥790</strong> (1회 결제로 영구 이용) / <strong>Pro 월간 구독: ¥200/월</strong> (최초 3일 무료 체험 포함)<br>
-                ※Pro 해금 기능: 법인 사각인(1~4열), 인주 번짐·이중 테두리 저장, 외부 PDF(최대 20페이지)·사진 서류 날인 출력, 1서류 다중 동시 날인, 실물 도장 사진 스캔 투명 저장, 내 도장 무제한 보관
+                · <strong>기본 무료</strong> (개인 원형인·타원형 회람인·날짜 데이터인 선명 모드, pHYs 실측 투명 PNG, 내장 샘플 3종 날인, 내 도장 2개 보관)<br>
+                · <strong>Pro 평생 소장 플랜: ¥790</strong> / <strong>Pro 월간 구독: ¥200/월</strong> (최초 3일 무료 체험 포함)<br>
+                ※Pro 해금 기능: 법인 대표자인(이중원형)·법인 각인, 인주 번짐·이중 테두리, 외부 무손실 PDF·다중 날인, 수동 크롭 1024px 사진 스캔, 무제한 보관함
               </span>
             </td>
           </tr>
           <tr>
-            <th data-lang="ja">ストアURL</th>
-            <th data-lang="ko">공식 스토어 URL</th>
+            <th data-lang="ja">公式リンク・Webツール</th>
+            <th data-lang="ko">공식 링크 &amp; 무료 웹 도구</th>
             <td>
-              ・App Store (iOS/iPadOS): <a href="https://apps.apple.com/jp/app/id6827110841" target="_blank" rel="noopener">https://apps.apple.com/jp/app/id6827110841</a><br>
-              ・Google Play (Android): <a href="https://play.google.com/store/apps/details?id=com.knowledgestudio.japan.app01_denshi_inkan&hl=ja&gl=JP" target="_blank" rel="noopener">https://play.google.com/store/apps/details?id=com.knowledgestudio.japan.app01_denshi_inkan&amp;hl=ja&amp;gl=JP</a>
+              ・公式スマートリンク（自動案内）：<a href="https://koo-by.github.io/jp-inkan/">https://koo-by.github.io/jp-inkan/</a><br>
+              ・Google Play（Android 先行公開中）：<a href="https://play.google.com/store/apps/details?id=com.knowledgestudio.japan.app_01_denshi_inkan&amp;hl=ja&amp;gl=JP" target="_blank" rel="noopener">https://play.google.com/store/apps/details?id=com.knowledgestudio.japan.app_01_denshi_inkan&amp;hl=ja&amp;gl=JP</a><br>
+              ・App Store（iOS / iPadOS）：審査中（公開完了次第 <a href="https://koo-by.github.io/jp-inkan/">/jp-inkan/</a> にてご案内）<br>
+              ・無料Webツール（10.5mm透過PNG作成）：<a href="https://koo-by.github.io/jp-inkan/hanko-size-tool/">https://koo-by.github.io/jp-inkan/hanko-size-tool/</a>
             </td>
           </tr>
           <tr>
@@ -495,37 +520,42 @@
         </button>
       </div>
       <p data-lang="ja">メディア関係者様・ブロガー様は、以下のプレスリリース本文および当ページ内の情報を自由に引用・転載いただけます。</p>
-      <p data-lang="ko">일본 미디어 기자 및 블로거가 별도 문의 없이 즉시 기사에 인용·복사하여 사용할 수 있는 표준 일본어 보도자료 전문입니다.</p>
+      <p data-lang="ko">일본 미디어 기자 및 블로거가 별도 문의 없이 즉시 기사에 인용·복사하여 사용할 수 있는 최신 일본어 보도자료 전문입니다.</p>
 
       <div class="press-copy-wrap">
-        <pre id="press-release-ja" class="press-text">【プレスリリース】旧字体・実物ハンコ透過スキャン・PDF実寸押印がスマホ1つで完結！完全オフラインの『電子印鑑スタジオ』iOS/Android向けに提供開始
+        <pre id="press-release-ja" class="press-text">【プレスリリース】元のPDFが劣化しないロスレス押印＆Excel実寸mm透過PNGに対応！完全オフラインの『電子印鑑スタジオ』Android版を先行公開（iOS版は審査中）
 
-Jisik Gongbang（知識工房、代表：具 本燁）は、会員登録不要・完全端末内（オフライン）処理で安全に電子印鑑の作成からPDF書類への押印までを完結できるモバイルアプリ『電子印鑑スタジオ - 透過ハンコ作成＆PDF押印』（iOS / iPadOS / Android対応）を公開いたしました。
+Jisik Gongbang（知識工房、代表：具 本燁）は、会員登録不要・完全端末内（オフライン）処理で電子印鑑の作成からPDF書類への無劣化押印までを完結できるビジネスアプリ『電子印鑑スタジオ - 透過ハンコ作成＆PDF押印』をGoogle Play（Android版）にて先行公開いたしました（iOS / iPadOS版は審査中）。併せて、PC・iPhoneのブラウザ上ですぐに試せる無料「実寸10.5mm透過PNG作成Webツール」も公開しています。
 
-■ 開発の背景
-テレワークや電子請求書の普及に伴い、スマートフォンやタブレットだけで見積書や請求書PDFに押印したいという需要が急増しています。しかし従来の電子印鑑アプリには、「髙・﨑・邊・齋などの旧字体・異体字が文字化けする」「紙に押した社判の写真から背景だけを綺麗に透過できない」「社外秘の取引書類を外部クラウドサーバーにアップロードするのが不安」といった課題がありました。『電子印鑑スタジオ』は、これら日本のビジネス現場の声を反映し、外部通信ゼロの完全オンデバイス処理で開発されました。
+■ 開発の背景：従来の電子印鑑アプリの「4つの実務ストレス」を解消
+テレワークや電子請求書の普及に伴い、スマートフォンで請求書PDFに押印したり、Excel・Wordに透過ハンコ画像を貼り付けたりする業務が増えています。しかし従来ツールには以下の課題がありました。
+1. 取引先PDFにハンコを押すと文書全体が画像化され、元の文字のコピーや検索ができなくなる
+2. 透過PNGをExcelやWordに貼り付けると、27cmもの巨大サイズになって毎回手動縮小が必要
+3. 「髙・﨑・邊・齋」などの旧字体が作れず、法人代表者印（二重丸印）にも対応していない
+4. 社外秘の見積書や請求書PDFを外部クラウドサーバーにアップロードするのが不安
 
-■ 『電子印鑑スタジオ』の4大特長
-1. 日本のあらゆる苗字・旧字体・異体字に対応した印鑑作成
-個人丸印（認印・三文判）、小判型回覧印、日付データ印（令和/西暦ワンタッチ切替・上下段テキスト自由編集）、法人角印（縦・横1〜4列、之印自動調整）に対応。6書体（印相体風・篆書体風・古印体風・楷書体・明朝・ゴシック）や朱肉5色、リアルな朱肉かすれ効果・お辞儀角度の調整も可能で、300DPI相当の背景透過PNGとして即座に保存できます。
+■ 『電子印鑑スタジオ』の4つの武器
+1. 【無劣化ベクターPDF直接押印（20ページ超対応）】
+元のPDFのベクター文字・レイアウト・全ページをそのまま保持し、透明印影だけを正確に重ねて出力。認印10.5mm・代表者印18mm・角印21mmなどの実寸プリセットで複数同時押印にも対応しています。
 
-2. 紙に押した実物ハンコの「背景透過スキャン抽出」
-白い紙に押した手持ちの印鑑をカメラ撮影またはアルバムから読み込むだけで、紙の影や照明ムラを消去し、朱肉の輪郭だけを残した鮮明な背景透過PNGを生成します。
+2. 【Excel・Wordで27cmにならないPNG pHYs実寸mm出力】
+生成した1024×1024px背景透過PNGに物理サイズ情報（pHYs DPI）を自動記録するため、ExcelやWordに貼り付けるだけで実寸サイズでピタッと配置できます。
 
-3. 最大20ページのPDF書類へ実寸mm指定で直接ドラッグ押印
-見積書・請求書・社内稟議書のサンプル書類を標準内蔵。さらに手元のPDF書類（最大20ページ一括読込対応）を読み込み、認印10.5mm・実印15mm・角印21mm/24mmの実寸プリセットで狙った枠にピタッと配置できます。1つの書類に「会社角印＋担当者丸印」を同時に押す複数押印にも対応しています。
+3. 【法人代表者印（二重丸印）・角印・旧字体ピッカー＆4種オフライン書体】
+外周会社名＋中央役職名の「法人代表者印」、法人角印（1〜4列・之印自動調整）、日付データ印（令和/西暦切替）に加え、「髙・﨑・邊・齋」旧字体ピッカーと厳選4種の日本語書道・印章フォントを内蔵しています。
 
-4. 会員登録不要・100%端末内処理で社外秘書類も安心
-作成した印影や読み込んだPDFファイルは外部サーバーへ一切送信されません。すべて端末内で完結するため、機密性の高い業務書類でも安心してご利用いただけます。
+4. 【手動クロップ＆1024px実物ハンコ透過スキャン＋完全オフライン設計】
+複数の印鑑が押された書類写真から手動クロップ枠・回転補正で狙った印影だけを切り抜き、1024px背景透過PNGとして抽出可能。外部サーバーへの送信は一切なく100%端末内で完結します。
 
-■ 価格とプラン
-・無料プラン：個人丸印・小判印・日付データ印の鮮明モード作成、背景透過PNG保存、内蔵サンプル書類3種への単一押印出力、マイ印鑑2個保存がすべて無料。
-・Proプラン：買い切り ¥790（税込・永久ライセンス）または 月額 ¥200（税込・初回3日間無料トライアル付き）で、法人角印、朱肉かすれ・二重枠、外部PDF押印出力、複数同時押印、写真スキャン透過保存、無制限保存が解放されます。
+※ご注意（法的効力・セキュリティについて）
+本アプリは日常業務書類の視覚的な印影画像を作成するツールであり、電子署名法に基づく第三者認証局の電子証明書や公的な実印登録証明を付与するものではありません。また、偽造・悪用防止のため、自治体に登録された実印や銀行届出印のスキャン・使用はお控えください。
 
-■ 公式リンク
+■ 価格・公式リンク
+・価格：基本無料（Pro買い切り ¥790 ／ Pro月額 ¥200・初回3日間無料トライアル付き）
+・公式案内ページ（Android直行／iOS審査状況案内）：https://koo-by.github.io/jp-inkan/
+・Google Play（Android 先行公開中）：https://play.google.com/store/apps/details?id=com.knowledgestudio.japan.app_01_denshi_inkan&hl=ja&gl=JP
+・無料Webツール（実寸10.5mm透過PNG作成）：https://koo-by.github.io/jp-inkan/hanko-size-tool/
 ・公式プレスキット：https://koo-by.github.io/press_app01_denshi_inkan.html
-・App Store (iOS/iPadOS)：https://apps.apple.com/jp/app/id6827110841
-・Google Play (Android)：https://play.google.com/store/apps/details?id=com.knowledgestudio.japan.app01_denshi_inkan&amp;hl=ja&amp;gl=JP
 ・お問い合わせ先：Jisik Gongbang（知識工房） ddumwork@gmail.com</pre>
       </div>
     </div>
@@ -537,8 +567,10 @@ Jisik Gongbang（知識工房、代表：具 本燁）は、会員登録不要�
       <p data-lang="ja">記事掲載のご連絡、レビュー用のご質問、機能に関するお問い合わせは以下の公式メールアドレスまでお気軽にご連絡ください（事前許諾なしでの記事掲載・リンク紹介も大歓迎です）。</p>
       <p data-lang="ko">기사 게재 안내, 리뷰 관련 질문, 기능 문의는 아래 공식 이메일로 연락해 주시기 바랍니다 (사전 허락 없는 미디어 기사 게재 및 블로그 소개도 환영합니다).</p>
       <div class="info-box">
-        <strong>Jisik Gongbang（知識工房 / 지식공방）</strong><br>
+        <strong>Jisik Gongbang（知識工房）</strong><br>
         ・Email: <a href="mailto:ddumwork@gmail.com">ddumwork@gmail.com</a><br>
+        ・Smart One-Link: <a href="https://koo-by.github.io/jp-inkan/">https://koo-by.github.io/jp-inkan/</a><br>
+        ・Free Web Tool: <a href="https://koo-by.github.io/jp-inkan/hanko-size-tool/">https://koo-by.github.io/jp-inkan/hanko-size-tool/</a><br>
         ・Official Portal: <a href="https://koo-by.github.io/">https://koo-by.github.io/</a><br>
         ・Legal Links:
         <a data-internal="true" data-base="./privacy.html" href="./privacy.html">Privacy Policy</a> ｜
@@ -546,8 +578,8 @@ Jisik Gongbang（知識工房、代表：具 本燁）は、会員登録不要�
         <a data-internal="true" data-base="./tokushoho.html" href="./tokushoho.html">特定商取引法に基づく表記</a>
       </div>
       <div class="meta-footer">
-        <span data-lang="ja">公開日：2026年11月5日 ｜ Jisik Gongbang（知識工房）All Rights Reserved.</span>
-        <span data-lang="ko">공개일: 2026년 11월 5일 ｜ Jisik Gongbang (지식공방) All Rights Reserved.</span>
+        <span data-lang="ja">公開日：2026年11月5日 ｜ 最終更新日：2026年11月22日 ｜ Jisik Gongbang（知識工房）All Rights Reserved.</span>
+        <span data-lang="ko">공개일: 2026년 11월 5일 ｜ 최종 갱신일: 2026년 11월 22일 ｜ Jisik Gongbang (지식공방) All Rights Reserved.</span>
       </div>
     </div>
   </main>
@@ -555,7 +587,8 @@ Jisik Gongbang（知識工房、代表：具 本燁）は、会員登録不要�
   <script>
     function setLang(lang) {
       var isKo = (lang === 'ko');
-      document.body.classList.toggle('lang-ko', isKo);
+      var keepQa = document.body.classList.contains('qa-preview');
+      document.body.className = (isKo ? 'lang-ko' : 'lang-ja') + (keepQa ? ' qa-preview' : '');
       document.documentElement.lang = isKo ? 'ko' : 'ja';
       var btnJa = document.getElementById('btn-ja');
       var btnKo = document.getElementById('btn-ko');
@@ -563,14 +596,14 @@ Jisik Gongbang（知識工房、代表：具 本燁）は、会員登録不要�
         btnJa.classList.toggle('active', !isKo);
         btnKo.classList.toggle('active', isKo);
       }
+      var qaQuery = isKo ? '?lang=ko' : (keepQa ? '?qa=1' : '');
       var links = document.querySelectorAll('a[data-internal="true"]');
       for (var i = 0; i < links.length; i++) {
         var baseHref = links[i].getAttribute('data-base');
         if (baseHref) {
-          links[i].setAttribute('href', baseHref + '?v=20261105_press' + (isKo ? '&lang=ko' : ''));
+          links[i].setAttribute('href', baseHref + qaQuery);
         }
       }
-      try { localStorage.setItem('jg_legal_lang', isKo ? 'ko' : 'ja'); } catch (e) {}
     }
 
     function copyPressRelease() {
@@ -597,13 +630,11 @@ Jisik Gongbang（知識工房、代表：具 本燁）は、会員登録不要�
     (function() {
       var params = new URLSearchParams(window.location.search);
       var qLang = params.get('lang');
-      var saved = null;
-      try { saved = localStorage.getItem('jg_legal_lang'); } catch (e) {}
-      if (qLang === 'ko' || (!qLang && saved === 'ko')) {
-        setLang('ko');
-      } else {
-        setLang('ja');
+      var qaParam = params.get('qa') === '1' || params.get('qa') === 'true' || params.get('preview') === '1';
+      if (qaParam || qLang === 'ko') {
+        document.body.classList.add('qa-preview');
       }
+      setLang(qLang === 'ko' ? 'ko' : 'ja');
     })();
   </script>
 </body>

@@ -1,0 +1,821 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>電子印鑑スタジオ - 透過ハンコ作成＆PDF押印｜公式スマートリンク（Android先行公開中）</title>
+  <meta name="description" content="会員登録不要・完全オフラインの電子印鑑＆無劣化PDF押印アプリ『電子印鑑スタジオ』公式案内ページ。Android版（Google Play）先行公開中・iOS版審査中。iPhone・PCでも使える10.5mm透過PNG作成Webツールも無料公開中。">
+  <link rel="canonical" href="https://koo-by.github.io/jp-inkan/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://koo-by.github.io/jp-inkan/">
+  <meta property="og:title" content="電子印鑑スタジオ - 透過ハンコ作成＆PDF押印｜公式ダウンロード＆無料Webツール">
+  <meta property="og:description" content="元のPDFの文字が劣化しないロスレスPDF直接押印・Excel実寸mm対応透過PNG・法人代表者印・角印・実物ハンコ透過スキャンを100%端末内で完結。">
+  <meta property="og:image" content="https://koo-by.github.io/press_hero_1200x630.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://koo-by.github.io/press_hero_1200x630.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "電子印鑑スタジオ - 透過ハンコ作成＆PDF押印",
+    "operatingSystem": "ANDROID",
+    "applicationCategory": "BusinessApplication",
+    "inLanguage": "ja",
+    "url": "https://koo-by.github.io/jp-inkan/",
+    "downloadUrl": "https://play.google.com/store/apps/details?id=com.knowledgestudio.japan.app_01_denshi_inkan&hl=ja&gl=JP",
+    "offers": [
+      {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "JPY"
+      },
+      {
+        "@type": "Offer",
+        "price": "790",
+        "priceCurrency": "JPY"
+      }
+    ],
+    "publisher": {
+      "@type": "Organization",
+      "name": "Jisik Gongbang",
+      "url": "https://koo-by.github.io/"
+    }
+  }
+  </script>
+  <style>
+    :root {
+      --crimson-900: #450a0a;
+      --crimson-800: #991b1b;
+      --vermilion: #d9381e;
+      --vermilion-soft: #fef2f2;
+      --slate-900: #0f172a;
+      --slate-700: #334155;
+      --slate-500: #64748b;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --border: #e2e8f0;
+      --emerald-700: #047857;
+      --emerald-50: #ecfdf5;
+      --amber-bg: #fffbeb;
+      --amber-bd: #fcd34d;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", "Noto Sans JP", Meiryo, sans-serif;
+      background: linear-gradient(180deg, #1e293b 0%, #7f1d1d 255px, #f8fafc 255px, #f8fafc 100%);
+      color: var(--slate-900);
+      line-height: 1.65;
+      min-height: 100vh;
+    }
+    .wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 20px 16px 56px;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+    .brand-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 13px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      color: #f8fafc;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .brand-pill:hover { background: rgba(255, 255, 255, 0.22); }
+    .lang-switch {
+      display: none;
+      background: rgba(15, 23, 42, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 999px;
+      padding: 3px;
+      gap: 4px;
+    }
+    body.lang-ko .lang-switch,
+    body.qa-preview .lang-switch {
+      display: inline-flex;
+    }
+    .lang-btn {
+      appearance: none;
+      border: 0;
+      background: transparent;
+      color: #e2e8f0;
+      font-size: 12.5px;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+    .lang-btn.active {
+      background: #ffffff;
+      color: var(--slate-900);
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 28px 24px;
+      box-shadow: 0 18px 42px rgba(15, 23, 42, 0.12);
+    }
+    .status-banner {
+      display: none;
+      flex-direction: column;
+      gap: 8px;
+      background: var(--emerald-50);
+      border: 1px solid #a7f3d0;
+      color: #065f46;
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-size: 13.5px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .status-banner.visible { display: flex; }
+    .ios-notice {
+      display: none;
+      background: var(--amber-bg);
+      border: 1.5px solid var(--amber-bd);
+      color: #78350f;
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin-bottom: 18px;
+      font-size: 13.5px;
+    }
+    .ios-notice.visible { display: block; }
+    .ios-notice strong {
+      display: block;
+      font-size: 14.5px;
+      color: #92400e;
+      margin-bottom: 4px;
+    }
+    .qa-box {
+      display: none;
+      margin-top: 4px;
+      padding-top: 8px;
+      border-top: 1px dashed #6ee7b7;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--slate-900);
+    }
+    body.lang-ko .qa-box,
+    body.qa-preview .qa-box {
+      display: block;
+    }
+    .qa-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+    .qa-btn {
+      appearance: none;
+      border: 1px solid #6ee7b7;
+      background: #ffffff;
+      color: #065f46;
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+    .qa-btn:hover { background: #d1fae5; }
+    .hero-badge {
+      display: inline-block;
+      background: var(--vermilion-soft);
+      color: var(--crimson-800);
+      border: 1px solid #fecaca;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 4px 11px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 25px;
+      line-height: 1.3;
+      color: var(--slate-900);
+      font-weight: 800;
+    }
+    .subtitle {
+      margin: 0 0 20px;
+      font-size: 14.5px;
+      color: #475569;
+    }
+    .cta-stack {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .store-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      text-decoration: none;
+      padding: 16px 20px;
+      border-radius: 14px;
+      color: #ffffff;
+      font-weight: 800;
+      border: 0;
+      cursor: pointer;
+      transition: transform 0.12s ease, opacity 0.12s ease;
+    }
+    .store-btn:hover {
+      transform: translateY(-1px);
+      opacity: 0.96;
+    }
+    .store-btn.play {
+      background: linear-gradient(135deg, #047857, #065f46);
+      box-shadow: 0 10px 22px rgba(4, 120, 87, 0.25);
+    }
+    .store-btn.ios {
+      background: linear-gradient(135deg, #0f172a, #334155);
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.25);
+    }
+    .store-btn.webtool {
+      background: linear-gradient(135deg, #d9381e, #b91c1c);
+      box-shadow: 0 10px 22px rgba(217, 56, 30, 0.25);
+    }
+    .store-btn .btn-meta {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      line-height: 1.28;
+    }
+    .store-btn .btn-small {
+      font-size: 12px;
+      font-weight: 600;
+      opacity: 0.92;
+    }
+    .store-btn .btn-main {
+      font-size: 16.5px;
+      font-weight: 800;
+    }
+    .ios-pending-pill {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      background: #f1f5f9;
+      border: 1px dashed #94a3b8;
+      border-radius: 12px;
+      padding: 12px 16px;
+      color: #334155;
+      font-size: 13.5px;
+      font-weight: 700;
+    }
+    .secondary-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .copy-btn {
+      appearance: none;
+      border: 1px solid #cbd5e1;
+      background: #f8fafc;
+      color: var(--slate-900);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 9px 14px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .copy-btn:hover { background: #e2e8f0; }
+    .copy-toast {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--emerald-700);
+      align-self: center;
+    }
+    .qr-panel {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px 18px;
+      margin-bottom: 22px;
+    }
+    @media (max-width: 560px) {
+      .card { padding: 22px 16px; }
+      h1 { font-size: 21.5px; }
+      .qr-panel { flex-direction: column; text-align: center; }
+    }
+    .qr-box {
+      flex-shrink: 0;
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 12px;
+      padding: 8px;
+      line-height: 0;
+    }
+    .qr-box svg {
+      display: block;
+      width: 148px;
+      height: 148px;
+    }
+    .qr-text h2 {
+      margin: 0 0 6px;
+      font-size: 16px;
+      color: var(--slate-900);
+    }
+    .qr-text p {
+      margin: 0 0 8px;
+      font-size: 13.5px;
+      color: #475569;
+    }
+    .url-chip {
+      display: inline-block;
+      background: #e2e8f0;
+      color: var(--slate-900);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 9px;
+      border-radius: 8px;
+      word-break: break-all;
+    }
+    .features-title {
+      margin: 0 0 12px;
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--crimson-800);
+    }
+    .features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    @media (max-width: 560px) {
+      .features { grid-template-columns: 1fr; }
+    }
+    .feat-item {
+      background: var(--vermilion-soft);
+      border: 1px solid #fecaca;
+      border-radius: 12px;
+      padding: 12px 14px;
+    }
+    .feat-item strong {
+      display: block;
+      font-size: 13.5px;
+      color: var(--crimson-800);
+      margin-bottom: 4px;
+    }
+    .feat-item span {
+      display: block;
+      font-size: 12.5px;
+      color: var(--slate-700);
+      line-height: 1.5;
+    }
+    .compliance-note {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-size: 12.5px;
+      color: #78350f;
+      margin-bottom: 18px;
+    }
+    .footer {
+      border-top: 1px solid var(--border);
+      padding-top: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 12.5px;
+      color: var(--slate-500);
+    }
+    .footer-links {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      color: var(--crimson-800);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .footer-links a:hover { text-decoration: underline; }
+    body.lang-ja [data-lang="ko"],
+    body.lang-ko [data-lang="ja"] {
+      display: none !important;
+    }
+  </style>
+</head>
+<body class="lang-ja">
+  <div class="wrap">
+    <div class="topbar">
+      <a class="brand-pill" href="/">
+        <span>Jisik Gongbang（知識工房）</span>
+        <span>•</span>
+        <span data-lang="ja">電子印鑑スタジオ 公式リンク</span>
+        <span data-lang="ko">전자도장 스튜디오 스마트 원링크</span>
+      </a>
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button id="btn-ja" class="lang-btn active" type="button" onclick="setLang('ja')">🇯🇵 日本語</button>
+        <button id="btn-ko" class="lang-btn" type="button" onclick="setLang('ko')">🇰🇷 한국어 검수</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div id="redirect-banner" class="status-banner" role="status">
+        <div>
+          <span data-lang="ja" id="redirect-msg-ja">Google Play（Android版）へ移動しています... 自動で開かない場合は下のボタンをタップしてください。</span>
+          <span data-lang="ko" id="redirect-msg-ko">검수 모드(?lang=ko / ?qa=1) 또는 PC 접속 중이므로 자동 이동을 정지했습니다. 아래 버튼으로 Android / iOS / Desktop 분기를 시뮬레이션할 수 있습니다.</span>
+        </div>
+        <div class="qa-box">
+          <div>추적 Google Play URL (UTM referrer 자동 결합): <code id="qa-play-url" style="word-break:break-all;"></code></div>
+          <div>현재 <code>IOS_LIVE</code> 플래그: <strong id="qa-ios-flag">false</strong></div>
+          <div class="qa-actions">
+            <button class="qa-btn" type="button" onclick="applyPlatformState('android', false)">Android 접속 시뮬</button>
+            <button class="qa-btn" type="button" onclick="applyPlatformState('ios', false)">iPhone/iPad 접속 시뮬</button>
+            <button class="qa-btn" type="button" onclick="applyPlatformState('desktop', false)">Desktop/PC 접속 시뮬</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="ios-notice" class="ios-notice" role="region" aria-label="iOS配信状況のご案内">
+        <strong data-lang="ja">📱 Android 先行公開中 ／ iOS版 審査中（公開準備中）</strong>
+        <strong data-lang="ko">📱 Android 선행 공개 중 / iOS 버전 심사 대기 중 (404 방어 가드 작동)</strong>
+        <span data-lang="ja">『電子印鑑スタジオ』は現在 <strong>Android版（Google Play）にて先行公開中</strong> です。iPhone / iPad（iOS版）はただいま審査中のため、公開までの間もすぐに使える<strong>「インストール不要・10.5mm実寸透過PNG 無料Webツール（Safari対応）」</strong>をご活用ください。</span>
+        <span data-lang="ko">현재 본 앱은 <strong>Android (Google Play JP)</strong>로 선행 출시되었으며 iOS(App Store)는 심사 대기 중입니다. `IOS_LIVE=false` 가드가 작동하여 404 에러 링크 대신 아래 <strong>무료 브라우저 웹 도구(10.5mm 투명 PNG 생성기)</strong>와 Android 링크 복사 동선으로 안전하게 분기합니다.</span>
+      </div>
+
+      <span class="hero-badge" data-lang="ja">登録不要・完全オフライン • Android 先行公開中 ／ iOS版 審査中</span>
+      <span class="hero-badge" data-lang="ko">회원가입 불필요·완전 오프라인 • Android 선행 공개 중 / iOS 심사 중</span>
+
+      <h1 data-lang="ja">電子印鑑スタジオ - 透過ハンコ作成＆PDF押印</h1>
+      <h1 data-lang="ko">전자도장 스튜디오 - 투명 도장 제작 &amp; PDF 날인</h1>
+
+      <p class="subtitle" data-lang="ja">元のPDFの文字や画質を一切劣化させない「ロスレスPDF直接押印」、Excel・Wordで27cmにならない実寸mm（pHYs）透過PNG出力、法人代表者印・角印・旧字体・実物ハンコ透過スキャンが100%端末内で完結します。</p>
+      <p class="subtitle" data-lang="ko">원본 PDF 글자 깨짐·이미지화 제로의 무손실 벡터 PDF 날인, Excel 27cm 거대화 방지 실측 mm(pHYs) 투명 PNG, 법인 대표자인·각인·구자체·실물 도장 1024px 스캔을 100% 오프라인으로 처리합니다.</p>
+
+      <div class="cta-stack">
+        <a id="btn-android-store" class="store-btn play" href="https://play.google.com/store/apps/details?id=com.knowledgestudio.japan.app_01_denshi_inkan&amp;hl=ja&amp;gl=JP" rel="noopener">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M3.609 1.814L13.792 12 3.61 22.186a1.77 1.77 0 0 1-.495-1.253V3.067c0-.487.185-.94.494-1.253zm11.24 11.243l2.742 2.743-11.27 6.38 8.528-9.123zm3.658-2.094l2.433 1.378c.747.423.747 1.495 0 1.918l-2.433 1.378-3.035-3.037 3.035-1.637zM6.32 1.82l11.27 6.38-2.742 2.743L6.32 1.82z"/>
+          </svg>
+          <span class="btn-meta">
+            <span class="btn-small" data-lang="ja">Android端末ですぐ使える（基本無料）</span>
+            <span class="btn-small" data-lang="ko">Google Play(JP) Android 즉시 다운로드 · UTM 추적</span>
+            <span class="btn-main">Google Play（Android 先行公開中）</span>
+          </span>
+        </a>
+
+        <div id="ios-pending-box" class="ios-pending-pill">
+          <span data-lang="ja">🍎 iPhone / iPad（App Store版）：ただいま審査中（公開完了次第このページから自動案内します）</span>
+          <span data-lang="ko">🍎 iPhone / iPad (App Store): 현재 심사 대기 중 (`IOS_LIVE=true` 전환 시 자동 활성화)</span>
+        </div>
+
+        <a id="btn-ios-store" class="store-btn ios" href="#ios-pending-box" style="display:none;" rel="noopener">
+          <span class="btn-meta">
+            <span class="btn-small" data-lang="ja">iPhone / iPad でダウンロード（基本無料）</span>
+            <span class="btn-small" data-lang="ko">App Store(JP) iOS 다운로드</span>
+            <span class="btn-main">App Store（iPhone / iPad）</span>
+          </span>
+        </a>
+
+        <a id="btn-web-hanko-tool" class="store-btn webtool" href="/jp-inkan/hanko-size-tool/">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"/><path d="M9 10h6M12 8v8M9 14h6"/>
+          </svg>
+          <span class="btn-meta">
+            <span class="btn-small" data-lang="ja">iPhone・PCでもインストール不要で今すぐ作成（完全オンデバイス）</span>
+            <span class="btn-small" data-lang="ko">무료 브라우저 웹 도구 (iPhone/PC 즉시 10.5mm 투명 PNG 생성)</span>
+            <span class="btn-main" data-lang="ja">無料Webツール：Excel実寸（10.5mm）透過ハンコ作成を開く</span>
+            <span class="btn-main" data-lang="ko">무료 웹 도구: Excel 실측(10.5mm) 투명 막도장 PNG 생성기 열기</span>
+          </span>
+        </a>
+      </div>
+
+      <div class="secondary-actions">
+        <button id="btn-copy-play" class="copy-btn" type="button" onclick="copyPlayLink()">
+          <span data-lang="ja">📋 Google Play（Android版）のリンクをコピー</span>
+          <span data-lang="ko">📋 Google Play 링크 복사 (UTM 포함)</span>
+        </button>
+        <span id="copy-toast" class="copy-toast" aria-live="polite"></span>
+      </div>
+
+      <div class="qr-panel">
+        <div class="qr-box">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35" width="180" height="180" shape-rendering="crispEdges" role="img" aria-label="QR Code 電子印鑑スタジオ"><rect width="35" height="35" fill="#ffffff"/><path d="M3,3h1v1h-1zM4,3h1v1h-1zM5,3h1v1h-1zM6,3h1v1h-1zM7,3h1v1h-1zM8,3h1v1h-1zM9,3h1v1h-1zM12,3h1v1h-1zM14,3h1v1h-1zM16,3h1v1h-1zM19,3h1v1h-1zM20,3h1v1h-1zM21,3h1v1h-1zM22,3h1v1h-1zM25,3h1v1h-1zM26,3h1v1h-1zM27,3h1v1h-1zM28,3h1v1h-1zM29,3h1v1h-1zM30,3h1v1h-1zM31,3h1v1h-1zM3,4h1v1h-1zM9,4h1v1h-1zM11,4h1v1h-1zM13,4h1v1h-1zM17,4h1v1h-1zM18,4h1v1h-1zM19,4h1v1h-1zM20,4h1v1h-1zM22,4h1v1h-1zM25,4h1v1h-1zM31,4h1v1h-1zM3,5h1v1h-1zM5,5h1v1h-1zM6,5h1v1h-1zM7,5h1v1h-1zM9,5h1v1h-1zM13,5h1v1h-1zM16,5h1v1h-1zM17,5h1v1h-1zM19,5h1v1h-1zM22,5h1v1h-1zM25,5h1v1h-1zM27,5h1v1h-1zM28,5h1v1h-1zM29,5h1v1h-1zM31,5h1v1h-1zM3,6h1v1h-1zM5,6h1v1h-1zM6,6h1v1h-1zM7,6h1v1h-1zM9,6h1v1h-1zM13,6h1v1h-1zM14,6h1v1h-1zM16,6h1v1h-1zM17,6h1v1h-1zM18,6h1v1h-1zM21,6h1v1h-1zM25,6h1v1h-1zM27,6h1v1h-1zM28,6h1v1h-1zM29,6h1v1h-1zM31,6h1v1h-1zM3,7h1v1h-1zM5,7h1v1h-1zM6,7h1v1h-1zM7,7h1v1h-1zM9,7h1v1h-1zM11,7h1v1h-1zM13,7h1v1h-1zM15,7h1v1h-1zM17,7h1v1h-1zM20,7h1v1h-1zM21,7h1v1h-1zM22,7h1v1h-1zM23,7h1v1h-1zM25,7h1v1h-1zM27,7h1v1h-1zM28,7h1v1h-1zM29,7h1v1h-1zM31,7h1v1h-1zM3,8h1v1h-1zM9,8h1v1h-1zM12,8h1v1h-1zM14,8h1v1h-1zM15,8h1v1h-1zM16,8h1v1h-1zM21,8h1v1h-1zM22,8h1v1h-1zM25,8h1v1h-1zM31,8h1v1h-1zM3,9h1v1h-1zM4,9h1v1h-1zM5,9h1v1h-1zM6,9h1v1h-1zM7,9h1v1h-1zM8,9h1v1h-1zM9,9h1v1h-1zM11,9h1v1h-1zM13,9h1v1h-1zM15,9h1v1h-1zM17,9h1v1h-1zM19,9h1v1h-1zM21,9h1v1h-1zM23,9h1v1h-1zM25,9h1v1h-1zM26,9h1v1h-1zM27,9h1v1h-1zM28,9h1v1h-1zM29,9h1v1h-1zM30,9h1v1h-1zM31,9h1v1h-1zM12,10h1v1h-1zM13,10h1v1h-1zM16,10h1v1h-1zM17,10h1v1h-1zM19,10h1v1h-1zM20,10h1v1h-1zM21,10h1v1h-1zM3,11h1v1h-1zM5,11h1v1h-1zM7,11h1v1h-1zM9,11h1v1h-1zM12,11h1v1h-1zM13,11h1v1h-1zM15,11h1v1h-1zM17,11h1v1h-1zM18,11h1v1h-1zM19,11h1v1h-1zM20,11h1v1h-1zM21,11h1v1h-1zM23,11h1v1h-1zM27,11h1v1h-1zM30,11h1v1h-1zM6,12h1v1h-1zM10,12h1v1h-1zM11,12h1v1h-1zM14,12h1v1h-1zM17,12h1v1h-1zM18,12h1v1h-1zM23,12h1v1h-1zM24,12h1v1h-1zM25,12h1v1h-1zM28,12h1v1h-1zM31,12h1v1h-1zM4,13h1v1h-1zM5,13h1v1h-1zM6,13h1v1h-1zM7,13h1v1h-1zM8,13h1v1h-1zM9,13h1v1h-1zM10,13h1v1h-1zM14,13h1v1h-1zM16,13h1v1h-1zM20,13h1v1h-1zM25,13h1v1h-1zM26,13h1v1h-1zM27,13h1v1h-1zM29,13h1v1h-1zM30,13h1v1h-1zM31,13h1v1h-1zM4,14h1v1h-1zM5,14h1v1h-1zM6,14h1v1h-1zM7,14h1v1h-1zM10,14h1v1h-1zM11,14h1v1h-1zM12,14h1v1h-1zM14,14h1v1h-1zM15,14h1v1h-1zM19,14h1v1h-1zM20,14h1v1h-1zM21,14h1v1h-1zM22,14h1v1h-1zM23,14h1v1h-1zM24,14h1v1h-1zM25,14h1v1h-1zM27,14h1v1h-1zM30,14h1v1h-1zM3,15h1v1h-1zM5,15h1v1h-1zM9,15h1v1h-1zM10,15h1v1h-1zM11,15h1v1h-1zM12,15h1v1h-1zM14,15h1v1h-1zM15,15h1v1h-1zM18,15h1v1h-1zM19,15h1v1h-1zM20,15h1v1h-1zM24,15h1v1h-1zM25,15h1v1h-1zM28,15h1v1h-1zM30,15h1v1h-1zM31,15h1v1h-1zM3,16h1v1h-1zM4,16h1v1h-1zM5,16h1v1h-1zM6,16h1v1h-1zM7,16h1v1h-1zM8,16h1v1h-1zM11,16h1v1h-1zM12,16h1v1h-1zM15,16h1v1h-1zM16,16h1v1h-1zM23,16h1v1h-1zM25,16h1v1h-1zM26,16h1v1h-1zM28,16h1v1h-1zM31,16h1v1h-1zM3,17h1v1h-1zM4,17h1v1h-1zM5,17h1v1h-1zM6,17h1v1h-1zM8,17h1v1h-1zM9,17h1v1h-1zM10,17h1v1h-1zM12,17h1v1h-1zM13,17h1v1h-1zM14,17h1v1h-1zM17,17h1v1h-1zM19,17h1v1h-1zM20,17h1v1h-1zM21,17h1v1h-1zM23,17h1v1h-1zM26,17h1v1h-1zM28,17h1v1h-1zM30,17h1v1h-1zM31,17h1v1h-1zM3,18h1v1h-1zM4,18h1v1h-1zM11,18h1v1h-1zM15,18h1v1h-1zM16,18h1v1h-1zM17,18h1v1h-1zM19,18h1v1h-1zM20,18h1v1h-1zM22,18h1v1h-1zM27,18h1v1h-1zM28,18h1v1h-1zM30,18h1v1h-1zM5,19h1v1h-1zM6,19h1v1h-1zM8,19h1v1h-1zM9,19h1v1h-1zM11,19h1v1h-1zM14,19h1v1h-1zM15,19h1v1h-1zM17,19h1v1h-1zM18,19h1v1h-1zM19,19h1v1h-1zM20,19h1v1h-1zM22,19h1v1h-1zM23,19h1v1h-1zM25,19h1v1h-1zM28,19h1v1h-1zM30,19h1v1h-1zM31,19h1v1h-1zM4,20h1v1h-1zM6,20h1v1h-1zM7,20h1v1h-1zM8,20h1v1h-1zM10,20h1v1h-1zM11,20h1v1h-1zM12,20h1v1h-1zM13,20h1v1h-1zM17,20h1v1h-1zM19,20h1v1h-1zM20,20h1v1h-1zM21,20h1v1h-1zM23,20h1v1h-1zM24,20h1v1h-1zM25,20h1v1h-1zM28,20h1v1h-1zM29,20h1v1h-1zM31,20h1v1h-1zM3,21h1v1h-1zM5,21h1v1h-1zM7,21h1v1h-1zM8,21h1v1h-1zM9,21h1v1h-1zM10,21h1v1h-1zM11,21h1v1h-1zM12,21h1v1h-1zM13,21h1v1h-1zM16,21h1v1h-1zM21,21h1v1h-1zM23,21h1v1h-1zM24,21h1v1h-1zM26,21h1v1h-1zM30,21h1v1h-1zM31,21h1v1h-1zM4,22h1v1h-1zM6,22h1v1h-1zM7,22h1v1h-1zM11,22h1v1h-1zM12,22h1v1h-1zM13,22h1v1h-1zM14,22h1v1h-1zM18,22h1v1h-1zM20,22h1v1h-1zM22,22h1v1h-1zM23,22h1v1h-1zM24,22h1v1h-1zM25,22h1v1h-1zM27,22h1v1h-1zM28,22h1v1h-1zM30,22h1v1h-1zM3,23h1v1h-1zM7,23h1v1h-1zM8,23h1v1h-1zM9,23h1v1h-1zM14,23h1v1h-1zM19,23h1v1h-1zM20,23h1v1h-1zM21,23h1v1h-1zM23,23h1v1h-1zM24,23h1v1h-1zM25,23h1v1h-1zM26,23h1v1h-1zM27,23h1v1h-1zM11,24h1v1h-1zM12,24h1v1h-1zM14,24h1v1h-1zM16,24h1v1h-1zM19,24h1v1h-1zM23,24h1v1h-1zM27,24h1v1h-1zM29,24h1v1h-1zM30,24h1v1h-1zM31,24h1v1h-1zM3,25h1v1h-1zM4,25h1v1h-1zM5,25h1v1h-1zM6,25h1v1h-1zM7,25h1v1h-1zM8,25h1v1h-1zM9,25h1v1h-1zM14,25h1v1h-1zM15,25h1v1h-1zM17,25h1v1h-1zM22,25h1v1h-1zM23,25h1v1h-1zM25,25h1v1h-1zM27,25h1v1h-1zM28,25h1v1h-1zM30,25h1v1h-1zM31,25h1v1h-1zM3,26h1v1h-1zM9,26h1v1h-1zM12,26h1v1h-1zM13,26h1v1h-1zM15,26h1v1h-1zM16,26h1v1h-1zM17,26h1v1h-1zM20,26h1v1h-1zM21,26h1v1h-1zM23,26h1v1h-1zM27,26h1v1h-1zM28,26h1v1h-1zM30,26h1v1h-1zM31,26h1v1h-1zM3,27h1v1h-1zM5,27h1v1h-1zM6,27h1v1h-1zM7,27h1v1h-1zM9,27h1v1h-1zM11,27h1v1h-1zM12,27h1v1h-1zM14,27h1v1h-1zM15,27h1v1h-1zM17,27h1v1h-1zM18,27h1v1h-1zM19,27h1v1h-1zM20,27h1v1h-1zM23,27h1v1h-1zM24,27h1v1h-1zM25,27h1v1h-1zM26,27h1v1h-1zM27,27h1v1h-1zM31,27h1v1h-1zM3,28h1v1h-1zM5,28h1v1h-1zM6,28h1v1h-1zM7,28h1v1h-1zM9,28h1v1h-1zM12,28h1v1h-1zM14,28h1v1h-1zM16,28h1v1h-1zM17,28h1v1h-1zM19,28h1v1h-1zM26,28h1v1h-1zM27,28h1v1h-1zM29,28h1v1h-1zM30,28h1v1h-1zM31,28h1v1h-1zM3,29h1v1h-1zM5,29h1v1h-1zM6,29h1v1h-1zM7,29h1v1h-1zM9,29h1v1h-1zM11,29h1v1h-1zM13,29h1v1h-1zM14,29h1v1h-1zM16,29h1v1h-1zM19,29h1v1h-1zM21,29h1v1h-1zM26,29h1v1h-1zM27,29h1v1h-1zM28,29h1v1h-1zM31,29h1v1h-1zM3,30h1v1h-1zM9,30h1v1h-1zM12,30h1v1h-1zM13,30h1v1h-1zM14,30h1v1h-1zM16,30h1v1h-1zM17,30h1v1h-1zM19,30h1v1h-1zM20,30h1v1h-1zM21,30h1v1h-1zM22,30h1v1h-1zM23,30h1v1h-1zM27,30h1v1h-1zM30,30h1v1h-1zM3,31h1v1h-1zM4,31h1v1h-1zM5,31h1v1h-1zM6,31h1v1h-1zM7,31h1v1h-1zM8,31h1v1h-1zM9,31h1v1h-1zM11,31h1v1h-1zM12,31h1v1h-1zM13,31h1v1h-1zM15,31h1v1h-1zM18,31h1v1h-1zM19,31h1v1h-1zM20,31h1v1h-1zM22,31h1v1h-1zM23,31h1v1h-1zM24,31h1v1h-1zM30,31h1v1h-1zM31,31h1v1h-1z" fill="#0f172a"/></svg>
+        </div>
+        <div class="qr-text">
+          <h2 data-lang="ja">パソコン（PC）でご覧の方へ</h2>
+          <h2 data-lang="ko">PC 브라우저에서 접속하셨나요?</h2>
+          <p data-lang="ja">スマートフォンのカメラで左のQRコードを読み取ると、Android端末ではGoogle Playへ自動接続し、iPhoneでは無料のWeb透過ハンコツールをご利用いただけます。</p>
+          <p data-lang="ko">스마트폰 카메라로 왼쪽 QR 코드를 스캔하면 Android 기기는 Google Play로 직행하며, iOS/PC 사용자는 무료 웹 도장 도구로 안전하게 연결됩니다.</p>
+          <span class="url-chip">https://koo-by.github.io/jp-inkan/</span>
+        </div>
+      </div>
+
+      <h3 class="features-title" data-lang="ja">『電子印鑑スタジオ』が選ばれる4つの特長</h3>
+      <h3 class="features-title" data-lang="ko">『전자도장 스튜디오』가 선택받는 4대 핵심 무기</h3>
+      <div class="features">
+        <div class="feat-item">
+          <strong data-lang="ja">1. 文字が劣化しない「無劣化PDF直接押印」</strong>
+          <strong data-lang="ko">1. 글자 깨짐 없는 무손실 벡터 PDF 날인</strong>
+          <span data-lang="ja">PDFを画像化せず元のベクター文字と全ページ（20ページ超対応）を維持したまま、10.5mm〜24mmの実寸で押印します。</span>
+          <span data-lang="ko">PDF를 비트맵으로 굽지 않아 텍스트 검색/복사 및 20페이지 초과 대용량 규격을 100% 보존합니다.</span>
+        </div>
+        <div class="feat-item">
+          <strong data-lang="ja">2. Excel/Wordで27cmにならない実寸pHYs PNG</strong>
+          <strong data-lang="ko">2. Excel 27cm 거대화 방지 PNG pHYs 출력</strong>
+          <span data-lang="ja">物理サイズ情報（pHYs DPI）を自動記録した1024px透過PNGのため、貼るだけで10.5mm・18mm等の実寸サイズになります。</span>
+          <span data-lang="ko">1024px 고해상도 투명 PNG에 물리 DPI(pHYs)를 자동 기록해 엑셀·워드 삽입 시 실물 mm 크기로 고정됩니다.</span>
+        </div>
+        <div class="feat-item">
+          <strong data-lang="ja">3. 法人代表者印（二重丸印）・角印・旧字体対応</strong>
+          <strong data-lang="ko">3. 법인 대표자인(이중원형)·각인·구자체 피커</strong>
+          <span data-lang="ja">「髙・﨑・邊・齋」などの旧字体ピッカー＆4種のオフライン印章フォント内蔵。法人代表者印・角印・日付データ印まで網羅。</span>
+          <span data-lang="ko">외곽 상호+중앙 직책 이중원형 대표자인과 사각인(1~4열), 구자체 입력기, 번들 인장 4종 서체를 오프라인 내장했습니다.</span>
+        </div>
+        <div class="feat-item">
+          <strong data-lang="ja">4. 紙の実物ハンコ手動クロップ＆100%オフライン</strong>
+          <strong data-lang="ko">4. 실물 도장 1024px 수동 크롭 &amp; 서버 전송 0</strong>
+          <span data-lang="ja">複数ハンコの書類から手動切り抜き＆1024px透明抽出。社外秘PDFも外部サーバーへ一切送信せず端末内だけで安全完結。</span>
+          <span data-lang="ko">수동 크롭·회전 보정으로 1024px 투명 스캔을 추출하며, 외부 서버 전송 0바이트 100% 온디바이스로 안전합니다.</span>
+        </div>
+      </div>
+
+      <div class="compliance-note" data-lang="ja">
+        <strong>ご注意（電子署名法・セキュリティについて）：</strong> 本アプリで作成される電子印鑑は、見積書・請求書・領収書・社内稟議書などの日常業務書類における視覚的な印影画像を作成するツールです。電子署名法に基づく第三者認証局の電子証明書や公的な実印登録証明を付与するものではありません。また、偽造・悪用防止のため、<strong>自治体に登録された実印や銀行届出印をスキャン・登録して使用することはお控えください</strong>。
+      </div>
+      <div class="compliance-note" data-lang="ko">
+        <strong>주의사항 (일본 전자서명법 &amp; 실인 스캔 금지):</strong> 본 앱은 일상 업무 서류용 시각적 인영 도구이며, 전자서명법에 따른 공인 전자증명서나 공적 인감증명을 부여하지 않습니다. 지자체 등록 실인(実印)이나 은행 신고인을 스캔해 사용하는 것은 삼가 주세요.
+      </div>
+
+      <div class="footer">
+        <span>Jisik Gongbang（知識工房） • 100% On-Device Studio</span>
+        <div class="footer-links">
+          <a id="link-tool" href="/jp-inkan/hanko-size-tool/" data-base="/jp-inkan/hanko-size-tool/">
+            <span data-lang="ja">無料10.5mm透過PNGツール</span>
+            <span data-lang="ko">무료 10.5mm 웹 도구</span>
+          </a>
+          <a id="link-press" href="/press_app01_denshi_inkan.html" data-base="/press_app01_denshi_inkan.html">
+            <span data-lang="ja">公式プレスキット</span>
+            <span data-lang="ko">공식 프레스킷</span>
+          </a>
+          <a id="link-privacy" href="/privacy.html" data-base="/privacy.html">
+            <span data-lang="ja">プライバシーポリシー</span>
+            <span data-lang="ko">개인정보처리방침</span>
+          </a>
+          <a id="link-terms" href="/terms.html" data-base="/terms.html">
+            <span data-lang="ja">利用規約</span>
+            <span data-lang="ko">이용약관</span>
+          </a>
+          <a id="link-tokushoho" href="/tokushoho.html" data-base="/tokushoho.html">
+            <span data-lang="ja">特定商取引法に基づく表記</span>
+            <span data-lang="ko">특정상거래법 표기</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Single-line switch: set IOS_LIVE = true once Apple App Store build reaches READY_FOR_SALE.
+    var IOS_LIVE = false;
+    var PLAY_BASE_URL = "https://play.google.com/store/apps/details?id=com.knowledgestudio.japan.app_01_denshi_inkan&hl=ja&gl=JP";
+    var APP_STORE_ID = "6827110841";
+
+    function getAppStoreUrl() {
+      if (!IOS_LIVE) return null;
+      return "https://" + "apps.apple.com/jp/app/id" + APP_STORE_ID;
+    }
+
+    function buildGooglePlayUrl(searchStr) {
+      var params = new URLSearchParams(searchStr !== undefined ? searchStr : (window.location.search || ""));
+      var customRef = params.get("referrer");
+      var referrerValue = customRef;
+      if (!referrerValue) {
+        var utmSource = params.get("utm_source") || params.get("src") || "onelink";
+        var utmMedium = params.get("utm_medium") || "web_redirect";
+        var utmCampaign = params.get("utm_campaign") || "jp_android_wave1";
+        var utmContent = params.get("utm_content") || "";
+        var utmTerm = params.get("utm_term") || "";
+        var parts = [
+          "utm_source=" + encodeURIComponent(utmSource),
+          "utm_medium=" + encodeURIComponent(utmMedium),
+          "utm_campaign=" + encodeURIComponent(utmCampaign)
+        ];
+        if (utmContent) parts.push("utm_content=" + encodeURIComponent(utmContent));
+        if (utmTerm) parts.push("utm_term=" + encodeURIComponent(utmTerm));
+        referrerValue = parts.join("&");
+      }
+      return PLAY_BASE_URL + "&referrer=" + encodeURIComponent(referrerValue);
+    }
+
+    function detectTargetPlatform(ua, platform, maxTouchPoints) {
+      var u = ua || "";
+      var p = platform || "";
+      var touch = typeof maxTouchPoints === "number" ? maxTouchPoints : 0;
+      if (/Android/i.test(u)) {
+        return { os: "android", shouldRedirect: true };
+      }
+      if (/iPhone|iPad|iPod/i.test(u) || (/Macintosh/i.test(u) && touch > 1) || (/MacIntel/i.test(p) && touch > 1)) {
+        return { os: "ios", shouldRedirect: IOS_LIVE };
+      }
+      return { os: "desktop", shouldRedirect: false };
+    }
+
+    function setLang(lang) {
+      var target = lang === "ko" ? "ko" : "ja";
+      var keepQa = document.body.classList.contains("qa-preview");
+      document.body.className = "lang-" + target + (keepQa ? " qa-preview" : "");
+      document.documentElement.lang = target;
+
+      var btnJa = document.getElementById("btn-ja");
+      var btnKo = document.getElementById("btn-ko");
+      if (btnJa) btnJa.classList.toggle("active", target === "ja");
+      if (btnKo) btnKo.classList.toggle("active", target === "ko");
+
+      var qaQuery = target === "ko" ? "?lang=ko" : (keepQa ? "?qa=1" : "");
+      ["link-tool", "link-press", "link-privacy", "link-terms", "link-tokushoho"].forEach(function(id) {
+        var el = document.getElementById(id);
+        if (el) el.href = el.getAttribute("data-base") + qaQuery;
+      });
+      var bwt = document.getElementById("btn-web-hanko-tool");
+      if (bwt) bwt.href = "/jp-inkan/hanko-size-tool/" + qaQuery;
+
+      var banner = document.getElementById("redirect-banner");
+      var currentOs = document.documentElement.getAttribute("data-detected-os") || "desktop";
+      if (banner) {
+        banner.classList.toggle("visible", (target === "ko") || keepQa || (currentOs === "android") || (currentOs === "ios" && IOS_LIVE));
+      }
+    }
+
+    function applyPlatformState(os, allowRedirect) {
+      var targetPlayUrl = buildGooglePlayUrl();
+      var playBtn = document.getElementById("btn-android-store");
+      if (playBtn) playBtn.href = targetPlayUrl;
+
+      var iosBtn = document.getElementById("btn-ios-store");
+      var iosPendingBox = document.getElementById("ios-pending-box");
+      var appStoreUrl = getAppStoreUrl();
+      if (IOS_LIVE && appStoreUrl) {
+        if (iosBtn) {
+          iosBtn.href = appStoreUrl;
+          iosBtn.style.display = "flex";
+        }
+        if (iosPendingBox) iosPendingBox.style.display = "none";
+      } else {
+        if (iosBtn) {
+          iosBtn.removeAttribute("href");
+          iosBtn.style.display = "none";
+        }
+        if (iosPendingBox) iosPendingBox.style.display = "flex";
+      }
+
+      var qaPlay = document.getElementById("qa-play-url");
+      if (qaPlay) qaPlay.textContent = targetPlayUrl;
+      var qaFlag = document.getElementById("qa-ios-flag");
+      if (qaFlag) qaFlag.textContent = String(IOS_LIVE);
+
+      var banner = document.getElementById("redirect-banner");
+      var iosNotice = document.getElementById("ios-notice");
+      var msgJa = document.getElementById("redirect-msg-ja");
+      var msgKo = document.getElementById("redirect-msg-ko");
+      var isQaMode = document.body.classList.contains("lang-ko") || document.body.classList.contains("qa-preview");
+
+      if (iosNotice) iosNotice.classList.toggle("visible", os === "ios" && !IOS_LIVE);
+      document.documentElement.setAttribute("data-detected-os", os);
+
+      if (os === "android") {
+        if (banner) banner.classList.add("visible");
+        if (msgJa) {
+          msgJa.textContent = allowRedirect
+            ? "Google Play（Android版）へ移動しています... 自動で開かない場合は下のボタンをタップしてください。"
+            : "Android端末を検出しました（プレビューモードのため自動遷移を停止中）。下のボタンからUTMリンクを確認できます。";
+        }
+        if (msgKo) {
+          msgKo.textContent = "[시뮬레이션: Android] 실제 Android 접속 시 120ms 후 UTM referrer가 포함된 Google Play JP로 자동 이동합니다.";
+        }
+        if (allowRedirect) {
+          window.setTimeout(function() {
+            try {
+              window.location.replace(targetPlayUrl);
+            } catch (e) {
+              window.location.href = targetPlayUrl;
+            }
+          }, 120);
+        }
+      } else if (os === "ios") {
+        if (IOS_LIVE && appStoreUrl) {
+          if (banner) banner.classList.add("visible");
+          if (msgJa) msgJa.textContent = "App Store（iPhone / iPad）へ移動しています...";
+          if (msgKo) msgKo.textContent = "[시뮬레이션: iOS] IOS_LIVE=true 상태이므로 App Store로 이동합니다.";
+          if (allowRedirect) {
+            window.setTimeout(function() {
+              window.location.replace(appStoreUrl);
+            }, 120);
+          }
+        } else {
+          if (banner) banner.classList.toggle("visible", isQaMode);
+          if (msgJa) {
+            msgJa.textContent = "iOS版は審査中のため、Android版先行公開のご案内と無料Webツールを表示しています。";
+          }
+          if (msgKo) {
+            msgKo.textContent = "[시뮬레이션: iPhone/iOS] IOS_LIVE=false이므로 404 리다이렉트 대신 'Android 선행 공개 중 / iOS 심사 중' 안내 및 무료 웹 도구로 안전 분기합니다.";
+          }
+        }
+      } else {
+        if (banner) banner.classList.toggle("visible", isQaMode);
+        if (msgJa) {
+          msgJa.textContent = "PCでご覧の方はQRコードまたは無料Web透過ハンコツールをご利用ください。";
+        }
+        if (msgKo) {
+          msgKo.textContent = "[시뮬레이션: Desktop/PC] 자동 이동 없이 QR 코드, Google Play 버튼, 무료 10.5mm 웹 도장 도구를 표시합니다.";
+        }
+      }
+    }
+
+    function copyPlayLink() {
+      var url = buildGooglePlayUrl();
+      var toast = document.getElementById("copy-toast");
+      var isKo = document.body.classList.contains("lang-ko");
+      var doneMsg = isKo ? "✓ Google Play 링크를 복사했습니다!" : "✓ Google Playのリンクをコピーしました！";
+      var failMsg = isKo ? "⚠️ 복사 실패 — 주소를 길게 눌러 복사하세요." : "⚠️ コピーに失敗しました。URLを長押ししてコピーしてください。";
+      if (fallbackCopyText(url, toast, doneMsg)) return;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(function() {
+          if (toast) toast.textContent = doneMsg;
+        }).catch(function() {
+          if (toast) toast.textContent = failMsg;
+        });
+      } else if (toast) {
+        toast.textContent = failMsg;
+      }
+    }
+
+    function fallbackCopyText(text, toast, doneMsg) {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "fixed";
+      ta.style.left = "-9999px";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      var copied = false;
+      try {
+        copied = !!document.execCommand("copy");
+      } catch (e) {
+        copied = false;
+      }
+      document.body.removeChild(ta);
+      if (copied && toast) toast.textContent = doneMsg;
+      return copied;
+    }
+
+    (function initOneLink() {
+      var params = new URLSearchParams(window.location.search);
+      var qLang = params.get("lang");
+      var qaParam = params.get("qa") === "1" || params.get("qa") === "true" || params.get("preview") === "1" || params.get("no_redirect") === "1";
+      var osOverride = params.get("os");
+
+      if (qaParam || qLang === "ko") {
+        document.body.classList.add("qa-preview");
+      }
+      setLang(qLang === "ko" ? "ko" : "ja");
+
+      var detected = detectTargetPlatform(navigator.userAgent, navigator.platform, navigator.maxTouchPoints);
+      var effectiveOs = (osOverride === "android" || osOverride === "ios" || osOverride === "desktop") ? osOverride : detected.os;
+
+      if (qaParam || qLang === "ko") {
+        var banner = document.getElementById("redirect-banner");
+        if (banner) banner.classList.add("visible");
+        applyPlatformState(effectiveOs, false);
+        return;
+      }
+
+      applyPlatformState(effectiveOs, (effectiveOs === "android") || (effectiveOs === "ios" && IOS_LIVE));
+    })();
+  </script>
+</body>
+</html>
