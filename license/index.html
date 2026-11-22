@@ -637,7 +637,7 @@
       seokgyo:  { name: "석교동", lat: 36.627342, lng: 127.491827, desc: "412번 ↔ 211번 환승 (도보 1분)" },
       yukgeori: { name: "육거리시장", lat: 36.627609, lng: 127.489322, desc: "211번 ↔ 412/407번 환승 (도보 4분)" },
       koreaHosp:{ name: "한국병원", lat: 36.620144, lng: 127.496103, desc: "502번 ↔ 211번 환승 (도보 0분)" },
-      yeongun:  { name: "영운동행정복지센터", lat: 36.617590, lng: 127.498591, desc: "509/502번 하차(1245) → 211·213·214·215·216번 승차(1246)" },
+      yeongun:  { name: "영운동행정복지센터", lat: 36.617590, lng: 127.498591, desc: "509/502번 하차(1245) → 211·213번 승차(1246)" },
       hyeondo:  { name: "현도면행정복지센터", lat: 36.486556, lng: 127.424194, desc: "407번 ↔ 300번 환승 (도보 2분)" },
       namil:    { name: "남일면행정복지센터", lat: 36.586965, lng: 127.509673, desc: "가덕면·시험장 방면 경유" },
       exam:     { name: "청주운전면허시험장", lat: 36.575621, lng: 127.566825, desc: "충북 청주시 상당구 가덕면 교육원로 131-20 (별관 1층 사진·신검)" }
@@ -663,11 +663,11 @@
           meta: "환승 2회 · 도보 6분 · 통합환승 적용",
           segments: [
             { type: "walk", label: "1분", flex: 4 },
-            { type: "branch", label: "300/18 (7분)", flex: 14 },
+            { type: "branch", label: "300/18 (7분)", flex: 18 },
             { type: "walk", label: "1분", flex: 4 },
-            { type: "trunk", label: "412 (34분)", flex: 44 },
+            { type: "trunk", label: "412 (34분)", flex: 40 },
             { type: "walk", label: "1분", flex: 4 },
-            { type: "trunk", label: "211 (22분)", flex: 30 },
+            { type: "trunk", label: "211 (22분)", flex: 28 },
             { type: "walk", label: "3분", flex: 6 }
           ],
           steps: [
@@ -687,31 +687,31 @@
         },
         {
           id: "go-stable",
-          tag: "배차 안정 (5개 노선)",
+          tag: "조치원·오송 경유",
           tagClass: "backup",
           duration: "1시간 55분",
           meta: "환승 2회 · 도보 5분 · 412번 놓쳤을 때 추천",
           segments: [
             { type: "walk", label: "1분", flex: 4 },
-            { type: "branch", label: "300/18 (12분)", flex: 16 },
+            { type: "branch", label: "300/18 (12분)", flex: 18 },
             { type: "walk", label: "1분", flex: 4 },
-            { type: "express", label: "509급행 (50분)", flex: 50 },
-            { type: "trunk", label: "211~216 (19분)", flex: 24 },
+            { type: "express", label: "509급행 (50분)", flex: 48 },
+            { type: "trunk", label: "211/213 (19분)", flex: 24 },
             { type: "walk", label: "3분", flex: 6 }
           ],
           steps: [
             { stop: "내판역 정류장", dot: "branch", badges: [{ cls: "branch", txt: "지선 300" }, { cls: "branch", txt: "지선 18" }], sub: "조치원역 방향 약 12분 이동 (또는 340번)" },
             { stop: "조치원역 (도보 1분 환승)", dot: "express", badges: [{ cls: "express", txt: "급행 509" }, { cls: "trunk", txt: "간선 502" }], sub: "오송역·청주도청 경유 약 50분 이동 (509번 배차 ~27분 / 502번 ~40분)" },
-            { stop: "영운동행정복지센터 (1245→1246)", dot: "trunk", badges: [{ cls: "trunk", txt: "211" }, { cls: "branch", txt: "213·214·215·216" }], sub: "5개 노선 모두 면허시험장 경유! 먼저 오는 버스 타고 약 19분 이동" },
+            { stop: "영운동행정복지센터 (1245→1246)", dot: "trunk", badges: [{ cls: "trunk", txt: "간선 211" }, { cls: "branch", txt: "지선 213" }], sub: "시험장 정문 앞 정차는 211번(메인)·213번(일 5~6회)뿐입니다! (212·214·216은 미경유, 215는 도보 17분 주의)" },
             { stop: "청주운전면허시험장 도착", dot: "end", badges: [], sub: "도보 3분 · 시험장 정문 진입" }
           ],
-          tip: "영운동행정복지센터에서 211·213·214·215·216번 중 아무거나 먼저 오는 버스를 탈 수 있어 환승 불확실성이 적습니다. 대기가 길면 여기서 택시 타는 것도 좋습니다.",
+          tip: "412번을 놓쳤을 때 최고의 백업 경로입니다. 영운동에서 반드시 211번(또는 시간 맞으면 213번)을 타세요. 대기가 길면 여기서 택시로 갈아타는 것도 좋습니다.",
           mapLegs: [
             { from: "naepan", to: "jochiwon", type: "branch", label: "300 / 18" },
             { from: "jochiwon", to: "osong", type: "express", label: "509" },
             { from: "osong", to: "yeongun", type: "express", label: "509" },
-            { from: "yeongun", to: "namil", type: "trunk", label: "211~216" },
-            { from: "namil", to: "exam", type: "trunk", label: "211~216" }
+            { from: "yeongun", to: "namil", type: "trunk", label: "211 / 213" },
+            { from: "namil", to: "exam", type: "trunk", label: "211 / 213" }
           ],
           markers: ["naepan", "jochiwon", "osong", "yeongun", "exam"]
         },
@@ -812,20 +812,20 @@
           meta: "환승 2회 · 영운동 + 509급행 경유",
           segments: [
             { type: "walk", label: "3분", flex: 6 },
-            { type: "trunk", label: "211~216 (20분)", flex: 24 },
-            { type: "express", label: "509급행 (48분)", flex: 50 },
+            { type: "trunk", label: "211/213 (20분)", flex: 26 },
+            { type: "express", label: "509급행 (48분)", flex: 48 },
             { type: "trunk", label: "340/18 (15분)", flex: 20 }
           ],
           steps: [
-            { stop: "청주운전면허시험장", dot: "trunk", badges: [{ cls: "trunk", txt: "211~216" }], sub: "시험장 앞 5개 노선 모두 영운동 경유 · 약 20분 이동" },
+            { stop: "청주운전면허시험장", dot: "trunk", badges: [{ cls: "trunk", txt: "211" }, { cls: "branch", txt: "213" }], sub: "시험장 앞 정류장 정차 노선은 211번·213번뿐! 약 20분 이동" },
             { stop: "영운동행정복지센터", dot: "express", badges: [{ cls: "express", txt: "급행 509" }, { cls: "trunk", txt: "간선 502" }], sub: "오송역 경유 약 48분 이동 · 조치원버스터미널 또는 조치원역 하차" },
             { stop: "조치원역 / 버스터미널", dot: "branch", badges: [{ cls: "trunk", txt: "340" }, { cls: "branch", txt: "18" }], sub: "340번(터미널) 13분 또는 18번(역, 도보 1분) 17분 · 내판역 하차" },
             { stop: "내판역 경부선 도착", dot: "end", badges: [], sub: "18번 이용 시 도보 환승 최소" }
           ],
-          tip: "면허시험장에서 211번 외에 213·214·215·216번이 먼저 오더라도 영운동행정복지센터까지 나와서 509/502번을 탈 수 있습니다.",
+          tip: "면허시험장 앞에서 211번 또는 213번을 타고 영운동행정복지센터까지 나와서 509/502번을 타는 조치원 경유 경로입니다.",
           mapLegs: [
-            { from: "exam", to: "namil", type: "trunk", label: "211~216" },
-            { from: "namil", to: "yeongun", type: "trunk", label: "211~216" },
+            { from: "exam", to: "namil", type: "trunk", label: "211 / 213" },
+            { from: "namil", to: "yeongun", type: "trunk", label: "211 / 213" },
             { from: "yeongun", to: "osong", type: "express", label: "509" },
             { from: "osong", to: "jochiwon", type: "express", label: "509" },
             { from: "jochiwon", to: "naepan", type: "branch", label: "18 / 340" }
