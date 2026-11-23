@@ -1,0 +1,722 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>Ploegendienst Rooster &amp; Wekker — Download voor Android (Google Play NL)</title>
+  <meta name="description" content="Download Ploegendienst Rooster &amp; Wekker op Google Play (Android): 5-ploegen en zorgrooster in 0 seconden, ISO-weeknummers, Nederlandse feestdagen, echte dienstwekker en gratis ORT &amp; ploegentoeslag calculator.">
+  <link rel="canonical" href="https://koo-by.github.io/nl-ploegen/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://koo-by.github.io/nl-ploegen/">
+  <meta property="og:title" content="Ploegendienst Rooster &amp; Wekker — 5-Ploegen Kalenders, Wekker &amp; ORT Calculator">
+  <meta property="og:description" content="100% offline dienstrooster zonder account of reclame. 5-ploegen (2-2-2-4), Zorg Paint Mode, automatische wekker (uit op Vrij), ORT 22–60% en Samen vrij vergelijking.">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Ploegendienst Rooster & Wekker",
+    "operatingSystem": "ANDROID",
+    "applicationCategory": "UtilitiesApplication",
+    "inLanguage": "nl",
+    "url": "https://koo-by.github.io/nl-ploegen/",
+    "downloadUrl": "https://play.google.com/store/apps/details?id=com.knowledgestudio.nl.app_03_ploegendienst_rooster&hl=nl&gl=NL",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Jisik Gongbang"
+    }
+  }
+  </script>
+  <style>
+    :root {
+      --cobalt-950: #0b1434;
+      --cobalt-900: #0f1d4d;
+      --cobalt-800: #173794;
+      --cobalt-700: #1d4ed8;
+      --cobalt-50: #eff6ff;
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --border: #dbe3ef;
+      --amber: #f59e0b;
+      --amber-bg: #fffbeb;
+      --amber-bd: #fcd34d;
+      --emerald: #10b981;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", "Malgun Gothic", sans-serif;
+      background: linear-gradient(180deg, #0b1434 0%, #173794 270px, #f4f7fb 270px, #f4f7fb 100%);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    .wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 20px 16px 48px;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+    .brand-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      color: #eff6ff;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+    .lang-switch {
+      display: none;
+      background: rgba(15, 23, 42, 0.42);
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      border-radius: 999px;
+      padding: 3px;
+      gap: 4px;
+    }
+    body.lang-ko .lang-switch,
+    body.qa-preview .lang-switch {
+      display: inline-flex;
+    }
+    .lang-btn {
+      appearance: none;
+      border: 0;
+      background: transparent;
+      color: #e2e8f0;
+      font-size: 12.5px;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+    .lang-btn.active {
+      background: #ffffff;
+      color: #0b1434;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 28px 24px;
+      box-shadow: 0 18px 40px rgba(11, 20, 52, 0.14);
+    }
+    .status-banner {
+      display: none;
+      flex-direction: column;
+      gap: 8px;
+      background: var(--cobalt-50);
+      border: 1px solid #bfdbfe;
+      color: #1e3a8a;
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-size: 13.5px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .status-banner.visible { display: flex; }
+    .ios-notice {
+      display: none;
+      background: var(--amber-bg);
+      border: 1.5px solid var(--amber-bd);
+      color: #78350f;
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin-bottom: 18px;
+      font-size: 13.5px;
+    }
+    .ios-notice.visible { display: block; }
+    .ios-notice strong {
+      display: block;
+      font-size: 14.5px;
+      color: #92400e;
+      margin-bottom: 4px;
+    }
+    .qa-box {
+      display: none;
+      margin-top: 4px;
+      padding-top: 8px;
+      border-top: 1px dashed #93c5fd;
+      font-size: 12px;
+      font-weight: 600;
+      color: #0f172a;
+    }
+    body.lang-ko .qa-box,
+    body.qa-preview .qa-box {
+      display: block;
+    }
+    .qa-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+    .qa-btn {
+      appearance: none;
+      border: 1px solid #93c5fd;
+      background: #ffffff;
+      color: #1e3a8a;
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+    .qa-btn:hover { background: #dbeafe; }
+    .hero-badge {
+      display: inline-block;
+      background: #fef3c7;
+      color: #92400e;
+      border: 1px solid #fcd34d;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 26px;
+      line-height: 1.25;
+      color: #0f172a;
+      font-weight: 800;
+    }
+    .subtitle {
+      margin: 0 0 20px;
+      font-size: 15px;
+      color: var(--muted);
+    }
+    .cta-stack {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .store-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      text-decoration: none;
+      padding: 16px 20px;
+      border-radius: 14px;
+      color: #ffffff;
+      font-weight: 800;
+      border: 0;
+      cursor: pointer;
+      transition: transform 0.12s ease, opacity 0.12s ease;
+    }
+    .store-btn:hover { transform: translateY(-1px); opacity: 0.96; }
+    .store-btn.play {
+      background: linear-gradient(135deg, #1d4ed8, #173794);
+      box-shadow: 0 10px 22px rgba(29, 78, 216, 0.28);
+    }
+    .store-btn.webtool {
+      background: linear-gradient(135deg, #b45309, #d97706);
+      box-shadow: 0 8px 18px rgba(217, 119, 6, 0.24);
+    }
+    .store-btn.ios-soon {
+      background: #f1f5f9;
+      color: #475569;
+      border: 1.5px dashed #94a3b8;
+      cursor: default;
+      box-shadow: none;
+    }
+    .store-btn.ios-soon:hover { transform: none; opacity: 1; }
+    .store-btn .btn-meta {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      line-height: 1.25;
+    }
+    .store-btn .btn-small { font-size: 12px; font-weight: 600; opacity: 0.92; }
+    .store-btn .btn-main { font-size: 16.5px; font-weight: 800; }
+    .secondary-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .copy-btn {
+      appearance: none;
+      border: 1px solid #cbd5e1;
+      background: #f8fafc;
+      color: #0f172a;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 9px 14px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .copy-btn:hover { background: #e2e8f0; }
+    .copy-toast {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #1d4ed8;
+      align-self: center;
+    }
+    .qr-panel {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px 18px;
+      margin-bottom: 22px;
+    }
+    @media (max-width: 560px) {
+      .card { padding: 22px 16px; }
+      h1 { font-size: 22px; }
+      .qr-panel { flex-direction: column; text-align: center; }
+    }
+    .qr-box {
+      flex-shrink: 0;
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 12px;
+      padding: 8px;
+      line-height: 0;
+    }
+    .qr-box svg { display: block; width: 148px; height: 148px; }
+    .qr-text h2 { margin: 0 0 6px; font-size: 16px; color: #0f172a; }
+    .qr-text p { margin: 0 0 8px; font-size: 13.5px; color: var(--muted); }
+    .url-chip {
+      display: inline-block;
+      background: #e2e8f0;
+      color: #0f172a;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 9px;
+      border-radius: 8px;
+      word-break: break-all;
+    }
+    .features-title {
+      margin: 0 0 12px;
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--cobalt-800);
+    }
+    .features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    @media (max-width: 560px) {
+      .features { grid-template-columns: 1fr; }
+    }
+    .feat-item {
+      background: var(--cobalt-50);
+      border: 1px solid #dbeafe;
+      border-radius: 12px;
+      padding: 12px 14px;
+    }
+    .feat-item strong {
+      display: block;
+      font-size: 13.5px;
+      color: var(--cobalt-800);
+      margin-bottom: 4px;
+    }
+    .feat-item span {
+      display: block;
+      font-size: 12.5px;
+      color: #334155;
+      line-height: 1.45;
+    }
+    .compliance-note {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-size: 12.5px;
+      color: #78350f;
+      margin-bottom: 18px;
+    }
+    .footer {
+      border-top: 1px solid var(--border);
+      padding-top: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 12.5px;
+      color: var(--muted);
+    }
+    .footer-links { display: flex; gap: 14px; flex-wrap: wrap; }
+    .footer-links a { color: var(--cobalt-700); text-decoration: none; font-weight: 700; }
+    .footer-links a:hover { text-decoration: underline; }
+    body.lang-nl [data-lang="ko"],
+    body.lang-ko [data-lang="nl"] {
+      display: none !important;
+    }
+  </style>
+</head>
+<body class="lang-nl">
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand-pill">
+        <span>Jisik Gongbang</span>
+        <span>•</span>
+        <span>Nederland • 100% Offline</span>
+      </div>
+      <div class="lang-switch" role="group" aria-label="Taalkeuze">
+        <button id="btn-nl" class="lang-btn active" type="button" onclick="setLang('nl')">Nederlands</button>
+        <button id="btn-ko" class="lang-btn" type="button" onclick="setLang('ko')">한국어 검수</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div id="redirect-banner" class="status-banner" role="status">
+        <div>
+          <span data-lang="nl" id="redirect-msg-nl">Doorsturen naar Google Play (Android)... Als de app-pagina niet vanzelf opent, tik dan hieronder op de Google Play-knop.</span>
+          <span data-lang="ko" id="redirect-msg-ko">검수 모드(?lang=ko / ?preview=1)이거나 PC 접속 중이므로 자동 이동을 멈추었습니다. 아래 버튼으로 Android / iOS / Desktop 분기를 시뮬레이션할 수 있습니다.</span>
+        </div>
+        <div class="qa-box">
+          <div>추적 Google Play URL (UTM &amp; referrer 자동 조합): <code id="qa-play-url" style="word-break:break-all;"></code></div>
+          <div class="qa-actions">
+            <button class="qa-btn" type="button" onclick="applyPlatformState('android', false)">Android 접속 시뮬</button>
+            <button class="qa-btn" type="button" onclick="applyPlatformState('ios', false)">iPhone/iPad (Coming Soon) 시뮬</button>
+            <button class="qa-btn" type="button" onclick="applyPlatformState('desktop', false)">Desktop 접속 시뮬</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="ios-notice" class="ios-notice" role="region" aria-label="Melding voor iPhone en iPad">
+        <strong data-lang="nl">iOS App Store (iPhone / iPad) — Binnenkort beschikbaar (Coming Soon)</strong>
+        <strong data-lang="ko">iPhone / iPad (iOS App Store) — 출시 준비 중 (Coming Soon) 분기 작동</strong>
+        <span data-lang="nl">De app is nu direct beschikbaar voor <strong>Android (Google Play)</strong>. De iPhone &amp; iPad-versie wordt momenteel afgerond voor de App Store. Gebruik ondertussen direct de <strong>Gratis Web ORT &amp; Ploegentoeslag Calculator</strong> hieronder in Safari — zonder account of installatie!</span>
+        <span data-lang="ko">현재 Google Play(Android)가 먼저 진행 중이며, iOS App Store 버전은 등록·검수 준비 중(Coming Soon)입니다. iPhone/iPad 접속자는 오류 화면 대신 아래 <strong>무료 ORT &amp; 교대수당 웹 계산기</strong>를 Safari에서 즉시 사용하도록 안전 분기됩니다.</span>
+      </div>
+
+      <span class="hero-badge" data-lang="nl">100% OFFLINE • GEEN RECLAME • ZONDER ACCOUNT</span>
+      <span class="hero-badge" data-lang="ko">100% 오프라인 • 광고 0 • 회원가입 불필요</span>
+
+      <h1 data-lang="nl">Ploegendienst Rooster &amp; Wekker</h1>
+      <h1 data-lang="ko">Ploegendienst Rooster &amp; Wekker (네덜란드 교대근무 달력 &amp; 알람)</h1>
+
+      <p class="subtitle" data-lang="nl">Open direct jouw 5-ploegendienst (2-2-2-4), 3-ploegen of zorgrooster met ISO-weeknummers, Nederlandse feestdagen (incl. Koningsdag-verschuiving), echte dienstwekker (automatisch UIT op vrije dagen), ORT/ploegentoeslag en 2-persoons Samen vrij-vergelijking.</p>
+      <p class="subtitle" data-lang="ko">회원가입이나 광고 없이 0초 만에 5교대(2-2-2-4)·3교대·의료(Zorg) 근무표를 여세요. ISO 주번호(W01–W53), 네덜란드 공휴일(Koningsdag 토요일 보정), 휴무일 자동 OFF 기상 알람, ORT(22~60%)·5교대 29% 수당 계산 및 2인 Samen vrij 비교를 제공합니다.</p>
+
+      <div class="cta-stack">
+        <a id="btn-android-store" class="store-btn play" href="https://play.google.com/store/apps/details?id=com.knowledgestudio.nl.app_03_ploegendienst_rooster&amp;hl=nl&amp;gl=NL" rel="noopener">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M3.609 1.814L13.792 12 3.61 22.186a1.77 1.77 0 0 1-.495-1.253V3.067c0-.487.185-.94.494-1.253zm11.24 11.243l2.742 2.743-11.27 6.38 8.528-9.123zm3.658-2.094l2.433 1.378c.747.423.747 1.495 0 1.918l-2.433 1.378-3.035-3.037 3.035-1.637zM6.32 1.82l11.27 6.38-2.742 2.743L6.32 1.82z"/>
+          </svg>
+          <span class="btn-meta">
+            <span class="btn-small" data-lang="nl">Download gratis basisversie voor Android</span>
+            <span class="btn-small" data-lang="ko">Google Play(NL) Android 다운로드 · UTM Referrer 추적</span>
+            <span class="btn-main">Google Play (Android NL)</span>
+          </span>
+        </a>
+
+        <a id="btn-web-ort-tool" class="store-btn webtool" href="/nl-ploegen/ort-berekenen/">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="14" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="10" y2="18"/><line x1="14" y1="18" x2="16" y2="18"/>
+          </svg>
+          <span class="btn-meta">
+            <span class="btn-small" data-lang="nl">Direct gebruiken op iPhone, Android &amp; PC (geen installatie)</span>
+            <span class="btn-small" data-lang="ko">무료 웹 SEO 도구 (iPhone/PC/Android 모두 즉시 계산)</span>
+            <span class="btn-main" data-lang="nl">Gratis ORT &amp; Ploegentoeslag Calculator (Web)</span>
+            <span class="btn-main" data-lang="ko">무료 네덜란드 ORT &amp; 교대수당 웹 계산기 열기</span>
+          </span>
+        </a>
+
+        <div class="store-btn ios-soon" aria-label="iOS App Store binnenkort beschikbaar">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.33c.64-.78 1.08-1.86.96-2.94-.93.04-2.06.62-2.72 1.4-.59.68-1.1 1.79-.96 2.84 1.04.08 2.08-.52 2.72-1.3z"/>
+          </svg>
+          <span class="btn-meta">
+            <span class="btn-small" data-lang="nl">iPhone &amp; iPad</span>
+            <span class="btn-small" data-lang="ko">iOS App Store</span>
+            <span class="btn-main" data-lang="nl">App Store (iOS) — Binnenkort beschikbaar (Coming Soon)</span>
+            <span class="btn-main" data-lang="ko">App Store (iOS) — 출시 준비 중 (Coming Soon)</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="secondary-actions">
+        <button id="btn-copy-play" class="copy-btn" type="button" onclick="copyPlayLink()">
+          <span data-lang="nl">📋 Kopieer Google Play-link (voor WhatsApp / collega)</span>
+          <span data-lang="ko">📋 Google Play 링크 복사 (WhatsApp·동료 전송용)</span>
+        </button>
+        <span id="copy-toast" class="copy-toast" aria-live="polite"></span>
+      </div>
+
+      <div class="qr-panel">
+        <div class="qr-box">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 37" width="196" height="196" shape-rendering="crispEdges" role="img" aria-label="QR Code Ploegendienst Rooster &amp; Wekker"><rect width="37" height="37" fill="#ffffff"/><path d="M4,4h1v1h-1zM5,4h1v1h-1zM6,4h1v1h-1zM7,4h1v1h-1zM8,4h1v1h-1zM9,4h1v1h-1zM10,4h1v1h-1zM14,4h1v1h-1zM15,4h1v1h-1zM16,4h1v1h-1zM17,4h1v1h-1zM18,4h1v1h-1zM20,4h1v1h-1zM21,4h1v1h-1zM22,4h1v1h-1zM23,4h1v1h-1zM26,4h1v1h-1zM27,4h1v1h-1zM28,4h1v1h-1zM29,4h1v1h-1zM30,4h1v1h-1zM31,4h1v1h-1zM32,4h1v1h-1zM4,5h1v1h-1zM10,5h1v1h-1zM12,5h1v1h-1zM14,5h1v1h-1zM18,5h1v1h-1zM19,5h1v1h-1zM20,5h1v1h-1zM21,5h1v1h-1zM23,5h1v1h-1zM26,5h1v1h-1zM32,5h1v1h-1zM4,6h1v1h-1zM6,6h1v1h-1zM7,6h1v1h-1zM8,6h1v1h-1zM10,6h1v1h-1zM13,6h1v1h-1zM14,6h1v1h-1zM17,6h1v1h-1zM18,6h1v1h-1zM19,6h1v1h-1zM23,6h1v1h-1zM26,6h1v1h-1zM28,6h1v1h-1zM29,6h1v1h-1zM30,6h1v1h-1zM32,6h1v1h-1zM4,7h1v1h-1zM6,7h1v1h-1zM7,7h1v1h-1zM8,7h1v1h-1zM10,7h1v1h-1zM13,7h1v1h-1zM14,7h1v1h-1zM16,7h1v1h-1zM17,7h1v1h-1zM18,7h1v1h-1zM22,7h1v1h-1zM26,7h1v1h-1zM28,7h1v1h-1zM29,7h1v1h-1zM30,7h1v1h-1zM32,7h1v1h-1zM4,8h1v1h-1zM6,8h1v1h-1zM7,8h1v1h-1zM8,8h1v1h-1zM10,8h1v1h-1zM12,8h1v1h-1zM14,8h1v1h-1zM16,8h1v1h-1zM18,8h1v1h-1zM19,8h1v1h-1zM20,8h1v1h-1zM21,8h1v1h-1zM22,8h1v1h-1zM23,8h1v1h-1zM24,8h1v1h-1zM26,8h1v1h-1zM28,8h1v1h-1zM29,8h1v1h-1zM30,8h1v1h-1zM32,8h1v1h-1zM4,9h1v1h-1zM10,9h1v1h-1zM13,9h1v1h-1zM16,9h1v1h-1zM17,9h1v1h-1zM19,9h1v1h-1zM22,9h1v1h-1zM23,9h1v1h-1zM26,9h1v1h-1zM32,9h1v1h-1zM4,10h1v1h-1zM5,10h1v1h-1zM6,10h1v1h-1zM7,10h1v1h-1zM8,10h1v1h-1zM9,10h1v1h-1zM10,10h1v1h-1zM12,10h1v1h-1zM14,10h1v1h-1zM16,10h1v1h-1zM18,10h1v1h-1zM20,10h1v1h-1zM22,10h1v1h-1zM24,10h1v1h-1zM26,10h1v1h-1zM27,10h1v1h-1zM28,10h1v1h-1zM29,10h1v1h-1zM30,10h1v1h-1zM31,10h1v1h-1zM32,10h1v1h-1zM13,11h1v1h-1zM15,11h1v1h-1zM17,11h1v1h-1zM18,11h1v1h-1zM20,11h1v1h-1zM21,11h1v1h-1zM22,11h1v1h-1zM4,12h1v1h-1zM6,12h1v1h-1zM8,12h1v1h-1zM10,12h1v1h-1zM16,12h1v1h-1zM18,12h1v1h-1zM19,12h1v1h-1zM20,12h1v1h-1zM21,12h1v1h-1zM22,12h1v1h-1zM24,12h1v1h-1zM28,12h1v1h-1zM31,12h1v1h-1zM4,13h1v1h-1zM6,13h1v1h-1zM9,13h1v1h-1zM11,13h1v1h-1zM12,13h1v1h-1zM14,13h1v1h-1zM18,13h1v1h-1zM20,13h1v1h-1zM24,13h1v1h-1zM25,13h1v1h-1zM26,13h1v1h-1zM29,13h1v1h-1zM32,13h1v1h-1zM5,14h1v1h-1zM6,14h1v1h-1zM7,14h1v1h-1zM10,14h1v1h-1zM12,14h1v1h-1zM13,14h1v1h-1zM14,14h1v1h-1zM15,14h1v1h-1zM16,14h1v1h-1zM17,14h1v1h-1zM21,14h1v1h-1zM26,14h1v1h-1zM27,14h1v1h-1zM28,14h1v1h-1zM30,14h1v1h-1zM31,14h1v1h-1zM32,14h1v1h-1zM4,15h1v1h-1zM9,15h1v1h-1zM13,15h1v1h-1zM14,15h1v1h-1zM15,15h1v1h-1zM19,15h1v1h-1zM20,15h1v1h-1zM21,15h1v1h-1zM22,15h1v1h-1zM23,15h1v1h-1zM24,15h1v1h-1zM25,15h1v1h-1zM26,15h1v1h-1zM28,15h1v1h-1zM31,15h1v1h-1zM4,16h1v1h-1zM9,16h1v1h-1zM10,16h1v1h-1zM12,16h1v1h-1zM14,16h1v1h-1zM15,16h1v1h-1zM20,16h1v1h-1zM21,16h1v1h-1zM25,16h1v1h-1zM26,16h1v1h-1zM29,16h1v1h-1zM31,16h1v1h-1zM32,16h1v1h-1zM4,17h1v1h-1zM5,17h1v1h-1zM8,17h1v1h-1zM11,17h1v1h-1zM12,17h1v1h-1zM17,17h1v1h-1zM20,17h1v1h-1zM24,17h1v1h-1zM26,17h1v1h-1zM27,17h1v1h-1zM29,17h1v1h-1zM32,17h1v1h-1zM5,18h1v1h-1zM6,18h1v1h-1zM9,18h1v1h-1zM10,18h1v1h-1zM12,18h1v1h-1zM14,18h1v1h-1zM18,18h1v1h-1zM21,18h1v1h-1zM24,18h1v1h-1zM27,18h1v1h-1zM29,18h1v1h-1zM31,18h1v1h-1zM32,18h1v1h-1zM4,19h1v1h-1zM5,19h1v1h-1zM7,19h1v1h-1zM8,19h1v1h-1zM9,19h1v1h-1zM12,19h1v1h-1zM13,19h1v1h-1zM14,19h1v1h-1zM15,19h1v1h-1zM17,19h1v1h-1zM18,19h1v1h-1zM20,19h1v1h-1zM21,19h1v1h-1zM23,19h1v1h-1zM28,19h1v1h-1zM29,19h1v1h-1zM31,19h1v1h-1zM5,20h1v1h-1zM6,20h1v1h-1zM10,20h1v1h-1zM15,20h1v1h-1zM16,20h1v1h-1zM18,20h1v1h-1zM20,20h1v1h-1zM21,20h1v1h-1zM23,20h1v1h-1zM24,20h1v1h-1zM26,20h1v1h-1zM29,20h1v1h-1zM31,20h1v1h-1zM32,20h1v1h-1zM7,21h1v1h-1zM11,21h1v1h-1zM12,21h1v1h-1zM14,21h1v1h-1zM18,21h1v1h-1zM20,21h1v1h-1zM24,21h1v1h-1zM25,21h1v1h-1zM26,21h1v1h-1zM29,21h1v1h-1zM30,21h1v1h-1zM32,21h1v1h-1zM4,22h1v1h-1zM7,22h1v1h-1zM8,22h1v1h-1zM9,22h1v1h-1zM10,22h1v1h-1zM11,22h1v1h-1zM13,22h1v1h-1zM14,22h1v1h-1zM15,22h1v1h-1zM16,22h1v1h-1zM17,22h1v1h-1zM24,22h1v1h-1zM25,22h1v1h-1zM27,22h1v1h-1zM31,22h1v1h-1zM32,22h1v1h-1zM5,23h1v1h-1zM9,23h1v1h-1zM14,23h1v1h-1zM19,23h1v1h-1zM20,23h1v1h-1zM21,23h1v1h-1zM23,23h1v1h-1zM24,23h1v1h-1zM25,23h1v1h-1zM26,23h1v1h-1zM28,23h1v1h-1zM29,23h1v1h-1zM31,23h1v1h-1zM4,24h1v1h-1zM7,24h1v1h-1zM10,24h1v1h-1zM16,24h1v1h-1zM20,24h1v1h-1zM21,24h1v1h-1zM22,24h1v1h-1zM24,24h1v1h-1zM25,24h1v1h-1zM26,24h1v1h-1zM27,24h1v1h-1zM28,24h1v1h-1zM12,25h1v1h-1zM13,25h1v1h-1zM14,25h1v1h-1zM16,25h1v1h-1zM17,25h1v1h-1zM20,25h1v1h-1zM24,25h1v1h-1zM28,25h1v1h-1zM30,25h1v1h-1zM31,25h1v1h-1zM32,25h1v1h-1zM4,26h1v1h-1zM5,26h1v1h-1zM6,26h1v1h-1zM7,26h1v1h-1zM8,26h1v1h-1zM9,26h1v1h-1zM10,26h1v1h-1zM13,26h1v1h-1zM16,26h1v1h-1zM18,26h1v1h-1zM23,26h1v1h-1zM24,26h1v1h-1zM26,26h1v1h-1zM28,26h1v1h-1zM29,26h1v1h-1zM31,26h1v1h-1zM32,26h1v1h-1zM4,27h1v1h-1zM10,27h1v1h-1zM13,27h1v1h-1zM15,27h1v1h-1zM17,27h1v1h-1zM18,27h1v1h-1zM20,27h1v1h-1zM21,27h1v1h-1zM22,27h1v1h-1zM24,27h1v1h-1zM28,27h1v1h-1zM29,27h1v1h-1zM31,27h1v1h-1zM4,28h1v1h-1zM6,28h1v1h-1zM7,28h1v1h-1zM8,28h1v1h-1zM10,28h1v1h-1zM12,28h1v1h-1zM14,28h1v1h-1zM15,28h1v1h-1zM18,28h1v1h-1zM19,28h1v1h-1zM20,28h1v1h-1zM21,28h1v1h-1zM24,28h1v1h-1zM25,28h1v1h-1zM26,28h1v1h-1zM27,28h1v1h-1zM28,28h1v1h-1zM31,28h1v1h-1zM32,28h1v1h-1zM4,29h1v1h-1zM6,29h1v1h-1zM7,29h1v1h-1zM8,29h1v1h-1zM10,29h1v1h-1zM13,29h1v1h-1zM16,29h1v1h-1zM18,29h1v1h-1zM20,29h1v1h-1zM21,29h1v1h-1zM22,29h1v1h-1zM27,29h1v1h-1zM28,29h1v1h-1zM30,29h1v1h-1zM31,29h1v1h-1zM32,29h1v1h-1zM4,30h1v1h-1zM6,30h1v1h-1zM7,30h1v1h-1zM8,30h1v1h-1zM10,30h1v1h-1zM12,30h1v1h-1zM15,30h1v1h-1zM16,30h1v1h-1zM20,30h1v1h-1zM22,30h1v1h-1zM27,30h1v1h-1zM28,30h1v1h-1zM29,30h1v1h-1zM32,30h1v1h-1zM4,31h1v1h-1zM10,31h1v1h-1zM13,31h1v1h-1zM15,31h1v1h-1zM16,31h1v1h-1zM19,31h1v1h-1zM20,31h1v1h-1zM21,31h1v1h-1zM23,31h1v1h-1zM24,31h1v1h-1zM28,31h1v1h-1zM31,31h1v1h-1zM4,32h1v1h-1zM5,32h1v1h-1zM6,32h1v1h-1zM7,32h1v1h-1zM8,32h1v1h-1zM9,32h1v1h-1zM10,32h1v1h-1zM12,32h1v1h-1zM13,32h1v1h-1zM14,32h1v1h-1zM15,32h1v1h-1zM17,32h1v1h-1zM19,32h1v1h-1zM20,32h1v1h-1zM21,32h1v1h-1zM23,32h1v1h-1zM24,32h1v1h-1zM25,32h1v1h-1zM31,32h1v1h-1zM32,32h1v1h-1z" fill="#0f172a"/></svg>
+        </div>
+        <div class="qr-text">
+          <h2 data-lang="nl">Open je deze pagina op je computer?</h2>
+          <h2 data-lang="ko">PC 또는 데스크톱으로 접속하셨나요?</h2>
+          <p data-lang="nl">Scan de QR-code met de camera van je Android-telefoon om direct naar de officiële Google Play-pagina te gaan.</p>
+          <p data-lang="ko">Android 스마트폰 카메라로 왼쪽 QR 코드를 스캔하면 Google Play 네덜란드 스토어로 즉시 연결됩니다.</p>
+          <span class="url-chip">https://koo-by.github.io/nl-ploegen/</span>
+        </div>
+      </div>
+
+      <h3 class="features-title" data-lang="nl">4 redenen waarom Nederlandse ploegenwerkers overstappen</h3>
+      <h3 class="features-title" data-lang="ko">네덜란드 교대근무자·의료진이 선택하는 4가지 핵심 강점</h3>
+      <div class="features">
+        <div class="feat-item">
+          <strong data-lang="nl">1. 5-Ploegen, Zorg &amp; ISO-weeknummers</strong>
+          <strong data-lang="ko">1. 5교대 · 의료 Paint Mode · ISO 주번호</strong>
+          <span data-lang="nl">2-2-2-4, 2-2-2-3-1, 3/2-ploegen of Zorg Paint Mode met O/M/N, V/L/N, D/A/N en NL feestdagen (incl. Koningsdag).</span>
+          <span data-lang="ko">5교대(2-2-2-4), 3/2교대, 병원 터치 칠하기, O/M/N·V/L/N·D/A/N 전환, 11개 NL 공휴일·서머타임 자동 표기.</span>
+        </div>
+        <div class="feat-item">
+          <strong data-lang="nl">2. Echte dienstwekker (automatisch UIT op Vrij)</strong>
+          <strong data-lang="ko">2. 휴무일 자동 OFF 진짜 기상 알람</strong>
+          <span data-lang="nl">Loopt op het echte wekkerkanaal met sluimerstand en springt op Vrij- en Verlofdagen automatisch uit.</span>
+          <span data-lang="ko">일반 알림이 아닌 시스템 알람 채널로 정시 기상, 쉬는 날(Vrij)·휴가(Verlof)엔 자동으로 꺼집니다.</span>
+        </div>
+        <div class="feat-item">
+          <strong data-lang="nl">3. ORT (22–60%) &amp; 5-Ploegentoeslag</strong>
+          <strong data-lang="ko">3. 병원 ORT(22~60%) &amp; 5교대 29% 수당</strong>
+          <span data-lang="nl">Minuut-nauwkeurige CAO Ziekenhuizen/VVT ORT over middernacht + 5-ploegen (28–33%), geld of tijd-voor-tijd.</span>
+          <span data-lang="ko">자정 넘김 야간근무까지 분 단위로 분할하는 ORT(22/38/47/52/60%) 및 5교대 고정 수당(급여/시간보상).</span>
+        </div>
+        <div class="feat-item">
+          <strong data-lang="nl">4. Samen vrij &amp; WhatsApp/PDF/.ICS delen</strong>
+          <strong data-lang="ko">4. 2인 Samen vrij 비교 &amp; WhatsApp/PDF/.ICS</strong>
+          <span data-lang="nl">Leg je partnerrooster over je eigen maandkaart en exporteer naar Google/Apple Agenda, A4 PDF of CSV.</span>
+          <span data-lang="ko">배우자·동료 근무표와 겹쳐 함께 쉬는 날 확인 및 .ics 캘린더·PNG·A4 PDF·UTF-8 BOM CSV 내보내기.</span>
+        </div>
+      </div>
+
+      <div class="compliance-note" data-lang="nl">
+        <strong>Belangrijke toelichting (Indicatief):</strong> De uren-, ORT- en ploegentoeslagberekeningen in de app en webcalculator zijn uitsluitend bedoeld als persoonlijke richtlijn (<em>indicatief</em>) en vervangen geen officiële loonstrook, werkgeversberekening of juridisch/CAO-advies.
+      </div>
+      <div class="compliance-note" data-lang="ko">
+        <strong>면책 고지 (F41 — Indicatief):</strong> 앱과 웹 계산기의 ORT·교대수당 산출 결과는 개인 참고용 추정치(<em>indicatief</em>)이며, 공식 급여명세서(<em>loonstrook</em>), 고용주 정산 또는 노무·CAO 법률 자문을 대체하지 않습니다.
+      </div>
+
+      <div class="footer">
+        <span>Jisik Gongbang • Offline Utility Studio</span>
+        <div class="footer-links">
+          <a id="link-calc" href="/nl-ploegen/ort-berekenen/" data-base="/nl-ploegen/ort-berekenen/">
+            <span data-lang="nl">Gratis ORT Calculator</span>
+            <span data-lang="ko">무료 ORT 웹 계산기</span>
+          </a>
+          <a id="link-privacy" href="https://koo-by.github.io/privacy.html" data-base="https://koo-by.github.io/privacy.html">
+            <span data-lang="nl">Privacybeleid</span>
+            <span data-lang="ko">개인정보처리방침</span>
+          </a>
+          <a id="link-terms" href="https://koo-by.github.io/terms.html" data-base="https://koo-by.github.io/terms.html">
+            <span data-lang="nl">Gebruiksvoorwaarden</span>
+            <span data-lang="ko">이용약관</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var PLAY_BASE_URL = "https://play.google.com/store/apps/details?id=com.knowledgestudio.nl.app_03_ploegendienst_rooster&hl=nl&gl=NL";
+
+    function buildGooglePlayUrl(searchStr) {
+      var params = new URLSearchParams(searchStr !== undefined ? searchStr : (window.location.search || ""));
+      var customRef = params.get("referrer");
+      var referrerValue = customRef;
+      if (!referrerValue) {
+        var utmSource = params.get("utm_source") || params.get("src") || "onelink";
+        var utmMedium = params.get("utm_medium") || "web_redirect";
+        var utmCampaign = params.get("utm_campaign") || "nl_ploegen_launch";
+        var utmContent = params.get("utm_content") || "";
+        var utmTerm = params.get("utm_term") || "";
+        var parts = [
+          "utm_source=" + encodeURIComponent(utmSource),
+          "utm_medium=" + encodeURIComponent(utmMedium),
+          "utm_campaign=" + encodeURIComponent(utmCampaign)
+        ];
+        if (utmContent) parts.push("utm_content=" + encodeURIComponent(utmContent));
+        if (utmTerm) parts.push("utm_term=" + encodeURIComponent(utmTerm));
+        referrerValue = parts.join("&");
+      }
+      return PLAY_BASE_URL + "&referrer=" + encodeURIComponent(referrerValue);
+    }
+
+    function detectTargetPlatform(ua, platform, maxTouchPoints) {
+      var u = ua || "";
+      var p = platform || "";
+      var touch = typeof maxTouchPoints === "number" ? maxTouchPoints : 0;
+      if (/Android/i.test(u)) {
+        return { os: "android", shouldRedirect: true };
+      }
+      if (/iPhone|iPad|iPod/i.test(u) || (/Macintosh/i.test(u) && touch > 1) || (/MacIntel/i.test(p) && touch > 1)) {
+        return { os: "ios", shouldRedirect: false };
+      }
+      return { os: "desktop", shouldRedirect: false };
+    }
+
+    function setLang(lang) {
+      var target = lang === "ko" ? "ko" : "nl";
+      var keepPreview = document.body.classList.contains("qa-preview");
+      document.body.className = "lang-" + target + (keepPreview ? " qa-preview" : "");
+      document.documentElement.lang = target;
+      var btnNl = document.getElementById("btn-nl");
+      var btnKo = document.getElementById("btn-ko");
+      if (btnNl) btnNl.classList.toggle("active", target === "nl");
+      if (btnKo) btnKo.classList.toggle("active", target === "ko");
+      var lp = document.getElementById("link-privacy");
+      var lt = document.getElementById("link-terms");
+      var lc = document.getElementById("link-calc");
+      var bwo = document.getElementById("btn-web-ort-tool");
+      if (lp) lp.href = lp.getAttribute("data-base") + (target === "ko" ? "?lang=ko" : "");
+      if (lt) lt.href = lt.getAttribute("data-base") + (target === "ko" ? "?lang=ko" : "");
+      var calcQuery = target === "ko" ? "?lang=ko" : (keepPreview ? "?preview=1" : "");
+      if (lc) lc.href = lc.getAttribute("data-base") + calcQuery;
+      if (bwo) bwo.href = "/nl-ploegen/ort-berekenen/" + calcQuery;
+      var banner = document.getElementById("redirect-banner");
+      var currentOs = document.documentElement.getAttribute("data-detected-os") || "desktop";
+      if (banner) {
+        var shouldShowBanner = (target === "ko") || keepPreview || (currentOs === "android");
+        banner.classList.toggle("visible", shouldShowBanner);
+      }
+    }
+
+    function applyPlatformState(os, allowRedirect) {
+      var targetPlayUrl = buildGooglePlayUrl();
+      var playBtn = document.getElementById("btn-android-store");
+      if (playBtn) playBtn.href = targetPlayUrl;
+      var qaPlay = document.getElementById("qa-play-url");
+      if (qaPlay) qaPlay.textContent = targetPlayUrl;
+
+      var banner = document.getElementById("redirect-banner");
+      var iosNotice = document.getElementById("ios-notice");
+      var msgNl = document.getElementById("redirect-msg-nl");
+      var msgKo = document.getElementById("redirect-msg-ko");
+      var isQaMode = document.body.classList.contains("lang-ko") || document.body.classList.contains("qa-preview");
+
+      if (iosNotice) iosNotice.classList.toggle("visible", os === "ios");
+      document.documentElement.setAttribute("data-detected-os", os);
+
+      if (os === "android") {
+        if (banner) banner.classList.add("visible");
+        if (msgNl) {
+          msgNl.textContent = allowRedirect
+            ? "Doorsturen naar Google Play (Android)... Als de pagina niet vanzelf opent, tik dan hieronder op Google Play."
+            : "Android-apparaat herkend — voorvertoning blokkeert automatische doorverwijzing. Tik hieronder op Google Play om de UTM-link te testen.";
+        }
+        if (msgKo) {
+          msgKo.textContent = "[시뮬레이션: Android] 실제 Android 접속 시 120ms 후 UTM referrer 포함 Google Play NL로 자동 이동합니다.";
+        }
+        if (allowRedirect) {
+          window.setTimeout(function() {
+            try {
+              window.location.replace(targetPlayUrl);
+            } catch (e) {
+              window.location.href = targetPlayUrl;
+            }
+          }, 120);
+        }
+      } else if (os === "ios") {
+        if (banner) banner.classList.toggle("visible", isQaMode);
+        if (msgNl) {
+          msgNl.textContent = "iPhone / iPad herkend — App Store-versie is binnenkort beschikbaar. Gebruik nu direct de gratis Web ORT Calculator.";
+        }
+        if (msgKo) {
+          msgKo.textContent = "[시뮬레이션: iPhone/iOS] iOS Coming Soon 안내 배너 노출 + 무료 웹 ORT 계산기로 안전 유도합니다.";
+        }
+      } else {
+        if (banner) banner.classList.toggle("visible", isQaMode);
+        if (msgNl) {
+          msgNl.textContent = "Je kijkt op een computer (Desktop) — scan de QR-code of open de Google Play- of Web ORT Calculator-knop hieronder.";
+        }
+        if (msgKo) {
+          msgKo.textContent = "[시뮬레이션: Desktop/PC] 자동 이동 없이 QR 코드, Google Play 버튼, 무료 ORT 웹 계산기 동선을 표시합니다.";
+        }
+      }
+    }
+
+    function copyPlayLink() {
+      var url = buildGooglePlayUrl();
+      var toast = document.getElementById("copy-toast");
+      var isKo = document.body.classList.contains("lang-ko");
+      var doneMsg = isKo ? "✓ Google Play 링크가 복사되었습니다!" : "✓ Google Play-link gekopieerd!";
+      var failMsg = isKo ? "⚠️ 복사 실패 — 주소를 길게 눌러 복사해주세요." : "⚠️ Kopiëren mislukt — houd de link ingedrukt om te kopiëren.";
+      if (fallbackCopyText(url, toast, doneMsg, true)) return;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(function() {
+          if (toast) toast.textContent = doneMsg;
+        }).catch(function() {
+          if (toast) toast.textContent = failMsg;
+        });
+      } else if (toast) {
+        toast.textContent = failMsg;
+      }
+    }
+
+    function fallbackCopyText(text, toast, doneMsg, silentOnFail) {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "fixed";
+      ta.style.left = "-9999px";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      var copied = false;
+      try {
+        copied = !!document.execCommand("copy");
+      } catch (e) {
+        copied = false;
+      }
+      document.body.removeChild(ta);
+      if (copied && toast) {
+        toast.textContent = doneMsg;
+      } else if (!silentOnFail && toast) {
+        toast.textContent = "⚠️";
+      }
+      return copied;
+    }
+
+    (function initOneLink() {
+      var params = new URLSearchParams(window.location.search);
+      var qLang = params.get("lang");
+      var preview = params.get("preview") === "1" || params.get("no_redirect") === "1";
+      var osOverride = params.get("os");
+
+      if (preview || qLang === "ko") {
+        document.body.classList.add("qa-preview");
+      }
+      setLang(qLang === "ko" ? "ko" : "nl");
+
+      var detected = detectTargetPlatform(navigator.userAgent, navigator.platform, navigator.maxTouchPoints);
+      var effectiveOs = (osOverride === "android" || osOverride === "ios" || osOverride === "desktop") ? osOverride : detected.os;
+
+      if (preview || qLang === "ko") {
+        var banner = document.getElementById("redirect-banner");
+        if (banner) banner.classList.add("visible");
+        applyPlatformState(effectiveOs, false);
+        return;
+      }
+
+      applyPlatformState(effectiveOs, effectiveOs === "android");
+    })();
+  </script>
+</body>
+</html>

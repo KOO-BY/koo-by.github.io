@@ -1,0 +1,1430 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <title>ORT Berekenen &amp; Ploegentoeslag Calculator (CAO Ziekenhuizen, VVT &amp; 5-Ploegen) — Gratis Webtool</title>
+  <meta name="description" content="Gratis Nederlandse ORT &amp; ploegentoeslag calculator: CAO Ziekenhuizen &amp; VVT (22%, 38%, 47%, 52%, 60% met middernacht-splitsing), 5-ploegen (29%), 3-ploegen (19%), 2-ploegen (14%), alle 11 NL feestdagen incl. Koningsdag-verschuiving en Geld vs. Tijd-voor-tijd.">
+  <meta name="keywords" content="ort berekenen, onregelmatigheidstoeslag berekenen, cao ziekenhuizen ort, cao vvt ort, ploegentoeslag berekenen, 5 ploegen toeslag 29 procent, tijd voor tijd berekenen, koningsdag ort">
+  <link rel="canonical" href="https://koo-by.github.io/nl-ploegen/ort-berekenen/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://koo-by.github.io/nl-ploegen/ort-berekenen/">
+  <meta property="og:title" content="Gratis ORT &amp; Ploegentoeslag Calculator (CAO Ziekenhuizen/VVT &amp; 5-Ploegen)">
+  <meta property="og:description" content="Bereken minuut-nauwkeurig je ORT (22–60% over middernacht) of vaste 5/3/2-ploegentoeslag, inclusief Nederlandse feestdagen (Koningsdag) en geld vs. tijd-voor-tijd.">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Gratis ORT & Ploegentoeslag Calculator — Ploegendienst Rooster & Wekker",
+    "operatingSystem": "Web, ANDROID",
+    "applicationCategory": "FinanceApplication",
+    "inLanguage": "nl",
+    "url": "https://koo-by.github.io/nl-ploegen/ort-berekenen/",
+    "installUrl": "https://play.google.com/store/apps/details?id=com.knowledgestudio.nl.app_03_ploegendienst_rooster&hl=nl&gl=NL",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Jisik Gongbang"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Hoe werkt ORT berekenen per minuut bij een nachtdienst over middernacht?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Een nachtdienst (bijv. 22:00–06:00) loopt over twee kalenderdagen. Tussen 22:00 en 24:00 geldt het tarief van de startdag (bijv. 47% doordeweeks of 52% op zaterdag) en vanaf 00:00 het tarief van de volgende dag (bijv. 60% als dat zondag of een officiële feestdag is). Deze calculator splitst elke werkminuut exact over middernacht."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Welke ORT-percentages gebruikt deze CAO Ziekenhuizen & VVT calculator?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "De calculator hanteert 22% (ma–vr 06:00–07:00 en 20:00–22:00), 47% (ma–vr 00:00–06:00 en 22:00–24:00), 38% (zaterdag 06:00–22:00), 52% (zaterdag 00:00–06:00 en 22:00–24:00) en 60% (zondag en alle 11 officiële Nederlandse feestdagen de hele dag)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Hoe wordt Koningsdag berekend als 27 april op een zondag valt?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Volgens de officiële Nederlandse regel verschuift Koningsdag naar zaterdag 26 april zodra 27 april op een zondag valt (zoals in 2025, 2031 en 2036). Deze calculator herkent die verschuiving automatisch en kent op zaterdag 26 april het feestdagtarief van 60% toe."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wat is het verschil tussen Geld en Tijd-voor-tijd bij ORT?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bij uitbetaling in geld ontvang je het bruto uurloon vermenigvuldigd met het ORT-percentage per tijdvak. Bij Tijd-voor-tijd bouw je per gewerkt ORT-uur een evenredig aantal extra vrije uren op (bijvoorbeeld 1 uur op 60% levert 0,60 uur compensatie op)."
+        }
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --cobalt-950: #0b1434;
+      --cobalt-900: #0f1d4d;
+      --cobalt-800: #173794;
+      --cobalt-700: #1d4ed8;
+      --cobalt-50: #eff6ff;
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --border: #dbe3ef;
+      --amber: #f59e0b;
+      --amber-soft: #fef3c7;
+      --emerald: #10b981;
+      --emerald-soft: #d1fae5;
+      --indigo: #312e81;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", "Malgun Gothic", sans-serif;
+      background: linear-gradient(180deg, #0b1434 0%, #173794 260px, #f4f7fb 260px, #f4f7fb 100%);
+      color: var(--text);
+      line-height: 1.55;
+      min-height: 100vh;
+    }
+    .wrap {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 18px 16px 56px;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .nav-left { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .brand-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      color: #eff6ff;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .brand-pill:hover { background: rgba(255, 255, 255, 0.24); }
+    .lang-switch {
+      display: none;
+      background: rgba(15, 23, 42, 0.42);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 999px;
+      padding: 3px;
+      gap: 4px;
+    }
+    body.lang-ko .lang-switch,
+    body.qa-preview .lang-switch {
+      display: inline-flex;
+    }
+    .lang-btn {
+      appearance: none;
+      border: 0;
+      background: transparent;
+      color: #e2e8f0;
+      font-size: 12.5px;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+    .lang-btn.active { background: #ffffff; color: #0b1434; }
+    .hero-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px 24px 20px;
+      box-shadow: 0 16px 36px rgba(11, 20, 52, 0.12);
+      margin-bottom: 18px;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: var(--amber-soft);
+      color: #92400e;
+      border: 1px solid #fcd34d;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 8px;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 25px;
+      line-height: 1.25;
+      color: #0f172a;
+      font-weight: 800;
+    }
+    .subtitle { margin: 0 0 14px; color: var(--muted); font-size: 14.5px; }
+    .mode-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .mode-tab {
+      appearance: none;
+      border: 1.5px solid #bfdbfe;
+      background: #eff6ff;
+      color: #1e3a8a;
+      font-size: 13px;
+      font-weight: 800;
+      padding: 8px 14px;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+    .mode-tab.active {
+      background: var(--cobalt-700);
+      color: #ffffff;
+      border-color: var(--cobalt-700);
+    }
+    .presets { display: flex; flex-wrap: wrap; gap: 8px; }
+    .preset-btn {
+      appearance: none;
+      border: 1px solid #cbd5e1;
+      background: #f8fafc;
+      color: #0f172a;
+      font-size: 12.5px;
+      font-weight: 700;
+      padding: 6px 11px;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+    .preset-btn:hover, .preset-btn.active {
+      background: #173794;
+      color: #ffffff;
+      border-color: #173794;
+    }
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1.06fr 0.94fr;
+      gap: 18px;
+      align-items: start;
+    }
+    @media (max-width: 880px) {
+      .calc-grid { grid-template-columns: 1fr; }
+      h1 { font-size: 21px; }
+    }
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.05);
+    }
+    .panel h2 {
+      margin: 0 0 14px;
+      font-size: 16.5px;
+      color: var(--cobalt-800);
+      font-weight: 800;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 10px;
+    }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 540px) { .form-grid { grid-template-columns: 1fr; } }
+    .field { display: flex; flex-direction: column; gap: 4px; }
+    .field.full { grid-column: 1 / -1; }
+    .field label { font-size: 12.5px; font-weight: 700; color: #334155; }
+    .field input, .field select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 10px;
+      font-size: 14.5px;
+      font-weight: 600;
+      color: #0f172a;
+      background: #ffffff;
+      font-family: inherit;
+    }
+    .field input:focus, .field select:focus {
+      outline: none;
+      border-color: var(--cobalt-700);
+      box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.14);
+    }
+    .field .hint { font-size: 11.5px; color: #64748b; }
+    .sub-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 12px;
+      grid-column: 1 / -1;
+    }
+    .sub-box-title {
+      font-size: 12.5px;
+      font-weight: 800;
+      color: var(--cobalt-800);
+      margin-bottom: 8px;
+    }
+    .win-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+    @media (max-width: 600px) { .win-grid { grid-template-columns: 1fr; } }
+    .win-card {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      padding: 8px 10px;
+    }
+    .win-card .w-lbl { font-size: 11.5px; font-weight: 800; margin-bottom: 6px; display: block; }
+    .win-card .w-early { color: #b45309; }
+    .win-card .w-late { color: #1d4ed8; }
+    .win-card .w-night { color: #312e81; }
+    .win-row { display: flex; gap: 4px; align-items: center; font-size: 12px; }
+    .win-row input { padding: 5px 6px; font-size: 12.5px; }
+    .result-hero {
+      background: linear-gradient(135deg, #0b1434, #1d4ed8);
+      color: #ffffff;
+      border-radius: 16px;
+      padding: 18px;
+      margin-bottom: 14px;
+    }
+    .result-hero .lbl { font-size: 12.5px; font-weight: 700; color: #bfdbfe; }
+    .result-hero .big-num {
+      font-size: 32px;
+      font-weight: 800;
+      line-height: 1.2;
+      margin: 4px 0 6px;
+      font-variant-numeric: tabular-nums;
+    }
+    .result-hero .sub-row {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 13px;
+      color: #e2e8f0;
+    }
+    .badge-pill {
+      display: inline-block;
+      padding: 5px 11px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 12px;
+      background: var(--cobalt-50);
+      color: var(--cobalt-800);
+      border: 1px solid #bfdbfe;
+    }
+    .badge-pill.holiday {
+      background: var(--amber-soft);
+      color: #92400e;
+      border-color: #fcd34d;
+    }
+    .breakdown-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.5px;
+      margin-bottom: 14px;
+    }
+    .breakdown-table th, .breakdown-table td {
+      padding: 7px 6px;
+      border-bottom: 1px solid #e2e8f0;
+      text-align: left;
+    }
+    .breakdown-table th {
+      font-size: 12px;
+      color: #475569;
+      background: #f8fafc;
+    }
+    .breakdown-table td.num, .breakdown-table th.num {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+    .breakdown-table tr.total td {
+      border-top: 2px solid #1d4ed8;
+      border-bottom: 0;
+      font-weight: 800;
+      color: #0b1434;
+      padding-top: 10px;
+    }
+    .shift-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+    .sc-chip {
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+    }
+    .sc-early { background: #fef3c7; color: #92400e; border-color: #fcd34d; }
+    .sc-late { background: #dbeafe; color: #1e40af; border-color: #93c5fd; }
+    .sc-night { background: #e0e7ff; color: #312e81; border-color: #a5b4fc; }
+    .sc-off { background: #d1fae5; color: #065f46; border-color: #6ee7b7; }
+    .holiday-list {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 10px 12px;
+      font-size: 12.5px;
+      color: #334155;
+      margin-bottom: 14px;
+    }
+    .actions-row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; align-items: center; }
+    .btn-secondary {
+      appearance: none;
+      border: 1px solid #cbd5e1;
+      background: #f8fafc;
+      color: #0f172a;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 10px 14px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .btn-secondary:hover { background: #e2e8f0; }
+    .cta-box {
+      background: linear-gradient(135deg, #0b1434, #173794);
+      color: #ffffff;
+      border-radius: 16px;
+      padding: 18px;
+      margin-top: 12px;
+    }
+    .cta-box h3 { margin: 0 0 6px; font-size: 16.5px; color: #fde68a; }
+    .cta-box p { margin: 0 0 12px; font-size: 13.5px; color: #e2e8f0; }
+    .play-cta-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      text-decoration: none;
+      background: #10b981;
+      color: #062825;
+      font-weight: 800;
+      font-size: 15px;
+      padding: 13px 16px;
+      border-radius: 12px;
+    }
+    .play-cta-btn:hover { background: #34d399; }
+    .compliance-note {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-size: 12.5px;
+      color: #78350f;
+      margin-top: 14px;
+    }
+    .seo-section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px 24px;
+      margin-top: 18px;
+    }
+    .seo-section h2 { margin: 0 0 12px; font-size: 18px; color: var(--cobalt-800); }
+    .faq-item { border-bottom: 1px solid #e2e8f0; padding: 12px 0; }
+    .faq-item:last-child { border-bottom: 0; }
+    .faq-item h3 { margin: 0 0 5px; font-size: 15px; color: #0f172a; }
+    .faq-item p { margin: 0; font-size: 14px; color: var(--muted); }
+    .footer {
+      border-top: 1px solid var(--border);
+      padding-top: 14px;
+      margin-top: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 12.5px;
+      color: var(--muted);
+    }
+    .footer a { color: var(--cobalt-700); text-decoration: none; font-weight: 700; }
+    .footer a:hover { text-decoration: underline; }
+    body.lang-nl [data-lang="ko"],
+    body.lang-ko [data-lang="nl"] {
+      display: none !important;
+    }
+    .hidden-block { display: none !important; }
+  </style>
+</head>
+<body class="lang-nl">
+  <div class="wrap">
+    <div class="topbar">
+      <div class="nav-left">
+        <a id="back-onelink" class="brand-pill" href="/nl-ploegen/">← Ploegendienst Rooster &amp; Wekker</a>
+        <span class="brand-pill">Gratis Webtool • 100% Privacy</span>
+      </div>
+      <div class="lang-switch" role="group" aria-label="Taalkeuze">
+        <button id="btn-nl" class="lang-btn active" type="button" onclick="setLang('nl')">Nederlands</button>
+        <button id="btn-ko" class="lang-btn" type="button" onclick="setLang('ko')">한국어 검수</button>
+      </div>
+    </div>
+
+    <section class="hero-card">
+      <span class="hero-badge" data-lang="nl">CAO ZIEKENHUIZEN / VVT (22–60%) &amp; 5-PLOEGENTOESLAG (28–33%)</span>
+      <span class="hero-badge" data-lang="ko">네덜란드 병원 ORT (22~60% 자정 분할) &amp; 산업계 5·3·2교대 고정수당 웹 계산기</span>
+
+      <h1 data-lang="nl">Gratis ORT Berekenen &amp; Ploegentoeslag Calculator</h1>
+      <h1 data-lang="ko">무료 네덜란드 ORT &amp; Ploegentoeslag 웹 계산기 (Dart 엔진 100% 동일)</h1>
+
+      <p class="subtitle" data-lang="nl">Bereken jouw onregelmatigheidstoeslag (ORT) per minuut — inclusief nachtdiensten over middernacht, alle 11 officiële Nederlandse feestdagen (met Koningsdag-verschuiving) en keuze uit Geld of Tijd-voor-tijd. Of bereken je vaste 5-ploegentoeslag (29%), 3-ploegen (19%) of 2-ploegen (14%).</p>
+      <p class="subtitle" data-lang="ko">앱과 동일한 분 단위 자정 분할 엔진(NlAllowanceCalculator + NlCalendarEngine)으로 야간근무·공휴일(Koningsdag 일→토 보정)·5교대 29% 수당을 즉시 계산합니다. 브라우저 내에서만 동작하며 입력값을 서버로 보내지 않습니다.</p>
+
+      <div class="mode-tabs" role="tablist">
+        <button id="tab-monthly" class="mode-tab active" type="button" onclick="setCalcScope('monthly')">
+          <span data-lang="nl">📅 Maandrooster berekenen</span>
+          <span data-lang="ko">📅 월간 근무표 전체 계산</span>
+        </button>
+        <button id="tab-single" class="mode-tab" type="button" onclick="setCalcScope('single')">
+          <span data-lang="nl">⏱️ Enkele dienst (bijv. nacht / feestdag)</span>
+          <span data-lang="ko">⏱️ 단일 근무 정밀 계산 (야간·공휴일)</span>
+        </button>
+      </div>
+
+      <div class="presets">
+        <button id="preset-zorg-month" class="preset-btn active" type="button" onclick="applyPreset('zorgMonth')">🏥 Zorg ORT (5-ploegen maand · € 22,00)</button>
+        <button id="preset-5pl-month" class="preset-btn" type="button" onclick="applyPreset('fivePlMonth')">🏭 5-Ploegen 29% (€ 18,50)</button>
+        <button id="preset-3pl-month" class="preset-btn" type="button" onclick="applyPreset('threePlMonth')">🔧 3-Ploegen 19% (€ 18,50)</button>
+        <button id="preset-sat-night" class="preset-btn" type="button" onclick="applyPreset('satNight')">🌙 Zaterdagnacht 22:00–06:00 (52% → 60%)</button>
+        <button id="preset-koningsdag" class="preset-btn" type="button" onclick="applyPreset('koningsdag2025')">👑 Koningsdag 2025 (zat 26 apr · 60%)</button>
+      </div>
+    </section>
+
+    <div class="calc-grid">
+      <section class="panel">
+        <h2 data-lang="nl">1. Vul jouw dienst- en loongegevens in</h2>
+        <h2 data-lang="ko">1. 근무 · 수당 조건 입력 (네덜란드 콤마 소수점 지원)</h2>
+
+        <div class="form-grid">
+          <div class="field">
+            <label for="inp-allowance-mode">
+              <span data-lang="nl">Toeslag-regeling (ORT / Ploeg)</span>
+              <span data-lang="ko">수당 방식 (ORT / 고정 %)</span>
+            </label>
+            <select id="inp-allowance-mode" onchange="onAllowanceModeChange()">
+              <option value="caoZiekenhuizenOrt">CAO Ziekenhuizen ORT (22–60%)</option>
+              <option value="caoVvtOrt">CAO VVT Zorg ORT (22–60%)</option>
+              <option value="fixedFivePloegen">5-Ploegentoeslag (28–33%, std 29%)</option>
+              <option value="fixedThreePloegen">3-Ploegentoeslag (19%)</option>
+              <option value="fixedTwoPloegen">2-Ploegentoeslag (14%)</option>
+              <option value="customFixed">Eigen vaste toeslag (%)</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="inp-wage">
+              <span data-lang="nl">Bruto uurloon (€, bijv. 18,50 of 22,00)</span>
+              <span data-lang="ko">시급 (€, 예: 18,50 또는 22,00)</span>
+            </label>
+            <input id="inp-wage" type="text" value="22,00" oninput="calculate()">
+          </div>
+
+          <div class="field" id="wrap-fixed-pct">
+            <label for="inp-fixed-pct">
+              <span data-lang="nl">Ploegentoeslag % (5-ploegen: 28–33%)</span>
+              <span data-lang="ko">고정 교대수당 % (5교대: 28~33%)</span>
+            </label>
+            <input id="inp-fixed-pct" type="text" value="29" oninput="calculate()">
+          </div>
+
+          <div class="field">
+            <label for="inp-payout">
+              <span data-lang="nl">Uitbetaling toeslag</span>
+              <span data-lang="ko">수당 수령 방식</span>
+            </label>
+            <select id="inp-payout" onchange="calculate()">
+              <option value="money">In geld (bruto EUR)</option>
+              <option value="timeForTime">Tijd-voor-tijd (vrije uren)</option>
+            </select>
+          </div>
+
+          <!-- Monthly scope inputs -->
+          <div id="monthly-inputs" class="sub-box">
+            <div class="sub-box-title">
+              <span data-lang="nl">Rooster &amp; Maand</span>
+              <span data-lang="ko">월간 패턴 &amp; 기준일</span>
+            </div>
+            <div class="form-grid">
+              <div class="field">
+                <label for="inp-year"><span data-lang="nl">Jaar</span><span data-lang="ko">연도</span></label>
+                <input id="inp-year" type="number" min="2020" max="2040" value="2026" oninput="calculate()">
+              </div>
+              <div class="field">
+                <label for="inp-month"><span data-lang="nl">Maand (1–12)</span><span data-lang="ko">월 (1–12)</span></label>
+                <select id="inp-month" onchange="calculate()">
+                  <option value="1">1 — Januari</option>
+                  <option value="2">2 — Februari</option>
+                  <option value="3">3 — Maart</option>
+                  <option value="4">4 — April</option>
+                  <option value="5">5 — Mei</option>
+                  <option value="6">6 — Juni</option>
+                  <option value="7">7 — Juli</option>
+                  <option value="8">8 — Augustus</option>
+                  <option value="9">9 — September</option>
+                  <option value="10">10 — Oktober</option>
+                  <option value="11" selected>11 — November</option>
+                  <option value="12">12 — December</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="inp-preset"><span data-lang="nl">Roosterpatroon</span><span data-lang="ko">교대 패턴 프리셋</span></label>
+                <select id="inp-preset" onchange="calculate()">
+                  <option value="fiveShift2224">5-Ploegen (2-2-2-4)</option>
+                  <option value="fiveShift22231">5-Ploegen (2-2-2-3-1)</option>
+                  <option value="threeShiftWeekly">3-Ploegen (O-M-N wekelijks)</option>
+                  <option value="twoShiftEarlyLate">2-Ploegen (Vroeg/Laat)</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="inp-anchor"><span data-lang="nl">Startdatum 1e ochtenddienst</span><span data-lang="ko">첫 아침근무 시작일</span></label>
+                <input id="inp-anchor" type="date" value="2026-11-01" oninput="calculate()">
+              </div>
+
+              <div class="field full">
+                <label><span data-lang="nl">Diensttijden &amp; onbetaalde pauze (min)</span><span data-lang="ko">근무별 출퇴근 시각 &amp; 무급 휴게(분)</span></label>
+                <div class="win-grid">
+                  <div class="win-card">
+                    <span class="w-lbl w-early">Ochtend / Vroeg</span>
+                    <div class="win-row">
+                      <input id="w-early-start" type="time" value="06:00" oninput="calculate()">
+                      <span>–</span>
+                      <input id="w-early-end" type="time" value="14:00" oninput="calculate()">
+                    </div>
+                    <div class="win-row" style="margin-top:6px;">
+                      <span>Pauze:</span>
+                      <input id="w-early-brk" type="number" min="0" max="240" value="0" oninput="calculate()">
+                      <span>min</span>
+                    </div>
+                  </div>
+                  <div class="win-card">
+                    <span class="w-lbl w-late">Middag / Laat</span>
+                    <div class="win-row">
+                      <input id="w-late-start" type="time" value="14:00" oninput="calculate()">
+                      <span>–</span>
+                      <input id="w-late-end" type="time" value="22:00" oninput="calculate()">
+                    </div>
+                    <div class="win-row" style="margin-top:6px;">
+                      <span>Pauze:</span>
+                      <input id="w-late-brk" type="number" min="0" max="240" value="0" oninput="calculate()">
+                      <span>min</span>
+                    </div>
+                  </div>
+                  <div class="win-card">
+                    <span class="w-lbl w-night">Nacht</span>
+                    <div class="win-row">
+                      <input id="w-night-start" type="time" value="22:00" oninput="calculate()">
+                      <span>–</span>
+                      <input id="w-night-end" type="time" value="06:00" oninput="calculate()">
+                    </div>
+                    <div class="win-row" style="margin-top:6px;">
+                      <span>Pauze:</span>
+                      <input id="w-night-brk" type="number" min="0" max="240" value="0" oninput="calculate()">
+                      <span>min</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Single shift scope inputs -->
+          <div id="single-inputs" class="sub-box hidden-block">
+            <div class="sub-box-title">
+              <span data-lang="nl">Enkele dienst (splitst exact over middernacht)</span>
+              <span data-lang="ko">단일 시프트 정밀 계산 (자정 넘김 · 공휴일 검증)</span>
+            </div>
+            <div class="form-grid">
+              <div class="field">
+                <label for="s-date"><span data-lang="nl">Startdatum dienst</span><span data-lang="ko">근무 시작 날짜</span></label>
+                <input id="s-date" type="date" value="2026-11-28" oninput="calculate()">
+              </div>
+              <div class="field">
+                <label for="s-break"><span data-lang="nl">Onbetaalde pauze (minuten)</span><span data-lang="ko">무급 휴게시간 (분)</span></label>
+                <input id="s-break" type="number" min="0" max="240" value="0" oninput="calculate()">
+              </div>
+              <div class="field">
+                <label for="s-start"><span data-lang="nl">Begintijd (24u)</span><span data-lang="ko">출근 시각 (24시간)</span></label>
+                <input id="s-start" type="time" value="22:00" oninput="calculate()">
+              </div>
+              <div class="field">
+                <label for="s-end"><span data-lang="nl">Eindtijd (24u)</span><span data-lang="ko">퇴근 시각 (24시간)</span></label>
+                <input id="s-end" type="time" value="06:00" oninput="calculate()">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2 data-lang="nl">2. Indicatief ORT- &amp; Toeslagoverzicht</h2>
+        <h2 data-lang="ko">2. 추정 수당 · ORT 시간대별 분해 결과</h2>
+
+        <div class="result-hero">
+          <div class="lbl" id="out-hero-lbl">Totale toeslag (indicatief)</div>
+          <div class="big-num" id="out-hero-val">€ 0,00</div>
+          <div class="sub-row">
+            <span id="out-sub-left">Basisloon: € 0,00</span>
+            <span id="out-sub-right">Totaal bruto: € 0,00</span>
+          </div>
+        </div>
+
+        <span id="out-mode-badge" class="badge-pill">CAO Ziekenhuizen ORT (22–60%)</span>
+        <div id="out-shift-chips" class="shift-chips"></div>
+        <div id="out-holiday-box" class="holiday-list hidden-block"></div>
+
+        <table class="breakdown-table">
+          <thead>
+            <tr>
+              <th><span data-lang="nl">Tarief / Regeling</span><span data-lang="ko">구간 / 방식</span></th>
+              <th class="num"><span data-lang="nl">Uren</span><span data-lang="ko">시간</span></th>
+              <th class="num"><span data-lang="nl">Bedrag / TvT</span><span data-lang="ko">금액 / 보상시간</span></th>
+            </tr>
+          </thead>
+          <tbody id="out-breakdown-body"></tbody>
+        </table>
+
+        <div class="actions-row">
+          <button class="btn-secondary" type="button" onclick="copySummary()">📋 <span data-lang="nl">Kopieer berekening</span><span data-lang="ko">계산 결과 복사</span></button>
+          <span id="copy-calc-toast" style="font-size:12.5px;font-weight:700;color:#1d4ed8;"></span>
+        </div>
+
+        <div class="compliance-note" data-lang="nl">
+          <strong>Indicatief (F41):</strong> Deze berekening is een hulpmiddel voor je eigen overzicht en vervangt geen officiële loonstrook, werkgeversberekening of juridisch/CAO-advies. Afwijkende CAO-regels (zoals onbetaalde pauzes of bovenwettelijke afspraken) kunnen per instelling verschillen.
+        </div>
+        <div class="compliance-note" data-lang="ko">
+          <strong>면책 고지 (F41 — Indicatief):</strong> 본 계산 결과는 개인 확인용 추정치(<em>indicatief</em>)이며, 공식 급여명세서(<em>loonstrook</em>) 또는 노무·CAO 자문을 대체하지 않습니다.
+        </div>
+
+        <div class="cta-box">
+          <h3 data-lang="nl">Wil je dit automatisch elke maand + echte dienstwekker?</h3>
+          <h3 data-lang="ko">매달 근무표에 맞춰 자동 ORT + 휴무일 자동 OFF 기상 알람까지 원하시나요?</h3>
+          <p data-lang="nl">Download <strong>Ploegendienst Rooster &amp; Wekker</strong> op Android: 100% offline, geen reclame, ISO-weeknummers, wekker automatisch UIT op vrije dagen en Samen vrij met je partner.</p>
+          <p data-lang="ko"><strong>Ploegendienst Rooster &amp; Wekker</strong> Android 앱으로 100% 오프라인 달력, 휴무일 자동 OFF 시스템 알람, 2인 Samen vrij 비교, PDF/CSV 내보내기를 한 번에 이용하세요.</p>
+          <a id="btn-play-cta" class="play-cta-btn" href="/nl-ploegen/?utm_source=seo_ort_calc&amp;utm_medium=cta&amp;utm_campaign=nl_launch">
+            <span data-lang="nl">Open Ploegendienst Rooster &amp; Wekker (Android) →</span>
+            <span data-lang="ko">Google Play 원링크 및 앱 안내 열기 →</span>
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <section class="seo-section">
+      <h2>
+        <span data-lang="nl">Uitleg ORT-regels, Koningsdag &amp; Ploegentoeslag in Nederland</span>
+        <span data-lang="ko">네덜란드 ORT 규정 · Koningsdag 보정 · 교대수당 FAQ</span>
+      </h2>
+      <div class="faq-item">
+        <h3>1. Hoe werkt de middernacht-splitsing bij ORT in de zorg (CAO Ziekenhuizen &amp; VVT)?</h3>
+        <p>Een nachtdienst van <code>22:00</code> tot <code>06:00</code> valt in twee verschillende dagen. Op een zaterdagnacht telt <code>22:00–24:00</code> (2 uur) als zaterdagavond/nacht (<code>52%</code>) en <code>00:00–06:00</code> (6 uur) als zondagochtend (<code>60%</code>). Onze calculator splitst elke werkminuut exact over middernacht.</p>
+      </div>
+      <div class="faq-item">
+        <h3>2. Hoe werkt Koningsdag als 27 april op zondag valt (bijv. 2025, 2031, 2036)?</h3>
+        <p>Valt 27 april op zondag, dan wordt Koningsdag officieel gevierd op <strong>zaterdag 26 april</strong>. De kalendermodule herkent deze verschuiving automatisch voor elk jaar en past de 60% feestdag-ORT toe op 26 april.</p>
+      </div>
+      <div class="faq-item">
+        <h3>3. Wat is het verschil tussen 5-ploegentoeslag (28–33%), 3-ploegen (19%) en 2-ploegen (14%)?</h3>
+        <p>In de industrie en logistiek krijg je vaak een vaste ploegentoeslag over al je gewerkte uren (bij 5-ploegen meestal <code>28% tot 33%</code>, standaard <code>29%</code>). In de zorg werkt men meestal met tijdvak-gebonden ORT (<code>22% / 38% / 47% / 52% / 60%</code>). In deze tool kies je eenvoudig welke regeling bij jouw contract hoort.</p>
+      </div>
+      <div class="footer">
+        <span>Jisik Gongbang • Gratis ORT &amp; Ploegentoeslag Webtool</span>
+        <div>
+          <a href="/nl-ploegen/">App Download (Android)</a> ·
+          <a href="https://koo-by.github.io/privacy.html">Privacybeleid</a> ·
+          <a href="https://koo-by.github.io/terms.html">Gebruiksvoorwaarden</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    // =========================================================================
+    // Pure NlCalendarEngine + NlAllowanceCalculator (1:1 Dart Mirror)
+    // =========================================================================
+    var ORT_TIERS = [22, 38, 47, 52, 60];
+    var PRESET_CYCLES = {
+      fiveShift2224: ["early", "early", "late", "late", "night", "night", "off", "off", "off", "off"],
+      fiveShift22231: ["early", "early", "late", "late", "night", "night", "off", "off", "off", "early"],
+      threeShiftWeekly: [
+        "early", "early", "early", "early", "early", "off", "off",
+        "late", "late", "late", "late", "late", "off", "off",
+        "night", "night", "night", "night", "night", "off", "off"
+      ],
+      twoShiftEarlyLate: [
+        "early", "early", "early", "early", "early", "off", "off",
+        "late", "late", "late", "late", "late", "off", "off"
+      ]
+    };
+
+    function round2(v) { return Math.round(v * 100.0) / 100.0; }
+    function round4(v) { return Math.round(v * 10000.0) / 10000.0; }
+    function clamp(v, minV, maxV) { return Math.min(maxV, Math.max(minV, v)); }
+    function pad2(n) { return (n < 10 ? "0" : "") + n; }
+    function pad4(n) { return String(n).padStart(4, "0"); }
+
+    function dateKeyFromYmd(y, m, d) {
+      return pad4(y) + "-" + pad2(m) + "-" + pad2(d);
+    }
+
+    function addDaysYmd(y, m, d, deltaDays) {
+      var dt = new Date(Date.UTC(y, m - 1, d + deltaDays));
+      return { y: dt.getUTCFullYear(), m: dt.getUTCMonth() + 1, d: dt.getUTCDate() };
+    }
+
+    function daysInMonth(y, m) {
+      return new Date(Date.UTC(y, m, 0)).getUTCDate();
+    }
+
+    function daysBetweenYmd(y1, m1, d1, y2, m2, d2) {
+      var t1 = Date.UTC(y1, m1 - 1, d1);
+      var t2 = Date.UTC(y2, m2 - 1, d2);
+      return Math.round((t2 - t1) / 86400000);
+    }
+
+    // JS Date.getUTCDay(): 0=Sun, 1=Mon..6=Sat -> Dart weekday: 1=Mon..7=Sun
+    function weekdayDart(y, m, d) {
+      var w = new Date(Date.UTC(y, m - 1, d)).getUTCDay();
+      return w === 0 ? 7 : w;
+    }
+
+    function easterSunday(year) {
+      var a = year % 19;
+      var b = Math.floor(year / 100);
+      var c = year % 100;
+      var d = Math.floor(b / 4);
+      var e = b % 4;
+      var f = Math.floor((b + 8) / 25);
+      var g = Math.floor((b - f + 1) / 3);
+      var h = (19 * a + b - d - g + 15) % 30;
+      var i = Math.floor(c / 4);
+      var k = c % 4;
+      var l = (32 + 2 * e + 2 * i - h - k) % 7;
+      var m = Math.floor((a + 11 * h + 22 * l) / 451);
+      var month = Math.floor((h + l - 7 * m + 114) / 31);
+      var day = ((h + l - 7 * m + 114) % 31) + 1;
+      return { y: year, m: month, d: day };
+    }
+
+    var _HOLIDAY_CACHE = {};
+    function officialHolidaysForYear(year) {
+      if (_HOLIDAY_CACHE[year]) return _HOLIDAY_CACHE[year];
+      var easter = easterSunday(year);
+      var april27Wd = weekdayDart(year, 4, 27);
+      var koningsdagShifted = (april27Wd === 7);
+      var koningsdag = koningsdagShifted ? { y: year, m: 4, d: 26 } : { y: year, m: 4, d: 27 };
+      var list = [
+        { d: { y: year, m: 1, d: 1 }, nameNl: "Nieuwjaarsdag" },
+        { d: addDaysYmd(easter.y, easter.m, easter.d, -2), nameNl: "Goede Vrijdag" },
+        { d: easter, nameNl: "Eerste Paasdag" },
+        { d: addDaysYmd(easter.y, easter.m, easter.d, 1), nameNl: "Tweede Paasdag" },
+        { d: koningsdag, nameNl: koningsdagShifted ? "Koningsdag (zat 26 apr)" : "Koningsdag", isObservedShift: koningsdagShifted },
+        { d: { y: year, m: 5, d: 5 }, nameNl: "Bevrijdingsdag" },
+        { d: addDaysYmd(easter.y, easter.m, easter.d, 39), nameNl: "Hemelvaartsdag" },
+        { d: addDaysYmd(easter.y, easter.m, easter.d, 49), nameNl: "Eerste Pinksterdag" },
+        { d: addDaysYmd(easter.y, easter.m, easter.d, 50), nameNl: "Tweede Pinksterdag" },
+        { d: { y: year, m: 12, d: 25 }, nameNl: "Eerste Kerstdag" },
+        { d: { y: year, m: 12, d: 26 }, nameNl: "Tweede Kerstdag" }
+      ];
+      var map = {};
+      for (var idx = 0; idx < list.length; idx++) {
+        var item = list[idx];
+        var key = dateKeyFromYmd(item.d.y, item.d.m, item.d.d);
+        map[key] = {
+          key: key,
+          y: item.d.y,
+          m: item.d.m,
+          d: item.d.d,
+          nameNl: item.nameNl,
+          isObservedShift: !!item.isObservedShift
+        };
+      }
+      _HOLIDAY_CACHE[year] = map;
+      return map;
+    }
+
+    function holidayForYmd(y, m, d) {
+      var map = officialHolidaysForYear(y);
+      return map[dateKeyFromYmd(y, m, d)] || null;
+    }
+
+    function isOfficialHolidayYmd(y, m, d) {
+      return holidayForYmd(y, m, d) !== null;
+    }
+
+    function ortRatePercentForMinute(y, m, d, minuteOfDay) {
+      var min = ((minuteOfDay % 1440) + 1440) % 1440;
+      if (weekdayDart(y, m, d) === 7 || isOfficialHolidayYmd(y, m, d)) {
+        return 60;
+      }
+      if (weekdayDart(y, m, d) === 6) {
+        return (min >= 360 && min < 1320) ? 38 : 52;
+      }
+      if (min < 360 || min >= 1320) return 47;
+      if ((min >= 360 && min < 420) || (min >= 1200 && min < 1320)) return 22;
+      return 0;
+    }
+
+    function makeWindow(startH, startM, endH, endM, breakMins) {
+      var sh = clamp(startH, 0, 23);
+      var sm = clamp(startM, 0, 59);
+      var eh = clamp(endH, 0, 23);
+      var em = clamp(endM, 0, 59);
+      var brk = clamp(breakMins || 0, 0, 240);
+      var isZero = (sh === 0 && sm === 0 && eh === 0 && em === 0);
+      var startTotal = sh * 60 + sm;
+      var endTotal = eh * 60 + em;
+      var gross = isZero ? 0 : (endTotal <= startTotal ? (1440 - startTotal) + endTotal : (endTotal - startTotal));
+      var paid = clamp(gross - brk, 0, 1440);
+      return {
+        startTotalMinutes: startTotal,
+        endTotalMinutes: endTotal,
+        grossDurationMinutes: gross,
+        unpaidBreakMinutes: brk,
+        paidDurationMinutes: paid,
+        durationHours: paid / 60.0
+      };
+    }
+
+    function computeSingleShiftOrtTierHours(y, m, d, win) {
+      var tierMinutes = { 22: 0, 38: 0, 47: 0, 52: 0, 60: 0 };
+      if (!win || win.paidDurationMinutes <= 0) {
+        return { 22: 0.0, 38: 0.0, 47: 0.0, 52: 0.0, 60: 0.0 };
+      }
+      var gross = win.grossDurationMinutes;
+      var breakMins = clamp(win.unpaidBreakMinutes, 0, gross);
+      var breakStart = Math.floor((gross - breakMins) / 2);
+      var breakEnd = breakStart + breakMins;
+      var startMin = win.startTotalMinutes;
+
+      for (var offset = 0; offset < gross; offset++) {
+        if (breakMins > 0 && offset >= breakStart && offset < breakEnd) continue;
+        var absMin = startMin + offset;
+        var dayDelta = Math.floor(absMin / 1440);
+        var minOfDay = absMin % 1440;
+        var actual = dayDelta === 0 ? { y: y, m: m, d: d } : addDaysYmd(y, m, d, dayDelta);
+        var rate = ortRatePercentForMinute(actual.y, actual.m, actual.d, minOfDay);
+        if (rate > 0) tierMinutes[rate] += 1;
+      }
+      var out = {};
+      for (var idx = 0; idx < ORT_TIERS.length; idx++) {
+        var t = ORT_TIERS[idx];
+        out[t] = tierMinutes[t] / 60.0;
+      }
+      return out;
+    }
+
+    function isOrtMode(mode) {
+      return mode === "caoZiekenhuizenOrt" || mode === "caoVvtOrt";
+    }
+
+    function resolveEffectiveFixedPercent(mode, configured) {
+      var safe = isFinite(configured) ? clamp(configured, 0.0, 100.0) : 29.0;
+      if (mode === "fixedFivePloegen") return clamp(safe, 28.0, 33.0);
+      if (mode === "fixedThreePloegen") return safe > 0 ? safe : 19.0;
+      if (mode === "fixedTwoPloegen") return safe > 0 ? safe : 14.0;
+      if (mode === "customFixed") return safe;
+      return 0.0;
+    }
+
+    function resolveShiftForDate(y, m, d, preset, anchorY, anchorM, anchorD) {
+      var cycle = PRESET_CYCLES[preset] || PRESET_CYCLES.fiveShift2224;
+      var diff = daysBetweenYmd(anchorY, anchorM, anchorD, y, m, d);
+      var index = ((diff % cycle.length) + cycle.length) % cycle.length;
+      return cycle[index];
+    }
+
+    function calculateMonthlySummary(params) {
+      var year = params.year;
+      var month = params.month;
+      var preset = params.preset;
+      var anchorY = params.anchorY, anchorM = params.anchorM, anchorD = params.anchorD;
+      var windows = params.windows;
+      var allowanceMode = params.allowanceMode;
+      var safeWage = isFinite(params.hourlyWageEur) ? clamp(params.hourlyWageEur, 0.0, 500.0) : 0.0;
+      var fixedPloegPercent = params.fixedPloegPercent;
+
+      var shiftCounts = { early: 0, late: 0, night: 0, off: 0, leave: 0 };
+      var tierHours = { 22: 0.0, 38: 0.0, 47: 0.0, 52: 0.0, 60: 0.0 };
+      var totalHours = 0.0;
+      var daysCount = daysInMonth(year, month);
+      var ort = isOrtMode(allowanceMode);
+
+      for (var day = 1; day <= daysCount; day++) {
+        var shift = resolveShiftForDate(year, month, day, preset, anchorY, anchorM, anchorD);
+        shiftCounts[shift] = (shiftCounts[shift] || 0) + 1;
+        if (shift !== "early" && shift !== "late" && shift !== "night") continue;
+        var win = windows[shift];
+        totalHours += win.durationHours;
+        if (ort) {
+          var dayTiers = computeSingleShiftOrtTierHours(year, month, day, win);
+          for (var i = 0; i < ORT_TIERS.length; i++) {
+            var tier = ORT_TIERS[i];
+            tierHours[tier] += dayTiers[tier];
+          }
+        }
+      }
+
+      var basePay = round2(totalHours * safeWage);
+      if (ort) {
+        var tierPayEur = {};
+        var totalAllowance = 0.0;
+        var totalOrtHours = 0.0;
+        var timeForTimeHours = 0.0;
+        for (var i = 0; i < ORT_TIERS.length; i++) {
+          var t = ORT_TIERS[i];
+          var hrs = round4(tierHours[t]);
+          tierHours[t] = hrs;
+          var pay = round2(hrs * safeWage * (t / 100.0));
+          tierPayEur[t] = pay;
+          totalAllowance += pay;
+          totalOrtHours += hrs;
+          timeForTimeHours += hrs * (t / 100.0);
+        }
+        var allowanceRounded = round2(totalAllowance);
+        return {
+          year: year,
+          month: month,
+          totalHours: round2(totalHours),
+          shiftCounts: shiftCounts,
+          basePayEur: basePay,
+          totalAllowanceEur: allowanceRounded,
+          totalGrossEur: round2(basePay + allowanceRounded),
+          totalOrtHours: round2(totalOrtHours),
+          timeForTimeHours: round2(timeForTimeHours),
+          tierHours: tierHours,
+          tierPayEur: tierPayEur,
+          effectiveFixedPercent: 0.0
+        };
+      }
+
+      var effPct = resolveEffectiveFixedPercent(allowanceMode, fixedPloegPercent);
+      var fixedAllowance = round2(basePay * (effPct / 100.0));
+      var tft = round2(totalHours * (effPct / 100.0));
+      return {
+        year: year,
+        month: month,
+        totalHours: round2(totalHours),
+        shiftCounts: shiftCounts,
+        basePayEur: basePay,
+        totalAllowanceEur: fixedAllowance,
+        totalGrossEur: round2(basePay + fixedAllowance),
+        totalOrtHours: round2(totalHours),
+        timeForTimeHours: tft,
+        tierHours: tierHours,
+        tierPayEur: { 22: 0, 38: 0, 47: 0, 52: 0, 60: 0 },
+        effectiveFixedPercent: effPct
+      };
+    }
+
+    function calculateSingleShiftSummary(params) {
+      var y = params.y, m = params.m, d = params.d;
+      var win = params.window;
+      var allowanceMode = params.allowanceMode;
+      var safeWage = isFinite(params.hourlyWageEur) ? clamp(params.hourlyWageEur, 0.0, 500.0) : 0.0;
+      var fixedPloegPercent = params.fixedPloegPercent;
+      var hours = win.durationHours;
+      var basePay = round2(hours * safeWage);
+
+      if (isOrtMode(allowanceMode)) {
+        var tiers = computeSingleShiftOrtTierHours(y, m, d, win);
+        var tierPayEur = {};
+        var totalAllowance = 0.0;
+        var totalOrtHours = 0.0;
+        var tft = 0.0;
+        for (var i = 0; i < ORT_TIERS.length; i++) {
+          var t = ORT_TIERS[i];
+          var hrs = round4(tiers[t]);
+          tiers[t] = hrs;
+          var pay = round2(hrs * safeWage * (t / 100.0));
+          tierPayEur[t] = pay;
+          totalAllowance += pay;
+          totalOrtHours += hrs;
+          tft += hrs * (t / 100.0);
+        }
+        var allowanceRounded = round2(totalAllowance);
+        return {
+          totalHours: round2(hours),
+          basePayEur: basePay,
+          totalAllowanceEur: allowanceRounded,
+          totalGrossEur: round2(basePay + allowanceRounded),
+          totalOrtHours: round2(totalOrtHours),
+          timeForTimeHours: round2(tft),
+          tierHours: tiers,
+          tierPayEur: tierPayEur,
+          effectiveFixedPercent: 0.0
+        };
+      }
+
+      var effPct = resolveEffectiveFixedPercent(allowanceMode, fixedPloegPercent);
+      var fixedAllowance = round2(basePay * (effPct / 100.0));
+      return {
+        totalHours: round2(hours),
+        basePayEur: basePay,
+        totalAllowanceEur: fixedAllowance,
+        totalGrossEur: round2(basePay + fixedAllowance),
+        totalOrtHours: round2(hours),
+        timeForTimeHours: round2(hours * (effPct / 100.0)),
+        tierHours: { 22: 0, 38: 0, 47: 0, 52: 0, 60: 0 },
+        tierPayEur: { 22: 0, 38: 0, 47: 0, 52: 0, 60: 0 },
+        effectiveFixedPercent: effPct
+      };
+    }
+
+    function parseLocalizedNumber(raw, fallback) {
+      var s = String(raw || "").replace(/[^\d.,-]/g, "").trim();
+      if (!s) return fallback;
+      if (s.indexOf(",") !== -1 && s.indexOf(".") !== -1) {
+        if (s.lastIndexOf(",") > s.lastIndexOf(".")) {
+          s = s.replace(/\./g, "").replace(",", ".");
+        } else {
+          s = s.replace(/,/g, "");
+        }
+      } else if (s.indexOf(",") !== -1) {
+        s = s.replace(",", ".");
+      }
+      var n = parseFloat(s);
+      return isFinite(n) && n >= 0 ? n : fallback;
+    }
+
+    function formatDecimalNl(value, decimals) {
+      var safe = isFinite(value) ? value : 0.0;
+      var neg = safe < 0;
+      var fixed = Math.abs(safe).toFixed(decimals === undefined ? 2 : decimals);
+      var parts = fixed.split(".");
+      var intFormatted = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+      if ((decimals === undefined ? 2 : decimals) <= 0) return (neg ? "-" : "") + intFormatted;
+      return (neg ? "-" : "") + intFormatted + "," + parts[1];
+    }
+
+    function formatEuroNl(value) {
+      return "€ " + formatDecimalNl(value, 2);
+    }
+
+    function parseTimeInput(id, defH, defM) {
+      var val = (document.getElementById(id).value || "").trim();
+      var m = val.match(/^(\d{1,2}):(\d{2})$/);
+      if (!m) return { h: defH, m: defM };
+      return { h: clamp(parseInt(m[1], 10), 0, 23), m: clamp(parseInt(m[2], 10), 0, 59) };
+    }
+
+    function parseDateInput(id, defY, defM, defD) {
+      var val = (document.getElementById(id).value || "").trim();
+      var m = val.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+      if (!m) return { y: defY, m: defM, d: defD };
+      return { y: parseInt(m[1], 10), m: parseInt(m[2], 10), d: parseInt(m[3], 10) };
+    }
+
+    // =========================================================================
+    // UI Controller
+    // =========================================================================
+    var CALC_SCOPE = "monthly";
+    var LAST_SUMMARY_TEXT = "";
+
+    function setCalcScope(scope) {
+      CALC_SCOPE = scope === "single" ? "single" : "monthly";
+      document.getElementById("tab-monthly").classList.toggle("active", CALC_SCOPE === "monthly");
+      document.getElementById("tab-single").classList.toggle("active", CALC_SCOPE === "single");
+      document.getElementById("monthly-inputs").classList.toggle("hidden-block", CALC_SCOPE !== "monthly");
+      document.getElementById("single-inputs").classList.toggle("hidden-block", CALC_SCOPE !== "single");
+      calculate();
+    }
+
+    function onAllowanceModeChange() {
+      var mode = document.getElementById("inp-allowance-mode").value;
+      var pctInput = document.getElementById("inp-fixed-pct");
+      if (mode === "fixedFivePloegen") pctInput.value = "29";
+      else if (mode === "fixedThreePloegen") pctInput.value = "19";
+      else if (mode === "fixedTwoPloegen") pctInput.value = "14";
+      calculate();
+    }
+
+    function applyPreset(key) {
+      var map = {
+        zorgMonth: "preset-zorg-month",
+        fivePlMonth: "preset-5pl-month",
+        threePlMonth: "preset-3pl-month",
+        satNight: "preset-sat-night",
+        koningsdag2025: "preset-koningsdag"
+      };
+      Object.keys(map).forEach(function(k) {
+        var el = document.getElementById(map[k]);
+        if (el) el.classList.toggle("active", k === key);
+      });
+
+      if (key === "zorgMonth") {
+        setCalcScope("monthly");
+        document.getElementById("inp-allowance-mode").value = "caoZiekenhuizenOrt";
+        document.getElementById("inp-wage").value = "22,00";
+        document.getElementById("inp-year").value = 2026;
+        document.getElementById("inp-month").value = "11";
+        document.getElementById("inp-preset").value = "fiveShift2224";
+        document.getElementById("inp-anchor").value = "2026-11-01";
+        document.getElementById("w-early-start").value = "06:00";
+        document.getElementById("w-early-end").value = "14:00";
+        document.getElementById("w-early-brk").value = 0;
+        document.getElementById("w-late-start").value = "14:00";
+        document.getElementById("w-late-end").value = "22:00";
+        document.getElementById("w-late-brk").value = 0;
+        document.getElementById("w-night-start").value = "22:00";
+        document.getElementById("w-night-end").value = "06:00";
+        document.getElementById("w-night-brk").value = 0;
+      } else if (key === "fivePlMonth") {
+        setCalcScope("monthly");
+        document.getElementById("inp-allowance-mode").value = "fixedFivePloegen";
+        document.getElementById("inp-wage").value = "18,50";
+        document.getElementById("inp-fixed-pct").value = "29";
+        document.getElementById("inp-year").value = 2026;
+        document.getElementById("inp-month").value = "11";
+        document.getElementById("inp-preset").value = "fiveShift2224";
+        document.getElementById("inp-anchor").value = "2026-11-01";
+      } else if (key === "threePlMonth") {
+        setCalcScope("monthly");
+        document.getElementById("inp-allowance-mode").value = "fixedThreePloegen";
+        document.getElementById("inp-wage").value = "18,50";
+        document.getElementById("inp-fixed-pct").value = "19";
+        document.getElementById("inp-year").value = 2026;
+        document.getElementById("inp-month").value = "11";
+        document.getElementById("inp-preset").value = "threeShiftWeekly";
+        document.getElementById("inp-anchor").value = "2026-11-02";
+      } else if (key === "satNight") {
+        setCalcScope("single");
+        document.getElementById("inp-allowance-mode").value = "caoZiekenhuizenOrt";
+        document.getElementById("inp-wage").value = "22,00";
+        document.getElementById("s-date").value = "2026-11-28";
+        document.getElementById("s-start").value = "22:00";
+        document.getElementById("s-end").value = "06:00";
+        document.getElementById("s-break").value = 0;
+      } else if (key === "koningsdag2025") {
+        setCalcScope("single");
+        document.getElementById("inp-allowance-mode").value = "caoZiekenhuizenOrt";
+        document.getElementById("inp-wage").value = "22,00";
+        document.getElementById("s-date").value = "2025-04-26";
+        document.getElementById("s-start").value = "06:00";
+        document.getElementById("s-end").value = "14:00";
+        document.getElementById("s-break").value = 0;
+      }
+      calculate();
+    }
+
+    function calculate() {
+      var isKo = document.body.classList.contains("lang-ko");
+      var mode = document.getElementById("inp-allowance-mode").value;
+      var wage = parseLocalizedNumber(document.getElementById("inp-wage").value, 18.50);
+      var fixedPct = parseLocalizedNumber(document.getElementById("inp-fixed-pct").value, 29.0);
+      var payout = document.getElementById("inp-payout").value;
+
+      var wrapPct = document.getElementById("wrap-fixed-pct");
+      if (wrapPct) wrapPct.classList.toggle("hidden-block", isOrtMode(mode));
+
+      var modeLabels = {
+        caoZiekenhuizenOrt: isKo ? "병원 ORT (CAO Ziekenhuizen 22~60%)" : "CAO Ziekenhuizen ORT (22–60%)",
+        caoVvtOrt: isKo ? "요양·돌봄 ORT (CAO VVT 22~60%)" : "CAO VVT Zorg ORT (22–60%)",
+        fixedFivePloegen: isKo ? "5교대 고정수당 (28~33%)" : "5-Ploegentoeslag vast",
+        fixedThreePloegen: isKo ? "3교대 고정수당 (19%)" : "3-Ploegentoeslag vast",
+        fixedTwoPloegen: isKo ? "2교대 고정수당 (14%)" : "2-Ploegentoeslag vast",
+        customFixed: isKo ? "직접 입력 고정수당 %" : "Eigen vaste ploegentoeslag"
+      };
+
+      var tierDesc = {
+        22: isKo ? "평일 06:00–07:00 & 20:00–22:00 (22%)" : "Ma–Vr 06:00–07:00 & 20:00–22:00 (22%)",
+        38: isKo ? "토요일 주간 06:00–22:00 (38%)" : "Zaterdag 06:00–22:00 (38%)",
+        47: isKo ? "평일 심야 00:00–06:00 & 22:00–24:00 (47%)" : "Ma–Vr nacht 00:00–06:00 & 22:00–24:00 (47%)",
+        52: isKo ? "토요일 심야 00:00–06:00 & 22:00–24:00 (52%)" : "Zaterdag nacht 00:00–06:00 & 22:00–24:00 (52%)",
+        60: isKo ? "일요일 & NL 공휴일 전 시간 (60%)" : "Zondag & NL feestdagen hele dag (60%)"
+      };
+
+      var summary;
+      var chipsHtml = "";
+      var holidayBox = document.getElementById("out-holiday-box");
+      var badgeEl = document.getElementById("out-mode-badge");
+      badgeEl.className = "badge-pill";
+
+      if (CALC_SCOPE === "monthly") {
+        var year = clamp(parseInt(document.getElementById("inp-year").value, 10) || 2026, 2020, 2040);
+        var month = clamp(parseInt(document.getElementById("inp-month").value, 10) || 11, 1, 12);
+        var preset = document.getElementById("inp-preset").value;
+        var anchor = parseDateInput("inp-anchor", year, month, 1);
+
+        var es = parseTimeInput("w-early-start", 6, 0), ee = parseTimeInput("w-early-end", 14, 0);
+        var ls = parseTimeInput("w-late-start", 14, 0), le = parseTimeInput("w-late-end", 22, 0);
+        var ns = parseTimeInput("w-night-start", 22, 0), ne = parseTimeInput("w-night-end", 6, 0);
+
+        var windows = {
+          early: makeWindow(es.h, es.m, ee.h, ee.m, parseInt(document.getElementById("w-early-brk").value, 10) || 0),
+          late: makeWindow(ls.h, ls.m, le.h, le.m, parseInt(document.getElementById("w-late-brk").value, 10) || 0),
+          night: makeWindow(ns.h, ns.m, ne.h, ne.m, parseInt(document.getElementById("w-night-brk").value, 10) || 0)
+        };
+
+        summary = calculateMonthlySummary({
+          year: year, month: month, preset: preset,
+          anchorY: anchor.y, anchorM: anchor.m, anchorD: anchor.d,
+          windows: windows, allowanceMode: mode, hourlyWageEur: wage, fixedPloegPercent: fixedPct
+        });
+
+        chipsHtml = [
+          '<span class="sc-chip sc-early">Ochtend: ' + summary.shiftCounts.early + 'd</span>',
+          '<span class="sc-chip sc-late">Middag: ' + summary.shiftCounts.late + 'd</span>',
+          '<span class="sc-chip sc-night">Nacht: ' + summary.shiftCounts.night + 'd</span>',
+          '<span class="sc-chip sc-off">Vrij: ' + summary.shiftCounts.off + 'd</span>'
+        ].join("");
+
+        var hMap = officialHolidaysForYear(year);
+        var monthHolidays = [];
+        Object.keys(hMap).sort().forEach(function(k) {
+          if (hMap[k].m === month) monthHolidays.push(hMap[k]);
+        });
+        if (monthHolidays.length > 0) {
+          holidayBox.classList.remove("hidden-block");
+          holidayBox.innerHTML = "<strong>" + (isKo ? "이달의 네덜란드 공휴일 (60% ORT):" : "Officiële feestdagen deze maand (60% ORT):") + "</strong> " +
+            monthHolidays.map(function(h) { return h.key + " " + h.nameNl; }).join(" · ");
+        } else {
+          holidayBox.classList.add("hidden-block");
+        }
+      } else {
+        var sDate = parseDateInput("s-date", 2026, 11, 28);
+        var sStart = parseTimeInput("s-start", 22, 0);
+        var sEnd = parseTimeInput("s-end", 6, 0);
+        var sBrk = parseInt(document.getElementById("s-break").value, 10) || 0;
+        var win = makeWindow(sStart.h, sStart.m, sEnd.h, sEnd.m, sBrk);
+
+        summary = calculateSingleShiftSummary({
+          y: sDate.y, m: sDate.m, d: sDate.d, window: win,
+          allowanceMode: mode, hourlyWageEur: wage, fixedPloegPercent: fixedPct
+        });
+
+        var hStart = holidayForYmd(sDate.y, sDate.m, sDate.d);
+        var nextD = addDaysYmd(sDate.y, sDate.m, sDate.d, 1);
+        var hNext = holidayForYmd(nextD.y, nextD.m, nextD.d);
+        var crosses = win.endTotalMinutes <= win.startTotalMinutes && win.grossDurationMinutes > 0;
+        chipsHtml = '<span class="sc-chip sc-night">' + (isKo ? "유급 근무: " : "Betaald: ") + formatDecimalNl(summary.totalHours, 2) + ' u</span>' +
+          (crosses ? '<span class="sc-chip sc-late">' + (isKo ? "자정 넘김 분할 적용" : "Middernacht-splitsing actief") + '</span>' : '');
+        if (hStart || (crosses && hNext)) {
+          badgeEl.classList.add("holiday");
+          holidayBox.classList.remove("hidden-block");
+          var hParts = [];
+          if (hStart) hParts.push(hStart.key + " " + hStart.nameNl + " (60%)");
+          if (crosses && hNext) hParts.push(hNext.key + " " + hNext.nameNl + " (60%)");
+          holidayBox.innerHTML = "<strong>" + (isKo ? "공휴일 60% 자동 감지:" : "Feestdag 60% automatisch herkend:") + "</strong> " + hParts.join(" · ");
+        } else {
+          holidayBox.classList.add("hidden-block");
+        }
+      }
+
+      document.getElementById("out-shift-chips").innerHTML = chipsHtml;
+      badgeEl.textContent = modeLabels[mode] + (isOrtMode(mode) ? "" : (" (" + formatDecimalNl(summary.effectiveFixedPercent, 0) + "%)"));
+
+      var isTft = (payout === "timeForTime");
+      document.getElementById("out-hero-lbl").textContent = isTft
+        ? (isKo ? "적립 보상휴무 시간 (Tijd-voor-tijd, 추정)" : "Opgebouwde Tijd-voor-tijd (indicatief)")
+        : (isKo ? "예상 총 ORT / 교대수당 (indicatief)" : "Totale toeslag (indicatief)");
+      document.getElementById("out-hero-val").textContent = isTft
+        ? (formatDecimalNl(summary.timeForTimeHours, 2) + " u")
+        : formatEuroNl(summary.totalAllowanceEur);
+      document.getElementById("out-sub-left").textContent = (isKo ? "유급시간: " : "Uren: ") + formatDecimalNl(summary.totalHours, 2) + " u  |  " + (isKo ? "기본급: " : "Basis: ") + formatEuroNl(summary.basePayEur);
+      document.getElementById("out-sub-right").textContent = isTft
+        ? ((isKo ? "현금 환산 시: " : "In geld: ") + formatEuroNl(summary.totalAllowanceEur))
+        : ((isKo ? "예상 총액: " : "Bruto totaal: ") + formatEuroNl(summary.totalGrossEur));
+
+      var tbodyHtml = "";
+      if (isOrtMode(mode)) {
+        for (var i = 0; i < ORT_TIERS.length; i++) {
+          var t = ORT_TIERS[i];
+          var h = summary.tierHours[t] || 0;
+          var p = summary.tierPayEur[t] || 0;
+          var tftVal = round2(h * (t / 100.0));
+          tbodyHtml += "<tr>" +
+            "<td>" + tierDesc[t] + "</td>" +
+            '<td class="num">' + formatDecimalNl(h, 2) + " u</td>" +
+            '<td class="num">' + (isTft ? (formatDecimalNl(tftVal, 2) + " u") : formatEuroNl(p)) + "</td>" +
+            "</tr>";
+        }
+      } else {
+        tbodyHtml += "<tr>" +
+          "<td>" + modeLabels[mode] + " (" + formatDecimalNl(summary.effectiveFixedPercent, 1) + "%)</td>" +
+          '<td class="num">' + formatDecimalNl(summary.totalHours, 2) + " u</td>" +
+          '<td class="num">' + (isTft ? (formatDecimalNl(summary.timeForTimeHours, 2) + " u") : formatEuroNl(summary.totalAllowanceEur)) + "</td>" +
+          "</tr>";
+      }
+      tbodyHtml += '<tr class="total"><td>' + (isKo ? "합계 (기본급 + 수당)" : "Totaal (basis + toeslag)") + '</td><td class="num">' + formatDecimalNl(summary.totalHours, 2) + ' u</td><td class="num">' + formatEuroNl(summary.totalGrossEur) + '</td></tr>';
+      document.getElementById("out-breakdown-body").innerHTML = tbodyHtml;
+
+      LAST_SUMMARY_TEXT = [
+        "[ORT & Ploegentoeslag (indicatief)]",
+        "- Regeling: " + badgeEl.textContent + " | Uurloon: " + formatEuroNl(wage),
+        "- Gewerkte uren: " + formatDecimalNl(summary.totalHours, 2) + " u | Basisloon: " + formatEuroNl(summary.basePayEur),
+        "- Toeslag: " + formatEuroNl(summary.totalAllowanceEur) + " (TvT: " + formatDecimalNl(summary.timeForTimeHours, 2) + " u)",
+        "- Bruto totaal (indicatief): " + formatEuroNl(summary.totalGrossEur),
+        "Bereken zelf: https://koo-by.github.io/nl-ploegen/ort-berekenen/"
+      ].join("\n");
+    }
+
+    function copySummary() {
+      var toast = document.getElementById("copy-calc-toast");
+      var isKo = document.body.classList.contains("lang-ko");
+      var okMsg = isKo ? "✓ 계산 요약이 복사되었습니다!" : "✓ Berekening gekopieerd!";
+      var ta = document.createElement("textarea");
+      ta.value = LAST_SUMMARY_TEXT;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "fixed";
+      ta.style.left = "-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = false;
+      try { ok = !!document.execCommand("copy"); } catch (e) { ok = false; }
+      document.body.removeChild(ta);
+      if (ok && toast) { toast.textContent = okMsg; return; }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(LAST_SUMMARY_TEXT).then(function() { if (toast) toast.textContent = okMsg; });
+      }
+    }
+
+    function setLang(lang) {
+      var target = lang === "ko" ? "ko" : "nl";
+      var keepPreview = document.body.classList.contains("qa-preview");
+      document.body.className = "lang-" + target + (keepPreview ? " qa-preview" : "");
+      document.documentElement.lang = target;
+      var bn = document.getElementById("btn-nl");
+      var bk = document.getElementById("btn-ko");
+      if (bn) bn.classList.toggle("active", target === "nl");
+      if (bk) bk.classList.toggle("active", target === "ko");
+      var back = document.getElementById("back-onelink");
+      var q = target === "ko" ? "?lang=ko" : (keepPreview ? "?preview=1" : "");
+      if (back) back.href = "/nl-ploegen/" + q;
+      var cta = document.getElementById("btn-play-cta");
+      if (cta) cta.href = "/nl-ploegen/?utm_source=seo_ort_calc&utm_medium=cta&utm_campaign=nl_launch" + (target === "ko" ? "&lang=ko" : "");
+      calculate();
+    }
+
+    (function initCalc() {
+      var params = new URLSearchParams(window.location.search);
+      var qLang = params.get("lang");
+      var preview = params.get("preview") === "1" || params.get("no_redirect") === "1";
+      if (preview || qLang === "ko") {
+        document.body.classList.add("qa-preview");
+      }
+      setLang(qLang === "ko" ? "ko" : "nl");
+      applyPreset("zorgMonth");
+    })();
+  </script>
+</body>
+</html>
