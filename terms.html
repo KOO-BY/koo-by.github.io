@@ -122,34 +122,49 @@
       font-size: 13.5px;
       color: #64748b;
     }
-    [data-lang="ko"] { display: none; }
-    body.lang-ko [data-lang="ja"] { display: none; }
-    body.lang-ko [data-lang="ko"] { display: block; }
-    body.lang-ko span[data-lang="ko"], body.lang-ko a[data-lang="ko"] { display: inline; }
-    span[data-lang="ja"], a[data-lang="ja"] { display: inline; }
-    body.lang-ko span[data-lang="ja"], body.lang-ko a[data-lang="ja"] { display: none; }
+    [data-lang] { display: none; }
+    body.lang-ja div[data-lang="ja"], body.lang-ja h1[data-lang="ja"] { display: block; }
+    body.lang-ko div[data-lang="ko"], body.lang-ko h1[data-lang="ko"] { display: block; }
+    body.lang-nl div[data-lang="nl"], body.lang-nl h1[data-lang="nl"] { display: block; }
+    body.lang-en div[data-lang="en"], body.lang-en h1[data-lang="en"] { display: block; }
+    body.lang-ja .badge[data-lang="ja"],
+    body.lang-ko .badge[data-lang="ko"],
+    body.lang-nl .badge[data-lang="nl"],
+    body.lang-en .badge[data-lang="en"] { display: inline-block; }
+    body.lang-ja span[data-lang="ja"], body.lang-ja a[data-lang="ja"],
+    body.lang-ko span[data-lang="ko"], body.lang-ko a[data-lang="ko"],
+    body.lang-nl span[data-lang="nl"], body.lang-nl a[data-lang="nl"],
+    body.lang-en span[data-lang="en"], body.lang-en a[data-lang="en"] { display: inline; }
 </style>
 </head>
-<body>
+<body class="lang-ja">
   <main>
     <div class="topbar">
       <div class="nav">
-        <a data-internal="true" data-base="./index.html" href="./index.html?v=20261030_v5">
+        <a data-internal="true" data-base="./index.html" href="./index.html?v=20261123_v6">
           <span data-lang="ja">← 公式サポート・法務ポータルへ戻る</span>
           <span data-lang="ko">← 공식 고객지원·법무 포털로 돌아가기</span>
+          <span data-lang="nl">← Terug naar het support- &amp; juridisch portaal</span>
+          <span data-lang="en">← Back to Support &amp; Legal Portal</span>
         </a>
       </div>
       <div class="lang-switch" role="group" aria-label="Language switch">
         <button id="btn-ja" class="lang-btn active" onclick="setLang('ja')">🇯🇵 日本語</button>
         <button id="btn-ko" class="lang-btn" onclick="setLang('ko')">🇰🇷 한국어</button>
+        <button id="btn-nl" class="lang-btn" onclick="setLang('nl')">🇳🇱 Nederlands</button>
+        <button id="btn-en" class="lang-btn" onclick="setLang('en')">🇬🇧 English</button>
       </div>
     </div>
 
     <div class="card">
       <span class="badge" data-lang="ja">Terms of Use &amp; EULA</span>
       <span class="badge" data-lang="ko">이용약관 (Terms of Use &amp; EULA)</span>
+      <span class="badge" data-lang="nl">Gebruiksvoorwaarden &amp; EULA</span>
+      <span class="badge" data-lang="en">Terms of Use &amp; EULA</span>
       <h1 data-lang="ja">利用規約（Terms of Use / 使用許諾契約）</h1>
       <h1 data-lang="ko">이용약관 (Terms of Use / 최종 사용자 라이선스 계약)</h1>
+      <h1 data-lang="nl">Gebruiksvoorwaarden — Ploegendienst Rooster &amp; Wekker &amp; Jisik Gongbang Apps</h1>
+      <h1 data-lang="en">Terms of Use &amp; EULA — Ploegendienst Rooster &amp; Wekker &amp; Jisik Gongbang Apps</h1>
 
       <div data-lang="ja">
         <p>この利用規約（以下「本規約」といいます）は、Jisik Gongbang（知識工房、以下「当方」といいます）が提供するスマートフォン用アプリケーション『電子印鑑スタジオ - 透過ハンコ作成＆PDF押印』および関連サービス（以下「本アプリ」といいます）の利用条件を定めるものです。本アプリをご利用になる前に、本規約をよくお読みください。</p>
@@ -253,43 +268,122 @@
         </div>
       </div>
 
+      <div data-lang="nl">
+        <p>Deze gebruiksvoorwaarden (&ldquo;Voorwaarden&rdquo;) zijn van toepassing op het gebruik van mobiele applicaties van <strong>Jisik Gongbang</strong>, waaronder <strong>『Ploegendienst Rooster &amp; Wekker』</strong> (alsmede onze overige nuts- en document-apps). Door een app te downloaden of te gebruiken, ga je akkoord met deze Voorwaarden.</p>
+
+        <h2>Artikel 1 (Licentie en eigen geëxporteerde bestanden)</h2>
+        <ol>
+          <li>Alle intellectuele-eigendomsrechten op de programmacode, vormgeving en ingebouwde sjablonen berusten bij Jisik Gongbang of diens licentiegevers.</li>
+          <li><strong>Rechten op eigen bestanden:</strong> De roosters, afbeeldingen, <code>.ics</code>-agendabestanden, A4 PDF&rsquo;s, CSV-overzichten en JSON-back-ups (alsmede stempel-/documentbestanden uit onze overige apps) die jij met de app maakt, blijven volledig van jou en mag je vrij gebruiken en delen.</li>
+        </ol>
+
+        <h2>Artikel 2 (Betaalde Pro-plannen, 3 dagen gratis proberen &amp; opzegging)</h2>
+        <ol>
+          <li>Naast de gratis basisfuncties biedt 『Ploegendienst Rooster &amp; Wekker』 optioneel <strong>Lifetime Pro</strong> (eenmalige aankoop zonder abonnement) en <strong>Monthly Pro</strong> (maandelijks automatisch verlengend abonnement). De actuele prijzen inclusief 21% btw worden voorafgaand aan aankoop getoond in het aankoopvenster van de Apple App Store of Google Play.</li>
+          <li><strong>3 dagen gratis proberen &amp; 24-uurstermijn:</strong> Indien bij het maandabonnement een proefperiode van 3 dagen wordt aangeboden, wordt het abonnement aan het einde van de proefperiode automatisch omgezet in een betaald maandabonnement, tenzij je <strong>minimaal 24 uur vóór afloop</strong> van de proef- of lopende periode opzegt via de accountinstellingen van je winkel (iOS: <em>Instellingen &gt; Apple Account &gt; Abonnementen</em>; Android: <em>Google Play &gt; Betalingen en abonnementen &gt; Abonnementen</em>).</li>
+          <li><strong>Verwijderen van de app stopt een abonnement niet automatisch.</strong> Zeg altijd rechtstreeks via Google Play of Apple op.</li>
+          <li><strong>Overstappen naar Lifetime Pro tijdens actief maandabonnement:</strong> Koop je een eenmalige Lifetime Pro-licentie terwijl er nog een actief maandabonnement (of gratis proefperiode) loopt, zet het maandabonnement dan handmatig minimaal 24 uur vóór verlenging stop in de store-instellingen om dubbele kosten te voorkomen.</li>
+          <li><strong>EU-herroepingsrecht &amp; terugbetalingen:</strong> Bij aankoop van digitale inhoud en abonnementen via Apple of Google gelden de wettelijke consumentenrechten in de EU/Nederland en de officiële terugbetalingsprocedures van Apple App Store en Google Play.</li>
+        </ol>
+
+        <h2>Artikel 3 (Belangrijke disclaimers voor Rooster, ORT &amp; Wekker)</h2>
+        <ol>
+          <li><strong>Indicatieve ORT- en ploegentoeslagberekening:</strong> Berekeningen voor ORT (zoals CAO Ziekenhuizen / VVT) en vaste ploegentoeslagen in 『Ploegendienst Rooster &amp; Wekker』 dienen uitsluitend als persoonlijk hulpmiddel ter referentie. Individuele arbeidscontracten, bedrijfsregelingen, pauzeaftrek en cao-wijzigingen kunnen afwijken; het officiële rooster en de loonstrook van je werkgever zijn altijd leidend.</li>
+          <li><strong>Betrouwbaarheid van wekkers en meldingen:</strong> Hoewel Android exacte systeemwekkers en iOS lokale meldingen gebruikt, kunnen een lege batterij, uitgeschakelde telefoon, ingetrokken meldingen, batterijbesparing van de fabrikant of de iOS Focus-/stille schakelaar een alarm verhinderen. Gebruik voor veiligheidskritische of vroege diensten altijd indien nodig een back-upwekker.</li>
+          <li><strong>Lokale back-up:</strong> Omdat gegevens uitsluitend op jouw apparaat worden opgeslagen, adviseren wij regelmatig een lokale JSON-back-up te exporteren om verlies bij toestelwissel of defect te voorkomen.</li>
+        </ol>
+
+        <h2>Artikel 4 (Toegestaan gebruik &amp; aansprakelijkheid)</h2>
+        <p>Het is niet toegestaan de app te decompileren, reverse-engineeren of als eigen software door te verkopen. Voor zover wettelijk toegestaan is iedere aansprakelijkheid voor indirecte schade uitgesloten, met dien verstande dat niets in deze Voorwaarden dwingendrechtelijke consumentenrechten naar Nederlands of Europees recht beperkt of uitsluit (zoals aansprakelijkheid bij opzet of grove schuld).</p>
+
+        <h2>Artikel 5 (Toepasselijk recht &amp; contact)</h2>
+        <p>Op deze Voorwaarden is het recht van de Republiek Korea van toepassing, onverminderd de verplichte consumentenbeschermingsbepalingen die gelden in het land waar je als consument binnen de Europese Unie verblijft (Rome I Verordening).</p>
+        <div class="info-box">
+          <strong>Aanbieder:</strong> Jisik Gongbang (Bedrijfsreg. nr.: 874-15-02757 / D-U-N-S® Number: 697010594)<br>
+          <strong>Vertegenwoordiger:</strong> KOO BONYEOP<br>
+          <strong>Adres:</strong> 65 Naesong-gil, Yeondong-myeon, Sejong-si, 30069, Republic of Korea<br>
+          <strong>E-mail voor support:</strong> <a href="mailto:ddumwork@gmail.com">ddumwork@gmail.com</a>
+        </div>
+      </div>
+
+      <div data-lang="en">
+        <p>These Terms of Use (&ldquo;Terms&rdquo;) govern your use of mobile applications provided by <strong>Jisik Gongbang</strong>, including <strong>&ldquo;Ploegendienst Rooster &amp; Wekker&rdquo;</strong> (and our other utility and document applications). By downloading or using the app, you agree to these Terms.</p>
+
+        <h2>1. License &amp; User-Generated Exports</h2>
+        <ol>
+          <li>All intellectual property rights in the app software, user interface, and built-in templates remain with Jisik Gongbang or its licensors.</li>
+          <li>You retain ownership of all rosters, notes, <code>.ics</code> calendar exports, PNG cards, A4 PDFs, CSV sheets, and JSON backups you create and may freely use or share them.</li>
+        </ol>
+
+        <h2>2. Pro Upgrades, 3-Day Free Trial &amp; Auto-Renewal</h2>
+        <ol>
+          <li>Optional Pro upgrades include a one-time <strong>Lifetime Pro</strong> purchase and an auto-renewing <strong>Monthly Pro</strong> subscription. Exact localized prices (including applicable taxes/VAT) are displayed in the Apple App Store or Google Play purchase sheet prior to checkout.</li>
+          <li><strong>3-Day Free Trial &amp; 24-Hour Rule:</strong> Where Monthly Pro includes a 3-day free trial, the subscription automatically converts to a paid monthly plan at the end of the trial unless cancelled <strong>at least 24 hours before</strong> the end of the trial or billing period in your store settings (iOS: <em>Settings &gt; Apple Account &gt; Subscriptions</em>; Android: <em>Google Play &gt; Payments &amp; subscriptions &gt; Subscriptions</em>).</li>
+          <li>Uninstalling the app does not cancel an active subscription. If you purchase Lifetime Pro while a Monthly Pro subscription or trial is active, remember to cancel the monthly subscription manually at least 24 hours before renewal to prevent duplicate charges.</li>
+          <li>Statutory EU consumer withdrawal rules for digital content and Apple/Google store refund procedures apply.</li>
+        </ol>
+
+        <h2>3. Informational &amp; Alarm Disclaimers</h2>
+        <ol>
+          <li><strong>ORT &amp; Shift Allowance Estimates:</strong> ORT (CAO Ziekenhuizen / VVT) and fixed shift-allowance calculations inside &ldquo;Ploegendienst Rooster &amp; Wekker&rdquo; are provided strictly as personal reference estimates. Your official employer roster, applicable CAO text, and payslip always prevail.</li>
+          <li><strong>Alarm Delivery:</strong> While Android exact alarms and iOS local notifications are implemented for reliable shift reminders, depleted batteries, powered-off devices, OEM battery restrictions, denied notifications, or iOS Focus/Mute settings may prevent alerts from sounding. Please keep a backup alarm for critical shifts.</li>
+          <li><strong>Local Backups:</strong> Because all data is stored locally on your device, please export regular JSON backups before changing or wiping your device.</li>
+        </ol>
+
+        <h2>4. Restrictions, Governing Law &amp; Limitation of Liability</h2>
+        <p>You may not reverse-engineer, redistribute, or resell the app. Nothing in these Terms excludes or limits mandatory consumer rights granted by EU or Dutch law (nor liability for intent or gross negligence). Subject thereto, these Terms are governed by the laws of the Republic of Korea without prejudice to mandatory local consumer protections (EU Rome I Regulation).</p>
+        <div class="info-box">
+          <strong>Provider:</strong> Jisik Gongbang (Business Reg. No.: 874-15-02757 / D-U-N-S® Number: 697010594)<br>
+          <strong>Representative:</strong> KOO BONYEOP<br>
+          <strong>Address:</strong> 65 Naesong-gil, Yeondong-myeon, Sejong-si, 30069, Republic of Korea<br>
+          <strong>Support E-mail:</strong> <a href="mailto:ddumwork@gmail.com">ddumwork@gmail.com</a>
+        </div>
+      </div>
+
       <div class="meta-footer">
-        <span data-lang="ja">制定日：2026年10月17日 ｜ 最終改定日：2026年10月30日</span>
-        <span data-lang="ko">제정일: 2026년 10월 17일 ｜ 최종 개정일: 2026년 10월 30일</span>
+        <span data-lang="ja">制定日：2026年10月17日 ｜ 最終改定日：2026年11月23日</span>
+        <span data-lang="ko">제정일: 2026년 10월 17일 ｜ 최종 개정일: 2026년 11월 23일</span>
+        <span data-lang="nl">Ingangsdatum: 17 oktober 2026 ｜ Laatst bijgewerkt: 23 november 2026</span>
+        <span data-lang="en">Effective Date: October 17, 2026 ｜ Last Updated: November 23, 2026</span>
       </div>
     </div>
   </main>
   
   <script>
     function setLang(lang) {
-      var isKo = (lang === 'ko');
-      document.body.classList.toggle('lang-ko', isKo);
-      document.documentElement.lang = isKo ? 'ko' : 'ja';
-      var btnJa = document.getElementById('btn-ja');
-      var btnKo = document.getElementById('btn-ko');
-      if (btnJa && btnKo) {
-        btnJa.classList.toggle('active', !isKo);
-        btnKo.classList.toggle('active', isKo);
+      var supported = ['ja', 'ko', 'nl', 'en'];
+      if (supported.indexOf(lang) === -1) lang = 'ja';
+      document.body.className = 'lang-' + lang;
+      document.documentElement.lang = lang;
+      for (var j = 0; j < supported.length; j++) {
+        var btn = document.getElementById('btn-' + supported[j]);
+        if (btn) btn.classList.toggle('active', supported[j] === lang);
       }
-      // Update internal links to preserve lang parameter
       var links = document.querySelectorAll('a[data-internal="true"]');
       for (var i = 0; i < links.length; i++) {
         var baseHref = links[i].getAttribute('data-base');
         if (baseHref) {
-          links[i].setAttribute('href', baseHref + '?v=20261030_v5' + (isKo ? '&lang=ko' : ''));
+          links[i].setAttribute('href', baseHref + '?v=20261123_v6&lang=' + lang);
         }
       }
-      try { localStorage.setItem('jg_legal_lang', isKo ? 'ko' : 'ja'); } catch (e) {}
+      try { localStorage.setItem('jg_legal_lang', lang); } catch (e) {}
     }
     (function() {
       var params = new URLSearchParams(window.location.search);
       var qLang = params.get('lang');
       var saved = null;
       try { saved = localStorage.getItem('jg_legal_lang'); } catch (e) {}
-      if (qLang === 'ko' || (!qLang && saved === 'ko')) {
-        setLang('ko');
+      var supported = ['ja', 'ko', 'nl', 'en'];
+      if (qLang && supported.indexOf(qLang) !== -1) {
+        setLang(qLang);
+      } else if (saved && supported.indexOf(saved) !== -1) {
+        setLang(saved);
       } else {
-        setLang('ja');
+        var nav = (navigator.language || '').toLowerCase();
+        if (nav.indexOf('nl') === 0) setLang('nl');
+        else if (nav.indexOf('ko') === 0) setLang('ko');
+        else if (nav.indexOf('en') === 0) setLang('en');
+        else setLang('ja');
       }
     })();
   </script>

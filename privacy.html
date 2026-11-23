@@ -122,34 +122,49 @@
       font-size: 13.5px;
       color: #64748b;
     }
-    [data-lang="ko"] { display: none; }
-    body.lang-ko [data-lang="ja"] { display: none; }
-    body.lang-ko [data-lang="ko"] { display: block; }
-    body.lang-ko span[data-lang="ko"], body.lang-ko a[data-lang="ko"] { display: inline; }
-    span[data-lang="ja"], a[data-lang="ja"] { display: inline; }
-    body.lang-ko span[data-lang="ja"], body.lang-ko a[data-lang="ja"] { display: none; }
+    [data-lang] { display: none; }
+    body.lang-ja div[data-lang="ja"], body.lang-ja h1[data-lang="ja"] { display: block; }
+    body.lang-ko div[data-lang="ko"], body.lang-ko h1[data-lang="ko"] { display: block; }
+    body.lang-nl div[data-lang="nl"], body.lang-nl h1[data-lang="nl"] { display: block; }
+    body.lang-en div[data-lang="en"], body.lang-en h1[data-lang="en"] { display: block; }
+    body.lang-ja .badge[data-lang="ja"],
+    body.lang-ko .badge[data-lang="ko"],
+    body.lang-nl .badge[data-lang="nl"],
+    body.lang-en .badge[data-lang="en"] { display: inline-block; }
+    body.lang-ja span[data-lang="ja"], body.lang-ja a[data-lang="ja"],
+    body.lang-ko span[data-lang="ko"], body.lang-ko a[data-lang="ko"],
+    body.lang-nl span[data-lang="nl"], body.lang-nl a[data-lang="nl"],
+    body.lang-en span[data-lang="en"], body.lang-en a[data-lang="en"] { display: inline; }
 </style>
 </head>
-<body>
+<body class="lang-ja">
   <main>
     <div class="topbar">
       <div class="nav">
-        <a data-internal="true" data-base="./index.html" href="./index.html?v=20261030_v5">
+        <a data-internal="true" data-base="./index.html" href="./index.html?v=20261123_v6">
           <span data-lang="ja">← 公式サポート・法務ポータルへ戻る</span>
           <span data-lang="ko">← 공식 고객지원·법무 포털로 돌아가기</span>
+          <span data-lang="nl">← Terug naar het support- &amp; juridisch portaal</span>
+          <span data-lang="en">← Back to Support &amp; Legal Portal</span>
         </a>
       </div>
       <div class="lang-switch" role="group" aria-label="Language switch">
         <button id="btn-ja" class="lang-btn active" onclick="setLang('ja')">🇯🇵 日本語</button>
         <button id="btn-ko" class="lang-btn" onclick="setLang('ko')">🇰🇷 한국어</button>
+        <button id="btn-nl" class="lang-btn" onclick="setLang('nl')">🇳🇱 Nederlands</button>
+        <button id="btn-en" class="lang-btn" onclick="setLang('en')">🇬🇧 English</button>
       </div>
     </div>
 
     <div class="card">
       <span class="badge" data-lang="ja">Privacy Policy</span>
       <span class="badge" data-lang="ko">개인정보처리방침 (Privacy Policy)</span>
+      <span class="badge" data-lang="nl">Privacybeleid (AVG / EU GDPR)</span>
+      <span class="badge" data-lang="en">Privacy Policy (EU GDPR)</span>
       <h1 data-lang="ja">プライバシーポリシー（個人情報保護方針）</h1>
       <h1 data-lang="ko">개인정보처리방침 (개인정보 보호 정책)</h1>
+      <h1 data-lang="nl">Privacybeleid — Ploegendienst Rooster &amp; Wekker &amp; Jisik Gongbang Apps</h1>
+      <h1 data-lang="en">Privacy Policy — Ploegendienst Rooster &amp; Wekker &amp; Jisik Gongbang Apps</h1>
 
       <div data-lang="ja">
         <p>Jisik Gongbang（知識工房、以下「当方」といいます）は、当方が提供するスマートフォン用アプリケーション『電子印鑑スタジオ - 透過ハンコ作成＆PDF押印』および関連アプリケーション（以下総称して「本アプリ」といいます）における利用者情報の取扱いについて、以下のとおりプライバシーポリシー（以下「本ポリシー」といいます）を定め、日本の個人情報保護法、大韓民国の個人情報保護法令、ならびにApple App StoreおよびGoogle Playの各ガイドラインを遵守いたします。</p>
@@ -259,43 +274,134 @@
         </div>
       </div>
 
+      <div data-lang="nl">
+        <p>Dit privacybeleid is opgesteld door <strong>Jisik Gongbang</strong> (hierna &ldquo;wij&rdquo; of &ldquo;de aanbieder&rdquo;) voor onze mobiele applicaties, waaronder <strong>『Ploegendienst Rooster &amp; Wekker』</strong> (en onze overige nuts- en document-apps zoals 『電子印鑑スタジオ - 透過ハンコ作成＆PDF押印』). Wij verwerken eventuele gegevens strikt in overeenstemming met de Europese Algemene Verordening Gegevensbescherming (<strong>AVG / EU GDPR — Verordening (EU) 2016/679</strong>), Nederlandse privacyregelgeving en het beleid van Google Play en de Apple App Store.</p>
+
+        <h2>1. Welke gegevens worden verwerkt (100% lokaal op je apparaat)</h2>
+        <p><strong>『Ploegendienst Rooster &amp; Wekker』 is ontworpen volgens het principe van maximale gegevensminimalisatie (Privacy by Design) en werkt 100% offline zonder gebruikersaccount of cloudserver.</strong></p>
+        <ul>
+          <li><strong>Roosters, notities, wekkers en uurloongegevens:</strong> Alle dienstroosters (jouw rooster en optioneel partnerrooster), dienstuitzonderingen (ruilen/verlof), wektijden, klank- en volumevoorkeuren en uurloon-/ORT-instellingen worden uitsluitend lokaal op je eigen toestel opgeslagen (via OS-opslag zoals <code>SharedPreferences</code> / <code>UserDefaults</code>) en <strong>nooit</strong> naar een server van ons of derden verzonden.</li>
+          <li><strong>Geen externe tracking of advertenties:</strong> 『Ploegendienst Rooster &amp; Wekker』 bevat geen advertentie-SDK&rsquo;s, geen analytics-trackers, geen gedragsprofilering en verzamelt geen advertentie-ID&rsquo;s (IDFA / AAID). Lettertypen zijn ingebouwd zodat er ook bij weergave geen externe font-servers worden aangeroepen.</li>
+          <li><strong>Document- en stempel-apps:</strong> Bij gebruik van onze document-/stempel-apps blijven ingeladen PDF-bestanden en afbeeldingen lokaal binnen het geheugen en de sandbox van het toestel.</li>
+          <li><strong>Support per e-mail:</strong> Alleen wanneer je zelf contact opneemt via <a href="mailto:ddumwork@gmail.com">ddumwork@gmail.com</a> gebruiken wij je e-mailadres en het bericht uitsluitend om jouw ondersteuningsvraag te beantwoorden.</li>
+        </ul>
+
+        <h2>2. Gebruik van systeemrechten (Toestemmingen)</h2>
+        <ul>
+          <li><strong>Ploegendienst Rooster &amp; Wekker (Android):</strong> Gebruikt exacte systeemwekkers (<code>USE_EXACT_ALARM</code> / <code>SCHEDULE_EXACT_ALARM</code>), heropstart-herstel (<code>RECEIVE_BOOT_COMPLETED</code>), meldingen en vergrendelscherm-wekkerscherm (<code>POST_NOTIFICATIONS</code>, <code>USE_FULL_SCREEN_INTENT</code>), voorgrond-audioservice (<code>FOREGROUND_SERVICE_MEDIA_PLAYBACK</code>) en wekkervolume-synchronisatie (<code>MODIFY_AUDIO_SETTINGS</code>) uitsluitend om jouw ingestelde dienstwekkers betrouwbaar te laten klinken. Er worden geen locatie-, camera- of contactgegevens opgevraagd.</li>
+          <li><strong>Ploegendienst Rooster &amp; Wekker (iOS / iPadOS):</strong> Gebruikt lokale meldingen (<code>UNUserNotificationCenter</code>) voor dienstherinneringen en, uitsluitend wanneer je zelf een geëxporteerde maandkaart in Foto&rsquo;s wilt bewaren, schrijftoegang tot de fotobibliotheek (<code>NSPhotoLibraryAddUsageDescription</code>). Er is geen toegang tot camera, locatie of bestaande foto&rsquo;s.</li>
+          <li><strong>Exports (<code>.ics</code>, PNG, A4 PDF, CSV, JSON):</strong> Bestanden worden lokaal gegenereerd en alleen via het standaard deelsysteem van Android/iOS gedeeld wanneer jij bewust op &ldquo;Exporteren&rdquo; of &ldquo;Delen&rdquo; tikt.</li>
+        </ul>
+
+        <h2>3. In-app aankopen via Google Play &amp; Apple App Store</h2>
+        <p>Betalingen voor Pro-upgrades (eenmalige aankoop <code>Lifetime Pro</code> of maandelijks abonnement <code>Monthly Pro</code> met 3 dagen gratis proefperiode) verlopen volledig via de officiële betaalsystemen van Apple Inc. (App Store / StoreKit) of Google LLC (Google Play Billing). Wij ontvangen of bewaren nooit jouw creditcard-, bank- of betaalgegevens.</p>
+        <ul>
+          <li><a href="https://www.apple.com/nl/legal/privacy/" target="_blank" rel="noopener">Privacybeleid van Apple</a></li>
+          <li><a href="https://policies.google.com/privacy?hl=nl" target="_blank" rel="noopener">Privacybeleid van Google</a></li>
+        </ul>
+
+        <h2>4. Rechtsgrond en jouw rechten onder de AVG / EU GDPR</h2>
+        <p>Voor zover gegevens worden verwerkt (bijvoorbeeld het beantwoorden van jouw support-e-mail of het lokaal uitvoeren van de app-functies op jouw verzoek), geschiedt dit op grond van artikel 6, lid 1, onder b AVG (uitvoering van de gebruikersoverkomst) dan wel artikel 6, lid 1, onder f AVG (gerechtvaardigd belang bij klantenondersteuning). Onder de AVG/GDPR beschik je over het recht op inzage, rectificatie, verwijdering (&ldquo;recht om vergeten te worden&rdquo;), beperking van de verwerking, gegevensoverdraagbaarheid en bezwaar.</p>
+        <ul>
+          <li><strong>Zelf wissen in de app of via verwijdering:</strong> Je kunt op elk moment alle lokaal opgeslagen gegevens resetten binnen Tab 4 of alle gegevens onmiddellijk en definitief wissen door de app van je toestel te verwijderen. Support-e-mails worden op verzoek via <a href="mailto:ddumwork@gmail.com">ddumwork@gmail.com</a> onverwijld verwijderd.</li>
+          <li><strong>Klacht indienen bij de toezichthouder:</strong> Als inwoner van de EU/EER heb je het recht een klacht in te dienen bij een toezichthoudende autoriteit, in Nederland bij de <strong>Autoriteit Persoonsgegevens</strong> (<a href="https://autoriteitpersoonsgegevens.nl/" target="_blank" rel="noopener">autoriteitpersoonsgegevens.nl</a>).</li>
+        </ul>
+
+        <h2>5. Wijzigingen en contactgegevens verwerkingsverantwoordelijke</h2>
+        <p>Wij kunnen dit privacybeleid bijwerken bij wetswijzigingen of app-updates. De actuele versie is altijd op deze pagina beschikbaar.</p>
+        <div class="info-box">
+          <strong>Verwerkingsverantwoordelijke / Onderneming:</strong> Jisik Gongbang (Bedrijfsreg. nr.: 874-15-02757 / D-U-N-S® Number: 697010594)<br>
+          <strong>Vertegenwoordiger:</strong> KOO BONYEOP<br>
+          <strong>Adres:</strong> 65 Naesong-gil, Yeondong-myeon, Sejong-si, 30069, Republic of Korea<br>
+          <strong>Support &amp; AVG-vragen:</strong> <a href="mailto:ddumwork@gmail.com">ddumwork@gmail.com</a>
+        </div>
+      </div>
+
+      <div data-lang="en">
+        <p>This Privacy Policy is provided by <strong>Jisik Gongbang</strong> (&ldquo;we&rdquo;, &ldquo;our&rdquo;, or &ldquo;us&rdquo;) for our mobile applications, including <strong>&ldquo;Ploegendienst Rooster &amp; Wekker&rdquo;</strong> (and our other utility and document apps such as &ldquo;Electronic Seal Studio / 電子印鑑スタジオ&rdquo;). We handle user privacy strictly in accordance with the European Union General Data Protection Regulation (<strong>EU GDPR / Regulation (EU) 2016/679</strong>), Dutch privacy requirements (<strong>AVG</strong>), and Apple App Store / Google Play guidelines.</p>
+
+        <h2>1. 100% On-Device Offline Design &amp; Data Minimalization</h2>
+        <p><strong>&ldquo;Ploegendienst Rooster &amp; Wekker&rdquo; is built with Privacy by Design and operates 100% offline with zero account registration and zero developer backend servers.</strong></p>
+        <ul>
+          <li><strong>Shift Calendars, Overrides, Alarms &amp; ORT Inputs:</strong> All shift patterns, partner rosters, swaps (<em>Ruilen</em>), leave records (<em>Verlof</em>), notes, alarm times/sounds, and ORT/wage settings remain stored exclusively on your device (local OS preferences such as <code>SharedPreferences</code> / <code>UserDefaults</code>) and are never uploaded or shared with us or any third party.</li>
+          <li><strong>No Ads, Analytics, or Tracking:</strong> The app contains zero advertising SDKs, zero analytics/telemetry SDKs, and does not access or collect advertising identifiers (IDFA / AAID). All fonts and alarm audio files are bundled locally.</li>
+          <li><strong>Customer Support E-mails:</strong> If you email <a href="mailto:ddumwork@gmail.com">ddumwork@gmail.com</a>, your email address and message are used solely to respond to and resolve your support request.</li>
+        </ul>
+
+        <h2>2. Device Permissions</h2>
+        <ul>
+          <li><strong>Ploegendienst Rooster &amp; Wekker (Android):</strong> Uses exact alarms (<code>USE_EXACT_ALARM</code> / <code>SCHEDULE_EXACT_ALARM</code>), boot rescheduling (<code>RECEIVE_BOOT_COMPLETED</code>), notifications and lock-screen wake alerts (<code>POST_NOTIFICATIONS</code>, <code>USE_FULL_SCREEN_INTENT</code>), media playback foreground service (<code>FOREGROUND_SERVICE_MEDIA_PLAYBACK</code>), and alarm stream volume sync (<code>MODIFY_AUDIO_SETTINGS</code>) solely to deliver your scheduled shift wake-up alarms. No camera, location, or broad media-storage permissions are declared.</li>
+          <li><strong>Ploegendienst Rooster &amp; Wekker (iOS / iPadOS):</strong> Uses local notifications (<code>UNUserNotificationCenter</code>) for shift alerts and, only if you choose to save an exported monthly calendar image to Photos, write-only Photo Library access (<code>NSPhotoLibraryAddUsageDescription</code>).</li>
+          <li><strong>Exports (<code>.ics</code>, PNG, A4 PDF, CSV, JSON):</strong> All exports are generated locally on your device and shared only when you initiate sharing via the native OS share sheet.</li>
+        </ul>
+
+        <h2>3. In-App Purchases</h2>
+        <p>Pro upgrades (one-time Lifetime Pro or Monthly Pro subscription with an optional 3-day free trial) are processed strictly by Apple Inc. (App Store / StoreKit) or Google LLC (Google Play Billing). We never collect or store payment card or bank credentials.</p>
+        <ul>
+          <li><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple Privacy Policy</a></li>
+          <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></li>
+        </ul>
+
+        <h2>4. Legal Basis &amp; Your Rights under EU GDPR / AVG</h2>
+        <p>Where any personal data is processed (solely limited to responding to voluntary support emails or performing on-device functionality requested by you), processing relies on Art. 6(1)(b) GDPR (performance of service) and Art. 6(1)(f) GDPR (legitimate interest in providing user support). Under the EU GDPR, you have the right to access, rectification, erasure, restriction of processing, data portability, and objection.</p>
+        <ul>
+          <li><strong>Full Local Deletion:</strong> You can reset data inside Tab 4 or delete the application from your device at any time to permanently erase all local data. Support email correspondence will be deleted promptly upon request to <a href="mailto:ddumwork@gmail.com">ddumwork@gmail.com</a>.</li>
+          <li><strong>Supervisory Authority:</strong> EU/EEA residents have the right to lodge a complaint with a supervisory authority, including the Dutch Data Protection Authority (<strong>Autoriteit Persoonsgegevens</strong>, <a href="https://autoriteitpersoonsgegevens.nl/" target="_blank" rel="noopener">autoriteitpersoonsgegevens.nl</a>).</li>
+        </ul>
+
+        <h2>5. Data Controller Contact</h2>
+        <div class="info-box">
+          <strong>Controller / Business Name:</strong> Jisik Gongbang (Business Reg. No.: 874-15-02757 / D-U-N-S® Number: 697010594)<br>
+          <strong>Representative:</strong> KOO BONYEOP<br>
+          <strong>Address:</strong> 65 Naesong-gil, Yeondong-myeon, Sejong-si, 30069, Republic of Korea<br>
+          <strong>Privacy &amp; Support Email:</strong> <a href="mailto:ddumwork@gmail.com">ddumwork@gmail.com</a>
+        </div>
+      </div>
+
       <div class="meta-footer">
-        <span data-lang="ja">制定日：2026年10月17日 ｜ 最終改定日：2026年10月30日</span>
-        <span data-lang="ko">제정일: 2026년 10월 17일 ｜ 최종 개정일: 2026년 10월 30일</span>
+        <span data-lang="ja">制定日：2026年10月17日 ｜ 最終改定日：2026年11月23日</span>
+        <span data-lang="ko">제정일: 2026년 10월 17일 ｜ 최종 개정일: 2026년 11월 23일</span>
+        <span data-lang="nl">Ingangsdatum: 17 oktober 2026 ｜ Laatst bijgewerkt: 23 november 2026</span>
+        <span data-lang="en">Effective Date: October 17, 2026 ｜ Last Updated: November 23, 2026</span>
       </div>
     </div>
   </main>
   
   <script>
     function setLang(lang) {
-      var isKo = (lang === 'ko');
-      document.body.classList.toggle('lang-ko', isKo);
-      document.documentElement.lang = isKo ? 'ko' : 'ja';
-      var btnJa = document.getElementById('btn-ja');
-      var btnKo = document.getElementById('btn-ko');
-      if (btnJa && btnKo) {
-        btnJa.classList.toggle('active', !isKo);
-        btnKo.classList.toggle('active', isKo);
+      var supported = ['ja', 'ko', 'nl', 'en'];
+      if (supported.indexOf(lang) === -1) lang = 'ja';
+      document.body.className = 'lang-' + lang;
+      document.documentElement.lang = lang;
+      for (var j = 0; j < supported.length; j++) {
+        var btn = document.getElementById('btn-' + supported[j]);
+        if (btn) btn.classList.toggle('active', supported[j] === lang);
       }
-      // Update internal links to preserve lang parameter
       var links = document.querySelectorAll('a[data-internal="true"]');
       for (var i = 0; i < links.length; i++) {
         var baseHref = links[i].getAttribute('data-base');
         if (baseHref) {
-          links[i].setAttribute('href', baseHref + '?v=20261030_v5' + (isKo ? '&lang=ko' : ''));
+          links[i].setAttribute('href', baseHref + '?v=20261123_v6&lang=' + lang);
         }
       }
-      try { localStorage.setItem('jg_legal_lang', isKo ? 'ko' : 'ja'); } catch (e) {}
+      try { localStorage.setItem('jg_legal_lang', lang); } catch (e) {}
     }
     (function() {
       var params = new URLSearchParams(window.location.search);
       var qLang = params.get('lang');
       var saved = null;
       try { saved = localStorage.getItem('jg_legal_lang'); } catch (e) {}
-      if (qLang === 'ko' || (!qLang && saved === 'ko')) {
-        setLang('ko');
+      var supported = ['ja', 'ko', 'nl', 'en'];
+      if (qLang && supported.indexOf(qLang) !== -1) {
+        setLang(qLang);
+      } else if (saved && supported.indexOf(saved) !== -1) {
+        setLang(saved);
       } else {
-        setLang('ja');
+        var nav = (navigator.language || '').toLowerCase();
+        if (nav.indexOf('nl') === 0) setLang('nl');
+        else if (nav.indexOf('ko') === 0) setLang('ko');
+        else if (nav.indexOf('en') === 0) setLang('en');
+        else setLang('ja');
       }
     })();
   </script>
