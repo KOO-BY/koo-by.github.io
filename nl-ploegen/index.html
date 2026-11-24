@@ -444,6 +444,18 @@
           </span>
         </a>
 
+        <a id="btn-roster-2027" class="store-btn webtool" href="/nl-ploegen/5-ploegenrooster-2027/">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+          <span class="btn-meta">
+            <span class="btn-small" data-lang="nl">Ploeg A t/m E · ISO-weeknummers · Gratis .ICS &amp; A4 print</span>
+            <span class="btn-small" data-lang="ko">A~E조 2027년 5교대 연간 달력 + .ICS/A4 무료 웹도구</span>
+            <span class="btn-main" data-lang="nl">5-Ploegenrooster 2027 Online (Ploeg A–E)</span>
+            <span class="btn-main" data-lang="ko">2027 네덜란드 5교대 연간 로스터 (Ploeg A–E)</span>
+          </span>
+        </a>
+
         <div class="store-btn ios-soon" aria-label="iOS App Store binnenkort beschikbaar">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.33c.64-.78 1.08-1.86.96-2.94-.93.04-2.06.62-2.72 1.4-.59.68-1.1 1.79-.96 2.84 1.04.08 2.08-.52 2.72-1.3z"/>
@@ -511,7 +523,7 @@
         <strong>Belangrijke toelichting (Indicatief):</strong> De uren-, ORT- en ploegentoeslagberekeningen in de app en webcalculator zijn uitsluitend bedoeld als persoonlijke richtlijn (<em>indicatief</em>) en vervangen geen officiële loonstrook, werkgeversberekening of juridisch/CAO-advies.
       </div>
       <div class="compliance-note" data-lang="ko">
-        <strong>면책 고지 (F41 — Indicatief):</strong> 앱과 웹 계산기의 ORT·교대수당 산출 결과는 개인 참고용 추정치(<em>indicatief</em>)이며, 공식 급여명세서(<em>loonstrook</em>), 고용주 정산 또는 노무·CAO 법률 자문을 대체하지 않습니다.
+        <strong>면책 고지 (Indicatief):</strong> 앱과 웹 계산기의 ORT·교대수당 산출 결과는 개인 참고용 추정치(<em>indicatief</em>)이며, 공식 급여명세서(<em>loonstrook</em>), 고용주 정산 또는 노무·CAO 법률 자문을 대체하지 않습니다.
       </div>
 
       <div class="footer">
@@ -521,11 +533,19 @@
             <span data-lang="nl">Gratis ORT Calculator</span>
             <span data-lang="ko">무료 ORT 웹 계산기</span>
           </a>
-          <a id="link-privacy" href="https://koo-by.github.io/privacy.html" data-base="https://koo-by.github.io/privacy.html">
+          <a id="link-roster-2027" href="/nl-ploegen/5-ploegenrooster-2027/" data-base="/nl-ploegen/5-ploegenrooster-2027/">
+            <span data-lang="nl">5-Ploegenrooster 2027</span>
+            <span data-lang="ko">2027 5교대 달력</span>
+          </a>
+          <a id="link-press" href="/press_app03_ploegendienst_rooster.html" data-base="/press_app03_ploegendienst_rooster.html">
+            <span data-lang="nl">Perskit</span>
+            <span data-lang="ko">보도자료/팩트시트</span>
+          </a>
+          <a id="link-privacy" href="https://koo-by.github.io/privacy.html?lang=nl" data-base="https://koo-by.github.io/privacy.html">
             <span data-lang="nl">Privacybeleid</span>
             <span data-lang="ko">개인정보처리방침</span>
           </a>
-          <a id="link-terms" href="https://koo-by.github.io/terms.html" data-base="https://koo-by.github.io/terms.html">
+          <a id="link-terms" href="https://koo-by.github.io/terms.html?lang=nl" data-base="https://koo-by.github.io/terms.html">
             <span data-lang="nl">Gebruiksvoorwaarden</span>
             <span data-lang="ko">이용약관</span>
           </a>
@@ -564,7 +584,7 @@
       var p = platform || "";
       var touch = typeof maxTouchPoints === "number" ? maxTouchPoints : 0;
       if (/Android/i.test(u)) {
-        return { os: "android", shouldRedirect: true };
+        return { os: "android", shouldRedirect: false };
       }
       if (/iPhone|iPad|iPod/i.test(u) || (/Macintosh/i.test(u) && touch > 1) || (/MacIntel/i.test(p) && touch > 1)) {
         return { os: "ios", shouldRedirect: false };
@@ -584,17 +604,21 @@
       var lp = document.getElementById("link-privacy");
       var lt = document.getElementById("link-terms");
       var lc = document.getElementById("link-calc");
+      var lr = document.getElementById("link-roster-2027");
+      var lpr = document.getElementById("link-press");
       var bwo = document.getElementById("btn-web-ort-tool");
-      if (lp) lp.href = lp.getAttribute("data-base") + (target === "ko" ? "?lang=ko" : "");
-      if (lt) lt.href = lt.getAttribute("data-base") + (target === "ko" ? "?lang=ko" : "");
+      var br2 = document.getElementById("btn-roster-2027");
+      if (lp) lp.href = lp.getAttribute("data-base") + (target === "ko" ? "?lang=ko" : "?lang=nl");
+      if (lt) lt.href = lt.getAttribute("data-base") + (target === "ko" ? "?lang=ko" : "?lang=nl");
       var calcQuery = target === "ko" ? "?lang=ko" : (keepPreview ? "?preview=1" : "");
       if (lc) lc.href = lc.getAttribute("data-base") + calcQuery;
+      if (lr) lr.href = lr.getAttribute("data-base") + calcQuery;
+      if (lpr) lpr.href = lpr.getAttribute("data-base") + (target === "ko" ? "?lang=ko" : "");
       if (bwo) bwo.href = "/nl-ploegen/ort-berekenen/" + calcQuery;
+      if (br2) br2.href = "/nl-ploegen/5-ploegenrooster-2027/" + calcQuery;
       var banner = document.getElementById("redirect-banner");
-      var currentOs = document.documentElement.getAttribute("data-detected-os") || "desktop";
       if (banner) {
-        var shouldShowBanner = (target === "ko") || keepPreview || (currentOs === "android");
-        banner.classList.toggle("visible", shouldShowBanner);
+        banner.classList.toggle("visible", (target === "ko") || keepPreview);
       }
     }
 
@@ -615,23 +639,12 @@
       document.documentElement.setAttribute("data-detected-os", os);
 
       if (os === "android") {
-        if (banner) banner.classList.add("visible");
+        if (banner) banner.classList.toggle("visible", isQaMode);
         if (msgNl) {
-          msgNl.textContent = allowRedirect
-            ? "Doorsturen naar Google Play (Android)... Als de pagina niet vanzelf opent, tik dan hieronder op Google Play."
-            : "Android-apparaat herkend — voorvertoning blokkeert automatische doorverwijzing. Tik hieronder op Google Play om de UTM-link te testen.";
+          msgNl.textContent = "Android-apparaat herkend — tik hierboven op Google Play voor de officiële app of gebruik onze gratis webtools.";
         }
         if (msgKo) {
-          msgKo.textContent = "[시뮬레이션: Android] 실제 Android 접속 시 120ms 후 UTM referrer 포함 Google Play NL로 자동 이동합니다.";
-        }
-        if (allowRedirect) {
-          window.setTimeout(function() {
-            try {
-              window.location.replace(targetPlayUrl);
-            } catch (e) {
-              window.location.href = targetPlayUrl;
-            }
-          }, 120);
+          msgKo.textContent = "[시뮬레이션: Android] 자동 리다이렉트 해제됨 — SEO 크롤러와 유저 모두 랜딩 페이지를 확인 후 Google Play 버튼을 클릭할 수 있습니다.";
         }
       } else if (os === "ios") {
         if (banner) banner.classList.toggle("visible", isQaMode);
@@ -715,7 +728,7 @@
         return;
       }
 
-      applyPlatformState(effectiveOs, effectiveOs === "android");
+      applyPlatformState(effectiveOs, false);
     })();
   </script>
 </body>

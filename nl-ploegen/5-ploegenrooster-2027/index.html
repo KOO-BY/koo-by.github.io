@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5-Ploegenrooster 2027 (Ploeg A–E) met ISO-weeknummers &amp; .ICS Download</title>
+  <meta name="description" content="Bekijk direct het complete 5-ploegenrooster 2026–2028 voor Ploeg A t/m E (2-2-2-4 cyclus) met ISO-weeknummers (W01–W53), Nederlandse feestdagen, zomertijd, 1-klik .ics agenda-export en A4 printweergave.">
+  <link rel="canonical" href="https://koo-by.github.io/nl-ploegen/5-ploegenrooster-2027/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="nl_NL">
+  <meta property="og:title" content="5-Ploegenrooster 2027 (Ploeg A t/m E) — Gratis Kalender &amp; .ICS Export">
+  <meta property="og:description" content="Gratis 5-ploegendienst jaarkalender voor Ploeg A–E (2-2-2-4). Inclusief ISO-weeknummers, Koningsdag, DST, .ics voor Google/Apple/Outlook en A4-print.">
+  <meta property="og:url" content="https://koo-by.github.io/nl-ploegen/5-ploegenrooster-2027/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "5-Ploegenrooster 2027 (Ploeg A t/m E) — Online Kalender & .ICS",
+    "url": "https://koo-by.github.io/nl-ploegen/5-ploegenrooster-2027/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web (Android, iOS, Windows, macOS)",
+    "inLanguage": "nl",
+    "isAccessibleForFree": true,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Hoe werkt een 5-ploegenrooster (2-2-2-4)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Een standaard 5-ploegencyclus (2-2-2-4) duurt 10 dagen: 2 ochtenddiensten (O), 2 middagdiensten (M), 2 nachtdiensten (N) en 4 vrije dagen (Vrij). Elke ploeg (A t/m E) start 2 dagen verschoven ten opzichte van de volgende ploeg, zodat 24/7 bezetting gegarandeerd is."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kan ik mijn 5-ploegenrooster 2027 in Google Agenda, Apple Agenda of Outlook zetten?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Klik bovenaan op Download .ICS Jaarrooster om voor het hele gekozen jaar direct een standaard .ics kalenderbestand met alle O-, M- en N-diensten te downloaden voor Google Calendar, Apple Agenda of Outlook."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Houdt dit rooster rekening met Koningsdag en Nederlandse weeknummers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Elke weekrij toont het officiële ISO-8601 weeknummer (W01 t/m W53) en alle officiële Nederlandse feestdagen plus zomertijd en wintertijd. Valt 27 april op zondag, dan schuift Koningsdag automatisch naar zaterdag 26 april."
+        }
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --cobalt-950: #0b1434;
+      --cobalt-900: #0f1d4d;
+      --cobalt-800: #173794;
+      --cobalt-700: #1d4ed8;
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --ink: #0f172a;
+      --muted: #475569;
+      --border: #dbe3f0;
+      --early-bg: #fef3c7; --early-ink: #b45309; --early-pill: #d97706;
+      --late-bg: #dbeafe; --late-ink: #1d4ed8; --late-pill: #2563eb;
+      --night-bg: #e0e7ff; --night-ink: #312e81; --night-pill: #312e81;
+      --off-bg: #d1fae5; --off-ink: #047857; --off-pill: #10b981;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.5;
+    }
+    body.lang-nl [data-lang="ko"] { display: none !important; }
+    body.lang-ko [data-lang="nl"] { display: none !important; }
+    .qa-bar {
+      display: none;
+      max-width: 1120px;
+      margin: 14px auto 0;
+      padding: 8px 16px;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12.5px;
+      color: var(--muted);
+    }
+    body.qa-preview .qa-bar, body.lang-ko .qa-bar { display: flex; }
+    .lang-switch button {
+      border: 1px solid #cbd5e1; background: #fff; color: #334155;
+      padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 700; cursor: pointer;
+    }
+    .lang-switch button.active { background: var(--cobalt-700); border-color: var(--cobalt-700); color: #fff; }
+    .wrap { max-width: 1120px; margin: 18px auto 48px; padding: 0 16px; }
+    .hero {
+      background: linear-gradient(145deg, var(--cobalt-950), var(--cobalt-900) 60%, var(--cobalt-800));
+      color: #fff; border-radius: 22px; padding: 26px 26px 24px;
+      box-shadow: 0 18px 40px -22px rgba(15, 29, 77, 0.72); margin-bottom: 18px;
+    }
+    .top-nav { display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+    .nav-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+    .top-nav a {
+      color: #dbeafe; text-decoration: none; font-size: 13px; font-weight: 700;
+      background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.20);
+      padding: 6px 12px; border-radius: 999px;
+    }
+    .hero h1 { margin: 0 0 8px; font-size: 27px; font-weight: 900; letter-spacing: -0.02em; }
+    .hero p { margin: 0; font-size: 14.5px; color: rgba(255,255,255,0.88); max-width: 780px; }
+    .controls {
+      background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+      padding: 18px; margin-bottom: 18px; box-shadow: 0 10px 26px -18px rgba(15,23,42,0.16);
+    }
+    .ctrl-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; align-items: end; }
+    .field label { display: block; font-size: 12px; font-weight: 800; color: #334155; margin-bottom: 5px; }
+    .field select, .field input {
+      width: 100%; padding: 9px 11px; border: 1.5px solid #cbd5e1; border-radius: 10px;
+      font-size: 14px; font-weight: 700; color: var(--ink); background: #fff;
+    }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; align-items: center; }
+    .btn-primary {
+      background: var(--cobalt-700); color: #fff; border: none; border-radius: 11px;
+      padding: 10px 16px; font-size: 13.5px; font-weight: 800; cursor: pointer;
+    }
+    .btn-secondary {
+      background: #eff6ff; color: var(--cobalt-700); border: 1px solid #bfdbfe;
+      border-radius: 11px; padding: 10px 14px; font-size: 13.5px; font-weight: 800; cursor: pointer;
+    }
+    .legend { display: flex; flex-wrap: wrap; gap: 8px; margin-left: auto; font-size: 12px; font-weight: 800; }
+    .leg-chip { padding: 4px 10px; border-radius: 999px; }
+    .leg-O { background: var(--early-bg); color: var(--early-ink); }
+    .leg-M { background: var(--late-bg); color: var(--late-ink); }
+    .leg-N { background: var(--night-bg); color: var(--night-ink); }
+    .leg-V { background: var(--off-bg); color: var(--off-ink); }
+    .summary-strip {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px; margin-bottom: 18px;
+    }
+    .sum-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 12px 14px;
+    }
+    .sum-lbl { font-size: 11.5px; font-weight: 800; color: var(--muted); }
+    .sum-val { font-size: 20px; font-weight: 900; color: var(--ink); margin-top: 2px; }
+    .year-grid {
+      display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px;
+    }
+    @media (max-width: 980px) { .year-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 640px) { .year-grid { grid-template-columns: 1fr; } .legend { margin-left: 0; } }
+    .month-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+      padding: 12px; break-inside: avoid;
+    }
+    .month-hdr { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+    .month-hdr h2 { margin: 0; font-size: 15.5px; font-weight: 900; color: var(--cobalt-900); }
+    .month-hdr span { font-size: 11.5px; font-weight: 700; color: var(--muted); }
+    table.cal { width: 100%; border-collapse: collapse; table-layout: fixed; }
+    table.cal th {
+      font-size: 10.5px; font-weight: 800; color: var(--muted); padding: 3px 1px 5px; text-align: center;
+    }
+    table.cal th.wk { color: var(--cobalt-700); width: 28px; }
+    table.cal td { padding: 2px; text-align: center; vertical-align: top; }
+    td.wk-cell {
+      font-size: 10.5px; font-weight: 800; color: var(--cobalt-700);
+      background: #eff6ff; border-radius: 6px; vertical-align: middle !important;
+    }
+    .day-cell {
+      border-radius: 7px; padding: 3px 1px; border: 1px solid #e2e8f0; min-height: 36px;
+      display: flex; flex-direction: column; align-items: center; justify-content: space-between;
+    }
+    .day-cell.early { background: #fffbeb; border-color: #fde68a; }
+    .day-cell.late { background: #eff6ff; border-color: #bfdbfe; }
+    .day-cell.night { background: #eef2ff; border-color: #c7d2fe; }
+    .day-cell.off { background: #ecfdf5; border-color: #a7f3d0; }
+    .day-cell.holiday { outline: 1.5px solid #dc2626; outline-offset: -1px; }
+    .dnum { font-size: 10.5px; font-weight: 800; color: #0f172a; line-height: 1.1; }
+    .sbadge {
+      font-size: 10px; font-weight: 900; color: #fff; border-radius: 4px;
+      padding: 1px 4px; line-height: 1.15; margin-top: 2px;
+    }
+    .sbadge.early { background: var(--early-pill); }
+    .sbadge.late { background: var(--late-pill); }
+    .sbadge.night { background: var(--night-pill); }
+    .sbadge.off { background: var(--off-pill); }
+    .hol-notes { margin-top: 7px; font-size: 11px; color: #991b1b; font-weight: 700; line-height: 1.35; }
+    .seo-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+      padding: 20px 22px; margin-top: 18px;
+    }
+    .cta-box {
+      background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 14px; padding: 15px 17px; margin-top: 14px;
+    }
+    .cta-box a {
+      display: inline-block; margin-top: 8px; background: var(--cobalt-700); color: #fff;
+      text-decoration: none; font-weight: 800; font-size: 13.5px; padding: 9px 14px; border-radius: 10px;
+    }
+    .footer {
+      margin-top: 20px; padding-top: 14px; border-top: 1px solid var(--border);
+      display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between;
+      font-size: 12.5px; color: var(--muted);
+    }
+    .footer a { color: var(--cobalt-700); text-decoration: none; font-weight: 700; }
+    @media print {
+      body { background: #fff; }
+      .qa-bar, .controls .btn-row, .top-nav, .cta-box, .seo-card .faq-list { display: none !important; }
+      .wrap { margin: 0; max-width: 100%; padding: 0; }
+      .hero { box-shadow: none; padding: 14px 18px; margin-bottom: 10px; }
+      .year-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+      .month-card { padding: 8px; border-color: #94a3b8; }
+      @page { size: A4 portrait; margin: 10mm; }
+    }
+  </style>
+</head>
+<body class="lang-nl">
+  <div class="qa-bar">
+    <span>QA Mode • 5-Ploegenrooster 2027</span>
+    <div class="lang-switch">
+      <button id="btn-nl" class="active" type="button" onclick="setLang('nl')">NL (Standaard)</button>
+      <button id="btn-ko" type="button" onclick="setLang('ko')">한국어 검수</button>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <section class="hero">
+      <div class="top-nav">
+        <div class="nav-pills">
+          <a id="nav-app" href="/nl-ploegen/">← Rooster &amp; Wekker App</a>
+          <a id="nav-ort" href="/nl-ploegen/ort-berekenen/">ORT Calculator (22–60%)</a>
+          <a id="nav-press" href="/press_app03_ploegendienst_rooster.html">Perskit</a>
+        </div>
+        <span style="font-size:12px;font-weight:800;color:#dbeafe;">2-2-2-4 · ISO W01–W53 · NL Feestdagen</span>
+      </div>
+      <h1>
+        <span data-lang="nl">5-Ploegenrooster 2027 (Ploeg A t/m E) — Gratis Jaarkalender &amp; .ICS</span>
+        <span data-lang="ko">네덜란드 5교대 2027 연간 근무표 (Ploeg A~E) — ISO 주번호 · 공휴일 · .ICS</span>
+      </h1>
+      <p data-lang="nl">Direct compleet jaaroverzicht voor 2026, 2027 en 2028 volgens de bekende 2-2-2-4 cyclus. Inclusief ISO-weeknummers, Koningsdag, zomertijd/wintertijd, 1-klik .ics download voor je agenda en nette A4-print.</p>
+      <p data-lang="ko">2-2-2-4 표준 5교대(2조근-2석근-2야근-4휴무) A~E조 2026~2028년 전체 달력, ISO 주번호, 네덜란드 공휴일·서머타임, .ics 다운로드 및 A4 인쇄를 무료로 제공합니다.</p>
+    </section>
+
+    <section class="controls">
+      <div class="ctrl-grid">
+        <div class="field">
+          <label for="inp-year"><span data-lang="nl">Jaar</span><span data-lang="ko">연도</span></label>
+          <select id="inp-year" onchange="renderAll()">
+            <option value="2026">2026</option>
+            <option value="2027" selected>2027</option>
+            <option value="2028">2028</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="inp-ploeg"><span data-lang="nl">Ploeg (A t/m E)</span><span data-lang="ko">근무조 (Ploeg A~E)</span></label>
+          <select id="inp-ploeg" onchange="onPloegChange()">
+            <option value="A" selected>Ploeg A (Start 1 jan 2027)</option>
+            <option value="B">Ploeg B (+2 dagen)</option>
+            <option value="C">Ploeg C (+4 dagen)</option>
+            <option value="D">Ploeg D (+6 dagen)</option>
+            <option value="E">Ploeg E (+8 dagen)</option>
+            <option value="custom">Eigen startdatum eerste O-dienst</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="inp-anchor"><span data-lang="nl">Startdatum 1e Ochtenddienst</span><span data-lang="ko">첫 조근 기준일</span></label>
+          <input id="inp-anchor" type="date" value="2027-01-01" onchange="onAnchorManual()">
+        </div>
+        <div class="field">
+          <label for="inp-style"><span data-lang="nl">Dienstcodes</span><span data-lang="ko">시프트 약어</span></label>
+          <select id="inp-style" onchange="renderAll()">
+            <option value="omn" selected>O / M / N (Ochtend-Middag-Nacht)</option>
+            <option value="vln">V / L / N (Vroeg-Laat-Nacht)</option>
+            <option value="dan">D / A / N (Dag-Avond-Nacht)</option>
+          </select>
+        </div>
+      </div>
+      <div class="btn-row">
+        <button class="btn-primary" type="button" onclick="downloadYearIcs()">📅 <span data-lang="nl">Download .ICS Jaarrooster</span><span data-lang="ko">연간 .ICS 파일 다운로드</span></button>
+        <button class="btn-secondary" type="button" onclick="window.print()">🖨️ <span data-lang="nl">Print A4 Jaarkaart</span><span data-lang="ko">A4 연간 달력 인쇄</span></button>
+        <div class="legend" id="legend-strip"></div>
+      </div>
+    </section>
+
+    <section class="summary-strip" id="year-summary"></section>
+    <main class="year-grid" id="year-grid"></main>
+
+    <section class="seo-card">
+      <div class="cta-box">
+        <strong data-lang="nl">Automatische dienstwekker (UIT op Vrij) + ORT-berekening op je telefoon?</strong>
+        <strong data-lang="ko">휴무일 자동 OFF 기상 알람과 ORT 계산까지 한 번에 원하시나요?</strong><br>
+        <span data-lang="nl">Download <strong>Ploegendienst Rooster &amp; Wekker</strong> voor Android: 100% offline, geen reclame, echte wekker per dienst en directe Samen vrij partner-vergelijking.</span>
+        <span data-lang="ko"><strong>Ploegendienst Rooster &amp; Wekker</strong> Android 앱은 광고 0개, 100% 오프라인, 휴무일 자동 OFF 알람, 2인 Samen vrij 비교를 지원합니다.</span><br>
+        <a id="cta-app" href="/nl-ploegen/?utm_source=seo_5ploegen_2027&amp;utm_medium=cta&amp;utm_campaign=nl_launch">Open Ploegendienst Rooster &amp; Wekker (Android) →</a>
+      </div>
+
+      <div class="faq-list" style="margin-top:16px;">
+        <h2 style="font-size:18px;margin:0 0 10px;" data-lang="nl">Veelgestelde vragen over het 5-ploegenrooster 2027</h2>
+        <p data-lang="nl"><strong>1. Hoe lees ik de kleuren en feestdagen?</strong> Rood omkaderde dagen zijn officiële Nederlandse feestdagen (zoals Koningsdag op dinsdag 27 april 2027) of zomertijd/wintertijd-wissels. De ploegentoeslag bij 5-ploegendienst ligt in Nederland doorgaans tussen 28% en 33% (reken dit indicatief door in onze <a href="/nl-ploegen/ort-berekenen/">ORT &amp; Ploegentoeslag Calculator</a>).</p>
+        <p data-lang="nl"><strong>2. Werkt het eigen bedrijf net iets anders?</strong> Kies bij <em>Ploeg</em> voor "Eigen startdatum eerste O-dienst" en selecteer de exacte begindatum van jouw volgende ochtenddienst-blok; alle 12 maanden verschuiven direct mee.</p>
+      </div>
+
+      <div class="footer">
+        <span>Jisik Gongbang • 5-Ploegenrooster 2027 (Indicatief)</span>
+        <div>
+          <a href="/nl-ploegen/">App Download (Android)</a> ·
+          <a href="/nl-ploegen/ort-berekenen/">ORT Calculator</a> ·
+          <a href="/press_app03_ploegendienst_rooster.html">Perskit</a> ·
+          <a id="link-privacy" href="https://koo-by.github.io/privacy.html?lang=nl" data-base="https://koo-by.github.io/privacy.html">Privacybeleid</a> ·
+          <a id="link-terms" href="https://koo-by.github.io/terms.html?lang=nl" data-base="https://koo-by.github.io/terms.html">Gebruiksvoorwaarden</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    var CYCLE = ["early", "early", "late", "late", "night", "night", "off", "off", "off", "off"];
+    var PLOEG_BASE = {
+      A: "2027-01-01",
+      B: "2027-01-03",
+      C: "2027-01-05",
+      D: "2027-01-07",
+      E: "2027-01-09"
+    };
+    var MONTHS_NL = ["Januari", "Februari", "Maart", "April", "Mei", "Juni", "Juli", "Augustus", "September", "Oktober", "November", "December"];
+    var STYLE_LABELS = {
+      omn: { early: "O", late: "M", night: "N", off: "V", fullEarly: "Ochtend", fullLate: "Middag", fullNight: "Nacht" },
+      vln: { early: "V", late: "L", night: "N", off: "V", fullEarly: "Vroeg", fullLate: "Laat", fullNight: "Nacht" },
+      dan: { early: "D", late: "A", night: "N", off: "V", fullEarly: "Dag", fullLate: "Avond", fullNight: "Nacht" }
+    };
+    var SHIFT_WINDOWS = {
+      early: { s: "060000", e: "140000", nextDay: false },
+      late:  { s: "140000", e: "220000", nextDay: false },
+      night: { s: "220000", e: "060000", nextDay: true }
+    };
+
+    function pad2(n) { return n < 10 ? "0" + n : String(n); }
+    function dateKey(y, m, d) { return y + "-" + pad2(m) + "-" + pad2(d); }
+    function daysInMonth(y, m) { return new Date(Date.UTC(y, m, 0)).getUTCDate(); }
+    function weekdayMon(y, m, d) { var wd = new Date(Date.UTC(y, m - 1, d)).getUTCDay(); return wd === 0 ? 7 : wd; }
+    function addDays(y, m, d, delta) {
+      var dt = new Date(Date.UTC(y, m - 1, d + delta));
+      return { y: dt.getUTCFullYear(), m: dt.getUTCMonth() + 1, d: dt.getUTCDate() };
+    }
+    function diffDays(y1, m1, d1, y2, m2, d2) {
+      return Math.round((Date.UTC(y1, m1 - 1, d1) - Date.UTC(y2, m2 - 1, d2)) / 86400000);
+    }
+    function isoWeekNumber(y, m, d) {
+      var dt = new Date(Date.UTC(y, m - 1, d));
+      var dayNum = dt.getUTCDay() || 7;
+      dt.setUTCDate(dt.getUTCDate() + 4 - dayNum);
+      var yearStart = new Date(Date.UTC(dt.getUTCFullYear(), 0, 1));
+      return Math.ceil((((dt - yearStart) / 86400000) + 1) / 7);
+    }
+    function easterSunday(year) {
+      var a = year % 19, b = Math.floor(year / 100), c = year % 100;
+      var d = Math.floor(b / 4), e = b % 4, f = Math.floor((b + 8) / 25);
+      var g = Math.floor((b - f + 1) / 3), h = (19 * a + b - d - g + 15) % 30;
+      var i = Math.floor(c / 4), k = c % 4, l = (32 + 2 * e + 2 * i - h - k) % 7;
+      var m = Math.floor((a + 11 * h + 22 * l) / 451);
+      var month = Math.floor((h + l - 7 * m + 114) / 31);
+      var day = ((h + l - 7 * m + 114) % 31) + 1;
+      return { y: year, m: month, d: day };
+    }
+    function lastSunday(year, month) {
+      var last = daysInMonth(year, month);
+      for (var d = last; d >= 1; d--) if (weekdayMon(year, month, d) === 7) return { y: year, m: month, d: d };
+      return { y: year, m: month, d: last };
+    }
+    function markersForYear(year) {
+      var e = easterSunday(year);
+      var k = { y: year, m: 4, d: 27 };
+      var kShift = weekdayMon(year, 4, 27) === 7;
+      if (kShift) k = { y: year, m: 4, d: 26 };
+      var items = [
+        [year, 1, 1, "Nieuwjaarsdag", true],
+        [addDays(e.y, e.m, e.d, -2).y, addDays(e.y, e.m, e.d, -2).m, addDays(e.y, e.m, e.d, -2).d, "Goede Vrijdag", true],
+        [e.y, e.m, e.d, "Eerste Paasdag", true],
+        [addDays(e.y, e.m, e.d, 1).y, addDays(e.y, e.m, e.d, 1).m, addDays(e.y, e.m, e.d, 1).d, "Tweede Paasdag", true],
+        [k.y, k.m, k.d, kShift ? "Koningsdag (zat 26 apr)" : "Koningsdag", true],
+        [year, 5, 5, "Bevrijdingsdag", true],
+        [addDays(e.y, e.m, e.d, 39).y, addDays(e.y, e.m, e.d, 39).m, addDays(e.y, e.m, e.d, 39).d, "Hemelvaartsdag", true],
+        [addDays(e.y, e.m, e.d, 49).y, addDays(e.y, e.m, e.d, 49).m, addDays(e.y, e.m, e.d, 49).d, "Eerste Pinksterdag", true],
+        [addDays(e.y, e.m, e.d, 50).y, addDays(e.y, e.m, e.d, 50).m, addDays(e.y, e.m, e.d, 50).d, "Tweede Pinksterdag", true],
+        [year, 12, 25, "Eerste Kerstdag", true],
+        [year, 12, 26, "Tweede Kerstdag", true]
+      ];
+      var zt = lastSunday(year, 3), wt = lastSunday(year, 10);
+      items.push([zt.y, zt.m, zt.d, "Zomertijd (+1u)", false]);
+      items.push([wt.y, wt.m, wt.d, "Wintertijd (-1u)", false]);
+      var map = {};
+      for (var i = 0; i < items.length; i++) {
+        var it = items[i], key = dateKey(it[0], it[1], it[2]);
+        if (!map[key]) map[key] = [];
+        map[key].push({ label: it[3], isHoliday: it[4] });
+      }
+      return map;
+    }
+
+    function parseAnchor() {
+      var val = document.getElementById("inp-anchor").value || "2027-01-01";
+      var m = val.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+      return m ? { y: parseInt(m[1], 10), m: parseInt(m[2], 10), d: parseInt(m[3], 10) } : { y: 2027, m: 1, d: 1 };
+    }
+    function shiftForDate(y, m, d, anchor) {
+      var delta = diffDays(y, m, d, anchor.y, anchor.m, anchor.d);
+      var idx = ((delta % 10) + 10) % 10;
+      return CYCLE[idx];
+    }
+    function onPloegChange() {
+      var v = document.getElementById("inp-ploeg").value;
+      if (PLOEG_BASE[v]) document.getElementById("inp-anchor").value = PLOEG_BASE[v];
+      renderAll();
+    }
+    function onAnchorManual() {
+      document.getElementById("inp-ploeg").value = "custom";
+      renderAll();
+    }
+
+    function renderAll() {
+      var isKo = document.body.classList.contains("lang-ko");
+      var year = parseInt(document.getElementById("inp-year").value, 10) || 2027;
+      var anchor = parseAnchor();
+      var styleKey = document.getElementById("inp-style").value;
+      var st = STYLE_LABELS[styleKey] || STYLE_LABELS.omn;
+      var marks = markersForYear(year);
+
+      document.getElementById("legend-strip").innerHTML =
+        '<span class="leg-chip leg-O">' + st.early + ' = ' + st.fullEarly + '</span>' +
+        '<span class="leg-chip leg-M">' + st.late + ' = ' + st.fullLate + '</span>' +
+        '<span class="leg-chip leg-N">' + st.night + ' = ' + st.fullNight + '</span>' +
+        '<span class="leg-chip leg-V">' + st.off + ' = Vrij</span>';
+
+      var counts = { early: 0, late: 0, night: 0, off: 0 };
+      var gridHtml = "";
+
+      for (var month = 1; month <= 12; month++) {
+        var dim = daysInMonth(year, month);
+        var firstWd = weekdayMon(year, month, 1);
+        var mHours = 0;
+        var holNotes = [];
+        var rowsHtml = "";
+        var curDay = 1;
+        var leadBlanks = firstWd - 1;
+        var totalCells = leadBlanks + dim;
+        var totalWeeks = Math.ceil(totalCells / 7);
+
+        for (var w = 0; w < totalWeeks; w++) {
+          var rowAnchorDay = w === 0 ? 1 : curDay;
+          var wk = isoWeekNumber(year, month, Math.min(rowAnchorDay, dim));
+          rowsHtml += '<tr><td class="wk-cell">W' + pad2(wk) + "</td>";
+          for (var c = 1; c <= 7; c++) {
+            if ((w === 0 && c < firstWd) || curDay > dim) {
+              rowsHtml += "<td></td>";
+              continue;
+            }
+            var s = shiftForDate(year, month, curDay, anchor);
+            counts[s]++;
+            if (s !== "off") mHours += 8;
+            var key = dateKey(year, month, curDay);
+            var dayMarks = marks[key] || [];
+            var hasHoliday = dayMarks.some(function(x) { return x.isHoliday; });
+            if (dayMarks.length > 0) {
+              holNotes.push(curDay + " " + MONTHS_NL[month - 1].slice(0, 3).toLowerCase() + ": " + dayMarks.map(function(x) { return x.label; }).join(" / "));
+            }
+            rowsHtml += '<td><div class="day-cell ' + s + (hasHoliday ? " holiday" : "") + '">' +
+              '<span class="dnum">' + curDay + "</span>" +
+              '<span class="sbadge ' + s + '">' + st[s] + "</span>" +
+              "</div></td>";
+            curDay++;
+          }
+          rowsHtml += "</tr>";
+        }
+
+        gridHtml += '<article class="month-card">' +
+          '<div class="month-hdr"><h2>' + MONTHS_NL[month - 1] + " " + year + "</h2><span>" + mHours + " u</span></div>" +
+          '<table class="cal"><thead><tr><th class="wk">Wk</th><th>Ma</th><th>Di</th><th>Wo</th><th>Do</th><th>Vr</th><th>Za</th><th>Zo</th></tr></thead><tbody>' +
+          rowsHtml + "</tbody></table>" +
+          (holNotes.length ? '<div class="hol-notes">' + holNotes.join(" · ") + "</div>" : "") +
+          "</article>";
+      }
+
+      document.getElementById("year-grid").innerHTML = gridHtml;
+      var workDays = counts.early + counts.late + counts.night;
+      document.getElementById("year-summary").innerHTML =
+        '<div class="sum-card"><div class="sum-lbl">' + (isKo ? "총 근무일 (" + year + ")" : "Werkdagen " + year) + '</div><div class="sum-val">' + workDays + " d (" + (workDays * 8) + ' u)</div></div>' +
+        '<div class="sum-card"><div class="sum-lbl">' + st.fullEarly + " (" + st.early + ')</div><div class="sum-val">' + counts.early + ' d</div></div>' +
+        '<div class="sum-card"><div class="sum-lbl">' + st.fullLate + " (" + st.late + ')</div><div class="sum-val">' + counts.late + ' d</div></div>' +
+        '<div class="sum-card"><div class="sum-lbl">' + st.fullNight + " (" + st.night + ')</div><div class="sum-val">' + counts.night + ' d</div></div>' +
+        '<div class="sum-card"><div class="sum-lbl">' + (isKo ? "총 휴무일" : "Vrije dagen") + '</div><div class="sum-val">' + counts.off + ' d</div></div>';
+    }
+
+    function downloadYearIcs() {
+      var year = parseInt(document.getElementById("inp-year").value, 10) || 2027;
+      var ploeg = document.getElementById("inp-ploeg").value;
+      var anchor = parseAnchor();
+      var styleKey = document.getElementById("inp-style").value;
+      var st = STYLE_LABELS[styleKey] || STYLE_LABELS.omn;
+      var lines = [
+        "BEGIN:VCALENDAR",
+        "VERSION:2.0",
+        "PRODID:-//Jisik Gongbang//Ploegendienst Rooster & Wekker//NL",
+        "CALSCALE:GREGORIAN",
+        "METHOD:PUBLISH"
+      ];
+      for (var m = 1; m <= 12; m++) {
+        var dim = daysInMonth(year, m);
+        for (var d = 1; d <= dim; d++) {
+          var s = shiftForDate(year, m, d, anchor);
+          if (s === "off") continue;
+          var w = SHIFT_WINDOWS[s];
+          var dtStart = year + pad2(m) + pad2(d) + "T" + w.s;
+          var endDate = w.nextDay ? addDays(year, m, d, 1) : { y: year, m: m, d: d };
+          var dtEnd = endDate.y + pad2(endDate.m) + pad2(endDate.d) + "T" + w.e;
+          var summary = (s === "early" ? st.fullEarly + " (" + st.early + ")" : s === "late" ? st.fullLate + " (" + st.late + ")" : st.fullNight + " (" + st.night + ")");
+          lines.push("BEGIN:VEVENT");
+          lines.push("UID:nl5pl-" + ploeg + "-" + year + pad2(m) + pad2(d) + "@koo-by.github.io");
+          lines.push("DTSTART;TZID=Europe/Amsterdam:" + dtStart);
+          lines.push("DTEND;TZID=Europe/Amsterdam:" + dtEnd);
+          lines.push("SUMMARY:5-Ploegen Ploeg " + ploeg + " - " + summary);
+          lines.push("END:VEVENT");
+        }
+      }
+      lines.push("END:VCALENDAR");
+      var blob = new Blob([lines.join("\r\n")], { type: "text/calendar;charset=utf-8" });
+      var a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "5-ploegenrooster-" + year + "-ploeg-" + ploeg + ".ics";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+
+    function setLang(lang) {
+      var target = lang === "ko" ? "ko" : "nl";
+      var keepPreview = document.body.classList.contains("qa-preview");
+      document.body.className = "lang-" + target + (keepPreview ? " qa-preview" : "");
+      document.documentElement.lang = target;
+      var bn = document.getElementById("btn-nl"), bk = document.getElementById("btn-ko");
+      if (bn) bn.classList.toggle("active", target === "nl");
+      if (bk) bk.classList.toggle("active", target === "ko");
+      var lp = document.getElementById("link-privacy"), lt = document.getElementById("link-terms");
+      if (lp) lp.href = lp.getAttribute("data-base") + (target === "ko" ? "?lang=ko" : "?lang=nl");
+      if (lt) lt.href = lt.getAttribute("data-base") + (target === "ko" ? "?lang=ko" : "?lang=nl");
+      renderAll();
+    }
+
+    (function init() {
+      var params = new URLSearchParams(window.location.search);
+      var qLang = params.get("lang");
+      if (params.get("preview") === "1" || qLang === "ko") document.body.classList.add("qa-preview");
+      setLang(qLang === "ko" ? "ko" : "nl");
+    })();
+  </script>
+</body>
+</html>

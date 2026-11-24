@@ -52,7 +52,7 @@
         "name": "Welke ORT-percentages gebruikt deze CAO Ziekenhuizen & VVT calculator?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "De calculator hanteert 22% (ma–vr 06:00–07:00 en 20:00–22:00), 47% (ma–vr 00:00–06:00 en 22:00–24:00), 38% (zaterdag 06:00–22:00), 52% (zaterdag 00:00–06:00 en 22:00–24:00) en 60% (zondag en alle 11 officiële Nederlandse feestdagen de hele dag)."
+          "text": "De calculator hanteert 22% (ma–vr 06:00–07:00 en 20:00–22:00), 47% (ma–vr 00:00–06:00 en 22:00–24:00), 38% (zaterdag 06:00–22:00 bij CAO Ziekenhuizen; bij CAO VVT 06:00–08:00 en 12:00–22:00 met 0% tussen 08:00–12:00), 52% (zaterdag 00:00–06:00 en 22:00–24:00) en 60% (zondag, 24 en 31 december 18:00–24:00, en officiële Nederlandse feestdagen behalve Goede Vrijdag; 5 mei Bevrijdingsdag telt elk jaar). Voor CAO Ziekenhuizen geldt op de ORT het IP-36 uurloonplafond van € 32,10/u."
         }
       },
       {
@@ -710,10 +710,10 @@
         </div>
 
         <div class="compliance-note" data-lang="nl">
-          <strong>Indicatief (F41):</strong> Deze berekening is een hulpmiddel voor je eigen overzicht en vervangt geen officiële loonstrook, werkgeversberekening of juridisch/CAO-advies. Afwijkende CAO-regels (zoals onbetaalde pauzes of bovenwettelijke afspraken) kunnen per instelling verschillen.
+          <strong>Indicatief:</strong> Deze berekening is een hulpmiddel voor je eigen overzicht en vervangt geen officiële loonstrook, werkgeversberekening of juridisch/CAO-advies. Afwijkende CAO-regels (zoals onbetaalde pauzes of bovenwettelijke afspraken) kunnen per instelling verschillen.
         </div>
         <div class="compliance-note" data-lang="ko">
-          <strong>면책 고지 (F41 — Indicatief):</strong> 본 계산 결과는 개인 확인용 추정치(<em>indicatief</em>)이며, 공식 급여명세서(<em>loonstrook</em>) 또는 노무·CAO 자문을 대체하지 않습니다.
+          <strong>면책 고지 (Indicatief):</strong> 본 계산 결과는 개인 확인용 추정치(<em>indicatief</em>)이며, 공식 급여명세서(<em>loonstrook</em>) 또는 노무·CAO 자문을 대체하지 않습니다.
         </div>
 
         <div class="cta-box">
@@ -743,15 +743,17 @@
         <p>Valt 27 april op zondag, dan wordt Koningsdag officieel gevierd op <strong>zaterdag 26 april</strong>. De kalendermodule herkent deze verschuiving automatisch voor elk jaar en past de 60% feestdag-ORT toe op 26 april.</p>
       </div>
       <div class="faq-item">
-        <h3>3. Wat is het verschil tussen 5-ploegentoeslag (28–33%), 3-ploegen (19%) en 2-ploegen (14%)?</h3>
-        <p>In de industrie en logistiek krijg je vaak een vaste ploegentoeslag over al je gewerkte uren (bij 5-ploegen meestal <code>28% tot 33%</code>, standaard <code>29%</code>). In de zorg werkt men meestal met tijdvak-gebonden ORT (<code>22% / 38% / 47% / 52% / 60%</code>). In deze tool kies je eenvoudig welke regeling bij jouw contract hoort.</p>
+        <h3>3. Wat is het verschil tussen CAO Ziekenhuizen, CAO VVT Zorg en 5/3/2-ploegentoeslag?</h3>
+        <p>Bij <strong>CAO Ziekenhuizen</strong> geldt zaterdag overdag (<code>06:00–22:00</code>) <code>38%</code> ORT en geldt voor de ORT-euroberekening het <strong>IP-36 uurloonplafond (€ 32,10/u</strong>, per aug 2026), terwijl je basisloon ongemaximeerd blijft. Bij <strong>CAO VVT</strong> telt zaterdag <code>08:00–12:00</code> voor <code>0%</code> (wel <code>38%</code> op 06:00–08:00 en 12:00–22:00) zonder uurloonplafond. <strong>Goede Vrijdag</strong> telt niet als 60% ORT-feestdag; <strong>Bevrijdingsdag (5 mei)</strong> elk jaar wel, en <strong>24 &amp; 31 december</strong> (18:00–24:00) krijgen <code>60%</code>. In industrie &amp; logistiek geldt meestal een vaste ploegentoeslag (5-ploegen <code>28%–33%</code>, std <code>29%</code>).</p>
       </div>
       <div class="footer">
         <span>Jisik Gongbang • Gratis ORT &amp; Ploegentoeslag Webtool</span>
         <div>
           <a href="/nl-ploegen/">App Download (Android)</a> ·
-          <a href="https://koo-by.github.io/privacy.html">Privacybeleid</a> ·
-          <a href="https://koo-by.github.io/terms.html">Gebruiksvoorwaarden</a>
+          <a href="/nl-ploegen/5-ploegenrooster-2027/">5-Ploegenrooster 2027</a> ·
+          <a href="/press_app03_ploegendienst_rooster.html">Perskit</a> ·
+          <a id="link-privacy" href="https://koo-by.github.io/privacy.html?lang=nl" data-base="https://koo-by.github.io/privacy.html">Privacybeleid</a> ·
+          <a id="link-terms" href="https://koo-by.github.io/terms.html?lang=nl" data-base="https://koo-by.github.io/terms.html">Gebruiksvoorwaarden</a>
         </div>
       </div>
     </section>
@@ -762,6 +764,7 @@
     // Pure NlCalendarEngine + NlAllowanceCalculator (1:1 Dart Mirror)
     // =========================================================================
     var ORT_TIERS = [22, 38, 47, 52, 60];
+    var CAO_ZIEKENHUIZEN_IP36_CAP_EUR = 32.10;
     var PRESET_CYCLES = {
       fiveShift2224: ["early", "early", "late", "late", "night", "night", "off", "off", "off", "off"],
       fiveShift22231: ["early", "early", "late", "late", "night", "night", "off", "off", "off", "early"],
@@ -833,17 +836,17 @@
       var koningsdagShifted = (april27Wd === 7);
       var koningsdag = koningsdagShifted ? { y: year, m: 4, d: 26 } : { y: year, m: 4, d: 27 };
       var list = [
-        { d: { y: year, m: 1, d: 1 }, nameNl: "Nieuwjaarsdag" },
-        { d: addDaysYmd(easter.y, easter.m, easter.d, -2), nameNl: "Goede Vrijdag" },
-        { d: easter, nameNl: "Eerste Paasdag" },
-        { d: addDaysYmd(easter.y, easter.m, easter.d, 1), nameNl: "Tweede Paasdag" },
-        { d: koningsdag, nameNl: koningsdagShifted ? "Koningsdag (zat 26 apr)" : "Koningsdag", isObservedShift: koningsdagShifted },
-        { d: { y: year, m: 5, d: 5 }, nameNl: "Bevrijdingsdag" },
-        { d: addDaysYmd(easter.y, easter.m, easter.d, 39), nameNl: "Hemelvaartsdag" },
-        { d: addDaysYmd(easter.y, easter.m, easter.d, 49), nameNl: "Eerste Pinksterdag" },
-        { d: addDaysYmd(easter.y, easter.m, easter.d, 50), nameNl: "Tweede Pinksterdag" },
-        { d: { y: year, m: 12, d: 25 }, nameNl: "Eerste Kerstdag" },
-        { d: { y: year, m: 12, d: 26 }, nameNl: "Tweede Kerstdag" }
+        { d: { y: year, m: 1, d: 1 }, nameNl: "Nieuwjaarsdag", qualifiesForOrtHolidayRate: true },
+        { d: addDaysYmd(easter.y, easter.m, easter.d, -2), nameNl: "Goede Vrijdag", qualifiesForOrtHolidayRate: false },
+        { d: easter, nameNl: "Eerste Paasdag", qualifiesForOrtHolidayRate: true },
+        { d: addDaysYmd(easter.y, easter.m, easter.d, 1), nameNl: "Tweede Paasdag", qualifiesForOrtHolidayRate: true },
+        { d: koningsdag, nameNl: koningsdagShifted ? "Koningsdag (zat 26 apr)" : "Koningsdag", isObservedShift: koningsdagShifted, qualifiesForOrtHolidayRate: true },
+        { d: { y: year, m: 5, d: 5 }, nameNl: "Bevrijdingsdag", qualifiesForOrtHolidayRate: true },
+        { d: addDaysYmd(easter.y, easter.m, easter.d, 39), nameNl: "Hemelvaartsdag", qualifiesForOrtHolidayRate: true },
+        { d: addDaysYmd(easter.y, easter.m, easter.d, 49), nameNl: "Eerste Pinksterdag", qualifiesForOrtHolidayRate: true },
+        { d: addDaysYmd(easter.y, easter.m, easter.d, 50), nameNl: "Tweede Pinksterdag", qualifiesForOrtHolidayRate: true },
+        { d: { y: year, m: 12, d: 25 }, nameNl: "Eerste Kerstdag", qualifiesForOrtHolidayRate: true },
+        { d: { y: year, m: 12, d: 26 }, nameNl: "Tweede Kerstdag", qualifiesForOrtHolidayRate: true }
       ];
       var map = {};
       for (var idx = 0; idx < list.length; idx++) {
@@ -855,7 +858,8 @@
           m: item.d.m,
           d: item.d.d,
           nameNl: item.nameNl,
-          isObservedShift: !!item.isObservedShift
+          isObservedShift: !!item.isObservedShift,
+          qualifiesForOrtHolidayRate: item.qualifiesForOrtHolidayRate !== false
         };
       }
       _HOLIDAY_CACHE[year] = map;
@@ -871,13 +875,30 @@
       return holidayForYmd(y, m, d) !== null;
     }
 
-    function ortRatePercentForMinute(y, m, d, minuteOfDay) {
+    function isOrtHolidayYmd(y, m, d) {
+      var h = holidayForYmd(y, m, d);
+      return !!(h && h.qualifiesForOrtHolidayRate);
+    }
+
+    function effectiveOrtWage(allowanceMode, safeWage) {
+      if (allowanceMode === "caoZiekenhuizenOrt" && safeWage > CAO_ZIEKENHUIZEN_IP36_CAP_EUR) {
+        return CAO_ZIEKENHUIZEN_IP36_CAP_EUR;
+      }
+      return safeWage;
+    }
+
+    function ortRatePercentForMinute(y, m, d, minuteOfDay, allowanceMode) {
       var min = ((minuteOfDay % 1440) + 1440) % 1440;
-      if (weekdayDart(y, m, d) === 7 || isOfficialHolidayYmd(y, m, d)) {
+      if (weekdayDart(y, m, d) === 7 || isOrtHolidayYmd(y, m, d)) {
+        return 60;
+      }
+      if (m === 12 && (d === 24 || d === 31) && min >= 1080) {
         return 60;
       }
       if (weekdayDart(y, m, d) === 6) {
-        return (min >= 360 && min < 1320) ? 38 : 52;
+        if (min < 360 || min >= 1320) return 52;
+        if (allowanceMode === "caoVvtOrt" && min >= 480 && min < 720) return 0;
+        return 38;
       }
       if (min < 360 || min >= 1320) return 47;
       if ((min >= 360 && min < 420) || (min >= 1200 && min < 1320)) return 22;
@@ -905,7 +926,7 @@
       };
     }
 
-    function computeSingleShiftOrtTierHours(y, m, d, win) {
+    function computeSingleShiftOrtTierHours(y, m, d, win, allowanceMode) {
       var tierMinutes = { 22: 0, 38: 0, 47: 0, 52: 0, 60: 0 };
       if (!win || win.paidDurationMinutes <= 0) {
         return { 22: 0.0, 38: 0.0, 47: 0.0, 52: 0.0, 60: 0.0 };
@@ -922,7 +943,7 @@
         var dayDelta = Math.floor(absMin / 1440);
         var minOfDay = absMin % 1440;
         var actual = dayDelta === 0 ? { y: y, m: m, d: d } : addDaysYmd(y, m, d, dayDelta);
-        var rate = ortRatePercentForMinute(actual.y, actual.m, actual.d, minOfDay);
+        var rate = ortRatePercentForMinute(actual.y, actual.m, actual.d, minOfDay, allowanceMode);
         if (rate > 0) tierMinutes[rate] += 1;
       }
       var out = {};
@@ -976,7 +997,7 @@
         var win = windows[shift];
         totalHours += win.durationHours;
         if (ort) {
-          var dayTiers = computeSingleShiftOrtTierHours(year, month, day, win);
+          var dayTiers = computeSingleShiftOrtTierHours(year, month, day, win, allowanceMode);
           for (var i = 0; i < ORT_TIERS.length; i++) {
             var tier = ORT_TIERS[i];
             tierHours[tier] += dayTiers[tier];
@@ -986,6 +1007,8 @@
 
       var basePay = round2(totalHours * safeWage);
       if (ort) {
+        var ortWage = effectiveOrtWage(allowanceMode, safeWage);
+        var ortCapApplied = (allowanceMode === "caoZiekenhuizenOrt" && safeWage > CAO_ZIEKENHUIZEN_IP36_CAP_EUR);
         var tierPayEur = {};
         var totalAllowance = 0.0;
         var totalOrtHours = 0.0;
@@ -994,7 +1017,7 @@
           var t = ORT_TIERS[i];
           var hrs = round4(tierHours[t]);
           tierHours[t] = hrs;
-          var pay = round2(hrs * safeWage * (t / 100.0));
+          var pay = round2(hrs * ortWage * (t / 100.0));
           tierPayEur[t] = pay;
           totalAllowance += pay;
           totalOrtHours += hrs;
@@ -1013,7 +1036,9 @@
           timeForTimeHours: round2(timeForTimeHours),
           tierHours: tierHours,
           tierPayEur: tierPayEur,
-          effectiveFixedPercent: 0.0
+          effectiveFixedPercent: 0.0,
+          ortWageCapApplied: ortCapApplied,
+          effectiveOrtWageEur: ortWage
         };
       }
 
@@ -1032,7 +1057,9 @@
         timeForTimeHours: tft,
         tierHours: tierHours,
         tierPayEur: { 22: 0, 38: 0, 47: 0, 52: 0, 60: 0 },
-        effectiveFixedPercent: effPct
+        effectiveFixedPercent: effPct,
+        ortWageCapApplied: false,
+        effectiveOrtWageEur: safeWage
       };
     }
 
@@ -1046,7 +1073,9 @@
       var basePay = round2(hours * safeWage);
 
       if (isOrtMode(allowanceMode)) {
-        var tiers = computeSingleShiftOrtTierHours(y, m, d, win);
+        var ortWage = effectiveOrtWage(allowanceMode, safeWage);
+        var ortCapApplied = (allowanceMode === "caoZiekenhuizenOrt" && safeWage > CAO_ZIEKENHUIZEN_IP36_CAP_EUR);
+        var tiers = computeSingleShiftOrtTierHours(y, m, d, win, allowanceMode);
         var tierPayEur = {};
         var totalAllowance = 0.0;
         var totalOrtHours = 0.0;
@@ -1055,7 +1084,7 @@
           var t = ORT_TIERS[i];
           var hrs = round4(tiers[t]);
           tiers[t] = hrs;
-          var pay = round2(hrs * safeWage * (t / 100.0));
+          var pay = round2(hrs * ortWage * (t / 100.0));
           tierPayEur[t] = pay;
           totalAllowance += pay;
           totalOrtHours += hrs;
@@ -1071,7 +1100,9 @@
           timeForTimeHours: round2(tft),
           tierHours: tiers,
           tierPayEur: tierPayEur,
-          effectiveFixedPercent: 0.0
+          effectiveFixedPercent: 0.0,
+          ortWageCapApplied: ortCapApplied,
+          effectiveOrtWageEur: ortWage
         };
       }
 
@@ -1086,7 +1117,9 @@
         timeForTimeHours: round2(hours * (effPct / 100.0)),
         tierHours: { 22: 0, 38: 0, 47: 0, 52: 0, 60: 0 },
         tierPayEur: { 22: 0, 38: 0, 47: 0, 52: 0, 60: 0 },
-        effectiveFixedPercent: effPct
+        effectiveFixedPercent: effPct,
+        ortWageCapApplied: false,
+        effectiveOrtWageEur: safeWage
       };
     }
 
@@ -1247,10 +1280,12 @@
 
       var tierDesc = {
         22: isKo ? "평일 06:00–07:00 & 20:00–22:00 (22%)" : "Ma–Vr 06:00–07:00 & 20:00–22:00 (22%)",
-        38: isKo ? "토요일 주간 06:00–22:00 (38%)" : "Zaterdag 06:00–22:00 (38%)",
+        38: mode === "caoVvtOrt"
+          ? (isKo ? "토요일 주간 06–08 & 12–22시 (38% · VVT)" : "Zaterdag 06:00–08:00 & 12:00–22:00 (38% · VVT)")
+          : (isKo ? "토요일 주간 06:00–22:00 (38%)" : "Zaterdag 06:00–22:00 (38%)"),
         47: isKo ? "평일 심야 00:00–06:00 & 22:00–24:00 (47%)" : "Ma–Vr nacht 00:00–06:00 & 22:00–24:00 (47%)",
         52: isKo ? "토요일 심야 00:00–06:00 & 22:00–24:00 (52%)" : "Zaterdag nacht 00:00–06:00 & 22:00–24:00 (52%)",
-        60: isKo ? "일요일 & NL 공휴일 전 시간 (60%)" : "Zondag & NL feestdagen hele dag (60%)"
+        60: isKo ? "일요일·NL 공휴일(성금요일 제외) & 12/24·31 18–24시 (60%)" : "Zondag, feestdag (excl. Goede Vrijdag) & 24/31 dec 18–24u (60%)"
       };
 
       var summary;
@@ -1293,10 +1328,20 @@
         Object.keys(hMap).sort().forEach(function(k) {
           if (hMap[k].m === month) monthHolidays.push(hMap[k]);
         });
-        if (monthHolidays.length > 0) {
+        if (monthHolidays.length > 0 || (mode === "caoZiekenhuizenOrt" && summary.ortWageCapApplied)) {
           holidayBox.classList.remove("hidden-block");
-          holidayBox.innerHTML = "<strong>" + (isKo ? "이달의 네덜란드 공휴일 (60% ORT):" : "Officiële feestdagen deze maand (60% ORT):") + "</strong> " +
-            monthHolidays.map(function(h) { return h.key + " " + h.nameNl; }).join(" · ");
+          var notes = [];
+          if (monthHolidays.length > 0) {
+            notes.push("<strong>" + (isKo ? "이달의 네덜란드 공휴일:" : "Officiële feestdagen deze maand:") + "</strong> " +
+              monthHolidays.map(function(h) {
+                return h.key + " " + h.nameNl + (h.qualifiesForOrtHolidayRate ? " (60% ORT)" : " (kalenderfeestdag · geen 60% ORT)");
+              }).join(" · "));
+          }
+          if (summary.ortWageCapApplied) {
+            notes.push("<strong>" + (isKo ? "CAO Ziekenhuizen IP-36 상한 적용:" : "IP-36 uurloonplafond toegepast:") + "</strong> " +
+              (isKo ? "ORT 계산 시급 상한 € 32,10/u 적용 (기본급은 상한 없음)." : "ORT wordt berekend tot max. € 32,10/u (basisloon blijft ongemaximeerd)."));
+          }
+          holidayBox.innerHTML = notes.join("<br>");
         } else {
           holidayBox.classList.add("hidden-block");
         }
@@ -1318,13 +1363,21 @@
         var crosses = win.endTotalMinutes <= win.startTotalMinutes && win.grossDurationMinutes > 0;
         chipsHtml = '<span class="sc-chip sc-night">' + (isKo ? "유급 근무: " : "Betaald: ") + formatDecimalNl(summary.totalHours, 2) + ' u</span>' +
           (crosses ? '<span class="sc-chip sc-late">' + (isKo ? "자정 넘김 분할 적용" : "Middernacht-splitsing actief") + '</span>' : '');
-        if (hStart || (crosses && hNext)) {
+        var sNotes = [];
+        if ((hStart && hStart.qualifiesForOrtHolidayRate) || (crosses && hNext && hNext.qualifiesForOrtHolidayRate)) {
           badgeEl.classList.add("holiday");
-          holidayBox.classList.remove("hidden-block");
           var hParts = [];
-          if (hStart) hParts.push(hStart.key + " " + hStart.nameNl + " (60%)");
-          if (crosses && hNext) hParts.push(hNext.key + " " + hNext.nameNl + " (60%)");
-          holidayBox.innerHTML = "<strong>" + (isKo ? "공휴일 60% 자동 감지:" : "Feestdag 60% automatisch herkend:") + "</strong> " + hParts.join(" · ");
+          if (hStart && hStart.qualifiesForOrtHolidayRate) hParts.push(hStart.key + " " + hStart.nameNl + " (60%)");
+          if (crosses && hNext && hNext.qualifiesForOrtHolidayRate) hParts.push(hNext.key + " " + hNext.nameNl + " (60%)");
+          sNotes.push("<strong>" + (isKo ? "공휴일 60% 자동 감지:" : "Feestdag 60% automatisch herkend:") + "</strong> " + hParts.join(" · "));
+        }
+        if (summary.ortWageCapApplied) {
+          sNotes.push("<strong>" + (isKo ? "CAO Ziekenhuizen IP-36 상한:" : "IP-36 ORT-plafond (€ 32,10/u):") + "</strong> " +
+            (isKo ? "ORT 금액은 € 32,10/u 기준으로 산출됩니다." : "ORT-bedrag is begrensd op € 32,10/u; basisloon is ongemaximeerd."));
+        }
+        if (sNotes.length > 0) {
+          holidayBox.classList.remove("hidden-block");
+          holidayBox.innerHTML = sNotes.join("<br>");
         } else {
           holidayBox.classList.add("hidden-block");
         }
@@ -1410,6 +1463,10 @@
       var back = document.getElementById("back-onelink");
       var q = target === "ko" ? "?lang=ko" : (keepPreview ? "?preview=1" : "");
       if (back) back.href = "/nl-ploegen/" + q;
+      var lp = document.getElementById("link-privacy");
+      var lt = document.getElementById("link-terms");
+      if (lp) lp.href = lp.getAttribute("data-base") + (target === "ko" ? "?lang=ko" : "?lang=nl");
+      if (lt) lt.href = lt.getAttribute("data-base") + (target === "ko" ? "?lang=ko" : "?lang=nl");
       var cta = document.getElementById("btn-play-cta");
       if (cta) cta.href = "/nl-ploegen/?utm_source=seo_ort_calc&utm_medium=cta&utm_campaign=nl_launch" + (target === "ko" ? "&lang=ko" : "");
       calculate();
