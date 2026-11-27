@@ -126,14 +126,17 @@
     body.lang-ja div[data-lang="ja"], body.lang-ja h1[data-lang="ja"] { display: block; }
     body.lang-ko div[data-lang="ko"], body.lang-ko h1[data-lang="ko"] { display: block; }
     body.lang-nl div[data-lang="nl"], body.lang-nl h1[data-lang="nl"] { display: block; }
+    body.lang-de div[data-lang="de"], body.lang-de h1[data-lang="de"] { display: block; }
     body.lang-en div[data-lang="en"], body.lang-en h1[data-lang="en"] { display: block; }
     body.lang-ja .badge[data-lang="ja"],
     body.lang-ko .badge[data-lang="ko"],
     body.lang-nl .badge[data-lang="nl"],
+    body.lang-de .badge[data-lang="de"],
     body.lang-en .badge[data-lang="en"] { display: inline-block; }
     body.lang-ja span[data-lang="ja"], body.lang-ja a[data-lang="ja"],
     body.lang-ko span[data-lang="ko"], body.lang-ko a[data-lang="ko"],
     body.lang-nl span[data-lang="nl"], body.lang-nl a[data-lang="nl"],
+    body.lang-de span[data-lang="de"], body.lang-de a[data-lang="de"],
     body.lang-en span[data-lang="en"], body.lang-en a[data-lang="en"] { display: inline; }
 </style>
 </head>
@@ -141,10 +144,11 @@
   <main>
     <div class="topbar">
       <div class="nav">
-        <a data-internal="true" data-base="./index.html" href="./index.html?v=20261123_v6">
+        <a data-internal="true" data-base="./index.html" href="./index.html?v=20261128_v7">
           <span data-lang="ja">← 公式サポート・法務ポータルへ戻る</span>
           <span data-lang="ko">← 공식 고객지원·법무 포털로 돌아가기</span>
           <span data-lang="nl">← Terug naar het support- &amp; juridisch portaal</span>
+          <span data-lang="de">← Zurück zum Support- &amp; Rechtsportal</span>
           <span data-lang="en">← Back to Support &amp; Legal Portal</span>
         </a>
       </div>
@@ -152,6 +156,7 @@
         <button id="btn-ja" class="lang-btn active" onclick="setLang('ja')">🇯🇵 日本語</button>
         <button id="btn-ko" class="lang-btn" onclick="setLang('ko')">🇰🇷 한국어</button>
         <button id="btn-nl" class="lang-btn" onclick="setLang('nl')">🇳🇱 Nederlands</button>
+        <button id="btn-de" class="lang-btn" onclick="setLang('de')">🇩🇪 Deutsch</button>
         <button id="btn-en" class="lang-btn" onclick="setLang('en')">🇬🇧 English</button>
       </div>
     </div>
@@ -160,11 +165,13 @@
       <span class="badge" data-lang="ja">Terms of Use &amp; EULA</span>
       <span class="badge" data-lang="ko">이용약관 (Terms of Use &amp; EULA)</span>
       <span class="badge" data-lang="nl">Gebruiksvoorwaarden &amp; EULA</span>
+      <span class="badge" data-lang="de">Nutzungsbedingungen &amp; EULA</span>
       <span class="badge" data-lang="en">Terms of Use &amp; EULA</span>
       <h1 data-lang="ja">利用規約（Terms of Use / 使用許諾契約）</h1>
       <h1 data-lang="ko">이용약관 (Terms of Use / 최종 사용자 라이선스 계약)</h1>
       <h1 data-lang="nl">Gebruiksvoorwaarden — Ploegendienst Rooster &amp; Wekker &amp; Jisik Gongbang Apps</h1>
-      <h1 data-lang="en">Terms of Use &amp; EULA — Ploegendienst Rooster &amp; Wekker &amp; Jisik Gongbang Apps</h1>
+      <h1 data-lang="de">Nutzungsbedingungen &amp; EULA — Zählerstand Strom Gas &amp; Kosten &amp; Jisik Gongbang Apps</h1>
+      <h1 data-lang="en">Terms of Use &amp; EULA — Ploegendienst Rooster &amp; Wekker, Zählerstand DACH &amp; Jisik Gongbang Apps</h1>
 
       <div data-lang="ja">
         <p>この利用規約（以下「本規約」といいます）は、Jisik Gongbang（知識工房、以下「当方」といいます）が提供するスマートフォン用アプリケーション『電子印鑑スタジオ - 透過ハンコ作成＆PDF押印』および関連サービス（以下「本アプリ」といいます）の利用条件を定めるものです。本アプリをご利用になる前に、本規約をよくお読みください。</p>
@@ -306,32 +313,68 @@
         </div>
       </div>
 
+      <div data-lang="de">
+        <p>Diese Nutzungsbedingungen (&bdquo;Bedingungen&ldquo;) regeln die Nutzung mobiler Applikationen von <strong>Jisik Gongbang</strong>, insbesondere <strong>&bdquo;Zählerstand Strom Gas &amp; Kosten&ldquo;</strong> (DACH: Deutschland, Österreich und Schweiz) sowie unserer weiteren Dienstprogramme. Mit dem Herunterladen oder der Nutzung der App erklärst du dich mit diesen Bedingungen einverstanden.</p>
+
+        <h2>§ 1 Nutzungsrechte &amp; eigene Exportdaten</h2>
+        <ol>
+          <li>Alle Urheber- und gewerblichen Schutzrechte an Programmcode, Benutzeroberfläche und integrierten Vorlagen verbleiben bei Jisik Gongbang oder den jeweiligen Lizenzgebern.</li>
+          <li><strong>Rechte an deinen Daten und Exporten:</strong> Alle mit der App erfassten Zählerstände sowie lokal erzeugten Exporte (DIN A4 PDF-Berichte, UTF-8 CSV-Dateien, JSON-Vollbackups, <code>.ics</code>-Kalendererinnerungen und PNG-Übersichtskarten) gehören vollständig dir und dürfen für private Zwecke sowie zur Übergabe an Vermieter, Energieversorger oder für die Steuer frei verwendet und geteilt werden.</li>
+        </ol>
+
+        <h2>§ 2 Kostenlose Basisversion &amp; einmalige Pro-Lifetime-Lizenz (kein Abo)</h2>
+        <ol>
+          <li>&bdquo;Zählerstand Strom Gas &amp; Kosten&ldquo; bietet eine dauerhaft kostenlose Basisversion (bis zu 2 Zähler, DVGW G 685 Gas-Umrechnung, Jahresprognose, Keller-Taschenlampe, lokale Erinnerung sowie vollständiges JSON-Backup und Wiederherstellung).</li>
+          <li>Optional kann per <strong>einmaligem In-App-Kauf</strong> die <strong>Pro-Lifetime-Lizenz</strong> (SKU: <code>zaehlerstand_dach_lifetime_pro</code>) freigeschaltet werden (Richtpreis: <strong>2,77 €</strong> inkl. MwSt. in DE 19 % / AT 20 % bzw. <strong>CHF 2.75</strong> inkl. 8,1 % MwSt. in CH; maßgeblich ist stets der vor Kaufabschluss im Google Play Store bzw. Apple App Store angezeigte Endpreis). <strong>Es gibt kein Abonnement, keine automatische Verlängerung und keine Werbung.</strong></li>
+          <li>Die Lizenz kann bei Gerätewechsel oder Neuinstallation über denselben Google- bzw. Apple-Account kostenfrei über &bdquo;Käufe wiederherstellen&ldquo; aktiviert werden. Für Widerruf und Rückerstattungen gelten die gesetzlichen Verbraucherrechte in der EU/DACH sowie die offiziellen Rückerstattungsverfahren von Google Play und Apple App Store.</li>
+        </ol>
+
+        <h2>§ 3 Wichtige Hinweise zu Prognosen, Gas-Umrechnung &amp; lokalen Backups</h2>
+        <ol>
+          <li><strong>Unverbindliche Verbrauchs- und Kostenprognosen:</strong> Berechnungen zu Jahresprognose (<code>Guthaben</code> / <code>Nachzahlung</code>), empfohlenem Abschlag/Teilbetrag/Akonto, Gas-Umrechnung nach DVGW G 685 (<code>E = V × z × H_s</code>), HT/NT-Tarifen, unterjährigem Tarifwechsel und Zählerwechsel dienen ausschließlich der persönlichen Orientierung auf Basis deiner eingegebenen Werte. Maßgeblich bleibt stets die offizielle Jahresabrechnung deines Energieversorgers oder Vermieters.</li>
+          <li><strong>Lokale Ablese-Erinnerungen:</strong> Die optionale monatliche Erinnerung nutzt batterieschonende System-Benachrichtigungen. Ein ausgeschaltetes Gerät, widerrufene Benachrichtigungsrechte oder herstellerspezifische Energiesparfunktionen können Zustellungen verzögern oder unterdrücken.</li>
+          <li><strong>Eigenverantwortliches JSON-Backup:</strong> Da sämtliche Daten ausschließlich lokal auf deinem Endgerät gespeichert werden, empfehlen wir, vor einem Gerätewechsel oder Zurücksetzen regelmäßig ein lokales JSON-Vollbackup zu sichern.</li>
+        </ol>
+
+        <h2>§ 4 Zulässige Nutzung &amp; Haftungsbeschränkung</h2>
+        <p>Dekompilieren, Reverse Engineering oder die unbefugte Weiterverbreitung bzw. der Weiterverkauf der App sind untersagt. Bei Vorsatz, grober Fahrlässigkeit sowie bei Verletzung von Leben, Körper oder Gesundheit haften wir unbeschränkt nach den gesetzlichen Bestimmungen. Im Übrigen ist die Haftung bei leichter Fahrlässigkeit — soweit gesetzlich zulässig — auf vertragstypische, vorhersehbare Schäden begrenzt; zwingende Verbraucherschutzvorschriften des Rechts deines Wohnsitzstaates (DE, AT oder CH) bleiben hiervon stets unberührt.</p>
+
+        <h2>§ 5 Anwendbares Recht &amp; Anbieterkontakt</h2>
+        <p>Es gilt das Recht der Republik Korea unter Ausschluss des UN-Kaufrechts, jedoch unbeschadet zwingender Verbraucherschutzbestimmungen am gewöhnlichen Aufenthaltsort von Verbrauchern in Deutschland, Österreich oder der Schweiz (Art. 6 Rom-I-Verordnung / Art. 120 schweiz. IPRG).</p>
+        <div class="info-box">
+          <strong>Anbieter:</strong> Jisik Gongbang (Unternehmensreg.-Nr.: 874-15-02757 / D-U-N-S® Number: 697010594)<br>
+          <strong>Vertretungsberechtigter:</strong> KOO BONYEOP<br>
+          <strong>Anschrift:</strong> 65 Naesong-gil, Yeondong-myeon, Sejong-si, 30069, Republic of Korea<br>
+          <strong>Support-E-Mail:</strong> <a href="mailto:ddumwork@gmail.com">ddumwork@gmail.com</a>
+        </div>
+      </div>
+
       <div data-lang="en">
-        <p>These Terms of Use (&ldquo;Terms&rdquo;) govern your use of mobile applications provided by <strong>Jisik Gongbang</strong>, including <strong>&ldquo;Ploegendienst Rooster &amp; Wekker&rdquo;</strong> (and our other utility and document applications). By downloading or using the app, you agree to these Terms.</p>
+        <p>These Terms of Use (&ldquo;Terms&rdquo;) govern your use of mobile applications provided by <strong>Jisik Gongbang</strong>, including <strong>&ldquo;Ploegendienst Rooster &amp; Wekker&rdquo;</strong>, <strong>&ldquo;Zählerstand Strom Gas &amp; Kosten&rdquo;</strong> (DACH utility meter tracker), and our other utility and document applications. By downloading or using the app, you agree to these Terms.</p>
 
         <h2>1. License &amp; User-Generated Exports</h2>
         <ol>
           <li>All intellectual property rights in the app software, user interface, and built-in templates remain with Jisik Gongbang or its licensors.</li>
-          <li>You retain ownership of all rosters, notes, <code>.ics</code> calendar exports, PNG cards, A4 PDFs, CSV sheets, and JSON backups you create and may freely use or share them.</li>
+          <li>You retain ownership of all rosters, meter logs, notes, <code>.ics</code> calendar exports, PNG cards, A4 PDFs, CSV sheets, and JSON backups you create and may freely use or share them.</li>
         </ol>
 
-        <h2>2. Pro Upgrades, 3-Day Free Trial &amp; Auto-Renewal</h2>
+        <h2>2. Pro Upgrades, One-Time Lifetime Pro &amp; Auto-Renewal (Where Applicable)</h2>
         <ol>
-          <li>Optional Pro upgrades include a one-time <strong>Lifetime Pro</strong> purchase and an auto-renewing <strong>Monthly Pro</strong> subscription. Exact localized prices (including applicable taxes/VAT) are displayed in the Apple App Store or Google Play purchase sheet prior to checkout.</li>
-          <li><strong>3-Day Free Trial &amp; 24-Hour Rule:</strong> Where Monthly Pro includes a 3-day free trial, the subscription automatically converts to a paid monthly plan at the end of the trial unless cancelled <strong>at least 24 hours before</strong> the end of the trial or billing period in your store settings (iOS: <em>Settings &gt; Apple Account &gt; Subscriptions</em>; Android: <em>Google Play &gt; Payments &amp; subscriptions &gt; Subscriptions</em>).</li>
+          <li>Optional Pro upgrades include a one-time <strong>Lifetime Pro</strong> purchase (and, only in apps that explicitly offer a subscription such as &ldquo;Ploegendienst Rooster &amp; Wekker&rdquo;, an auto-renewing Monthly Pro plan). <strong>&ldquo;Zählerstand Strom Gas &amp; Kosten&rdquo; offers solely a one-time Lifetime Pro purchase (<code>zaehlerstand_dach_lifetime_pro</code>) with zero subscription and zero auto-renewal.</strong> Exact localized prices (including applicable taxes/VAT) are displayed in the Apple App Store or Google Play purchase sheet prior to checkout.</li>
+          <li><strong>3-Day Free Trial &amp; 24-Hour Rule (Subscription Apps Only):</strong> Where an app offers Monthly Pro with a 3-day free trial, the subscription automatically converts to a paid monthly plan at the end of the trial unless cancelled <strong>at least 24 hours before</strong> the end of the trial or billing period in your store settings (iOS: <em>Settings &gt; Apple Account &gt; Subscriptions</em>; Android: <em>Google Play &gt; Payments &amp; subscriptions &gt; Subscriptions</em>).</li>
           <li>Uninstalling the app does not cancel an active subscription. If you purchase Lifetime Pro while a Monthly Pro subscription or trial is active, remember to cancel the monthly subscription manually at least 24 hours before renewal to prevent duplicate charges.</li>
-          <li>Statutory EU consumer withdrawal rules for digital content and Apple/Google store refund procedures apply.</li>
+          <li>Statutory EU/DACH consumer withdrawal rules for digital content and Apple/Google store refund procedures apply.</li>
         </ol>
 
-        <h2>3. Informational &amp; Alarm Disclaimers</h2>
+        <h2>3. Informational, Calculation &amp; Reminder Disclaimers</h2>
         <ol>
-          <li><strong>ORT &amp; Shift Allowance Estimates:</strong> ORT (CAO Ziekenhuizen / VVT) and fixed shift-allowance calculations inside &ldquo;Ploegendienst Rooster &amp; Wekker&rdquo; are provided strictly as personal reference estimates. Your official employer roster, applicable CAO text, and payslip always prevail.</li>
-          <li><strong>Alarm Delivery:</strong> While Android exact alarms and iOS local notifications are implemented for reliable shift reminders, depleted batteries, powered-off devices, OEM battery restrictions, denied notifications, or iOS Focus/Mute settings may prevent alerts from sounding. Please keep a backup alarm for critical shifts.</li>
+          <li><strong>Utility Forecast &amp; Allowance Estimates:</strong> Annual utility forecasts (<em>Guthaben / Nachzahlung</em>), DVGW G 685 gas conversions, HT/NT splits, and ORT/shift-allowance calculations inside our apps are provided strictly as personal reference estimates. Your official utility provider, landlord bill, employer roster, or payslip always prevails.</li>
+          <li><strong>Alarm &amp; Reminder Delivery:</strong> While Android alarms/reminders and iOS local notifications are implemented for reliability, depleted batteries, powered-off devices, OEM battery restrictions, denied notifications, or iOS Focus/Mute settings may delay or prevent alerts. Please keep a backup alarm for critical commitments.</li>
           <li><strong>Local Backups:</strong> Because all data is stored locally on your device, please export regular JSON backups before changing or wiping your device.</li>
         </ol>
 
         <h2>4. Restrictions, Governing Law &amp; Limitation of Liability</h2>
-        <p>You may not reverse-engineer, redistribute, or resell the app. Nothing in these Terms excludes or limits mandatory consumer rights granted by EU or Dutch law (nor liability for intent or gross negligence). Subject thereto, these Terms are governed by the laws of the Republic of Korea without prejudice to mandatory local consumer protections (EU Rome I Regulation).</p>
+        <p>You may not reverse-engineer, redistribute, or resell the app. Nothing in these Terms excludes or limits mandatory consumer rights granted by EU, Dutch, German, Austrian, or Swiss law (nor liability for intent or gross negligence). Subject thereto, these Terms are governed by the laws of the Republic of Korea without prejudice to mandatory local consumer protections (EU Rome I Regulation / Swiss IPRG).</p>
         <div class="info-box">
           <strong>Provider:</strong> Jisik Gongbang (Business Reg. No.: 874-15-02757 / D-U-N-S® Number: 697010594)<br>
           <strong>Representative:</strong> KOO BONYEOP<br>
@@ -344,14 +387,15 @@
         <span data-lang="ja">制定日：2026年10月17日 ｜ 最終改定日：2026年11月24日</span>
         <span data-lang="ko">제정일: 2026년 10월 17일 ｜ 최종 개정일: 2026년 11월 24일</span>
         <span data-lang="nl">Ingangsdatum: 17 oktober 2026 ｜ Laatst bijgewerkt: 24 november 2026</span>
-        <span data-lang="en">Effective Date: October 17, 2026 ｜ Last Updated: November 24, 2026</span>
+        <span data-lang="de">Inkrafttreten: 17. Oktober 2026 ｜ Zuletzt aktualisiert: 28. November 2026</span>
+        <span data-lang="en">Effective Date: October 17, 2026 ｜ Last Updated: November 28, 2026</span>
       </div>
     </div>
   </main>
   
   <script>
     function setLang(lang) {
-      var supported = ['ja', 'ko', 'nl', 'en'];
+      var supported = ['ja', 'ko', 'nl', 'de', 'en'];
       if (supported.indexOf(lang) === -1) lang = 'ja';
       document.body.className = 'lang-' + lang;
       document.documentElement.lang = lang;
@@ -363,7 +407,7 @@
       for (var i = 0; i < links.length; i++) {
         var baseHref = links[i].getAttribute('data-base');
         if (baseHref) {
-          links[i].setAttribute('href', baseHref + '?v=20261123_v6&lang=' + lang);
+          links[i].setAttribute('href', baseHref + '?v=20261128_v7&lang=' + lang);
         }
       }
       try { localStorage.setItem('jg_legal_lang', lang); } catch (e) {}
@@ -373,7 +417,7 @@
       var qLang = params.get('lang');
       var saved = null;
       try { saved = localStorage.getItem('jg_legal_lang'); } catch (e) {}
-      var supported = ['ja', 'ko', 'nl', 'en'];
+      var supported = ['ja', 'ko', 'nl', 'de', 'en'];
       if (qLang && supported.indexOf(qLang) !== -1) {
         setLang(qLang);
       } else if (saved && supported.indexOf(saved) !== -1) {
@@ -381,6 +425,7 @@
       } else {
         var nav = (navigator.language || '').toLowerCase();
         if (nav.indexOf('nl') === 0) setLang('nl');
+        else if (nav.indexOf('de') === 0) setLang('de');
         else if (nav.indexOf('ko') === 0) setLang('ko');
         else if (nav.indexOf('en') === 0) setLang('en');
         else setLang('ja');
